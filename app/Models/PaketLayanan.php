@@ -13,6 +13,7 @@ class PaketLayanan extends Model
     protected $table = 'tb_paket_layanan';
 
     protected $fillable = [
+        'layanan_id',
         'nama_paket',
         'detail_paket',
         'deskripsi',

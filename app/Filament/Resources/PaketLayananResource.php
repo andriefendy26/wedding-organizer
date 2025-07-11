@@ -6,6 +6,7 @@ use App\Filament\Resources\PaketLayananResource\Pages;
 use App\Filament\Resources\PaketLayananResource\RelationManagers;
 use App\Models\PaketLayanan;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -20,12 +21,19 @@ class PaketLayananResource extends Resource
     protected static ?string $model = PaketLayanan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Layanan';
+     protected static ?int $navigationSort = 2;
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 //
+                Select::make('layanan_id')
+                    ->relationship('layanan', 'nama')
+                    ->searchable()
+                    ->preload(),
                 TextInput::make('nama_paket')
                     ->required()
                     ->maxLength(255),

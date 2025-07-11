@@ -40,7 +40,12 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
-            ])
+            ])->navigationGroups([
+                'Layanan',
+                'Blog',
+                'User',
+                'Settings',
+            ])->collapsibleNavigationGroups(false)
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

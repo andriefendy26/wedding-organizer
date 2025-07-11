@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use App\Filament\Resources\IncludeResource\Pages;
+use App\Filament\Resources\IncludeResource\RelationManagers;
+use App\Models\Includes;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,24 +16,26 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class UserResource extends Resource
+class IncludeResource extends Resource
 {
-    protected static ?string $model = User::class;
+    protected static ?string $model = Includes::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    protected static ?string $navigationGroup = 'User'; 
 
+    protected static ?string $navigationGroup = 'Layanan';
+     protected static ?int $navigationSort = 3;
+    
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 //
-                TextInput::make('name'),
-                TextInput::make('email')->email(),
-                TextInput::make('password')
-                    ->password()
-                    // ->autocomplete(false)
+                Select::make('paket_layanan_id')
+                    ->relationship('PaketLayanan', 'nama_paket')
+                    ->searchable()
+                    ->preload(),
+
+                TextInput::make('nama_include'),
             ]);
     }
 
@@ -41,10 +44,7 @@ class UserResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('name'),
-                TextColumn::make('email'),
-                TextColumn::make('password'),
-                TextColumn::make('email_verified_at'),
+                TextColumn::make('nama_include')
             ])
             ->filters([
                 //
@@ -69,9 +69,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListIncludes::route('/'),
+            'create' => Pages\CreateInclude::route('/create'),
+            'edit' => Pages\EditInclude::route('/{record}/edit'),
         ];
     }
 }

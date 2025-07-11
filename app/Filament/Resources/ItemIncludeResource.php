@@ -2,37 +2,34 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
-use App\Models\User;
+use App\Filament\Resources\ItemIncludeResource\Pages;
+use App\Filament\Resources\ItemIncludeResource\RelationManagers;
+use App\Models\ItemInclude;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class UserResource extends Resource
+class ItemIncludeResource extends Resource
 {
-    protected static ?string $model = User::class;
+    protected static ?string $model = ItemInclude::class;
+    protected static ?string $navigationGroup = 'Layanan'; 
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    protected static ?string $navigationGroup = 'User'; 
+     protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 //
-                TextInput::make('name'),
-                TextInput::make('email')->email(),
-                TextInput::make('password')
-                    ->password()
-                    // ->autocomplete(false)
+                Select::make('include_id.nama_include'),
+                TextInput::make('nama_item'),
             ]);
     }
 
@@ -41,10 +38,6 @@ class UserResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('name'),
-                TextColumn::make('email'),
-                TextColumn::make('password'),
-                TextColumn::make('email_verified_at'),
             ])
             ->filters([
                 //
@@ -69,9 +62,9 @@ class UserResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => Pages\ListItemIncludes::route('/'),
+            'create' => Pages\CreateItemInclude::route('/create'),
+            'edit' => Pages\EditItemInclude::route('/{record}/edit'),
         ];
     }
 }

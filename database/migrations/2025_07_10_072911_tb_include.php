@@ -14,8 +14,10 @@ return new class extends Migration
         //
         Schema::create('tb_include', function (Blueprint $table) {
             $table->id();
+            // $table->unsignedBigInteger('paket_layanan_id');
             $table->string('nama_include');
             $table->timestamps();
+            // $table->foreign('paket_layanan_id')->references('id')->on('tb_paket_layanan');
         });
     }
 

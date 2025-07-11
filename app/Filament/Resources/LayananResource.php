@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Illuminate\Support\Str;
 use App\Filament\Resources\LayananResource\Pages;
 use App\Filament\Resources\LayananResource\RelationManagers;
 use App\Filament\Resources\LayananResource\RelationManagers\PaketLayananRelationManager;
@@ -22,6 +23,10 @@ class LayananResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Layanan';
+    protected static ?int $navigationSort = 1;
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -37,8 +42,7 @@ class LayananResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('nama'),
-                TextColumn::make('deskripsi'),
+                TextColumn::make('nama')->description(fn (Layanan $record): string => Str::limit($record->deskripsi, 50)),
             ])
             ->filters([
                 //
