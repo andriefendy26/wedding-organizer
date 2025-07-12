@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class paketInclude extends Model
+class PaketInclude extends Model
 {
     use HasFactory;
 
@@ -23,7 +23,7 @@ class paketInclude extends Model
         return $this->belongsTo(PaketLayanan::class);
     }
 
-    public function itemInclude():BelongsToMany {
-        return $this->BelongsToMany(itemInclude::class);
+    public function Include():belongsTo {
+        return $this->belongsTo(Includes::class);
     }
 }

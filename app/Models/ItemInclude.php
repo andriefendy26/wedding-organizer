@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ItemInclude extends Model
 {
@@ -17,7 +18,7 @@ class ItemInclude extends Model
         'nama_item'
     ];
 
-    public function Includes():BelongsTo {
+    public function Include():BelongsTo {
         return $this->belongsTo(Includes::class);
     }
     

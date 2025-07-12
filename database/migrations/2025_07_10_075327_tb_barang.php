@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('layanan_id');
             $table->string('foto');
             $table->string('nama');
-            $table->string('deskrpsi');
+            $table->string('deskripsi');
             $table->string('harga');
             $table->string('stock');
             $table->string('status');

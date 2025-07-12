@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Includes extends Model
 {
@@ -17,7 +18,10 @@ class Includes extends Model
         'nama_include'
     ];
 
-    public function paketLayanan():BelongsTo {
-        return $this->belongsTo(PaketLayanan::class);
+    public function ItemInclude():HasMany {
+        return $this->hasMany(ItemInclude::class, );
     }
+    // public function paketLayanan():BelongsTo {
+    //     return $this->belongsTo(PaketLayanan::class);
+    // }
 }

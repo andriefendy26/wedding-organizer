@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PaketLayananResource\Pages;
 use App\Filament\Resources\PaketLayananResource\RelationManagers;
+use App\Filament\Resources\PaketLayananResource\RelationManagers\PaketIncludeRelationManager;
 use App\Models\PaketLayanan;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
@@ -77,6 +78,7 @@ class PaketLayananResource extends Resource
     {
         return [
             //
+            PaketIncludeRelationManager::class,
         ];
     }
 

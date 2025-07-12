@@ -21,4 +21,8 @@ class Layanan extends Model
         return $this->HasMany(PaketLayanan::class);
     }
 
+    public function Barang():HasMany{
+        return $this->hasMany(Barang::class);
+    }
+
 }

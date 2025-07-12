@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Illuminate\Support\Str;
 use App\Filament\Resources\LayananResource\Pages;
 use App\Filament\Resources\LayananResource\RelationManagers;
+use App\Filament\Resources\LayananResource\RelationManagers\BarangRelationManager;
 use App\Filament\Resources\LayananResource\RelationManagers\PaketLayananRelationManager;
 use App\Models\Layanan;
 use Filament\Forms;
@@ -61,7 +62,8 @@ class LayananResource extends Resource
     {
         return [
             //
-            PaketLayananRelationManager::class
+            PaketLayananRelationManager::class,
+            BarangRelationManager::class
         ];
     }
 

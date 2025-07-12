@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\IncludeResource\Pages;
 use App\Filament\Resources\IncludeResource\RelationManagers;
+use App\Filament\Resources\IncludeResource\RelationManagers\ItemIncludeRelationManager;
 use App\Models\Includes;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
@@ -29,11 +30,10 @@ class IncludeResource extends Resource
     {
         return $form
             ->schema([
-                //
-                Select::make('paket_layanan_id')
-                    ->relationship('PaketLayanan', 'nama_paket')
-                    ->searchable()
-                    ->preload(),
+                // Select::make('paket_layanan_id')
+                //     ->relationship('PaketLayanan', 'nama_paket')
+                //     ->searchable()
+                //     ->preload(),
 
                 TextInput::make('nama_include'),
             ]);
@@ -63,6 +63,7 @@ class IncludeResource extends Resource
     {
         return [
             //
+            ItemIncludeRelationManager::class
         ];
     }
 
