@@ -19,9 +19,9 @@ class Includes extends Model
     ];
 
     public function ItemInclude():HasMany {
-        return $this->hasMany(ItemInclude::class, );
+        return $this->hasMany(ItemInclude::class, "include_id");
     }
-    // public function paketLayanan():BelongsTo {
-    //     return $this->belongsTo(PaketLayanan::class);
-    // }
+    public function paketLayanan():BelongsTo {
+        return $this->belongsTo(PaketLayanan::class);
+    }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('tanggal_event');
             $table->timestamps();
 
-            $table->foreign('layanan_id')->references('id')->on('tb_layanan');
+            $table->foreign('layanan_id')->references('id')->on('tb_layanan')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

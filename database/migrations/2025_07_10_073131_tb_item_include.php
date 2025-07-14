@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama_item');
             $table->timestamps();
 
-            $table->foreign('include_id')->references('id')->on('tb_include');
+            $table->foreign('include_id')->references('id')->on('tb_include')->onDelete('cascade');
         });
     }
 

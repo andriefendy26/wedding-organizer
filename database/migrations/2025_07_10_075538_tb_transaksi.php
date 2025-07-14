@@ -12,18 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('tb_sewa_layanan', function (Blueprint $table) {
+        Schema::create('tb_transaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('layanan_id');
+            $table->unsignedBigInteger('paket_layanan_id')->nullable();
             $table->date('tanggal_sewa');
-            $table->date('tanggal_kembali');
+            $table->date('tanggal_kemdbali');
+            $table->string('bukti_bayar')->nullable();
             $table->string('total_biaya');
             $table->string('status');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('layanan_id')->references('id')->on('tb_layanan');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('layanan_id')->references('id')->on('tb_layanan')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('paket_layanan_id')->references('id')->on('tb_paket_layanan')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -33,6 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('tb_sewa_layanan');
+        Schema::dropIfExists('tb_transaksi');
     }
 };

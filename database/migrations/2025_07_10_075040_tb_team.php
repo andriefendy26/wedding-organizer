@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->timestamps();
             
-            $table->foreign('portofolio_id')->references('id')->on('tb_portofolio');
+            $table->foreign('portofolio_id')->references('id')->on('tb_portofolio')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

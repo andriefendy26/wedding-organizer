@@ -7,6 +7,7 @@ use App\Filament\Resources\IncludeResource\RelationManagers;
 use App\Filament\Resources\IncludeResource\RelationManagers\ItemIncludeRelationManager;
 use App\Models\Includes;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -30,13 +31,13 @@ class IncludeResource extends Resource
     {
         return $form
             ->schema([
-                // Select::make('paket_layanan_id')
-                //     ->relationship('PaketLayanan', 'nama_paket')
-                //     ->searchable()
-                //     ->preload(),
-
                 TextInput::make('nama_include'),
-            ]);
+                Repeater::make('ItemInclude')
+                    ->relationship('ItemInclude')
+                    ->schema([
+                        TextInput::make('nama_item')->required(),
+                    ])
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table

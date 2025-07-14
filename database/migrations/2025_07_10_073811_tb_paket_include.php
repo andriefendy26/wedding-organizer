@@ -14,12 +14,12 @@ return new class extends Migration
         //
         Schema::create('tb_paket_include', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('paket_layanan_id');
-            $table->unsignedBigInteger('include_id');
+            $table->unsignedBigInteger('paket_layanan_id')->nullable();
+            $table->unsignedBigInteger('include_id')->nullable();
             $table->timestamps();
             
-            $table->foreign('paket_layanan_id')->references('id')->on('tb_paket_layanan');
-            $table->foreign('include_id')->references('id')->on('tb_include');
+            $table->foreign('paket_layanan_id')->references('id')->on('tb_paket_layanan')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('include_id')->references('id')->on('tb_include')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

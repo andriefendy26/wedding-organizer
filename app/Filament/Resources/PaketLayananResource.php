@@ -7,6 +7,8 @@ use App\Filament\Resources\PaketLayananResource\RelationManagers;
 use App\Filament\Resources\PaketLayananResource\RelationManagers\PaketIncludeRelationManager;
 use App\Models\PaketLayanan;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -30,23 +32,33 @@ class PaketLayananResource extends Resource
     {
         return $form
             ->schema([
-                //
-                Select::make('layanan_id')
+                Section::make('Paket Layanan')
+                ->schema([
+                    Select::make('layanan_id')
                     ->relationship('layanan', 'nama')
                     ->searchable()
                     ->preload(),
-                TextInput::make('nama_paket')
-                    ->required()
-                    ->maxLength(255),
-                TextInput::make('detail_paket')
-                    ->required()
-                    ->maxLength(255),
-                TextInput::make('deskripsi')
-                    ->required()
-                    ->maxLength(255),
-                TextInput::make('harga')
-                    ->numeric()
-                    ->required(),
+                    TextInput::make('nama_paket')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('detail_paket')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('deskripsi')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('harga')
+                        ->numeric()
+                        ->required(),
+                ])->columns(3),
+                Section::make('Tambahkan Include')
+                    ->schema([
+                        Repeater::make('PaketInclude')
+                            ->relationship('PaketInclude')
+                            ->schema([
+                                Select::make('include_id')->relationship('include', 'nama_include'),
+                            ])
+                    ])
             ]);
     }
 
@@ -57,7 +69,7 @@ class PaketLayananResource extends Resource
                 //
                  TextColumn::make('nama_paket'),
                 TextColumn::make('detail_paket'),
-                TextColumn::make('deskripsi'),
+                // TextColumn::make('deskripsi'),
                 TextColumn::make('harga'),
             ])
             ->filters([

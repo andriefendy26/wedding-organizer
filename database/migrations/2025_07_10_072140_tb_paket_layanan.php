@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('harga');
             $table->timestamps();
 
-            $table->foreign('layanan_id')->references('id')->on('tb_layanan');
+            $table->foreign('layanan_id')->references('id')->on('tb_layanan')->onDelete('cascade');
 
         });
     }

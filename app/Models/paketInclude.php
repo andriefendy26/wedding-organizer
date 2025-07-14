@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class PaketInclude extends Model
 {
     use HasFactory;
-
+    
+    public $incrementing = true;
         
     protected $table = 'tb_paket_include';
 
