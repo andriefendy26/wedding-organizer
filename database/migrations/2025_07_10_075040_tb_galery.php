@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('tb_team', function (Blueprint $table) {
+        Schema::create('tb_galery', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('portofolio_id');
             $table->string('foto');
-            $table->string('nama');
-            $table->string('deskripsi');
+            $table->string('nama')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
             
             $table->foreign('portofolio_id')->references('id')->on('tb_portofolio')->onUpdate('cascade')->onDelete('cascade');

@@ -16,10 +16,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('layanan_id');
             $table->string('judul');
-            $table->string('kategori');
-            $table->string('deskripsi');
-            $table->string('url');
-            $table->string('tanggal_event');
+            $table->string('kategori')->nullable();
+            $table->string('deskripsi')->nullable();
+            $table->string('url')->nullable();
+            $table->string('tanggal_event')->nullable();
             $table->timestamps();
 
             $table->foreign('layanan_id')->references('id')->on('tb_layanan')->onUpdate('cascade')->onDelete('cascade');
