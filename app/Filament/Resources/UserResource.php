@@ -6,6 +6,7 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -27,12 +28,29 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
-                TextInput::make('name'),
-                TextInput::make('email')->email(),
-                TextInput::make('password')
-                    ->password()
-                    // ->autocomplete(false)
+                TextInput::make('name')->label('Nama')->required(),
+                TextInput::make('telpon')->label('Telpon')->required(),
+                \Filament\Forms\Components\Select::make('jenis_kelamin')
+                    ->options([
+                        'Laki-laki' => 'Laki-laki',
+                        'Perempuan' => 'Perempuan',
+                    ])
+                    ->label('Jenis Kelamin')
+                    ->required(),
+                TextInput::make('alamat')->label('Alamat')->required(),
+                TextInput::make('NIK')->label('NIK')->required(),
+                \Filament\Forms\Components\FileUpload::make('foto_profile')
+                    ->image()
+                    ->maxSize(2048)
+                    ->label('Foto Profil'),
+                TextInput::make('email')->email()->label('Email')->required(),
+                TextInput::make('password')->password()->label('Password')->required(),
+                Select::make('roles')
+                ->label('Role')
+                ->relationship('roles', 'name')
+                ->searchable()
+                ->preload()
+                ->required(),
             ]);
     }
 

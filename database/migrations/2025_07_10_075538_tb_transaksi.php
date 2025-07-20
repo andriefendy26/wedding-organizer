@@ -14,7 +14,7 @@ return new class extends Migration
         //
         Schema::create('tb_transaksi', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('layanan_id');
             $table->unsignedBigInteger('paket_layanan_id')->nullable();
             $table->date('tanggal_sewa');
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('status');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('layanan_id')->references('id')->on('tb_layanan')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('paket_layanan_id')->references('id')->on('tb_paket_layanan')->onUpdate('cascade')->onDelete('cascade');
         });

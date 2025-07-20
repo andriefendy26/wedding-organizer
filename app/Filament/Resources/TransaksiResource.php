@@ -49,35 +49,57 @@ class TransaksiResource extends Resource
             $end = Carbon::parse($tanggalSelesai);
 
             $durasi = $start->diffInDays($end);
-            if($durasi){
-                $set('Durasi', $durasi);
-                hitungTotalBiaya($get, $set);
-            };
+            
+            $set('Durasi', $durasi);
+            
+            // Hitung ulang total biaya sewa setelah durasi berubah
+            hitungTotalBiayaSewa($get, $set);
+            // Hitung ulang total keseluruhan
+            hitungTotalBiaya($get, $set);
         }
 
-        function hitungTotalBiaya($get, $set): void {
+        // Fungsi untuk menghitung total biaya sewa berdasarkan barang dan durasi
+        function hitungTotalBiayaSewa(Get $get, Set $set): void {
             $durasi = $get('Durasi') ?? 0;
-            $sumBarang = collect($get('barangTransaksi'))->sum(fn ($item) => $item['total'] ?? 0);
-            $totalSewa = $durasi * $sumBarang;
+            $barangTransaksi = $get('barangTransaksi') ?? [];
+            
+            $totalPerHari = 0;
+            foreach($barangTransaksi as $item) {
+                $totalPerHari += ($item['harga_satuan'] ?? 0) * ($item['jumlah'] ?? 0);
+            }
+            
+            $totalSewa = $durasi * $totalPerHari;
             $set('TotalBiayaSewa', $totalSewa);
+        }
 
+        // Fungsi untuk menghitung total biaya keseluruhan (sewa + paket)
+        function hitungTotalBiaya(Get $get, Set $set): void {
+            $totalSewa = $get('TotalBiayaSewa') ?? 0;
             $paketId = $get('paket_layanan_id');
 
             $hargaPaket = 0;
             if($paketId){
                 $paket = PaketLayanan::find($paketId);
                 $hargaPaket = $paket ? $paket->harga : 0;
-            };
+            }
 
             $totalKeseluruhan = $totalSewa + $hargaPaket;
             $set('total_biaya', $totalKeseluruhan);
+        }
+
+        // Fungsi untuk menghitung total item dalam repeater
+        function hitungTotalItem(Get $get, Set $set): void {
+            $hargaSatuan = $get('harga_satuan') ?? 0;
+            $jumlah = $get('jumlah') ?? 0;
+            $total = $hargaSatuan * $jumlah;
+            $set('total', $total);
         }
         
         return $form
         ->schema([
                 Section::make('Customer')
                     ->schema([
-                        Select::make('user_id')->reactive()->relationship('user', 'name')->required()->label('Customer'),
+                        Select::make('customer_id')->reactive()->relationship('customer', 'nama')->required()->label('Customer'),
                     ]),
                 Section::make('Pilih Layanan dan Paket Layanan')
                 ->schema([
@@ -95,19 +117,11 @@ class TransaksiResource extends Resource
                             ->preload()
                             ->reactive()
                             ->visible(fn (Get $get) => filled($get('layanan_id')))
-                            ->afterStateUpdated(function (Get $get,Set $set, ?string $state){
-                                if(!$state){
-                                    hitungTotalBiaya($get,$set);
-                                    return;
-                                }
-                                
-                                $paket = PaketLayanan::find($state);
-                                if($state){
-                                    hitungTotalBiaya($get,$set);
-                                }
+                            ->afterStateUpdated(function (Get $get, Set $set, ?string $state){
+                                // Hitung ulang total biaya keseluruhan ketika paket berubah
+                                hitungTotalBiaya($get, $set);
                             }),
                 ])->columns(2),
-
 
                 Section::make('Sewa Barang')
                 ->schema([
@@ -119,38 +133,21 @@ class TransaksiResource extends Resource
                             ->live()
                             ->relationship('barang', 'nama')
                             ->afterStateUpdated(function (Get $get, Set $set, $state){
-                                $barang = Barang::find($state);
                                 if (!$state) {
-                                    $set('jumlah', 1);
                                     $set('harga_satuan', 0);
                                     $set('total', 0);
+                                } else {
+                                    $barang = Barang::find($state);
+                                    if ($barang) {
+                                        $harga = $barang->harga;
+                                        $set('harga_satuan', $harga);
+                                        // Hitung total untuk item ini
+                                        hitungTotalItem($get, $set);
+                                    }
                                 }
-
-                                if ($barang) {
-                                    $harga = $barang->harga;
-                                    $set('harga_satuan', $harga);
-                                    $set('total', $harga * $get('jumlah') ?? 1);
-                                }
-
-                                $hargaSatuan = $get('harga_satuan') ?? 0;
                                 
-                                $allFormData = $get('../../');
-                                $allProduct = $allFormData['barangTransaksi'] ?? [];
-                                $durasi = $allFormData['Durasi'] ?? 1;
-                                // dd($allProduct);
-                                $grandTotal = 0;
-                                foreach($allProduct as $product){
-                                    // $satuan = $allProduct['harga_satuan'];
-                                    $jumlah = $product['jumlah'] ?? 1;
-                                    $hargaSatuan = $product['harga_satuan'] ?? 0;
-                                    // $total = $product['total'] ?? 0;
-                                    $grandTotal += $hargaSatuan * $jumlah;
-                                };
-
-                                $subTotal = 0;
-
-                                $subTotal += $grandTotal * $durasi;
-                                $set('../../TotalBiayaSewa', $subTotal);
+                                // Hitung ulang total biaya sewa dan total keseluruhan
+                                hitungTotalBiayaSewa($get, $set);
                                 hitungTotalBiaya($get, $set);
                             }),
                         TextInput::make('jumlah')
@@ -160,27 +157,11 @@ class TransaksiResource extends Resource
                             ->minValue(1)
                             ->numeric()
                             ->afterStateUpdated(function (Set $set, Get $get, $state){
-                                $hargaSatuan = $get('harga_satuan') ?? 0;
-                                $total = $state * $hargaSatuan;
+                                // Hitung total untuk item ini
+                                hitungTotalItem($get, $set);
                                 
-                                $allFormData = $get('../../');
-                                $allProduct = $allFormData['barangTransaksi'] ?? [];
-                                $durasi = $allFormData['Durasi'] ?? 1;
-                                // dd($allProduct);
-                                $grandTotal = 0;
-                                foreach($allProduct as $product){
-                                    // $satuan = $allProduct['harga_satuan'];
-                                    $jumlah = $product['jumlah'] ?? 1;
-                                    $hargaSatuan = $product['harga_satuan'] ?? 0;
-                                    // $total = $product['total'] ?? 0;
-                                    $grandTotal += $hargaSatuan * $jumlah;
-                                };
-
-                                $subTotal = 0;
-
-                                $subTotal += $grandTotal * $durasi;
-                                $set('../../TotalBiayaSewa', $subTotal);
-                                $set('total', $total);
+                                // Hitung ulang total biaya sewa dan total keseluruhan
+                                hitungTotalBiayaSewa($get, $set);
                                 hitungTotalBiaya($get, $set);
                             }),
                         TextInput::make('harga_satuan')
@@ -197,30 +178,12 @@ class TransaksiResource extends Resource
                         ->reactive()
                         ->live()
                         ->columns(4)
-                        // ->afterStateUpdated(function (Get $get, Set $set) {
-                        //         $allFormData = $get('../../');
-                        //         $allProduct = $allFormData['barangTransaksi'] ?? [];
-                        //         $durasi = $allFormData['Durasi'] ?? 1;
-                        //         // dd($allProduct);
-                        //         $grandTotal = 0;
-                        //         foreach($allProduct as $product){
-                        //             // $satuan = $allProduct['harga_satuan'];
-                        //             $jumlah = $product['jumlah'] ?? 1;
-                        //             $hargaSatuan = $product['harga_satuan'] ?? 0;
-                        //             // $total = $product['total'] ?? 0;
-                        //             $grandTotal += $hargaSatuan * $jumlah;
-                        //         };
-
-                        //         $subTotal = 0;
-
-                        //         $subTotal += $grandTotal * $durasi;
-                        //         $set('../../TotalBiayaSewa', $subTotal);
-                        // })
                         ->addActionLabel('Tambah Barang')
                         ->afterStateUpdated(function (Get $get, Set $set) {
+                            // Ketika ada perubahan pada repeater (tambah/hapus item)
+                            hitungTotalBiayaSewa($get, $set);
                             hitungTotalBiaya($get, $set);
                         }),
-
 
                     Fieldset::make('Lama Penyewaan')
                         ->schema([
@@ -274,12 +237,19 @@ class TransaksiResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('user.name')->label('Customer'),
+                TextColumn::make('customer.nama')->label('Customer'),
                 TextColumn::make('Layanan.nama'),
                 TextColumn::make('total_biaya')
                     ->prefix('Rp ')
                     ->numeric()
                     ->sortable(),
+                TextColumn::make('public_id')
+                    ->label('Link Pembayaran')
+                    ->url(fn($record) => route('bayar.show', $record->public_id), true)
+                    ->openUrlInNewTab()
+                    ->copyable()
+                    ->copyMessage('Link disalin')
+                    ->copyMessageDuration(1500),
                 TextColumn::make('tanggal_sewa')
                     ->date()
                     ->sortable(),

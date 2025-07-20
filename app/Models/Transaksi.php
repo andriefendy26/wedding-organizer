@@ -17,6 +17,7 @@ class Transaksi extends Model
     protected $fillable  = [
         'user_id',
         'layanan_id',
+        'customer_id',
         'paket_layanan_id',
         'tanggal_sewa',
         'tanggal_kembali',
@@ -43,5 +44,22 @@ class Transaksi extends Model
     public function pembayaran(): HasOne
     {
         return $this->hasOne(Pembayaran::class);
+    }
+
+    public function paketLayanan()
+    {
+        return $this->belongsTo(\App\Models\PaketLayanan::class, 'paket_layanan_id');
+    }
+
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(Customers::class, 'customer_id');
+    }
+
+    protected static function booted()
+    {
+        static::creating(function ($transaksi) {
+            $transaksi->public_id = \Illuminate\Support\Str::uuid();
+        });
     }
 }
