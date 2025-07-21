@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\Layanan as ClustersLayanan;
 use App\Filament\Resources\PaketLayananResource\Pages;
 use App\Filament\Resources\PaketLayananResource\RelationManagers;
 use App\Filament\Resources\PaketLayananResource\RelationManagers\PaketIncludeRelationManager;
@@ -24,8 +25,9 @@ class PaketLayananResource extends Resource
     protected static ?string $model = PaketLayanan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Layanan';
-     protected static ?int $navigationSort = 2;
+    // protected static ?string $navigationGroup = 'Layanan';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $cluster = ClustersLayanan::class;
 
 
     public static function form(Form $form): Form
