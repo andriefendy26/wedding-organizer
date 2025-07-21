@@ -19,16 +19,22 @@ class KalenderController extends Controller
         $start = $request->query('start');
         $end = $request->query('end');
 
-        $query = KalenderKetersediaan::query();
+        $query = \App\Models\Transaksi::with('customer');
         if ($start && $end) {
-            $query->whereBetween('tanggal', [$start, $end]);
+            $query->where(function($q) use ($start, $end) {
+                $q->whereBetween('tanggal_sewa', [$start, $end])
+                  ->orWhereBetween('tanggal_kembali', [$start, $end]);
+            });
         }
 
         $events = $query->get()->map(function ($item) {
+            $nama = $item->customer ? $item->customer->nama : 'Tanpa Customer';
+            $layanan = $item->layanan ? $item->layanan->nama : '-';
             return [
-                'title' => $item->status . ' - ' . $item->catatan,
-                'start' => $item->tanggal->toDateString(),
-                'color' => $item->status === 'Booked' ? '#e53e3e' : '#38a169',
+                'title' => $nama . ' | ' . $layanan,
+                'start' => $item->tanggal_sewa,
+                'end' => $item->tanggal_kembali,
+                'color' => $item->status ? '#38a169' : '#e53e3e',
             ];
         });
 

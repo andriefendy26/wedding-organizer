@@ -42,8 +42,9 @@ class AdminPanelProvider extends PanelProvider
                 // Widgets\FilamentInfoWidget::class,
             ])->navigationGroups([
                 'Layanan',
-                'Blog',
-                'User',
+                'Transaksi',
+                'Content',
+                'UserManagement',
                 'Settings',
             ])->collapsibleNavigationGroups(false)
             ->middleware([
