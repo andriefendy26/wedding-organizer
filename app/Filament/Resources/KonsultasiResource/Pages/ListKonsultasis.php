@@ -6,7 +6,7 @@ use App\Filament\Resources\KonsultasiResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListKonsultasi extends ListRecords
+class ListKonsultasis extends ListRecords
 {
     protected static string $resource = KonsultasiResource::class;
 

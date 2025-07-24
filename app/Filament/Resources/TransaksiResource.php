@@ -54,13 +54,11 @@ class TransaksiResource extends Resource
             
             $set('Durasi', $durasi);
             
-            // Hitung ulang total biaya sewa setelah durasi berubah
             hitungTotalBiayaSewa($get, $set);
-            // Hitung ulang total keseluruhan
             hitungTotalBiaya($get, $set);
         }
 
-        // Fungsi untuk menghitung total biaya sewa berdasarkan barang dan durasi
+        
         function hitungTotalBiayaSewa(Get $get, Set $set): void {
             $durasi = $get('Durasi') ?? 0;
             $barangTransaksi = $get('barangTransaksi') ?? [];
@@ -74,7 +72,6 @@ class TransaksiResource extends Resource
             $set('TotalBiayaSewa', $totalSewa);
         }
 
-        // Fungsi untuk menghitung total biaya keseluruhan (sewa + paket)
         function hitungTotalBiaya(Get $get, Set $set): void {
             $totalSewa = $get('TotalBiayaSewa') ?? 0;
             $paketId = $get('paket_layanan_id');
@@ -89,7 +86,7 @@ class TransaksiResource extends Resource
             $set('total_biaya', $totalKeseluruhan);
         }
 
-        // Fungsi untuk menghitung total item dalam repeater
+        
         function hitungTotalItem(Get $get, Set $set): void {
             $hargaSatuan = $get('harga_satuan') ?? 0;
             $jumlah = $get('jumlah') ?? 0;
@@ -120,7 +117,6 @@ class TransaksiResource extends Resource
                             ->reactive()
                             ->visible(fn (Get $get) => filled($get('layanan_id')))
                             ->afterStateUpdated(function (Get $get, Set $set, ?string $state){
-                                // Hitung ulang total biaya keseluruhan ketika paket berubah
                                 hitungTotalBiaya($get, $set);
                             }),
                 ])->columns(2),
@@ -148,7 +144,6 @@ class TransaksiResource extends Resource
                                     }
                                 }
                                 
-                                // Hitung ulang total biaya sewa dan total keseluruhan
                                 hitungTotalBiayaSewa($get, $set);
                                 hitungTotalBiaya($get, $set);
                             }),
@@ -162,7 +157,6 @@ class TransaksiResource extends Resource
                                 // Hitung total untuk item ini
                                 hitungTotalItem($get, $set);
                                 
-                                // Hitung ulang total biaya sewa dan total keseluruhan
                                 hitungTotalBiayaSewa($get, $set);
                                 hitungTotalBiaya($get, $set);
                             }),

@@ -64,7 +64,7 @@ class KonsultasiResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListKonsultasi::route('/'),
+            'index' => Pages\ListKonsultasis::route('/'),
             'create' => Pages\CreateKonsultasi::route('/create'),
             'edit' => Pages\EditKonsultasi::route('/{record}/edit'),
         ];
