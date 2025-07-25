@@ -40,6 +40,7 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
+    @vite('resources/css/font.css')
     
     <style>
         .toggle-bg {
@@ -87,14 +88,15 @@
 <body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
     
     <!-- Header with Dark Mode Toggle -->
-    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 px-10">
+    <header class="backdrop-blur-2xl bg-white/30 fixed top-0 z-[999999999] w-full dark:bg-gray-800/30 shadow-sm border-b border-gray-200 dark:border-gray-700 px-30">
         <div class="container">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo/Brand -->
-                <div>
-                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('storage/content/LogoFont.png') }}" class="w-28 drop-shadow-lg rounded-xl"></img>
+                    {{-- <h1 class="text-2xl text-[--color-primary] font-bold italic  dark:text-white">
                         Wedding Organizer
-                    </h1>
+                    </h1> --}}
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -176,20 +178,21 @@
     </header>
 
     <!-- Navigation -->
-    <nav x-data="{ mobileMenuOpen: false }" class="flex justify-center  w-full absolute top-20 z-10">
+    <nav x-data="{ mobileMenuOpen: false }" class="flex justify-center  w-full fixed top-20 z-10">
         <div
-            class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white/30 dark:bg-gray-800/30 rounded-full shadow-lg border border-white/40 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6"
+            class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white/30 dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6"
         >
             <!-- Navigation Links (Desktop) -->
             <div class="flex items-center gap-6 text-black dark:text-white font-medium">
                 <a href="/" class="hover:text-red-600 transition">Home</a>
                 <a href="/" class="hover:text-red-600 transition">Pages</a>
                 <a href="/" class="hover:text-red-600 transition">Artikel</a>
+                <a href="/" class="hover:text-red-600 transition">FAQ</a>
                 <a href="/" class="hover:text-red-600 transition">Kalender</a>
                 <a href="/admin" class="hover:text-red-600 transition">Login</a>
         </div>
     </nav>
-
+    
     @yield('content')
 
     <!-- Main Content -->

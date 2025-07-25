@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @import "tailwindcss";
 @source "../views";
 
 @theme static {
     --color-primary: #B2110E;
-    --color-secondary: #D4201C;
+    /* --color-secondary: #D4201C; */
 }
 
 .containerHero {
-position: absolute;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100vh;
-  padding: 50px;
-  box-shadow: 0 30px 50px #000000;
-  text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.56);
+  /* padding: 50px; */
   overflow: hidden;
+  
 }
 
 #slide {
@@ -34,11 +35,12 @@ position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   /* z-index: 1; */
-  top: 50%;
+  /* top: 50%; */
   transform: translate(0, -50%);
-  border-radius: 20px;
-  box-shadow: 0 30px 50px #505050;
+  border-radius: 5px;
+  
 }
+
 
 .item:nth-child(1),
 .item:nth-child(2) {
@@ -52,10 +54,16 @@ position: absolute;
 }
 
 .item:nth-child(3) {
-  left: 70%;
+  /* background-color: aqua; */
+  /* background: fixed; */
+  left: 40%;
+  top: 85%;
+  height: 100px;
 }
 .item:nth-child(4) {
-  left: calc(70% + 190px);
+  left: calc(40% + 160px);
+  top: 85%;
+  height: 100px;
 }
 .item:nth-child(n + 5) {
   left: calc(70% + 200px);
@@ -65,24 +73,28 @@ position: absolute;
 .item .content {
   position: absolute;
   top: 50%;
-  left: 100px;
-  width: 300px;
-  text-align: left;
-  padding: 0;
-  color: #eee;
+  /* left: 100px; */
+  /* width: 300px; */
   transform: translate(0, -50%);
   display: none;
+  /* background-color: #373b44; */
   font-family: system-ui;
+  /* background: linear-gradient(to bottom right, #ffffff, #fff5f5); */
+}
+
+.item .tambahan {
+  display: none;
+}
+
+.item:nth-child(2) .tambahan {
+  display: block;
 }
 
 .item:nth-child(2) .content {
   display: block;
-  z-index: 11111;
+  z-index: 2;
 }
 
-.item button:hover {
-  background-color: #b1b0b0;
-}
 
 @keyframes showcontent {
   from {
@@ -99,18 +111,20 @@ position: absolute;
 
 .buttons {
   position: relative;
-  top: 70%;
-  z-index: 222222;
+  top: 75%;
+  /* left: 15%; */
+  /* left */
+  /* z-index: 222222; */
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: space-around;
 }
 
 .buttons button {
-  width: 35px;
-  height: 50px;
-  border: 2px solid #373b44;
-  border-radius: 30%;
+  width: 60px;
+  height: 60px;
+  /* border: 2px solid #373b44; */
+  /* border-radius: 30%; */
   transition: 0.5s;
 }
