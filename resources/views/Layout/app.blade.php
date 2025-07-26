@@ -41,6 +41,8 @@
     <!-- Styles -->
     @vite('resources/css/app.css')
     @vite('resources/css/font.css')
+
+    @stack('styles')
     
     <style>
         .toggle-bg {
@@ -88,12 +90,12 @@
 <body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
     
     <!-- Header with Dark Mode Toggle -->
-    <header class="backdrop-blur-2xl bg-white/30 fixed top-0 z-[999999999] w-full dark:bg-gray-800/30 shadow-sm border-b border-gray-200 dark:border-gray-700 px-30">
+    <header class="backdrop-blur-md bg-white fixed top-0 z-[999999999] w-full dark:bg-gray-800/30 shadow-sm border-b border-gray-200 dark:border-gray-700 px-30">
         <div class="container">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo/Brand -->
                 <div class="flex items-center space-x-4">
-                    <img src="{{ asset('storage/content/LogoFont.png') }}" class="w-28 drop-shadow-lg rounded-xl"></img>
+                    <img src="{{ asset('storage/content/LogoFont.png') }}" class="w-20 drop-shadow-lg rounded-xl"></img>
                     {{-- <h1 class="text-2xl text-[--color-primary] font-bold italic  dark:text-white">
                         Wedding Organizer
                     </h1> --}}
@@ -180,7 +182,7 @@
     <!-- Navigation -->
     <nav x-data="{ mobileMenuOpen: false }" class="flex justify-center  w-full fixed top-20 z-10">
         <div
-            class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white/30 dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6"
+            class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6"
         >
             <!-- Navigation Links (Desktop) -->
             <div class="flex items-center gap-6 text-black dark:text-white font-medium">
@@ -195,41 +197,7 @@
     
     @yield('content')
 
-    <!-- Main Content -->
-    <main class="flex-1">
-        <div class="container py-6">
-            
-            <!-- Demo Content -->
-            <div class="mt-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Wedding Planning</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Professional wedding planning services with attention to every detail.</p>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Venue Selection</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Find the perfect venue for your special day from our curated list.</p>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Catering Services</h3>
-                        <p class="text-gray-600 dark:text-gray-300">Delicious cuisine options to make your celebration memorable.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="mt-auto">
-        <div class="container">
-            <div class="text-center py-4">
-                <span class="text-muted">&copy; {{ date('Y') }} Wedding Organizer. All rights reserved.</span>
-            </div>
-        </div>
-    </footer>
-
+    
     <script>
         // Language Switcher Component
         function languageSwitcher() {
