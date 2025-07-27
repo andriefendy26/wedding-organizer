@@ -59,6 +59,43 @@ Route::get('/', function () {
 
     // return view('home');
 });
+Route::get('/artikel', function () {
+    return view('artikel');
+});
+Route::get('/detailartikel', function () {
+    return view('detailartikel');
+});
+Route::get('/faq', function () {
+    return view('faq');
+});
+Route::get('/kontak', function () {
+    return view('kontak');
+});
+
+Route::get('/tentang', function () {
+    return view('tentangkami');
+});
+
+Route::get('/tim', function () {
+    return view('timkami');
+});
+Route::get('/portofolio', function () {
+    return view('portofolio');
+});
+
+// route layanan
+Route::get('/layanan', function () {
+    return view('layanan');
+});
+Route::get('/layanansewa', function () {
+    return view('sewabarang');
+});
+
+
+// Route::get('/kalenderketerse', function () {
+//     return view('kalender');
+// });
+Route::get('/kalender', [KalenderController::class, 'kalender'])->name('kalender.index');
 
 
 Route::get('/bayar/{public_id}', [BayarController::class, 'show'])->name('bayar.show');

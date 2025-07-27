@@ -11,7 +11,7 @@ class KalenderController extends Controller
     public function index()
     {
         // halaman blade untuk fullcalendar
-        return view('kalender.index');
+        return view('kalender');
     }
 
     public function events(Request $request)

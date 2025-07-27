@@ -276,12 +276,12 @@
         {{-- header --}}
         <div class="poppins-regular">
             <h2 class="text-gray-600 dark:text-gray-400 edu-vic-wa-nt-hand-500 tracking-widest text-xl">Testimoni Pelanggan <span>----></span></h2>
-            <p class="text-black dark:text-white text-5xl w-1/2 mt-2">MENDENGARKAN DARI PELANGGAN KAMI YANG SENANG</p>
+            <p class="text-black dark:text-white text-5xl w-2/3 mt-2">MENDENGARKAN DARI PELANGGAN KAMI YANG SENANG</p>
         </div>
 
         {{-- Marquee testimoni --}}
 
-        <div class="marquee-container mt-10">
+        <div class="marquee-container mt-10 mask-x-from-90% mask-x-to-95%">
             {{-- Blur masking kiri-kanan --}}
             <div class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10">
                 <div class="h-full w-full bg-gradient-to-r from-white/80 via-white/0 to-transparent backdrop-blur-sm"></div>
@@ -353,10 +353,6 @@
             </div>
         </div>
     </div>
-
-</div>
-
-<div class="px-30 mt-20">
 </div>
 
 @push('styles')

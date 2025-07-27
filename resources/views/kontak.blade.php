@@ -1,0 +1,591 @@
+@extends('Layout.app')
+
+@section('title', 'Hubungi Kami - 3Rasa Wedding Organizer')
+
+@section('content')
+<div class="bg-white dark:bg-gray-800 min-h-screen">
+    {{-- Hero Section --}}
+    <div class="relative bg-gradient-to-br from-purple-600 to-pink-600 py-20">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center">
+                <nav class="flex justify-center items-center gap-2 text-white/80 text-sm mb-6">
+                    <a href="/" class="hover:text-white transition-colors">Beranda</a>
+                    <span>/</span>
+                    <span class="text-white">Kontak</span>
+                </nav>
+                
+                <h1 class="text-6xl font-semibold mb-6 edu-vic-wa-nt-hand text-white tracking-wide">
+                    Hubungi Kami
+                </h1>
+                <p class="text-xl text-white/90 pt-serif-regular-italic max-w-2xl mx-auto">
+                    Siap mewujudkan pernikahan impian Anda? Mari berkonsultasi dan rencanakan momen spesial bersama tim profesional kami
+                </p>
+            </div>
+        </div>
+        
+        {{-- Decorative elements --}}
+        <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full opacity-30"></div>
+        <div class="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-30"></div>
+    </div>
+
+    {{-- Contact Info Cards --}}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {{-- Phone Card --}}
+            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
+                    Telepon & WhatsApp
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
+                    Hubungi kami kapan saja untuk konsultasi gratis
+                </p>
+                <div class="space-y-2">
+                    <a href="tel:+6281234567890" class="block text-[--color-primary] hover:underline font-medium">
+                        +62 812-3456-7890
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="block text-[--color-primary] hover:underline font-medium">
+                        WhatsApp Chat
+                    </a>
+                </div>
+            </div>
+
+            {{-- Email Card --}}
+            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
+                    Email
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
+                    Kirim pertanyaan detail melalui email
+                </p>
+                <div class="space-y-2">
+                    <a href="mailto:info@3rasa.com" class="block text-[--color-primary] hover:underline font-medium">
+                        info@3rasa.com
+                    </a>
+                    <a href="mailto:booking@3rasa.com" class="block text-[--color-primary] hover:underline font-medium">
+                        booking@3rasa.com
+                    </a>
+                </div>
+            </div>
+
+            {{-- Location Card --}}
+            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
+                    Lokasi Kantor
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
+                    Kunjungi showroom kami langsung
+                </p>
+                <div class="space-y-2">
+                    <p class="text-gray-800 dark:text-gray-200 font-medium">
+                        Jl. Mulawarman No. 123<br>
+                        Tarakan, Kalimantan Utara<br>
+                        77115
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Main Contact Section --}}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {{-- Get In Touch Form --}}
+            <div>
+                <div class="mb-8">
+                    <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+                        Get In Touch
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic">
+                        Ceritakan visi pernikahan impian Anda, dan biarkan kami membantu mewujudkannya menjadi kenyataan yang menakjubkan.
+                    </p>
+                </div>
+
+                <form x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Nama Lengkap *
+                            </label>
+                            <input 
+                                x-model="form.name"
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                placeholder="Masukkan nama lengkap Anda"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Nomor WhatsApp *
+                            </label>
+                            <input 
+                                x-model="form.phone"
+                                type="tel" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                placeholder="contoh: 081234567890"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Email
+                        </label>
+                        <input 
+                            x-model="form.email"
+                            type="email" 
+                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                            placeholder="nama@email.com"
+                        />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Tanggal Acara *
+                            </label>
+                            <input 
+                                x-model="form.event_date"
+                                type="date" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Estimasi Budget
+                            </label>
+                            <select 
+                                x-model="form.budget"
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                            >
+                                <option value="">Pilih range budget</option>
+                                <option value="10-25">10 - 25 Juta</option>
+                                <option value="25-50">25 - 50 Juta</option>
+                                <option value="50-100">50 - 100 Juta</option>
+                                <option value="100+">100+ Juta</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Jenis Layanan *
+                        </label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="wedding-organizer"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Wedding Organizer</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="decoration"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Dekorasi</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="catering"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Catering</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="photography"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Fotografi</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="sound-system"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">Sound System</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input 
+                                    type="checkbox" 
+                                    x-model="form.services" 
+                                    value="mc"
+                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                />
+                                <span class="text-sm text-gray-700 dark:text-gray-300">MC</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            Pesan & Detail Acara *
+                        </label>
+                        <textarea 
+                            x-model="form.message"
+                            rows="5" 
+                            required
+                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors resize-none"
+                            placeholder="Ceritakan konsep pernikahan impian Anda, jumlah tamu, lokasi yang diinginkan, dan detail lainnya..."
+                        ></textarea>
+                    </div>
+
+                    <button 
+                        type="submit"
+                        :disabled="loading"
+                        class="w-full bg-[--color-primary] text-white py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 font-medium text-lg edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <span x-show="!loading">Kirim Pesan</span>
+                        <span x-show="loading" class="flex items-center justify-center gap-2">
+                            <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Mengirim...
+                        </span>
+                    </button>
+
+                    {{-- Success Message --}}
+                    <div x-show="success" x-transition class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+                        <div class="flex items-center gap-2 text-green-800 dark:text-green-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <p class="font-medium">Pesan berhasil dikirim! Kami akan menghubungi Anda segera.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            {{-- Google Maps & Business Hours --}}
+            <div class="space-y-8">
+                {{-- Google Maps --}}
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+                        Lokasi Kami
+                    </h3>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.32734509213!2d117.35089995!3d3.325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x321463d73b98b9bd%3A0x9b2c484fdad86b21!2sTarakan%2C%20North%20Kalimantan!5e0!3m2!1sen!2sid!4v1701234567890!5m2!1sen!2sid"
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-2xl"
+                        ></iframe>
+                    </div>
+                </div>
+
+                {{-- Business Hours --}}
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
+                        Jam Operasional
+                    </h3>
+                    <div class="space-y-4 pt-serif-regular">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                            <span class="text-gray-700 dark:text-gray-300">Senin - Jumat</span>
+                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                            <span class="text-gray-700 dark:text-gray-300">Sabtu</span>
+                            <span class="font-medium text-black dark:text-white">09.00 - 16.00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                            <span class="text-gray-700 dark:text-gray-300">Minggu</span>
+                            <span class="text-red-500 font-medium">Tutup</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-700 dark:text-gray-300">Hari Libur Nasional</span>
+                            <span class="text-red-500 font-medium">Tutup</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                        <p class="text-blue-800 dark:text-blue-200 text-sm">
+                            <strong>Catatan:</strong> Untuk konsultasi di luar jam operasional, hubungi WhatsApp kami. Kami siap melayani konsultasi darurat 24/7.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Social Media --}}
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-semibold mb-4 edu-vic-wa-nt-hand">
+                        Follow Our Journey
+                    </h3>
+                    <p class="mb-6 pt-serif-regular-italic opacity-90">
+                        Ikuti update terbaru dan inspirasi pernikahan di media sosial kami
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- FAQ Section --}}
+    <div class="bg-gray-50 dark:bg-gray-900 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+                    Pertanyaan yang Sering Diajukan
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-2xl mx-auto">
+                    Temukan jawaban untuk pertanyaan umum seputar layanan wedding organizer kami
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4" x-data="{ openFaq: null }">
+                {{-- FAQ Item 1 --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <button 
+                        @click="openFaq = openFaq === 1 ? null : 1"
+                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                    >
+                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                            Berapa lama waktu yang dibutuhkan untuk merencanakan pernikahan?
+                        </h3>
+                        <svg 
+                            :class="{ 'rotate-45': openFaq === 1 }" 
+                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === 1" x-transition class="px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
+                            Idealnya, perencanaan pernikahan dimulai 6-12 bulan sebelum hari H. Namun, kami juga bisa menangani pernikahan dengan waktu persiapan yang lebih singkat, bahkan hingga 1-2 bulan sebelumnya, tergantung ketersediaan vendor dan kompleksitas acara.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- FAQ Item 2 --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <button 
+                        @click="openFaq = openFaq === 2 ? null : 2"
+                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                    >
+                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                            Apakah ada paket wedding organizer yang bisa disesuaikan dengan budget?
+                        </h3>
+                        <svg 
+                            :class="{ 'rotate-45': openFaq === 2 }" 
+                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === 2" x-transition class="px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
+                            Tentu saja! Kami menyediakan berbagai paket mulai dari basic hingga premium. Setiap paket bisa dikustomisasi sesuai kebutuhan dan budget Anda. Tim kami akan membantu memaksimalkan budget yang ada untuk hasil terbaik.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- FAQ Item 3 --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <button 
+                        @click="openFaq = openFaq === 3 ? null : 3"
+                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                    >
+                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                            Bagaimana proses konsultasi dan perencanaan dengan tim 3Rasa?
+                        </h3>
+                        <svg 
+                            :class="{ 'rotate-45': openFaq === 3 }" 
+                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === 3" x-transition class="px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
+                            Proses dimulai dengan konsultasi gratis untuk memahami visi dan kebutuhan Anda. Setelah itu, kami akan menyusun proposal detail beserta timeline. Sepanjang proses, Anda akan mendapat update rutin dan bisa berkonsultasi kapan saja.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- FAQ Item 4 --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <button 
+                        @click="openFaq = openFaq === 4 ? null : 4"
+                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                    >
+                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                            Apakah 3Rasa melayani pernikahan adat tradisional?
+                        </h3>
+                        <svg 
+                            :class="{ 'rotate-45': openFaq === 4 }" 
+                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === 4" x-transition class="px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
+                            Ya, kami sangat berpengalaman dalam menyelenggarakan pernikahan adat, khususnya adat Kalimantan dan tradisi lokal lainnya. Tim kami memahami protokol adat dan bekerjasama dengan tetua adat untuk memastikan setiap ritual berjalan dengan sempurna.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- FAQ Item 5 --}}
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <button 
+                        @click="openFaq = openFaq === 5 ? null : 5"
+                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                    >
+                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                            Bagaimana jika ada perubahan mendadak pada hari pernikahan?
+                        </h3>
+                        <svg 
+                            :class="{ 'rotate-45': openFaq === 5 }" 
+                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                    <div x-show="openFaq === 5" x-transition class="px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
+                            Tim 3Rasa selalu memiliki contingency plan untuk berbagai situasi darurat. Kami menyediakan koordinator lapangan yang siap menangani perubahan mendadak dan memastikan acara tetap berjalan lancar tanpa mengurangi kualitas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- CTA Section --}}
+    <div class="bg-gradient-to-r from-purple-600 to-pink-600 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-white">
+                Siap Memulai Pernikahan Impian Anda?
+            </h2>
+            <p class="text-xl text-white/90 pt-serif-regular-italic mb-8 max-w-2xl mx-auto">
+                Jangan tunggu lagi! Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk hari spesial Anda.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-105">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    WhatsApp Sekarang
+                </a>
+                <a href="tel:+6281234567890" class="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-purple-600 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:scale-105">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    Telepon Kami
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+<script>
+    function contactForm() {
+        return {
+            loading: false,
+            success: false,
+            form: {
+                name: '',
+                phone: '',
+                email: '',
+                event_date: '',
+                budget: '',
+                services: [],
+                message: ''
+            },
+            
+            async submitForm() {
+                this.loading = true;
+                this.success = false;
+                
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Here you would normally send the data to your Laravel backend
+                    // const response = await fetch('/contact', {
+                    //     method: 'POST',
+                    //     headers: {
+                    //         'Content-Type': 'application/json',
+                    //         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    //     },
+                    //     body: JSON.stringify(this.form)
+                    // });
+                    
+                    this.success = true;
+                    this.resetForm();
+                    
+                    // Auto-hide success message after 5 seconds
+                    setTimeout(() => {
+                        this.success = false;
+                    }, 5000);
+                    
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    alert('Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.');
+                } finally {
+                    this.loading = false;
+                }
+            },
+            
+            resetForm() {
+                this.form = {
+                    name: '',
+                    phone: '',
+                    email: '',
+                    event_date: '',
+                    budget: '',
+                    services: [],
+                    message: ''
+                };
+            }
+        }
+    }
+</script>
+@endpush
+@endsection
