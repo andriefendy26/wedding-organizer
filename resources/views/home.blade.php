@@ -282,165 +282,74 @@
         {{-- Marquee testimoni --}}
 
         <div class="marquee-container mt-10">
+            {{-- Blur masking kiri-kanan --}}
+            <div class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10">
+                <div class="h-full w-full bg-gradient-to-r from-white/80 via-white/0 to-transparent backdrop-blur-sm"></div>
+            </div>
+            <div class="pointer-events-none absolute right-0 top-0 h-full w-24 z-10">
+                <div class="h-full w-full bg-gradient-to-l from-white/80 via-white/0 to-transparent backdrop-blur-sm"></div>
+            </div>
             {{-- marquee ke kiri --}}
             <div class="marquee-left flex space-x-6 mb-8 whitespace-nowrap">
-                {{-- card marquee --}}
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
+                @foreach($topTestimonials as $testimonial)
+                    <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
+                                <span class="text-white font-bold text-lg">JD</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">John Doe</h3>
+                                <p class="text-gray-500 text-sm">yap</p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
+                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
                     </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
+                @endforeach
+                @foreach($topTestimonials as $testimonial)
+                    <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
+                                <span class="text-white font-bold text-lg">JD</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">John Doe</h3>
+                                <p class="text-gray-500 text-sm">yap</p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
+                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
                     </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-
-                {{-- duplikat --}}
-
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                
+                @endforeach
             </div>
             {{-- marquee ke kanan --}}
-            <div class="marquee-right flex space-x-6 ">
-                {{-- card marquee --}}
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
+            <div class="marquee-right flex space-x-6 whitespace-nowrap">
+                @foreach($topTestimonials as $testimonial)
+                    <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
+                                <span class="text-white font-bold text-lg">JD</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">John Doe</h3>
+                                <p class="text-gray-500 text-sm">yap</p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
+                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
                     </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
+                @endforeach
+                @foreach($topTestimonials as $testimonial)
+                    <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
+                                <span class="text-white font-bold text-lg">JD</span>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="font-semibold text-gray-800">John Doe</h3>
+                                <p class="text-gray-500 text-sm">yap</p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
+                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
                     </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-
-                {{-- duplikat --}}
-
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
-                            <span class="text-white font-bold text-lg">JD</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">John Doe</h3>
-                            <p class="text-gray-500 text-sm">yap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -453,23 +362,19 @@
 @push('styles')
 <style>
     @keyframes marquee-left {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
     }
-    
     @keyframes marquee-right {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
     }
-    
     .marquee-left {
         animation: marquee-left 20s linear infinite;
     }
-    
     .marquee-right {
         animation: marquee-right 20s linear infinite;
     }
-    
     .marquee-container {
         overflow: hidden;
     }
