@@ -105,7 +105,7 @@
         .dropdown-transition {
             transition: all 0.2s ease-in-out;
         }
-        
+
     </style>
 </head>
 <body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
@@ -322,11 +322,11 @@
 
     @yield('content')
     <!-- Footer Section -->
-    <footer class="bg-gray-800  text-white relative overflow-hidden mt-20">
+    <footer class="bg-gray-800  text-white relative overflow-hidden">
         <!-- Background decoration -->
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-no-repeat bg-cover bg-center opacity-5"></div>
         
-        <div class="relative z-10 px-30 py-16">
+        <div class="relative z-10 px-10 lg:px-32 py-16">
             <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 

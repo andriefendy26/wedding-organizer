@@ -5,7 +5,7 @@
 
 @theme static {
     --color-primary: #B2110E;
-    /* --color-secondary: #D4201C; */
+    --color-secondary: #D4201C;
 }
 
 .containerHero {
@@ -53,21 +53,191 @@
   box-shadow: none;
 }
 
+
+
+/* Mobile First - Base styles (< 40rem) */
 .item:nth-child(3) {
-  /* background-color: aqua; */
-  /* background: fixed; */
-  left: 40%;
-  top: 85%;
-  height: 100px;
+    left: 9%;
+    top: 88%;
+    width: 38%;
+    height: 110px;
 }
+
 .item:nth-child(4) {
-  left: calc(40% + 160px);
-  top: 85%;
-  height: 100px;
+    left: 53%;
+    top: 88%;
+    width: 38%;
+    height: 110px;
 }
+
 .item:nth-child(n + 5) {
-  left: calc(70% + 200px);
-  opacity: 0;
+    left: calc(100% + 50px);
+    opacity: 0;
+}
+
+.buttons {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    z-index: 30;
+}
+
+.buttons button {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+/* Small devices (≥ 40rem / 640px) */
+@media (min-width: 40rem) {
+    .item:nth-child(3) {
+        left: 12%;
+        top: 88%;
+        width: 35%;
+        height: 110px;
+    }
+
+    .item:nth-child(4) {
+        left: calc(22% + 220px);
+        top: 88%;
+        width: 35%;
+        height: 110px;
+    }
+
+    .item:nth-child(n + 5) {
+        left: calc(70% + 200px);
+        opacity: 0;
+    }
+
+    .buttons {
+        top: 70%;
+        gap: 1rem;
+    }
+
+    .buttons button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Medium devices (≥ 48rem / 768px) */
+@media (min-width: 48rem) {
+    .item:nth-child(3) {
+        left: 18%;
+        top: 88%;
+        width: 30%;
+        height: 110px;
+    }
+
+    .item:nth-child(4) {
+        left: calc(35% + 170px);
+        top: 88%;
+        width: 30%;
+        height: 110px;
+    }
+
+    .item:nth-child(n + 5) {
+        left: calc(70% + 200px);
+        opacity: 0;
+    }
+
+    .buttons {
+        top: 70%;
+        gap: 1.5rem;
+    }
+
+    .buttons button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Large devices (≥ 64rem / 1024px) */
+@media (min-width: 64rem) {
+    .item:nth-child(3) {
+        left: 32%;
+        top: 85%;
+        width: 180px;
+        height: 100px;
+    }
+
+    .item:nth-child(4) {
+        left: calc(36% + 200px);
+        top: 85%;
+        width: 180px;
+        height: 100px;
+    }
+
+    .item:nth-child(n + 5) {
+        left: calc(70% + 200px);
+        opacity: 0;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      transform: translateX(0%);
+      display: flex;
+      gap: 1rem;
+      justify-content: space-around;
+      z-index: 30;
+      /* background-color: aqua; */
+      width: 100%;
+    }
+
+    .buttons button {
+        width: 50px;
+        height: 50px;
+        transition: 0.5s;
+    }
+}
+
+/* Extra Large devices (≥ 80rem / 1280px) */
+@media (min-width: 80rem) {
+    .item:nth-child(3) {
+        left: 35%;
+        top: 85%;
+        width: 180px;
+        height: 100px;
+    }
+
+    .item:nth-child(4) {
+        left: calc(38% + 200px);
+        top: 85%;
+        width: 180px;
+        height: 100px;
+    }
+
+    .item:nth-child(n + 5) {
+        left: calc(70% + 200px);
+        opacity: 0;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      transform: translateX(0%);
+      display: flex;
+      gap: 1rem;
+      justify-content: space-around;
+      z-index: 30;
+      /* background-color: aqua; */
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 100%;
+    }
+
+    .buttons button {
+        width: 50px;
+        height: 50px;
+        transition: 0.5s;
+    }
 }
 
 .item .content {
@@ -76,7 +246,7 @@
   /* left: 100px; */
   /* width: 300px; */
   transform: translate(0, -50%);
-  display: none;
+  display: none; 
   /* background-color: #373b44; */
   font-family: system-ui;
   /* background: linear-gradient(to bottom right, #ffffff, #fff5f5); */
@@ -107,24 +277,4 @@
     transform: translate(0, 0);
     filter: blur(0);
   }
-}
-
-.buttons {
-  position: relative;
-  top: 75%;
-  /* left: 15%; */
-  /* left */
-  /* z-index: 222222; */
-  text-align: center;
-  /* width: 100%; */
-  display: flex;
-  justify-content: space-around;
-}
-
-.buttons button {
-  width: 60px;
-  height: 60px;
-  /* border: 2px solid #373b44; */
-  /* border-radius: 30%; */
-  transition: 0.5s;
 }

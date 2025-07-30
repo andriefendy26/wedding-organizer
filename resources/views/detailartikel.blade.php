@@ -8,7 +8,7 @@
     <div class="relative bg-gradient-to-br from-purple-600 to-pink-600 h-96">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 flex items-center">
-            <div class="container mx-auto px-30">
+            <div class="container mx-auto px-32">
                 <div class="max-w-4xl">
                     <nav class="flex items-center gap-2 text-white/80 text-sm mb-6">
                         <a href="/" class="hover:text-white transition-colors">Beranda</a>
@@ -44,7 +44,7 @@
     </div>
 
     {{-- Article Content --}}
-    <div class="container mx-auto px-30 py-16">
+    <div class="container mx-auto px-32 py-16">
         <div class="max-w-4xl mx-auto">
             {{-- Author Info --}}
             <div class="flex items-center gap-4 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
@@ -186,7 +186,7 @@
 
     {{-- Related Articles --}}
     <div class="bg-gray-50 dark:bg-gray-900 py-16">
-        <div class="container mx-auto px-30">
+        <div class="container mx-auto px-32">
             <h2 class="text-4xl font-semibold text-center mb-12 edu-vic-wa-nt-hand text-black dark:text-white">
                 Artikel Terkait
             </h2>
@@ -256,7 +256,7 @@
     </div>
 
     {{-- Back to Articles --}}
-    <div class="container mx-auto px-30 py-8">
+    <div class="container mx-auto px-32 py-8">
         <div class="text-center">
             <a href="/artikel" class="inline-flex items-center gap-2 px-8 py-4 bg-[--color-primary] text-white rounded-xl hover:scale-105 transition-transform font-medium">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -309,45 +309,6 @@
 
 @push('styles')
 <style>
-    :root {
-        --color-primary: #B2110E;
-    }
-    
-    .pt-serif-regular {
-        font-family: "PT Serif", serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-    
-    .pt-serif-regular-italic {
-        font-family: "PT Serif", serif;
-        font-weight: 400;
-        font-style: italic;
-    }
-    
-    .edu-vic-wa-nt-hand {
-        font-family: "Edu VIC WA NT Beginner", cursive;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-    }
-    
-    .edu-vic-wa-nt-hand-500 {
-        font-family: "Edu VIC WA NT Beginner", cursive;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-    }
-    
-    .poppins-medium {
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-    }
-
-    .mask-x-from-90\% {
-        mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
 
     /* Smooth animations */
     * {

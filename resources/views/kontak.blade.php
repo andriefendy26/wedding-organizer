@@ -104,7 +104,7 @@
     </div>
 
     {{-- Main Contact Section --}}
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mx-auto px-4 sm:px-6 lg:px-32 py-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {{-- Get In Touch Form --}}
             <div>

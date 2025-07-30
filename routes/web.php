@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BayarController;
+use App\Http\Controllers\instagram;
 use App\Http\Controllers\KalenderController;
 
 /*
@@ -82,6 +83,7 @@ Route::get('/tim', function () {
 Route::get('/portofolio', function () {
     return view('portofolio');
 });
+
 
 // route layanan
 Route::get('/layanan', function () {
