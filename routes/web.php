@@ -1,9 +1,15 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\instagram;
 use App\Http\Controllers\KalenderController;
+use App\Http\Controllers\SuratController;
+use App\Http\Controllers\DocumentVerificationController;
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\PublicLetterController;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,12 +66,9 @@ Route::get('/', function () {
 
     // return view('home');
 });
-Route::get('/artikel', function () {
-    return view('artikel');
-});
-Route::get('/detailartikel', function () {
-    return view('detailartikel');
-});
+Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
+Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel.show');
+
 Route::get('/faq', function () {
     return view('faq');
 });
@@ -84,10 +87,12 @@ Route::get('/portofolio', function () {
     return view('portofolio');
 });
 
-
 // route layanan
 Route::get('/layanan', function () {
     return view('layanan');
+});
+Route::get('/detaillayanan', function () {
+    return view('detaillayanan');
 });
 Route::get('/layanansewa', function () {
     return view('sewabarang');
@@ -97,11 +102,19 @@ Route::get('/layanansewa', function () {
 // Route::get('/kalenderketerse', function () {
 //     return view('kalender');
 // });
-Route::get('/kalender', [KalenderController::class, 'kalender'])->name('kalender.index');
-
+Route::get('/kalender', [KalenderController::class, 'index'])->name('kalender.index');
 
 Route::get('/bayar/{public_id}', [BayarController::class, 'show'])->name('bayar.show');
 Route::post('/bayar/{public_id}', [BayarController::class, 'update'])->name('bayar.update');
 
-Route::get('/kalender', [KalenderController::class, 'index'])->name('kalender.index');
+// Route::get('/kalender', [KalenderController::class, 'index'])->name('kalender.index');
 Route::get('/kalender/events', [KalenderController::class, 'events'])->name('kalender.events');
+
+
+Route::prefix('letters/public')->group(function () {
+    Route::get('/{slug}', [PublicLetterController::class, 'show'])
+        ->name('letters.public.show');
+    
+    Route::get('/{slug}/download', [PublicLetterController::class, 'download'])
+        ->name('letters.public.download');
+});

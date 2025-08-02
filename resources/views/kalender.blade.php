@@ -5,20 +5,6 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     
-    <!-- Header Section dengan konsistensi desain home -->
-    {{-- <div class="containerHero bg-[url({{ asset('storage/content/decoration01.jpeg') }})] bg-cover bg-center relative">
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative z-10 content w-full h-96 flex text-center justify-center items-center">
-            <div class="flex flex-col justify-center items-center">
-                <h1 class="text-white text-6xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
-                    Kalender Ketersediaan
-                </h1>
-                <p class="w-[60%] my-6 text-white text-lg pt-serif-regular-italic">
-                    Periksa tanggal yang tersedia untuk acara pernikahan dan event spesial Anda bersama 3Rasa
-                </p>
-            </div>
-        </div>
-    </div> --}}
 
     {{-- Hero Section --}}
     <div class="relative h-[70vh] bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center">
@@ -48,7 +34,7 @@
                     Klik pada tanggal untuk melihat detail ketersediaan dan melakukan konsultasi
                 </p>
             </div>
-
+{{-- 
             <!-- Legend dengan design card yang konsisten -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div class="flex items-center gap-3 bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-600 hover:border-green-300 transition-all duration-300">
@@ -67,7 +53,7 @@
                     <div class="w-4 h-4 rounded-full bg-blue-500 shadow-sm"></div>
                     <span class="text-sm poppins-regular text-gray-700 dark:text-gray-300 font-medium">Event Khusus</span>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Calendar Container -->
@@ -177,6 +163,9 @@
 @push('styles')
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
 
+{{-- Tambahkan JS FullCalendar --}}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
 <style>
     :root {
         --color-primary: #8B5CF6;
@@ -193,11 +182,12 @@
     /* Custom FullCalendar Styling */
     #calendar {
         width: 100%;
-        height: 70vh;
+        height: 80vh;
         max-width: none;
         margin: 0;
-        background: transparent;
-        font-family: 'Poppins', sans-serif;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
     }
 
     /* Header styling */
@@ -530,16 +520,7 @@
                 list: 'Daftar'
             },
 
-            // Use sample data or replace with actual API call
-            events: function(fetchInfo, successCallback, failureCallback) {
-                // Uncomment below for actual API call
-                // fetchEventsFromAPI(fetchInfo, successCallback, failureCallback);
-                
-                // Using sample data for now
-                setTimeout(() => {
-                    successCallback(sampleEvents);
-                }, 500); // Simulate API delay
-            },
+           events: '/api/kalender-ketersediaan', 
 
             eventClick: function(info) {
                 showEventModal(info.event);
@@ -565,20 +546,20 @@
                 info.el.classList.add(`event-${status}`);
             },
 
-            loading: function(bool) {
-                if (bool) {
-                    showCalendarLoading();
-                }
-            },
+            // loading: function(bool) {
+            //     if (bool) {
+            //         showCalendarLoading();
+            //     }
+            // },
 
-            eventSources: [
-                {
-                    events: sampleEvents,
-                    failure: function() {
-                        handleCalendarError();
-                    }
-                }
-            ]
+            // eventSources: [
+            //     {
+            //          events: '/api/kalender-ketersediaan',
+            //         failure: function() {
+            //             handleCalendarError();
+            //         }
+            //     }
+            // ]
         });
 
         calendar.render();

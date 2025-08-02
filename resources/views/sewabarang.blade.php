@@ -1,9 +1,9 @@
 @extends('Layout.app')
 
-@section('title', 'Detail Layanan Penyewaan')
+@section('title', 'Layanan Penyewaan')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen pt-20">
+<div class="bg-white dark:bg-gray-800 min-h-screen">
     {{-- Hero Section --}}
     <div class="relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 py-20">
         <div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 floating-3d"></div>
@@ -24,319 +24,427 @@
         </div>
     </div>
 
-    {{-- Service Categories Section --}}
-    <div class="container mx-auto px-30 py-16" x-data="{ activeCategory: 'furniture' }">
-        {{-- Category Filter --}}
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-semibold mb-8 edu-vic-wa-nt-hand text-black dark:text-white">
-                Kategori Penyewaan
-            </h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <button 
-                    @click="activeCategory = 'furniture'"
-                    :class="activeCategory === 'furniture' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                    class="px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide font-medium"
-                >
-                    Furniture & Kursi
-                </button>
-                <button 
-                    @click="activeCategory = 'decoration'"
-                    :class="activeCategory === 'decoration' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                    class="px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide font-medium"
-                >
-                    Dekorasi & Backdrop
-                </button>
-                <button 
-                    @click="activeCategory = 'lighting'"
-                    :class="activeCategory === 'lighting' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                    class="px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide font-medium"
-                >
-                    Lighting & Sound
-                </button>
-                <button 
-                    @click="activeCategory = 'tableware'"
-                    :class="activeCategory === 'tableware' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                    class="px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide font-medium"
-                >
-                    Peralatan Makan
-                </button>
-            </div>
-        </div>
+    <div class="bg-white dark:bg-gray-800 px-10 md:px-16 lg:px-24 xl:px-32">
+        
+        {{-- Header Section --}}
+        <h2 class="text-black text-center py-8 text-2xl lg:text-3xl poppins-medium mx-8 md:mx-20 lg:mx-40 dark:text-white">
+            Sewa yang 
+            <span class="pt-serif-regular-italic">Premium</span> 
+            dengan Harga 
+            <span class="pt-serif-regular-italic">Terjangkau</span>,
+            Wujudkan
+            <span class="pt-serif-regular-italic">Pernikahan Sempurna</span>
+            Sesuai
+            <span class="pt-serif-regular-italic">Impian Anda.</span>
+        </h2>
 
-        {{-- Furniture Category --}}
-        <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            {{-- Featured Item --}}
-            <div class="lg:col-span-2">
-                <div class="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 rounded-3xl p-8 h-full relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full -translate-y-32 translate-x-32"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="flex items-start justify-between mb-8">
-                            <div>
-                                <span class="inline-block px-4 py-1 bg-white/50 backdrop-blur-sm rounded-full text-sm text-purple-700 dark:text-purple-300 mb-4">
-                                    Premium Collection
-                                </span>
-                                <h3 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
-                                    Sofa Premium Set
-                                </h3>
-                                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular mb-6">
-                                    Set sofa premium berbahan kulit sintetis berkualitas tinggi dengan rangka kayu solid. 
-                                    Tersedia dalam berbagai warna elegan yang cocok untuk pernikahan indoor maupun outdoor.
-                                </p>
-                            </div>
+        {{-- Category Selection --}}
+        <div class="mt-12 mb-16" x-data="{ activeCategory: 'furniture' }">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl lg:text-4xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-8">Kategori Penyewaan</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button 
+                        @click="activeCategory = 'furniture'"
+                        :class="activeCategory === 'furniture' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
+                    >
+                        Furniture & Kursi
+                    </button>
+                    <button 
+                        @click="activeCategory = 'decoration'"
+                        :class="activeCategory === 'decoration' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
+                    >
+                        Dekorasi & Backdrop
+                    </button>
+                    <button 
+                        @click="activeCategory = 'lighting'"
+                        :class="activeCategory === 'lighting' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
+                    >
+                        Lighting & Sound
+                    </button>
+                    <button 
+                        @click="activeCategory = 'tableware'"
+                        :class="activeCategory === 'tableware' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
+                    >
+                        Peralatan Makan
+                    </button>
+                </div>
+            </div>
+
+            {{-- Featured Product Grid (similar to homepage cards) --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                
+                {{-- Card 1 - Featured Sofa Set --}}
+                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/sofa-premium.jpg') }})] bg-no-repeat bg-center bg-cover">
+                    <h3 class="w-auto self-end border-2 border-white px-3 py-1 rounded-full text-xs">Premium Collection</h3>
+                    <div>
+                        <h4 class="text-xl edu-vic-wa-nt-hand-400 tracking-widest mb-2">Sofa Premium Set</h4>
+                        <p class="text-md xl:text-lg edu-vic-wa-nt-hand-400 tracking-widest">Set sofa premium berbahan kulit sintetis berkualitas tinggi dengan rangka kayu solid.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="text-2xl font-bold edu-vic-wa-nt-hand">Rp 350.000</div>
+                            <button class="px-4 py-2 bg-white text-black rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
                         </div>
-                        
+                    </div>
+                </div>
+
+                {{-- Card 2 - Info Card --}}
+                <div class="flex flex-col border-2 rounded-xl border-gray-200 p-4 gap-4 items-center justify-center text-center">
+                    <h3 class="text-3xl lg:text-4xl edu-vic-wa-nt-hand-500 text-black dark:text-white">Kualitas Premium Terjamin</h3>
+                    <p class="pt-serif-regular text-sm lg:text-md tracking-wider dark:text-gray-400 text-gray-600">Semua perlengkapan dalam kondisi prima dan selalu terawat. Kami pastikan kualitas terbaik untuk acara istimewa Anda.</p>
+                    
+                    <button class="flex group hover:scale-105 transition-all duration-300 bg-gray-300 rounded-full justify-center items-center">
+                        <p class="my-2 mx-3 ml-4 pt-serif-regular text-sm lg:text-lg text-black">
+                            Konsultasi Gratis
+                        </p>
+                        <x-heroicon-o-arrow-small-up class="w-8 h-8 lg:h-10 lg:w-10 border-2 bg-black text-white rounded-full p-1 group-hover:rotate-45 duration-300 transition-all" />
+                    </button>
+                </div>
+
+                {{-- Card 3 - Service Features --}}
+                <div class="h-40 lg:h-[400px] md:col-span-2 lg:col-span-1 flex relative overflow-hidden poppins-regular flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/wedding04.jpg') }})] bg-no-repeat bg-center bg-cover">
+                    <div class="absolute inset-0 bg-black/60"></div>
+                    <div class="relative z-10 flex gap-3 text-xs">
+                        <span class="rounded-full p-1 px-5 backdrop-blur-sm bg-white/40">Gratis Antar</span>
+                        <span class="rounded-full p-1 px-5 backdrop-blur-sm bg-white/40">Setup</span>
+                        <span class="rounded-full p-1 px-5 backdrop-blur-sm bg-white/40">Maintenance</span>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="text-lg edu-vic-wa-nt-hand-400 mb-2">Layanan Lengkap</h4>
+                        <p class="text-sm">Gratis antar-jemput, setup profesional, dan maintenance selama acara</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Product Grid --}}
+            <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                {{-- Kursi Tiffany --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/prop/kursi.jpg') }}" alt="Kursi Tiffany" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Kursi Tiffany</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Kursi elegant transparan berkualitas tinggi</p>
                         <div class="flex items-center justify-between">
-                            <div class="space-y-2">
-                                <div class="text-3xl font-bold price-highlight edu-vic-wa-nt-hand">Rp 350.000</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">per hari (set lengkap)</div>
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 15.000</div>
+                                <div class="text-xs text-gray-500">per unit/hari</div>
                             </div>
-                            <button class="flex group hover:scale-105 transition-all duration-300 bg-white dark:bg-gray-800 rounded-full justify-center items-center shadow-lg">
-                                <span class="my-2 mx-3 ml-4 pt-serif-regular text-black dark:text-white">
-                                    Pesan Sekarang
-                                </span>
-                                <x-heroicon-o-arrow-small-up class="h-10 w-10 border-2 bg-[--color-primary] text-white rounded-full p-1 group-hover:rotate-45 duration-300 transition-all" />
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Meja Bulat --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/prop/meja.jpg') }}" alt="Meja Bulat" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Meja Bulat Premium</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Meja bulat kapasitas 8-10 orang dengan taplak</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 85.000</div>
+                                <div class="text-xs text-gray-500">per unit/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Sofa VIP --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/prop/sofa-vip.jpg') }}" alt="Sofa VIP" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Sofa VIP Set</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set sofa VIP untuk pengantin dan keluarga</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 450.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Gazebo --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/prop/gazebo.jpg') }}" alt="Gazebo" class="w-32 h-32 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Gazebo Elegant</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Gazebo dengan dekorasi untuk akad nikah</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 750.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- 3D Product Showcase --}}
-            <div class="bg-white dark:bg-gray-700 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-600">
-                <div class="text-center mb-6">
-                    <h4 class="text-xl font-semibold edu-vic-wa-nt-hand text-black dark:text-white mb-2">
-                        Lihat Produk 3D
-                    </h4>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 pt-serif-regular">
-                        Putar untuk melihat detail
+            {{-- Decoration Category --}}
+            <div x-show="activeCategory === 'decoration'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                {{-- Backdrop Premium --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Backdrop" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Backdrop Premium</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Backdrop elegant dengan dekorasi bunga</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 650.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Pelaminan --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Pelaminan" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Pelaminan Mewah</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Pelaminan dengan ornamen traditional</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 1.200.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Lighting Category --}}
+            <div x-show="activeCategory === 'lighting'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                {{-- LED Strip --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-yellow-400 rounded-lg flex items-center justify-center">
+                            <span class="text-4xl">💡</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">LED Strip Premium</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Lampu LED strip dengan berbagai warna</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 150.000</div>
+                                <div class="text-xs text-gray-500">per meter/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Sound System --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-blue-400 rounded-lg flex items-center justify-center">
+                            <span class="text-4xl">🔊</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Sound System Pro</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Sound system professional dengan operator</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 450.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Tableware Category --}}
+            <div x-show="activeCategory === 'tableware'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                {{-- Piring Set --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-green-400 rounded-lg flex items-center justify-center">
+                            <span class="text-4xl">🍽️</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Piring Set Premium</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set piring keramik berkualitas tinggi</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 5.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Gelas Set --}}
+                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+                        <div class="w-32 h-32 bg-purple-400 rounded-lg flex items-center justify-center">
+                            <span class="text-4xl">🥃</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Gelas Set Premium</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set gelas kaca untuk minuman</p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 3.000</div>
+                                <div class="text-xs text-gray-500">per set/hari</div>
+                            </div>
+                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
+                                Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Why Choose Us Section (sama seperti homepage) --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 mt-10 gap-4">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="col-span-3 bg-gray-200 rounded-2xl p-6">
+                    <h3 class="text-black text-lg poppins-regular">Keunggulan layanan penyewaan kami :</h3>
+                    <p class="mt-2 edu-vic-wa-nt-hand-500 text-gray-800 text-sm">"Kualitas premium, harga terjangkau, dan layanan antar-jemput gratis area Tarakan!"
+                        <span class="font-semibold text-[--color-primary]">- Tim 3Rasa</span>
                     </p>
                 </div>
+
+                <div class="h-52 xl:h-full bg-[url({{ asset('storage/content/prop/kursi.jpg') }})] rounded-xl xl:col-span-1 col-span-3 bg-cover bg-center"></div>
                 
-                {{-- 3D Product Image --}}
-                <div class="relative h-64 mb-6 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-600 dark:to-gray-500 rounded-2xl overflow-hidden">
-                    <img src="{{ asset('storage/content/3d/sofa-3d.png') }}" 
-                         alt="Sofa 3D" 
-                         class="w-48 h-48 object-contain floating-3d filter drop-shadow-2xl">
+                <div class="flex col-span-2 xl:col-span-1 flex-col items-center justify-center text-center gap-4 border-2 rounded-2xl border-gray-200 p-4 text-sm">
+                    <p class="pt-serif-regular text-center tracking-wider dark:text-gray-400 text-gray-600">Semua perlengkapan dalam kondisi prima dan selalu terawat untuk acara istimewa Anda.</p>
+                    
+                    <button class="flex group hover:scale-105 transition-all duration-300 bg-gray-300 rounded-full justify-center items-center">
+                        <p class="my-2 mx-3 ml-4 pt-serif-regular text-black">
+                            Konsultasi
+                        </p>
+                        <x-heroicon-o-arrow-small-up class="h-8 w-8 border-2 bg-black text-white rounded-full p-1 group-hover:rotate-45 duration-300 transition-all" />
+                    </button>
                 </div>
-                
-                {{-- Product Details --}}
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Material:</span>
-                        <span class="text-sm font-medium text-black dark:text-white">Kulit Sintetis Premium</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Kapasitas:</span>
-                        <span class="text-sm font-medium text-black dark:text-white">3-4 Orang</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Dimensi:</span>
-                        <span class="text-sm font-medium text-black dark:text-white">200 x 90 x 85 cm</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Warna:</span>
-                        <div class="flex gap-2">
-                            <div class="w-4 h-4 bg-gray-800 rounded-full"></div>
-                            <div class="w-4 h-4 bg-white border rounded-full"></div>
-                            <div class="w-4 h-4 bg-amber-700 rounded-full"></div>
-                        </div>
-                    </div>
+
+                <div class="flex bg-gray-200 flex-col items-center justify-center text-center gap-4 border-2 rounded-2xl border-gray-200 p-4 text-sm">
+                    <p class="pt-serif-regular text-3xl xl:text-5xl text-center tracking-wider dark:text-gray-400 text-gray-600">500 +</p>
+                    <p class="pt-serif-regular text-center tracking-wider dark:text-gray-400 text-gray-600">Item tersedia</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-5 pt-serif-regular">
+                <div class="bg-gray-200 rounded-2xl p-6">
+                    <h3 class="text-md text-black">Layanan penyewaan lengkap dengan kualitas premium dan harga terjangkau. Kami menyediakan berbagai perlengkapan pernikahan mulai dari furniture, dekorasi, hingga peralatan pendukung lainnya.</h3>
+                </div>
+                <div class="bg-gray-200 rounded-2xl px-6 py-4">
+                    <p class="text-black">01. <span>Gratis antar-jemput area Tarakan</span></p>
+                </div>
+                <div class="bg-gray-200 rounded-2xl px-6 py-4">
+                    <p class="text-black">02. <span>Setup dan maintenance profesional</span></p>
+                </div>
+                <div class="bg-gray-200 rounded-2xl px-6 py-4">
+                    <p class="text-black">03. <span>Garansi kualitas premium</span></p>
                 </div>
             </div>
         </div>
 
-        {{-- Other Categories Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {{-- Kursi Tiffany --}}
-            <div class="service-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-600 dark:to-gray-500 flex items-center justify-center">
-                    <img src="{{ asset('storage/content/3d/chair-tiffany-3d.png') }}" 
-                         alt="Kursi Tiffany 3D" 
-                         class="service-image w-32 h-32 object-contain filter drop-shadow-lg">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                        Kursi Tiffany
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">
-                        Kursi elegant transparan berkualitas tinggi
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 15.000</div>
-                            <div class="text-xs text-gray-500">per unit/hari</div>
-                        </div>
-                        <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                            Pesan
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Meja Bulat --}}
-            <div class="service-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-green-100 to-blue-100 dark:from-gray-600 dark:to-gray-500 flex items-center justify-center">
-                    <img src="{{ asset('storage/content/3d/table-round-3d.png') }}" 
-                         alt="Meja Bulat 3D" 
-                         class="service-image w-32 h-32 object-contain filter drop-shadow-lg">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                        Meja Bulat Premium
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">
-                        Meja bulat kapasitas 8-10 orang dengan taplak
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 85.000</div>
-                            <div class="text-xs text-gray-500">per unit/hari</div>
-                        </div>
-                        <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                            Pesan
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Backdrop Elegant --}}
-            <div class="service-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-gray-600 dark:to-gray-500 flex items-center justify-center">
-                    <img src="{{ asset('storage/content/3d/backdrop-3d.png') }}" 
-                         alt="Backdrop 3D" 
-                         class="service-image w-32 h-32 object-contain filter drop-shadow-lg">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                        Backdrop Elegant
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">
-                        Backdrop premium dengan dekorasi bunga
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 450.000</div>
-                            <div class="text-xs text-gray-500">per set/hari</div>
-                        </div>
-                        <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                            Pesan
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Lighting Set --}}
-            <div class="service-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-gray-600 dark:to-gray-500 flex items-center justify-center">
-                    <img src="{{ asset('storage/content/3d/lighting-3d.png') }}" 
-                         alt="Lighting 3D" 
-                         class="service-image w-32 h-32 object-contain filter drop-shadow-lg">
-                </div>
-                <div class="p-6">
-                    <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                        Lighting Premium
-                    </h4>
-                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">
-                        Set lampu hias LED dengan berbagai mode
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 280.000</div>
-                            <div class="text-xs text-gray-500">per set/hari</div>
-                        </div>
-                        <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                            Pesan
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{-- Service Features --}}
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-white text-2xl">🚚</span>
-                </div>
-                <h4 class="text-xl font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                    Gratis Antar-Jemput
-                </h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                    Layanan antar-jemput gratis untuk area Tarakan dan sekitarnya
-                </p>
-            </div>
-
-            <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-green-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-white text-2xl">🛠️</span>
-                </div>
-                <h4 class="text-xl font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                    Setup & Maintenance
-                </h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                    Tim professional akan setup dan maintenance selama acara
-                </p>
-            </div>
-
-            <div class="text-center p-8 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-white text-2xl">⭐</span>
-                </div>
-                <h4 class="text-xl font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">
-                    Kualitas Premium
-                </h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                    Semua barang dalam kondisi prima dan selalu terawat
-                </p>
-            </div>
-        </div>
+        {{-- Service Features Section --}}
 
         {{-- Testimonial Section --}}
-        <div class="bg-gray-100 dark:bg-gray-900 rounded-3xl p-8 lg:p-12 mb-16">
-            <h3 class="text-3xl font-semibold text-center mb-8 edu-vic-wa-nt-hand text-black dark:text-white">
-                Apa Kata Klien Kami
-            </h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+        <div class="mt-10">
+            <div class="poppins-regular">
+                <h2 class="text-gray-600 dark:text-gray-400 edu-vic-wa-nt-hand-500 tracking-widest text-xl">Testimoni Pelanggan <span>----></span></h2>
+                <p class="text-black dark:text-white text-3xl lg:text-5xl lg:w-2/3 mt-2">PENGALAMAN MENYEWA DARI PELANGGAN KAMI</p>
+            </div>
+
+            {{-- Testimonial Cards --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold">SA</span>
+                            <span class="text-white font-bold text-lg">SA</span>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-black dark:text-white">Sari & Andi</h4>
-                            <p class="text-gray-500 text-sm">Pernikahan Adat Bugis</p>
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-gray-800">Sari & Andi</h3>
+                            <p class="text-gray-500 text-sm">Sewa Furniture Set</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 pt-serif-regular">
-                        "Peralatan sangat berkualitas dan pelayanan luar biasa! Tim 3Rasa sangat profesional dalam setup dan maintenance. Pernikahan kami jadi sempurna!"
-                    </p>
+                    <p class="text-gray-700">"Furniture berkualitas bagus dan pelayanan sangat memuaskan. Tim 3Rasa profesional dalam setup dan maintenance!"</p>
                 </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+
+                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold">RF</span>
+                            <span class="text-white font-bold text-lg">RF</span>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold text-black dark:text-white">Rina & Fadil</h4>
-                            <p class="text-gray-500 text-sm">Pernikahan Modern</p>
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-gray-800">Rina & Fadil</h3>
+                            <p class="text-gray-500 text-sm">Sewa Dekorasi</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 pt-serif-regular">
-                        "Harga terjangkau dengan kualitas premium. Semua tamu terkesan dengan dekorasi dan furniture yang disewa. Recommended banget!"
-                    </p>
+                    <p class="text-gray-700">"Harga terjangkau dengan kualitas premium. Dekorasi yang disewa membuat pernikahan kami jadi lebih elegant!"</p>
+                </div>
+
+                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">DN</span>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="font-semibold text-gray-800">Dina & Nurul</h3>
+                            <p class="text-gray-500 text-sm">Sewa Paket Lengkap</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Paket lengkap sangat memudahkan dan hemat. Semua kebutuhan pernikahan tersedia dengan kualitas terbaik!"</p>
                 </div>
             </div>
         </div>
 
         {{-- CTA Section --}}
-        <div class="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white">
+        <div class="mt-16 text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white">
             <h3 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand">
                 Siap Wujudkan Pernikahan Impian?
             </h3>
             <p class="text-xl mb-8 pt-serif-regular-italic opacity-90">
-                Konsultasi gratis dengan tim ahli kami untuk mendapatkan paket terbaik
+                Konsultasi gratis dengan tim ahli kami untuk mendapatkan paket sewa terbaik
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button class="flex group hover:scale-105 transition-all duration-300 bg-white rounded-full justify-center items-center">
@@ -344,7 +452,7 @@
                         WhatsApp Konsultasi
                     </span>
                     <div class="h-12 w-12 border-2 bg-green-500 text-white rounded-full p-2 group-hover:rotate-45 duration-300 transition-all flex items-center justify-center">
-                        <span class="text-lg">📱</span>
+                        <x-bi-whatsapp class="w-6 h-6" />
                     </div>
                 </button>
                 <button class="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 rounded-full transition-all duration-300 edu-vic-wa-nt-hand tracking-wide">
@@ -352,39 +460,39 @@
                 </button>
             </div>
         </div>
+
+        {{-- Contact Information --}}
+        <div class="mt-16 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <x-bi-telephone class="w-8 h-8 text-white" />
+                </div>
+                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Telepon</h4>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">+62 851-0000-0000</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <x-bi-instagram class="w-8 h-8 text-white" />
+                </div>
+                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Instagram</h4>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">@3rasa_wedding</p>
+            </div>
+
+            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+                <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <x-heroicon-o-map-pin class="w-8 h-8 text-white" />
+                </div>
+                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Lokasi</h4>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tarakan, Kalimantan Utara</p>
+            </div>
+        </div>
+
     </div>
 </div>
 
 @push('styles')
 <style>
-    :root {
-        --color-primary: #d946ef;
-    }
-    
-    .floating-3d {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(5deg); }
-    }
-
-    .service-card:hover .service-image {
-        transform: scale(1.1) rotate(5deg);
-    }
-
-    .service-image {
-        transition: all 0.3s ease;
-    }
-
-    .price-highlight {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
     .edu-vic-wa-nt-hand {
         font-family: 'Edu VIC WA NT Beginner', cursive;
     }
@@ -392,6 +500,11 @@
     .edu-vic-wa-nt-hand-500 {
         font-family: 'Edu VIC WA NT Beginner', cursive;
         font-weight: 500;
+    }
+    
+    .edu-vic-wa-nt-hand-400 {
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: 400;
     }
     
     .pt-serif-regular {
@@ -411,6 +524,39 @@
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
     }
+
+    .containerHero {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .containerHero #slide {
+        width: max-content;
+        margin-top: 50px;
+    }
+
+    .containerHero .item {
+        width: 100vw;
+        height: 80vh;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .containerHero .item .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 1200px;
+        text-align: center;
+    }
 </style>
 @endpush
 
@@ -418,8 +564,7 @@
 <script>
     // Add any additional JavaScript here if needed
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize any interactive elements
-        console.log('Wedding Rental Detail Page Loaded');
+        console.log('Wedding Rental Page Loaded');
     });
 </script>
 @endpush

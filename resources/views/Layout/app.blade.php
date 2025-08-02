@@ -263,12 +263,12 @@
                 <div class="relative group">
                     <a href="/artikel" class="hover:text-red-600 transition flex items-center gap-1 cursor-pointer">
                         Artikel
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {{-- <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        </svg> --}}
                     </a>
                     
-                    <!-- Dropdown Menu -->
+                    {{-- <!-- Dropdown Menu -->
                     <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-transition">
                         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-48 backdrop-blur-md">
                             <a href="/artikel/terbaru" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
@@ -304,7 +304,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 
                 <!-- FAQ -->

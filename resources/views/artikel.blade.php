@@ -23,7 +23,7 @@
     </div>
 
     {{-- Filter & Search Section --}}
-    <div class="container mx-auto px-30 py-8" x-data="{ activeCategory: 'all' }">
+    <div class="container mx-auto px-10 lg:px-30 py-8" x-data="artikelFilter()">
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
             {{-- Category Filter --}}
             <div class="w-full lg:w-auto">
@@ -37,15 +37,15 @@
                         Semua Artikel
                     </button>
                     <button 
-                        @click="activeCategory = 'wedding'"
-                        :class="activeCategory === 'wedding' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        @click="activeCategory = 'pernikahan'"
+                        :class="activeCategory === 'pernikahan' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
                         class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
                     >
                         Pernikahan
                     </button>
                     <button 
-                        @click="activeCategory = 'decoration'"
-                        :class="activeCategory === 'decoration' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
+                        @click="activeCategory = 'dekorasi'"
+                        :class="activeCategory === 'dekorasi' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
                         class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
                     >
                         Dekorasi
@@ -78,239 +78,112 @@
         </div>
 
         {{-- Featured Article --}}
-        <div class="mb-12">
-            <h2 class="text-3xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">Artikel Unggulan</h2>
-            <div class="relative bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl overflow-hidden h-96">
-                <div class="absolute inset-0 bg-black/40"></div>
-                <div class="absolute inset-0 flex items-center">
-                    <div class="container mx-auto px-30">
-                        <div class="max-w-2xl text-white">
-                            <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm mb-4">
-                                Pernikahan Adat
-                            </span>
-                            <h3 class="text-4xl font-bold mb-4 edu-vic-wa-nt-hand">
-                                Tips Memilih Dekorasi Pernikahan Adat yang Memukau
-                            </h3>
-                            <p class="text-lg pt-serif-regular-italic mb-6 opacity-90">
-                                Panduan lengkap untuk menciptakan dekorasi pernikahan adat yang elegan dan berkesan, dengan memadukan tradisi dan sentuhan modern.
-                            </p>
-                            <button class="flex group hover:scale-105 transition-all duration-300 bg-white rounded-full justify-center items-center">
-                                <span class="my-2 mx-3 ml-4 pt-serif-regular text-black">
-                                    Baca Selengkapnya
-                                </span>
-                                <svg class="h-10 w-10 border-2 bg-black text-white rounded-full p-2 group-hover:rotate-45 duration-300 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l9.2-9.2M17 17V7H7"></path>
-                                </svg>
-                            </button>
+        @if($artikels->count() > 0)
+            @php $featuredArtikel = $artikels->first(); @endphp
+            <div class="mb-12">
+                <h2 class="text-3xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">Artikel Unggulan</h2>
+                <div class="relative {{ $featuredArtikel->image_url ? 'bg-cover bg-center' : 'bg-gradient-to-r from-purple-600 to-pink-600' }} rounded-2xl overflow-hidden h-96"
+                     @if($featuredArtikel->image_url) style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ $featuredArtikel->image_url }}')" @endif>
+                    <div class="absolute inset-0 {{ !$featuredArtikel->image_url ? 'bg-black/40' : '' }}"></div>
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="container mx-auto px-10 lg:px-30">
+                            <div class="max-w-2xl text-white">
+                                @if($featuredArtikel->formatted_tags && count($featuredArtikel->formatted_tags) > 0)
+                                    <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm mb-4">
+                                        {{ ucfirst(str_replace('-', ' ', $featuredArtikel->formatted_tags[0])) }}
+                                    </span>
+                                @endif
+                                <h3 class="text-4xl font-bold mb-4 edu-vic-wa-nt-hand">
+                                    {{ $featuredArtikel->judul }}
+                                </h3>
+                                <p class="text-lg pt-serif-regular-italic mb-6 opacity-90">
+                                    {{ $featuredArtikel->sub_judul ?? $featuredArtikel->excerpt }}
+                                </p>
+                                <a href="{{ route('artikel.show', $featuredArtikel->slug) }}" class="inline-flex group hover:scale-105 transition-all duration-300 bg-white rounded-full justify-center items-center">
+                                    <span class="my-2 mx-3 ml-4 pt-serif-regular text-black">
+                                        Baca Selengkapnya
+                                    </span>
+                                    <svg class="h-10 w-10 border-2 bg-black text-white rounded-full p-2 group-hover:rotate-45 duration-300 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l9.2-9.2M17 17V7H7"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
 
         {{-- Articles Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{-- Article Card 1 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-blue-400 to-purple-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Dekorasi
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">15 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        Tren Dekorasi Pernikahan 2025: Minimalis Elegan
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Eksplorasi tren dekorasi pernikahan terbaru yang mengusung konsep minimalis namun tetap elegan dan berkesan.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+            @forelse($artikels->skip(1) as $artikel)
+                <article class="artikel-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600"
+                         data-category="{{ $artikel->formatted_tags ? implode(',', $artikel->formatted_tags) : '' }}"
+                         data-title="{{ strtolower($artikel->judul) }}"
+                         data-content="{{ strtolower(strip_tags($artikel->content)) }}">
+                    <div class="relative h-48 {{ $artikel->image_url ? 'bg-cover bg-center' : 'bg-gradient-to-br from-blue-400 to-purple-500' }}"
+                         @if($artikel->image_url) style="background-image: url('{{ $artikel->image_url }}')" @endif>
+                        @if($artikel->formatted_tags && count($artikel->formatted_tags) > 0)
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
+                                    {{ ucfirst(str_replace('-', ' ', $artikel->formatted_tags[0])) }}
+                                </span>
+                            </div>
+                        @endif
+                        <div class="absolute bottom-4 right-4">
+                            <span class="text-white/80 text-sm">{{ $artikel->formatted_date }}</span>
                         </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
+                            {{ $artikel->judul }}
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
+                            {{ $artikel->sub_judul ?? Str::limit(strip_tags($artikel->content), 100) }}
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xs font-bold">{{ substr($artikel->author, 0, 1) }}</span>
+                                </div>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">{{ $artikel->author }}</span>
+                            </div>
+                            <a href="{{ route('artikel.show', $artikel->slug) }}" class="text-[--color-primary] hover:underline text-sm font-medium">
+                                Baca →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            @empty
+                <div class="col-span-full text-center py-12">
+                    <div class="text-gray-500 dark:text-gray-400">
+                        <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Belum Ada Artikel</h3>
+                        <p>Artikel sedang dalam persiapan. Silakan kembali lagi nanti.</p>
                     </div>
                 </div>
-            </article>
+            @endforelse
+        </div>
 
-            {{-- Article Card 2 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-green-400 to-blue-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Tips
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">12 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        5 Tips Mengatur Budget Pernikahan dengan Bijak
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Panduan praktis untuk mengatur anggaran pernikahan agar tetap hemat tanpa mengurangi kemegahan acara.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
-                        </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            {{-- Article Card 3 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-pink-400 to-red-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Pernikahan
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">10 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        Memilih Venue Pernikahan Outdoor vs Indoor
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Pertimbangan penting dalam memilih lokasi pernikahan yang tepat sesuai dengan konsep dan budget Anda.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
-                        </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            {{-- Article Card 4 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-orange-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Tips
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">8 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        Checklist Lengkap Persiapan Pernikahan
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Daftar lengkap hal-hal yang perlu dipersiapkan untuk memastikan pernikahan Anda berjalan lancar.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
-                        </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            {{-- Article Card 5 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-indigo-400 to-purple-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Dekorasi
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">5 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        Ide Kreatif Dekorasi Meja Tamu yang Menawan
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Inspirasi dekorasi meja tamu yang unik dan menarik untuk menciptakan kesan pertama yang berkesan.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
-                        </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            {{-- Article Card 6 --}}
-            <article class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="relative h-48 bg-gradient-to-br from-teal-400 to-green-500">
-                    <div class="absolute top-4 left-4">
-                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
-                            Pernikahan
-                        </span>
-                    </div>
-                    <div class="absolute bottom-4 right-4">
-                        <span class="text-white/80 text-sm">3 Jan 2025</span>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                        Tradisi Pernikahan Adat Kalimantan yang Unik
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                        Mengenal lebih dalam tradisi dan ritual pernikahan adat Kalimantan yang kaya akan makna dan keindahan.
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-green-500 rounded-full"></div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Admin 3Rasa</span>
-                        </div>
-                        <button class="text-[--color-primary] hover:underline text-sm font-medium">
-                            Baca →
-                        </button>
-                    </div>
-                </div>
-            </article>
+        {{-- No Results Message --}}
+        <div id="no-results" class="hidden col-span-full text-center py-12">
+            <div class="text-gray-500 dark:text-gray-400">
+                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold mb-2">Artikel Tidak Ditemukan</h3>
+                <p>Tidak ada artikel yang sesuai dengan pencarian atau filter Anda.</p>
+            </div>
         </div>
 
         {{-- Pagination --}}
-        <div class="flex justify-center mt-12">
-            <div class="flex items-center gap-2">
-                <button class="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300">
-                    ← Sebelumnya
-                </button>
-                <button class="px-4 py-2 bg-[--color-primary] text-white rounded-xl">1</button>
-                <button class="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300">2</button>
-                <button class="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300">3</button>
-                <button class="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300">
-                    Selanjutnya →
-                </button>
+        @if($artikels->hasPages())
+            <div class="flex justify-center mt-12">
+                {{ $artikels->links('pagination::bootstrap-4') }}
             </div>
-        </div>
+        @endif
     </div>
 
     {{-- Newsletter Section --}}
@@ -322,17 +195,88 @@
             <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 pt-serif-regular-italic">
                 Dapatkan tips, inspirasi, dan penawaran khusus langsung di email Anda
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                @csrf
                 <input 
                     type="email" 
+                    name="email"
                     placeholder="Masukkan email Anda"
+                    required
                     class="px-6 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-600 flex-1 focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-800 text-black dark:text-white"
                 />
-                <button class="px-8 py-3 bg-[--color-primary] text-white rounded-xl hover:scale-105 transition-transform font-medium">
+                <button type="submit" class="px-8 py-3 bg-[--color-primary] text-white rounded-xl hover:scale-105 transition-transform font-medium">
                     Berlangganan
                 </button>
-            </div>
+            </form>
         </div>
     </div>
 </div>
+
+<script>
+    function artikelFilter() {
+        return {
+            activeCategory: 'all',
+            searchQuery: '',
+            
+            init() {
+                this.$watch('activeCategory', () => this.filterArticles());
+                this.$watch('searchQuery', () => this.filterArticles());
+            },
+            
+            filterArticles() {
+                const articles = document.querySelectorAll('.artikel-card');
+                const noResults = document.getElementById('no-results');
+                let visibleCount = 0;
+                
+                articles.forEach(article => {
+                    const categories = article.dataset.category.toLowerCase();
+                    const title = article.dataset.title;
+                    const content = article.dataset.content;
+                    
+                    // Check category filter
+                    const categoryMatch = this.activeCategory === 'all' || 
+                                        categories.includes(this.activeCategory.toLowerCase());
+                    
+                    // Check search query
+                    const searchMatch = this.searchQuery === '' ||
+                                      title.includes(this.searchQuery.toLowerCase()) ||
+                                      content.includes(this.searchQuery.toLowerCase());
+                    
+                    if (categoryMatch && searchMatch) {
+                        article.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+                
+                // Show no results message if no articles are visible
+                if (visibleCount === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    /* Custom pagination styles */
+    .pagination {
+        @apply inline-flex items-center gap-2;
+    }
+    
+    .pagination .page-link {
+        @apply px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300 no-underline;
+    }
+    
+    .pagination .page-item.active .page-link {
+        @apply bg-[--color-primary] text-white border-[--color-primary];
+    }
+    
+    .pagination .page-item.disabled .page-link {
+        @apply opacity-50 cursor-not-allowed;
+    }
+</style>
 @endsection

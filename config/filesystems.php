@@ -56,6 +56,23 @@ return [
             'throw' => false,
         ],
 
+        //news
+
+        // 'letters' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/letters'),
+        //     'url' => env('APP_URL').'/storage/letters',
+        //     'visibility' => 'public',
+        //     'throw' => false,
+        // ],
+        
+        // 'qr_codes' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/qr-codes'),
+        //     'url' => env('APP_URL').'/storage/qr-codes',
+        //     'visibility' => 'public',
+        //     'throw' => false,
+        // ],
     ],
 
     /*

@@ -37,7 +37,7 @@
             
             <div class="item bg-white dark:bg-gray-800 bg-[url({{ asset('storage/content/wedding01.jpg') }})] " >
                 {{-- <div class="absolute inset-0 bg-white dark:bg-gray-800 "></div> --}}
-                <div class="content z-1 p-8 bg-white lg:dark:bg-gray-800 dark:bg-gray-800/50 h-full">
+                <div class="content z-1 p-8 bg-white lg:dark:bg-gray-800 dark:bg-gray-800">
                     <div class="lg:grid grid-cols-1 my-32 lg:my-0 lg:grid-cols-2 lg:px-20">
                         {{-- <div class="absolute inset-0 bg-gray-800/50 lg:hidden"></div> --}}
                         <div class="flex flex-col justify-center items-start">
