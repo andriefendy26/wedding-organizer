@@ -5,9 +5,7 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     
-
-    {{-- Hero Section --}}
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center">
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
@@ -21,8 +19,9 @@
         </div>
     </div>
 
+
     <!-- Main Content -->
-    <div class="px-32 py-12 bg-white dark:bg-gray-800">
+    <div class="px-10 lg:px-32 py-12 bg-white dark:bg-gray-800">
         
         <!-- Legend Section -->
         <div class="max-w-6xl mx-auto mb-8">
@@ -34,26 +33,6 @@
                     Klik pada tanggal untuk melihat detail ketersediaan dan melakukan konsultasi
                 </p>
             </div>
-{{-- 
-            <!-- Legend dengan design card yang konsisten -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div class="flex items-center gap-3 bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-600 hover:border-green-300 transition-all duration-300">
-                    <div class="w-4 h-4 rounded-full bg-green-500 shadow-sm"></div>
-                    <span class="text-sm poppins-regular text-gray-700 dark:text-gray-300 font-medium">Tersedia</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-300 transition-all duration-300">
-                    <div class="w-4 h-4 rounded-full bg-yellow-500 shadow-sm"></div>
-                    <span class="text-sm poppins-regular text-gray-700 dark:text-gray-300 font-medium">Terbatas</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-600 hover:border-red-300 transition-all duration-300">
-                    <div class="w-4 h-4 rounded-full bg-red-500 shadow-sm"></div>
-                    <span class="text-sm poppins-regular text-gray-700 dark:text-gray-300 font-medium">Penuh</span>
-                </div>
-                <div class="flex items-center gap-3 bg-white dark:bg-gray-700 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 transition-all duration-300">
-                    <div class="w-4 h-4 rounded-full bg-blue-500 shadow-sm"></div>
-                    <span class="text-sm poppins-regular text-gray-700 dark:text-gray-300 font-medium">Event Khusus</span>
-                </div>
-            </div> --}}
         </div>
 
         <!-- Calendar Container -->
@@ -63,53 +42,6 @@
             </div>
         </div>
 
-        <!-- Services Section dengan grid layout yang konsisten -->
-        <div class="max-w-6xl mx-auto mt-16">
-            <h2 class="text-4xl text-center font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500 mb-8">
-                Layanan Yang Tersedia
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Wedding Organizer -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-600 hover:border-[--color-primary] transition-all duration-300 hover:shadow-lg hover:scale-105">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500 mb-2">Wedding Organizer</h3>
-                        <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm leading-relaxed">Perencanaan pernikahan lengkap dari A-Z dengan perhatian detail</p>
-                    </div>
-                </div>
-
-                <!-- Decoration -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-600 hover:border-[--color-primary] transition-all duration-300 hover:shadow-lg hover:scale-105">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500 mb-2">Dekorasi</h3>
-                        <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm leading-relaxed">Dekorasi indah sesuai tema impian dengan sentuhan personal</p>
-                    </div>
-                </div>
-
-                <!-- Equipment Rental -->
-                <div class="bg-white dark:bg-gray-700 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-600 hover:border-[--color-primary] transition-all duration-300 hover:shadow-lg hover:scale-105">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500 mb-2">Sewa Perlengkapan</h3>
-                        <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm leading-relaxed">Perlengkapan acara berkualitas tinggi dan terpercaya</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Contact Section dengan gradient yang konsisten -->
         <div class="max-w-6xl mx-auto mt-16 mb-8">
@@ -167,9 +99,7 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
 <style>
-    :root {
-        --color-primary: #8B5CF6;
-    }
+   
     
     .edu-vic-wa-nt-hand { font-family: 'Edu VIC WA NT Hand', cursive; }
     .edu-vic-wa-nt-hand-400 { font-family: 'Edu VIC WA NT Hand', cursive; font-weight: 400; }
@@ -194,7 +124,7 @@
     .fc-header-toolbar {
         margin-bottom: 1.5rem !important;
         padding: 1rem;
-        background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+        background: linear-gradient(135deg, #000000 0%, #ea0000 100%);
         border-radius: 12px;
         color: white;
     }
@@ -240,7 +170,7 @@
 
     .fc-day-today {
         background-color: rgba(139, 92, 246, 0.1) !important;
-        border: 2px solid #8B5CF6 !important;
+        border: 2px solid #e40202 !important;
     }
 
     .fc-daygrid-day-number {

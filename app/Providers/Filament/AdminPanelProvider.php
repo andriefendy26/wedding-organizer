@@ -45,7 +45,7 @@ class AdminPanelProvider extends PanelProvider
             ])->navigationGroups([
                 'Layanan',
                 'Transaksi',
-                'Content',
+                'Manajemen Konten',
                 'UserManagement',
                 'Settings',
             ])->collapsibleNavigationGroups(false)

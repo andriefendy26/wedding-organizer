@@ -39,13 +39,12 @@ class ArtikelController extends Controller
         
         return view('artikel', compact('artikels'));
     }
-    /**
-     * Display the specified article by slug
-     */
+
+    
     public function show($slug)
     {
         $artikel = Artikel::where('slug', $slug)->firstOrFail();
-        
+
         // Get related articles (same tags or recent articles)
         $relatedArtikels = Artikel::where('id', '!=', $artikel->id)
             ->where(function($query) use ($artikel) {
@@ -66,7 +65,7 @@ class ArtikelController extends Controller
         // If no related articles found, get latest articles
         if ($relatedArtikels->count() < 3) {
             $relatedArtikels = Artikel::where('id', '!=', $artikel->id)
-                ->latest()
+                ->latest
                 ->limit(3)
                 ->get();
         }
@@ -78,9 +77,6 @@ class ArtikelController extends Controller
         return view('detailartikel', compact('artikel', 'relatedArtikels', 'readingTime'));
     }
 
-    /**
-     * Get article excerpt
-     */
     public function getExcerpt($content, $length = 150)
     {
         $cleanContent = strip_tags($content);

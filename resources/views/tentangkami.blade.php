@@ -5,7 +5,7 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen pt-14">
     {{-- Hero Section --}}
-    <div class="relative h-96 bg-gradient-to-r from-[--color-primary]/20 to-[--color-primary]/40 dark:from-gray-700 dark:to-gray-600">
+    {{-- <div class="relative h-96 bg-gradient-to-r from-[--color-primary]/20 to-[--color-primary]/40 dark:from-gray-700 dark:to-gray-600">
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-cover bg-center opacity-20"></div>
         <div class="relative z-10 flex items-center justify-center h-full">
             <div class="text-center">
@@ -17,7 +17,23 @@
                 </p>
             </div>
         </div>
+    </div> --}}
+
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden mb-16">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                    Tentang 3Rasa
+                </h1>
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                    Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi
+                </p>
+            </div>
+        </div>
     </div>
+
+    
 
     {{-- Main Content --}}
     <div class="px-30 py-16">
@@ -274,36 +290,7 @@
             </div>
         </div>
 
-        {{-- Call to Action --}}
-        <div class="text-center bg-gradient-to-r from-[--color-primary] to-red-700 rounded-3xl p-12 text-white">
-            <h2 class="text-4xl edu-vic-wa-nt-hand mb-4">Siap Wujudkan Pernikahan Impian Anda?</h2>
-            <p class="text-xl pt-serif-regular-italic mb-8 opacity-90">
-                Mari diskusikan konsep pernikahan Anda bersama tim profesional kami
-            </p>
-            <div class="flex justify-center gap-4">
-                <button class="flex group hover:scale-105 transition-all duration-300 bg-white text-[--color-primary] rounded-full justify-center items-center">
-                    <p class="my-3 mx-4 ml-6 pt-serif-regular font-semibold">
-                        Konsultasi Gratis
-                    </p>
-                    <div class="h-10 w-10 border-2 border-[--color-primary] bg-[--color-primary] text-white rounded-full p-1 group-hover:rotate-45 duration-300 transition-all flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12l4-4 4 4m0 6l-4-4-4 4"></path>
-                        </svg>
-                    </div>
-                </button>
-                <button class="flex group hover:scale-105 transition-all duration-300 bg-transparent border-2 border-white text-white rounded-full justify-center items-center">
-                    <p class="my-3 mx-4 ml-6 pt-serif-regular font-semibold">
-                        Lihat Portfolio
-                    </p>
-                    <div class="h-10 w-10 border-2 border-white bg-white text-[--color-primary] rounded-full p-1 group-hover:rotate-45 duration-300 transition-all flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-        </div>
+
     </div>
 </div>
 

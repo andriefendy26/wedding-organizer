@@ -5,7 +5,7 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     {{-- Hero Section --}}
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center">
+    {{-- <div class="relative h-[70vh] bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
@@ -17,27 +17,23 @@
                 </p>
             </div>
         </div>
-    </div>
-
-    {{-- Filter Categories --}}
-    <div class="container mx-auto px-6 py-12">
-        <div class="flex justify-center mb-12">
-            <div class="flex flex-wrap gap-4 bg-gray-100 dark:bg-gray-700 p-2 rounded-full">
-                <button class="filter-btn active px-6 py-2 rounded-full transition-all duration-300" data-filter="all">
-                    Semua
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full transition-all duration-300" data-filter="wedding">
-                    Pernikahan
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full transition-all duration-300" data-filter="decoration">
-                    Dekorasi
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full transition-all duration-300" data-filter="corporate">
-                    Corporate
-                </button>
+    </div> --}}
+   <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                    Portfolio Kami
+                </h1>
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                    Koleksi momen indah yang telah kami wujudkan bersama pasangan-pasangan bahagia
+                </p>
+                </p>
             </div>
         </div>
-
+    </div>
+    {{-- Filter Categories --}}
+    <div class="container mx-auto px-6 py-12">
         {{-- Portfolio Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
             {{-- Wedding Projects --}}

@@ -1,10 +1,166 @@
-    @extends('Layout.app')
+@extends('Layout.app')
 
-    @section('title', 'Layanan Kami')
+@section('title', 'Layanan Kami')
 
-    @section('content')
+@push('styles')
+<style>
+    /* Shooting Stars Animation */
+    .shooting-stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .shooting-star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        opacity: 0;
+        animation: shoot linear infinite;
+    }
+
+    .shooting-star::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+        transform: translateY(-50%);
+        animation: tail linear infinite;
+    }
+
+    @keyframes shoot {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px) translateY(100px);
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(calc(100vw + 100px)) translateY(-100px);
+        }
+    }
+
+    @keyframes tail {
+        0% {
+            width: 0;
+        }
+        10% {
+            width: 50px;
+        }
+        90% {
+            width: 50px;
+        }
+        100% {
+            width: 0;
+        }
+    }
+
+    /* Different shooting star variants */
+    .shooting-star:nth-child(1) {
+        top: 10%;
+        left: -100px;
+        animation-duration: 3s;
+        animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(2) {
+        top: 20%;
+        left: -100px;
+        animation-duration: 4s;
+        animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(3) {
+        top: 30%;
+        left: -100px;
+        animation-duration: 2.5s;
+        animation-delay: 4s;
+    }
+
+    .shooting-star:nth-child(4) {
+        top: 40%;
+        left: -100px;
+        animation-duration: 3.5s;
+        animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(5) {
+        top: 60%;
+        left: -100px;
+        animation-duration: 4.5s;
+        animation-delay: 5s;
+    }
+
+    .shooting-star:nth-child(6) {
+        top: 70%;
+        left: -100px;
+        animation-duration: 2.8s;
+        animation-delay: 3s;
+    }
+
+    .shooting-star:nth-child(7) {
+        top: 80%;
+        left: -100px;
+        animation-duration: 3.2s;
+        animation-delay: 6s;
+    }
+
+    .shooting-star:nth-child(8) {
+        top: 15%;
+        left: -100px;
+        animation-duration: 3.8s;
+        animation-delay: 7s;
+    }
+
+    /* Ensure content is above shooting stars */
+    .content-wrapper {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Add subtle glow effect for dark theme */
+    .dark .shooting-star {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .dark .shooting-star::before {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+    }
+</style>
+@endpush
+
+@section('content')
+{{-- Shooting Stars Background --}}
+<div class="shooting-stars">
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+</div>
+
+<div class="content-wrapper">
     {{-- Hero Section --}}
-    <div class="relative w-full h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    {{-- <div class="relative w-full h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
         <div class="absolute inset-0 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] bg-cover bg-center opacity-20"></div>
         <div class="relative z-10 flex items-center justify-center h-full px-4">
             <div class="text-center max-w-4xl">
@@ -13,6 +169,21 @@
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic max-w-2xl mx-auto">
                     Wujudkan acara impian Anda dengan layanan profesional dan berkualitas tinggi
+                </p>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                    Layanan Kami
+                </h1>
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                    Wujudkan acara impian Anda dengan layanan profesional dan berkualitas tinggi
+                </p>
                 </p>
             </div>
         </div>
@@ -124,114 +295,6 @@
                             <li class="flex items-center">
                                 <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
                                 Tenda dan canopy
-                            </li>
-                        </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
-                    </div>
-                </div>
-
-                {{-- Service 4: Event Korporat --}}
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-gradient-to-br from-blue-500 to-purple-600 relative">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <x-heroicon-o-building-office class="w-24 h-24 text-white opacity-80" />
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Event Korporat
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Penyelenggaraan acara perusahaan yang profesional untuk meningkatkan citra dan networking.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Seminar & workshop
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Launching produk
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Team building
-                            </li>
-                        </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
-                    </div>
-                </div>
-
-                {{-- Service 5: Catering --}}
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-gradient-to-br from-orange-400 to-red-500 relative">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <x-heroicon-o-cake class="w-24 h-24 text-white opacity-80" />
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Catering Service
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Layanan katering dengan menu beragam dan cita rasa autentik untuk berbagai acara Anda.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Menu tradisional
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Prasmanan modern
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Live cooking
-                            </li>
-                        </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
-                    </div>
-                </div>
-
-                {{-- Service 6: Dokumentasi --}}
-                <div class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-gradient-to-br from-pink-400 to-purple-500 relative">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <x-heroicon-o-camera class="w-24 h-24 text-white opacity-80" />
-                        </div>
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Terbaru</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Dokumentasi
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Jasa foto dan video profesional untuk mengabadikan setiap momen berharga acara Anda.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Photography HD
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Videography 4K
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Drone footage
                             </li>
                         </ul>
                         <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
@@ -357,5 +420,6 @@
             </div>
         </div>
     </div>
+</div>
 
-    @endsection
+@endsection

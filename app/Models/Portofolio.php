@@ -30,4 +30,8 @@ class Portofolio extends Model
     {
         return $this->hasMany(\App\Models\Galery::class, 'portofolio_id');
     }
+    public function team()
+    {
+        return $this->belongsTo(Team::class, 'portofolio_id');
+    }
 }

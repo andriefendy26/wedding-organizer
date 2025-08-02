@@ -18,7 +18,8 @@ class GaleryResource extends Resource
     protected static ?string $model = Galery::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-protected static ?string $navigationGroup = 'Content';
+    protected static ?string $navigationGroup = 'Manajemen Konten';
+    protected static ?int $navigationSort = 0;
     public static function form(Form $form): Form
     {
         return $form

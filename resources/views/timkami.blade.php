@@ -5,43 +5,58 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     <!-- Hero Section -->
-    <div class="relative h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
-        <div class="absolute inset-0 bg-[url({{ asset('storage/content/team-bg.jpg') }})] bg-cover bg-center opacity-10"></div>
-        <div class="relative z-10 text-center px-8">
-            <h1 class="text-7xl edu-vic-wa-nt-hand text-black dark:text-white mb-6 tracking-wide">
-                Tim Profesional Kami
-            </h1>
-            <p class="text-xl pt-serif-regular-italic text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Dibalik setiap momen spesial yang kami ciptakan, terdapat tim profesional yang berdedikasi tinggi dengan pengalaman bertahun-tahun dalam industri wedding organizer.
-            </p>
+        {{-- <div class="relative h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
+            <div class="absolute inset-0 bg-[url({{ asset('storage/content/team-bg.jpg') }})] bg-cover bg-center opacity-10"></div>
+            <div class="relative z-10 text-center px-8">
+                <h1 class="text-7xl edu-vic-wa-nt-hand text-black dark:text-white mb-6 tracking-wide">
+                    Tim Profesional Kami
+                </h1>
+                <p class="text-xl pt-serif-regular-italic text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Dibalik setiap momen spesial yang kami ciptakan, terdapat tim profesional yang berdedikasi tinggi dengan pengalaman bertahun-tahun dalam industri wedding organizer.
+                </p>
+            </div>
+        </div> --}}
+
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden mb-16">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                    Tim Profesional Kami
+                </h1>
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                    Dibalik setiap momen spesial yang kami ciptakan, terdapat tim profesional yang berdedikasi tinggi dengan pengalaman bertahun-tahun dalam industri wedding organizer.
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- Team Stats Section -->
+
+    <!-- Team Stats Section (Menggunakan data dinamis) -->
     <div class="px-8">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
                 <div class="text-center p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl hover:scale-105 transition-all duration-300">
-                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">15+</h3>
+                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">{{ $teamStats['experience_years'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</p>
                 </div>
                 <div class="text-center p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl hover:scale-105 transition-all duration-300">
-                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">500+</h3>
+                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">{{ $teamStats['successful_events'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Event Sukses</p>
                 </div>
                 <div class="text-center p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl hover:scale-105 transition-all duration-300">
-                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">12</h3>
+                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">{{ $teamStats['team_members'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tim Ahli</p>
                 </div>
                 <div class="text-center p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl hover:scale-105 transition-all duration-300">
-                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">100%</h3>
+                    <h3 class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] mb-2">{{ $teamStats['client_satisfaction'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Kepuasan Klien</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Core Team Section -->
+    <!-- Core Team Section (Menggunakan data dari database) -->
     <div class="py-20 px-8 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
@@ -55,79 +70,52 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Team Member 1 -->
+                @php
+                $gradients = [
+                    'from-purple-400 to-pink-400',
+                    'from-blue-400 to-teal-400',
+                    'from-green-400 to-emerald-400',
+                    'from-red-400 to-orange-400',
+                    'from-indigo-400 to-purple-400',
+                    'from-yellow-400 to-red-400'
+                ];
+                @endphp
+                
+                @foreach($coreTeam as $index => $member)
                 <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden">
-                        <img src="{{ asset('storage/team/sarah.jpg') }}" alt="Sarah Wijaya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="aspect-square bg-gradient-to-br {{ $gradients[$index % count($gradients)] }} relative overflow-hidden">
+                        <img src="{{ $member->foto_url }}" alt="{{ $member->nama }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2">Sarah Wijaya</h3>
-                        <p class="text-[--color-primary] font-semibold mb-3">Lead Wedding Planner</p>
+                        <h3 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2">{{ $member->nama }}</h3>
+                        <p class="text-[--color-primary] font-semibold mb-3">{{ $member->jabatan }}</p>
                         <p class="text-gray-600 dark:text-gray-300 text-sm pt-serif-regular leading-relaxed">
-                            Dengan pengalaman 10+ tahun, Sarah ahli dalam merancang konsep pernikahan yang unik dan personal sesuai kepribadian setiap pasangan.
+                            {{ Str::limit($member->deskripsi, 120) }}
                         </p>
                         <div class="flex space-x-3 mt-4">
+                            @if($member->email)
+                            <a href="mailto:{{ $member->email }}" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
+                                <x-bi-envelope class="w-4 h-4" />
+                            </a>
+                            @endif
+                            @if($member->telepon)
+                            <a href="tel:{{ $member->telepon }}" class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
+                                <x-bi-telephone class="w-4 h-4" />
+                            </a>
+                            @endif
                             <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
                                 <x-bi-instagram class="w-4 h-4" />
-                            </button>
-                            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                                <x-bi-envelope class="w-4 h-4" />
                             </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Team Member 2 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-square bg-gradient-to-br from-blue-400 to-teal-400 relative overflow-hidden">
-                        <img src="{{ asset('storage/team/david.jpg') }}" alt="David Chen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2">David Chen</h3>
-                        <p class="text-[--color-primary] font-semibold mb-3">Creative Director</p>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm pt-serif-regular leading-relaxed">
-                            Bertanggung jawab atas seluruh aspek kreatif dan visual. David memastikan setiap detail dekorasi mencerminkan visi artistik yang luar biasa.
-                        </p>
-                        <div class="flex space-x-3 mt-4">
-                            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                                <x-bi-instagram class="w-4 h-4" />
-                            </button>
-                            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                                <x-bi-envelope class="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="aspect-square bg-gradient-to-br from-green-400 to-emerald-400 relative overflow-hidden">
-                        <img src="{{ asset('storage/team/maya.jpg') }}" alt="Maya Sari" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2">Maya Sari</h3>
-                        <p class="text-[--color-primary] font-semibold mb-3">Event Coordinator</p>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm pt-serif-regular leading-relaxed">
-                            Spesialis dalam koordinasi teknis dan logistik. Maya memastikan setiap acara berjalan lancar tanpa hambatan dari awal hingga akhir.
-                        </p>
-                        <div class="flex space-x-3 mt-4">
-                            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                                <x-bi-instagram class="w-4 h-4" />
-                            </button>
-                            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                                <x-bi-envelope class="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 
-    <!-- Extended Team Section -->
+    <!-- Extended Team Section (Support Team dari database) -->
     <div class="py-20 px-8">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
@@ -139,22 +127,64 @@
                 </p>
             </div>
 
+            @if($supportTeam->count() > 0)
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Support Team Members -->
                 @php
-                $supportTeam = [
-                    ['name' => 'Andi Pratama', 'role' => 'Photographer', 'bg' => 'from-red-400 to-pink-400'],
-                    ['name' => 'Lisa Indri', 'role' => 'Makeup Artist', 'bg' => 'from-purple-400 to-indigo-400'],
-                    ['name' => 'Rudi Hartono', 'role' => 'Videographer', 'bg' => 'from-yellow-400 to-orange-400'],
-                    ['name' => 'Nina Kusuma', 'role' => 'Florist', 'bg' => 'from-green-400 to-teal-400'],
-                    ['name' => 'Agus Setiawan', 'role' => 'Sound System', 'bg' => 'from-blue-400 to-cyan-400'],
-                    ['name' => 'Sari Dewi', 'role' => 'Catering', 'bg' => 'from-pink-400 to-rose-400'],
-                    ['name' => 'Bayu Adi', 'role' => 'Lighting', 'bg' => 'from-indigo-400 to-purple-400'],
-                    ['name' => 'Tari Wulan', 'role' => 'Entertainment', 'bg' => 'from-emerald-400 to-green-400']
+                $supportGradients = [
+                    'from-red-400 to-pink-400',
+                    'from-purple-400 to-indigo-400',
+                    'from-yellow-400 to-orange-400',
+                    'from-green-400 to-teal-400',
+                    'from-blue-400 to-cyan-400',
+                    'from-pink-400 to-rose-400',
+                    'from-indigo-400 to-purple-400',
+                    'from-emerald-400 to-green-400'
                 ];
                 @endphp
 
-                @foreach($supportTeam as $member)
+                @foreach($supportTeam as $index => $member)
+                <div class="group text-center">
+                    @if($member->foto)
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                        <img src="{{ $member->foto_url }}" alt="{{ $member->nama }}" class="w-full h-full object-cover">
+                    </div>
+                    @else
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br {{ $supportGradients[$index % count($supportGradients)] }} flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white font-bold text-lg">{{ substr($member->nama, 0, 1) }}</span>
+                    </div>
+                    @endif
+                    <h4 class="text-lg edu-vic-wa-nt-hand text-black dark:text-white">{{ $member->nama }}</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ $member->jabatan }}</p>
+                    @if($member->telepon || $member->email)
+                    <div class="flex justify-center space-x-2 mt-2">
+                        @if($member->email)
+                        <a href="mailto:{{ $member->email }}" class="text-xs text-[--color-primary] hover:underline">
+                            Email
+                        </a>
+                        @endif
+                        @if($member->telepon)
+                        <a href="tel:{{ $member->telepon }}" class="text-xs text-[--color-primary] hover:underline">
+                            {{ $member->formatted_phone ?? $member->telepon }}
+                        </a>
+                        @endif
+                    </div>
+                    @endif
+                </div>
+                @endforeach
+            </div>
+            @else
+            <!-- Fallback jika tidak ada support team di database -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                @php
+                $defaultSupportTeam = [
+                    ['name' => 'Tim Photographer', 'role' => 'Photography', 'bg' => 'from-red-400 to-pink-400'],
+                    ['name' => 'Tim Makeup', 'role' => 'Makeup Artist', 'bg' => 'from-purple-400 to-indigo-400'],
+                    ['name' => 'Tim Video', 'role' => 'Videography', 'bg' => 'from-yellow-400 to-orange-400'],
+                    ['name' => 'Tim Dekorasi', 'role' => 'Decoration', 'bg' => 'from-green-400 to-teal-400']
+                ];
+                @endphp
+
+                @foreach($defaultSupportTeam as $member)
                 <div class="group text-center">
                     <div class="w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br {{ $member['bg'] }} flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <span class="text-white font-bold text-lg">{{ substr($member['name'], 0, 1) }}</span>
@@ -164,6 +194,7 @@
                 </div>
                 @endforeach
             </div>
+            @endif
         </div>
     </div>
 

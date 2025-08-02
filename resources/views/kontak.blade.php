@@ -5,103 +5,21 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     {{-- Hero Section --}}
-    <div class="relative bg-gradient-to-br from-purple-600 to-pink-600 py-20">
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center">
-                <nav class="flex justify-center items-center gap-2 text-white/80 text-sm mb-6">
-                    <a href="/" class="hover:text-white transition-colors">Beranda</a>
-                    <span>/</span>
-                    <span class="text-white">Kontak</span>
-                </nav>
-                
-                <h1 class="text-6xl font-semibold mb-6 edu-vic-wa-nt-hand text-white tracking-wide">
+
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Hubungi Kami
                 </h1>
-                <p class="text-xl text-white/90 pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Siap mewujudkan pernikahan impian Anda? Mari berkonsultasi dan rencanakan momen spesial bersama tim profesional kami
                 </p>
             </div>
         </div>
-        
-        {{-- Decorative elements --}}
-        <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full opacity-30"></div>
-        <div class="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-30"></div>
     </div>
 
-    {{-- Contact Info Cards --}}
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {{-- Phone Card --}}
-            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                    Telepon & WhatsApp
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                    Hubungi kami kapan saja untuk konsultasi gratis
-                </p>
-                <div class="space-y-2">
-                    <a href="tel:+6281234567890" class="block text-[--color-primary] hover:underline font-medium">
-                        +62 812-3456-7890
-                    </a>
-                    <a href="https://wa.me/6281234567890" target="_blank" class="block text-[--color-primary] hover:underline font-medium">
-                        WhatsApp Chat
-                    </a>
-                </div>
-            </div>
-
-            {{-- Email Card --}}
-            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                    Email
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                    Kirim pertanyaan detail melalui email
-                </p>
-                <div class="space-y-2">
-                    <a href="mailto:info@3rasa.com" class="block text-[--color-primary] hover:underline font-medium">
-                        info@3rasa.com
-                    </a>
-                    <a href="mailto:booking@3rasa.com" class="block text-[--color-primary] hover:underline font-medium">
-                        booking@3rasa.com
-                    </a>
-                </div>
-            </div>
-
-            {{-- Location Card --}}
-            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
-                    Lokasi Kantor
-                </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
-                    Kunjungi showroom kami langsung
-                </p>
-                <div class="space-y-2">
-                    <p class="text-gray-800 dark:text-gray-200 font-medium">
-                        Jl. Mulawarman No. 123<br>
-                        Tarakan, Kalimantan Utara<br>
-                        77115
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     {{-- Main Contact Section --}}
     <div class="mx-auto px-4 sm:px-6 lg:px-32 py-16">
@@ -117,7 +35,18 @@
                     </p>
                 </div>
 
+                <!-- Tambahkan di dalam form section, setelah opening form tag -->
                 <form x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
+                    <!-- Error Message -->
+                    <div x-show="errorMessage" x-transition class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4">
+                        <div class="flex items-center gap-2 text-red-800 dark:text-red-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <p class="font-medium" x-text="errorMessage"></p>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -137,6 +66,7 @@
                             </label>
                             <input 
                                 x-model="form.phone"
+                                @input="formatPhone"
                                 type="tel" 
                                 required
                                 class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
@@ -164,8 +94,10 @@
                             </label>
                             <input 
                                 x-model="form.event_date"
+                                @change="validateEventDate"
                                 type="date" 
                                 required
+                                :min="new Date().toISOString().split('T')[0]"
                                 class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                             />
                         </div>
@@ -276,13 +208,16 @@
                         </span>
                     </button>
 
-                    {{-- Success Message --}}
+                    <!-- Success Message -->
                     <div x-show="success" x-transition class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
                         <div class="flex items-center gap-2 text-green-800 dark:text-green-200">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
-                            <p class="font-medium">Pesan berhasil dikirim! Kami akan menghubungi Anda segera.</p>
+                            <div>
+                                <p class="font-medium">Konsultasi berhasil dikirim!</p>
+                                <p class="text-sm">Tim kami akan menghubungi Anda segera untuk membahas detail pernikahan impian Anda.</p>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -340,22 +275,6 @@
                     </div>
                 </div>
 
-                {{-- Social Media --}}
-                <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
-                    <h3 class="text-2xl font-semibold mb-4 edu-vic-wa-nt-hand">
-                        Follow Our Journey
-                    </h3>
-                    <p class="mb-6 pt-serif-regular-italic opacity-90">
-                        Ikuti update terbaru dan inspirasi pernikahan di media sosial kami
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 011-1h3v-4h-3a5 5 0 00-5 5v2.01h-2l-.396 3.98h2.396v8.01z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -529,6 +448,7 @@
         return {
             loading: false,
             success: false,
+            errorMessage: '',
             form: {
                 name: '',
                 phone: '',
@@ -542,32 +462,74 @@
             async submitForm() {
                 this.loading = true;
                 this.success = false;
+                this.errorMessage = '';
                 
                 try {
-                    // Simulate API call
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    // Validasi client-side
+                    if (!this.form.name || !this.form.phone || !this.form.event_date || !this.form.message) {
+                        throw new Error('Mohon lengkapi semua field yang wajib diisi');
+                    }
                     
-                    // Here you would normally send the data to your Laravel backend
-                    // const response = await fetch('/contact', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'Content-Type': 'application/json',
-                    //         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    //     },
-                    //     body: JSON.stringify(this.form)
-                    // });
-                    
-                    this.success = true;
-                    this.resetForm();
-                    
-                    // Auto-hide success message after 5 seconds
-                    setTimeout(() => {
-                        this.success = false;
-                    }, 5000);
+                    if (this.form.services.length === 0) {
+                        throw new Error('Pilih minimal satu jenis layanan');
+                    }
+
+                    // Kirim data ke Laravel controller
+                    const response = await fetch('/konsultasi', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(this.form)
+                    });
+
+                    const result = await response.json();
+
+                    if (!response.ok) {
+                        // Handle validation errors
+                        if (result.errors) {
+                            const errorMessages = Object.values(result.errors).flat();
+                            throw new Error(errorMessages.join(', '));
+                        } else {
+                            throw new Error(result.message || 'Terjadi kesalahan pada server');
+                        }
+                    }
+
+                    if (result.success) {
+                        this.success = true;
+                        this.resetForm();
+                        
+                        // Auto-hide success message after 8 seconds
+                        setTimeout(() => {
+                            this.success = false;
+                        }, 8000);
+
+                        // Optional: Redirect to WhatsApp with pre-filled message
+                        const whatsappMessage = encodeURIComponent(
+                            `Halo 3Rasa Wedding Organizer!\n\n` +
+                            `Saya ${this.form.name} baru saja mengirim form konsultasi melalui website. ` +
+                            `Mohon informasi lebih lanjut untuk pernikahan saya pada ${this.form.event_date}.\n\n` +
+                            `Terima kasih!`
+                        );
+                        
+                        // Uncomment jika ingin auto redirect ke WhatsApp
+                        // setTimeout(() => {
+                        //     window.open(`https://wa.me/6281234567890?text=${whatsappMessage}`, '_blank');
+                        // }, 2000);
+                    } else {
+                        throw new Error(result.message || 'Gagal mengirim konsultasi');
+                    }
                     
                 } catch (error) {
                     console.error('Error submitting form:', error);
-                    alert('Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.');
+                    this.errorMessage = error.message;
+                    
+                    // Show error for 5 seconds
+                    setTimeout(() => {
+                        this.errorMessage = '';
+                    }, 5000);
                 } finally {
                     this.loading = false;
                 }
@@ -583,6 +545,32 @@
                     services: [],
                     message: ''
                 };
+            },
+
+            // Format phone number as user types
+            formatPhone() {
+                let phone = this.form.phone.replace(/\D/g, '');
+                
+                // Add +62 prefix if not present and starts with 0
+                if (phone.startsWith('0')) {
+                    phone = '62' + phone.substring(1);
+                } else if (!phone.startsWith('62')) {
+                    phone = '62' + phone;
+                }
+                
+                this.form.phone = phone;
+            },
+
+            // Validate event date
+            validateEventDate() {
+                const selectedDate = new Date(this.form.event_date);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                if (selectedDate <= today) {
+                    alert('Tanggal acara harus setelah hari ini');
+                    this.form.event_date = '';
+                }
             }
         }
     }

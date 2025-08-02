@@ -3,10 +3,12 @@
 use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BayarController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\instagram;
 use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\DocumentVerificationController;
+use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PublicLetterController;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -72,17 +74,32 @@ Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel
 Route::get('/faq', function () {
     return view('faq');
 });
+
+// Route untuk halaman kontak (GET)
 Route::get('/kontak', function () {
     return view('kontak');
+})->name('kontak');
+// Route untuk submit form konsultasi (POST)
+Route::post('/konsultasi', [KonsultasiController::class, 'store'])->name('konsultasi.store');
+
+// Route API (jika diperlukan untuk Ajax)
+Route::prefix('api')->group(function () {
+    Route::post('/konsultasi', [KonsultasiController::class, 'store']);
+    Route::get('/konsultasi', [KonsultasiController::class, 'index']);
+    Route::get('/konsultasi/{id}', [KonsultasiController::class, 'show']);
+    Route::delete('/konsultasi/{id}', [KonsultasiController::class, 'destroy']);
+    Route::get('/konsultasi-statistics', [KonsultasiController::class, 'statistics']);
 });
+
 
 Route::get('/tentang', function () {
     return view('tentangkami');
 });
 
-Route::get('/tim', function () {
-    return view('timkami');
-});
+// routes/web.php
+Route::get('/team', [ContentController::class, 'GetTeam'])->name('team');
+Route::get('/team/{id}', [ContentController::class, 'getTeamMember'])->name('team.member'); // optional
+
 Route::get('/portofolio', function () {
     return view('portofolio');
 });

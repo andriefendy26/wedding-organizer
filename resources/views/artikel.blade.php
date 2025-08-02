@@ -3,9 +3,9 @@
 @section('title', 'Artikel & Blog')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen pt-30">
+<div class="bg-white dark:bg-gray-800 min-h-screen pt-16">
     {{-- Hero Section --}}
-    <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-20">
+    {{-- <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-20">
         <div class="container mx-auto px-30">
             <div class="text-center">
                 <h1 class="text-6xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white tracking-wide">
@@ -15,50 +15,33 @@
                     Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda
                 </p>
             </div>
-        </div>
+        </div> --}}
         
         {{-- Decorative elements --}}
-        <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20"></div>
+        {{-- <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20"></div>
         <div class="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-20"></div>
+    </div> --}}
+
+    {{-- Hero Section --}}
+    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                    Artikel & Inspirasi
+                </h1>
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                    Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda
+                </p>
+            </div>
+        </div>
     </div>
+
 
     {{-- Filter & Search Section --}}
     <div class="container mx-auto px-10 lg:px-30 py-8" x-data="artikelFilter()">
         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
-            {{-- Category Filter --}}
-            <div class="w-full lg:w-auto">
-                <h3 class="text-lg font-medium text-black dark:text-white mb-4 poppins-regular">Filter Kategori:</h3>
-                <div class="flex flex-wrap gap-3">
-                    <button 
-                        @click="activeCategory = 'all'"
-                        :class="activeCategory === 'all' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Semua Artikel
-                    </button>
-                    <button 
-                        @click="activeCategory = 'pernikahan'"
-                        :class="activeCategory === 'pernikahan' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Pernikahan
-                    </button>
-                    <button 
-                        @click="activeCategory = 'dekorasi'"
-                        :class="activeCategory === 'dekorasi' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Dekorasi
-                    </button>
-                    <button 
-                        @click="activeCategory = 'tips'"
-                        :class="activeCategory === 'tips' ? 'bg-[--color-primary] text-white border-[--color-primary]' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 poppins-regular font-medium edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Tips & Trik
-                    </button>
-                </div>
-            </div>
+
 
             {{-- Search Box --}}
             <div class="w-full lg:w-auto">
@@ -67,12 +50,9 @@
                     <input 
                         type="text" 
                         placeholder="Cari artikel..."
-                        class="pl-12 pr-4 py-3 w-full lg:w-80 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular shadow-sm"
+                        class="pl-2 pr-4 py-3 w-full lg:w-80 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular shadow-sm"
                         x-model="searchQuery"
                     />
-                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
                 </div>
             </div>
         </div>
