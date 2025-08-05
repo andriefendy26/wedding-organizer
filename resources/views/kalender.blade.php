@@ -9,10 +9,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Kalender Ketersediaan
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Periksa tanggal yang tersedia untuk acara pernikahan dan event spesial Anda bersama 3Rasa
                 </p>
             </div>

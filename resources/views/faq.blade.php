@@ -9,10 +9,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Pertanyaan Umum
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Temukan jawaban atas pertanyaan yang sering diajukan tentang layanan pernikahan dan event kami
                 </p>
             </div>
@@ -84,7 +84,7 @@
         </div>
 
         {{-- No Results Message --}}
-        <div x-show="filteredFAQs.length === 0" class="text-center py-12">
+        <div  x-show="filteredFAQs.length === 0" class="text-center py-12">
             <div class="text-gray-500 dark:text-gray-400">
                 <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"></path>
@@ -95,7 +95,7 @@
         </div>
 
         {{-- FAQ Items --}}
-        <div class="space-y-4">
+        <div data-aos="fade-left" class="space-y-4">
             <template x-for="faq in filteredFAQs" :key="faq.id">
                 <div class="bg-white dark:bg-gray-700 rounded-xl border-2 border-gray-200 dark:border-gray-600 overflow-hidden transition-all duration-300 hover:shadow-lg">
                     <button 

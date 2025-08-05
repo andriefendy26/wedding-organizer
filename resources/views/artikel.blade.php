@@ -27,10 +27,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Artikel & Inspirasi
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda
                 </p>
             </div>
@@ -44,7 +44,7 @@
 
 
             {{-- Search Box --}}
-            <div class="w-full lg:w-auto">
+            <div data-aos="zoom-in-down" class="w-full lg:w-auto">
                 <h3 class="text-lg font-medium text-black dark:text-white mb-4 poppins-regular">Pencarian:</h3>
                 <div class="relative">
                     <input 
@@ -166,30 +166,6 @@
         @endif
     </div>
 
-    {{-- Newsletter Section --}}
-    <div class="bg-gray-100 dark:bg-gray-900 py-16 mt-16">
-        <div class="container mx-auto px-30 text-center">
-            <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
-                Jangan Lewatkan Update Terbaru
-            </h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 pt-serif-regular-italic">
-                Dapatkan tips, inspirasi, dan penawaran khusus langsung di email Anda
-            </p>
-            <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                @csrf
-                <input 
-                    type="email" 
-                    name="email"
-                    placeholder="Masukkan email Anda"
-                    required
-                    class="px-6 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-600 flex-1 focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-800 text-black dark:text-white"
-                />
-                <button type="submit" class="px-8 py-3 bg-[--color-primary] text-white rounded-xl hover:scale-105 transition-transform font-medium">
-                    Berlangganan
-                </button>
-            </form>
-        </div>
-    </div>
 </div>
 
 <script>

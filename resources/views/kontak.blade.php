@@ -10,10 +10,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Hubungi Kami
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Siap mewujudkan pernikahan impian Anda? Mari berkonsultasi dan rencanakan momen spesial bersama tim profesional kami
                 </p>
             </div>
@@ -36,7 +36,7 @@
                 </div>
 
                 <!-- Tambahkan di dalam form section, setelah opening form tag -->
-                <form x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
+                <form data-aos="fade-right" x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
                     <!-- Error Message -->
                     <div x-show="errorMessage" x-transition class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4">
                         <div class="flex items-center gap-2 text-red-800 dark:text-red-200">
@@ -224,7 +224,7 @@
             </div>
 
             {{-- Google Maps & Business Hours --}}
-            <div class="space-y-8">
+            <div data-aos="fade-left" class="space-y-8">
                 {{-- Google Maps --}}
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
@@ -282,7 +282,7 @@
     {{-- FAQ Section --}}
     <div class="bg-gray-50 dark:bg-gray-900 py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+            <div data-aos="zoom-in-left" class="text-center mb-12">
                 <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
                     Pertanyaan yang Sering Diajukan
                 </h2>
@@ -291,7 +291,7 @@
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto space-y-4" x-data="{ openFaq: null }">
+            <div data-aos="fade-right" class="max-w-4xl mx-auto space-y-4" x-data="{ openFaq: null }">
                 {{-- FAQ Item 1 --}}
                 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
                     <button 

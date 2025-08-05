@@ -11,6 +11,7 @@ use App\Http\Controllers\DocumentVerificationController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PublicLetterController;
+use App\Http\Controllers\SubscribeController;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 /*
@@ -64,10 +65,8 @@ Route::get('/', function () {
     ];
 
     return view('home', compact('topTestimonials', 'bottomTestimonials'));
+})->name('home');
 
-
-    // return view('home');
-});
 Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
 Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel.show');
 
@@ -96,7 +95,6 @@ Route::get('/tentang', function () {
     return view('tentangkami');
 });
 
-// routes/web.php
 Route::get('/team', [ContentController::class, 'GetTeam'])->name('team');
 Route::get('/team/{id}', [ContentController::class, 'getTeamMember'])->name('team.member'); // optional
 
@@ -115,10 +113,8 @@ Route::get('/layanansewa', function () {
     return view('sewabarang');
 });
 
+Route::post('/subscribe', [SubscribeController::class, 'store'])->name('subscribe');
 
-// Route::get('/kalenderketerse', function () {
-//     return view('kalender');
-// });
 Route::get('/kalender', [KalenderController::class, 'index'])->name('kalender.index');
 
 Route::get('/bayar/{public_id}', [BayarController::class, 'show'])->name('bayar.show');

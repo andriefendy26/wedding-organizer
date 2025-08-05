@@ -22,9 +22,13 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     
+    {{-- Animate On Scroll --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
     <!-- Scripts - -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -44,7 +48,6 @@
     @vite('resources/css/font.css')
 
     @stack('styles')
-    
     <style>
         .toggle-bg {
             transition: background-color 0.3s ease;
@@ -107,10 +110,131 @@
             transition: all 0.2s ease-in-out;
         }
 
+        /* alert */
+
+        .custom-alert {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 500px;
+    backdrop-filter: blur(16px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.custom-alert.success {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
+    border-left: 4px solid #10b981;
+}
+
+.custom-alert.error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+    border-left: 4px solid #ef4444;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
     </style>
 </head>
 <body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
-    
+
+    <!-- Custom Alert HTML (tambahkan setelah tag body) -->
+@if(session('success'))
+<div id="successAlert" class="custom-alert success text-white p-4 shadow-2xl">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <div class="flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-semibold">Berhasil!</h4>
+                <p class="text-sm opacity-90">{{ session('success') }}</p>
+            </div>
+        </div>
+        <button onclick="closeAlert('successAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+@endif
+
+@if(session('error'))
+<div id="errorAlert" class="custom-alert error text-white p-4 shadow-2xl">
+    <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <div class="flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-semibold">Gagal!</h4>
+                <p class="text-sm opacity-90">{{ session('error') }}</p>
+            </div>
+        </div>
+        <button onclick="closeAlert('errorAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+@endif
+
+@if($errors->any())
+<div id="validationAlert" class="custom-alert error text-white p-4 shadow-2xl">
+    <div class="flex items-start justify-between">
+        <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 mt-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-semibold">Validation Error!</h4>
+                <ul class="text-sm opacity-90 mt-1 space-y-1">
+                    @foreach($errors->all() as $error)
+                        <li>• {{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <button onclick="closeAlert('validationAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+@endif
+
     <!-- Header with Dark Mode Toggle -->
     <header class="backdrop-blur-md bg-white fixed top-0 z-[999999999] w-full dark:bg-gray-800/30 shadow-sm border-b border-gray-200 dark:border-gray-700 px-30">
         <div class="container">
@@ -203,7 +327,7 @@
 
      <!-- Navigation -->
     <nav x-data="{ mobileMenuOpen: false }" class="flex justify-center w-full fixed top-20 z-50">
-        <div class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6">
+        <div class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white/40 dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6">
             
             <!-- Navigation Links (Desktop) -->
             <div class="flex items-center gap-6 text-black dark:text-white font-medium">
@@ -416,14 +540,18 @@
                         <p class="text-gray-300 pt-serif-regular-italic">Berlangganan newsletter kami untuk mendapatkan tips pernikahan dan penawaran spesial</p>
                     </div>
                     <div class="flex gap-4">
-                        <input type="email" placeholder="Masukkan email Anda" 
+                        <form method="POST" action="{{ route('subscribe') }}">
+                            @csrf
+                            <input type="email" name="email" id="email" required placeholder="Masukkan email Anda"
                             class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:border-[--color-primary] focus:outline-none transition-colors duration-300">
-                        <button class="bg-[--color-primary] text-white px-6 py-3 rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 transition-all duration-300 hover:tracking-wider">
-                            Berlangganan
-                        </button>
+                            <button type="submit" class="bg-[--color-primary] text-white px-6 py-3 rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 transition-all duration-300 hover:tracking-wider">
+                                Berlangganan
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
+
 
             <!-- Customer Testimonial Banner -->
             <div class="bg-gradient-to-r from-[--color-primary]/20 to-transparent rounded-2xl p-6 mb-8 border border-[--color-primary]/30">
@@ -476,6 +604,27 @@
 
     
     <script>
+        function closeAlert(alertId) {
+            const alert = document.getElementById(alertId);
+            if (alert) {
+                alert.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                    alert.remove();
+                }, 300);
+            }
+        }
+
+        // Auto close alerts setelah 5 detik
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.custom-alert');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    if (alert.parentNode) {
+                        closeAlert(alert.id);
+                    }
+                }, 5000);
+            });
+        });
         // Language Switcher Component
         function languageSwitcher() {
             return {
@@ -697,6 +846,14 @@
                 flag: 'https://flagcdn.com/w20/us.png'
             };
         }
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 1500,
+        });
     </script>
 
     @stack('scripts')

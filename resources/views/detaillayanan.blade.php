@@ -1,6 +1,6 @@
 @extends('Layout.app')
 
-@section('title', $service->name . ' - Detail Layanan')
+@section('title', ' - Detail Layanan')
 
 @section('content')
 <div class="min-h-screen bg-white dark:bg-gray-800">

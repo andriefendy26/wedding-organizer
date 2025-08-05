@@ -4,21 +4,17 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
-    {{-- Hero Section --}}
-    <div class="relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 py-20">
-        <div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 floating-3d"></div>
-        <div class="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-20 floating-3d"></div>
-        
-        <div class="container mx-auto px-30">
-            <div class="text-center mb-16">
-                <span class="inline-block px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm mb-6 edu-vic-wa-nt-hand">
-                    🎪 Penyewaan Premium
-                </span>
-                <h1 class="text-5xl lg:text-7xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white tracking-wide">
+
+      <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
+            <div>
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Layanan Penyewaan
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic max-w-3xl mx-auto">
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Wujudkan pernikahan impian Anda dengan koleksi perlengkapan premium berkualitas tinggi dari 3Rasa
+                </p>
                 </p>
             </div>
         </div>
@@ -78,8 +74,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 
                 {{-- Card 1 - Featured Sofa Set --}}
-                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/sofa-premium.jpg') }})] bg-no-repeat bg-center bg-cover">
-                    <h3 class="w-auto self-end border-2 border-white px-3 py-1 rounded-full text-xs">Premium Collection</h3>
+                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/sofa-premium.jpg') }})] bg-no-repeat bg-center bg-cover">
+                    <h3 class="w-auto self-end border-2 dark:border-white px-3 py-1 rounded-full text-xs">Premium Collection</h3>
                     <div>
                         <h4 class="text-xl edu-vic-wa-nt-hand-400 tracking-widest mb-2">Sofa Premium Set</h4>
                         <p class="text-md xl:text-lg edu-vic-wa-nt-hand-400 tracking-widest">Set sofa premium berbahan kulit sintetis berkualitas tinggi dengan rangka kayu solid.</p>
@@ -342,7 +338,7 @@
         </div>
 
         {{-- Why Choose Us Section (sama seperti homepage) --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 mt-10 gap-4">
+        <div class="grid pb-16 grid-cols-1 md:grid-cols-2 mt-10 gap-4">
             <div class="grid grid-cols-3 gap-4">
                 <div class="col-span-3 bg-gray-200 rounded-2xl p-6">
                     <h3 class="text-black text-lg poppins-regular">Keunggulan layanan penyewaan kami :</h3>
@@ -385,109 +381,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- Service Features Section --}}
-
-        {{-- Testimonial Section --}}
-        <div class="mt-10">
-            <div class="poppins-regular">
-                <h2 class="text-gray-600 dark:text-gray-400 edu-vic-wa-nt-hand-500 tracking-widest text-xl">Testimoni Pelanggan <span>----></span></h2>
-                <p class="text-black dark:text-white text-3xl lg:text-5xl lg:w-2/3 mt-2">PENGALAMAN MENYEWA DARI PELANGGAN KAMI</p>
-            </div>
-
-            {{-- Testimonial Cards --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">SA</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">Sari & Andi</h3>
-                            <p class="text-gray-500 text-sm">Sewa Furniture Set</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Furniture berkualitas bagus dan pelayanan sangat memuaskan. Tim 3Rasa profesional dalam setup dan maintenance!"</p>
-                </div>
-
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">RF</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">Rina & Fadil</h3>
-                            <p class="text-gray-500 text-sm">Sewa Dekorasi</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Harga terjangkau dengan kualitas premium. Dekorasi yang disewa membuat pernikahan kami jadi lebih elegant!"</p>
-                </div>
-
-                <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">DN</span>
-                        </div>
-                        <div class="ml-3">
-                            <h3 class="font-semibold text-gray-800">Dina & Nurul</h3>
-                            <p class="text-gray-500 text-sm">Sewa Paket Lengkap</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Paket lengkap sangat memudahkan dan hemat. Semua kebutuhan pernikahan tersedia dengan kualitas terbaik!"</p>
-                </div>
-            </div>
-        </div>
-
-        {{-- CTA Section --}}
-        <div class="mt-16 text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white">
-            <h3 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand">
-                Siap Wujudkan Pernikahan Impian?
-            </h3>
-            <p class="text-xl mb-8 pt-serif-regular-italic opacity-90">
-                Konsultasi gratis dengan tim ahli kami untuk mendapatkan paket sewa terbaik
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="flex group hover:scale-105 transition-all duration-300 bg-white rounded-full justify-center items-center">
-                    <span class="my-3 mx-4 ml-6 pt-serif-regular text-black">
-                        WhatsApp Konsultasi
-                    </span>
-                    <div class="h-12 w-12 border-2 bg-green-500 text-white rounded-full p-2 group-hover:rotate-45 duration-300 transition-all flex items-center justify-center">
-                        <x-bi-whatsapp class="w-6 h-6" />
-                    </div>
-                </button>
-                <button class="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 rounded-full transition-all duration-300 edu-vic-wa-nt-hand tracking-wide">
-                    Lihat Katalog Lengkap
-                </button>
-            </div>
-        </div>
-
-        {{-- Contact Information --}}
-        <div class="mt-16 mb-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <x-bi-telephone class="w-8 h-8 text-white" />
-                </div>
-                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Telepon</h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">+62 851-0000-0000</p>
-            </div>
-
-            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <x-bi-instagram class="w-8 h-8 text-white" />
-                </div>
-                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Instagram</h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">@3rasa_wedding</p>
-            </div>
-
-            <div class="text-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <x-heroicon-o-map-pin class="w-8 h-8 text-white" />
-                </div>
-                <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Lokasi</h4>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tarakan, Kalimantan Utara</p>
-            </div>
-        </div>
-
     </div>
 </div>
 

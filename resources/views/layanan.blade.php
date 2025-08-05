@@ -297,9 +297,11 @@
                                 Tenda dan canopy
                             </li>
                         </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
+                        <a href="/layanansewa">
+                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
+                                Selengkapnya
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

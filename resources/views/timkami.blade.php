@@ -21,10 +21,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-right" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Tim Profesional Kami
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-left" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Dibalik setiap momen spesial yang kami ciptakan, terdapat tim profesional yang berdedikasi tinggi dengan pengalaman bertahun-tahun dalam industri wedding organizer.
                 </p>
             </div>
@@ -33,7 +33,7 @@
 
 
     <!-- Team Stats Section (Menggunakan data dinamis) -->
-    <div class="px-8">
+    <div data-aos="zoom-in-down" class="px-8">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
                 <div class="text-center p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl hover:scale-105 transition-all duration-300">
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Core Team Section (Menggunakan data dari database) -->
-    <div class="py-20 px-8 bg-gray-50 dark:bg-gray-900">
+    {{-- <div class="py-20 px-8 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">
@@ -113,22 +113,22 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Extended Team Section (Support Team dari database) -->
-    <div class="py-20 px-8">
+    <div  class="py-20 px-8">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">
-                    Tim Pendukung
+            <div data-aos="zoom-in-up" class="text-center mb-16">
+                <h2 data-aos="zoom-in-down" class="text-4xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">
+                    Tim Kami
                 </h2>
-                <p class="text-lg pt-serif-regular-italic text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="text-lg pt-serif-regular-italic text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                     Didukung oleh para ahli di bidangnya masing-masing untuk memberikan layanan terbaik.
                 </p>
             </div>
 
             @if($supportTeam->count() > 0)
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div data-aos="zoom-in-up" class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 @php
                 $supportGradients = [
                     'from-red-400 to-pink-400',
@@ -251,9 +251,11 @@
                     </p>
                     <x-heroicon-o-arrow-small-up class="h-10 w-10 border-2 bg-black dark:bg-white text-white dark:text-black rounded-full p-1 group-hover:rotate-45 duration-300 transition-all" />
                 </button>
-                <button class="edu-vic-wa-nt-hand-500 font-semibold border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-xl px-6 py-3">
-                    Lihat Portfolio
-                </button>
+                <a href="/portofolio">
+                    <button class="edu-vic-wa-nt-hand-500 font-semibold border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-xl px-6 py-3">
+                        Lihat Portfolio
+                    </button>
+                </a>
             </div>
         </div>
     </div>
