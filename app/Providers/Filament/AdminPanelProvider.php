@@ -32,6 +32,9 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->brandName('3Rasa Admin Panel')
+            // ->brandLogo(asset('storage/content/Logo.png'))
+            // ->brandLogoHeight('3rem')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -44,8 +47,8 @@ class AdminPanelProvider extends PanelProvider
                 // Widgets\FilamentInfoWidget::class,
             ])->navigationGroups([
                 'Layanan',
-                'Transaksi',
-                'Manajemen Konten',
+                'Manajemen Layanan',
+                'Konten Website',
                 'UserManagement',
                 'Settings',
             ])->collapsibleNavigationGroups(false)

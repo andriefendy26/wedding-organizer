@@ -327,63 +327,81 @@
             </div>
             {{-- marquee ke kiri --}}
             <div class="marquee-left flex space-x-6 mb-8 whitespace-nowrap">
-                @foreach($topTestimonials as $testimonial)
+                @foreach($testimoni as $testimonial)
                     <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
                                 <span class="text-white font-bold text-lg">JD</span>
                             </div>
                             <div class="ml-3">
-                                <h3 class="font-semibold text-gray-800">John Doe</h3>
-                                <p class="text-gray-500 text-sm">yap</p>
+                                <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
+                                <p class="text-gray-500 text-sm">
+                                      <!-- Rating dalam bentuk ikon bintang -->
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
+                                </p>
                             </div>
                         </div>
-                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
+                        <p class="text-gray-700 whitespace-normal">{{ Str::limit($testimonial->deskripsi, 100, '...') }}</p>
                     </div>
                 @endforeach
-                @foreach($topTestimonials as $testimonial)
+                @foreach($testimoni as $testimonial)
                     <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
                                 <span class="text-white font-bold text-lg">JD</span>
                             </div>
                             <div class="ml-3">
-                                <h3 class="font-semibold text-gray-800">John Doe</h3>
-                                <p class="text-gray-500 text-sm">yap</p>
+                                <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
+                                <p class="text-gray-500 text-sm">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
+                                </p>
                             </div>
                         </div>
-                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
+                        <p class="text-gray-700 whitespace-normal">{{ Str::limit($testimonial->deskripsi, 100, '...') }}</p>
                     </div>
                 @endforeach
             </div>
             {{-- marquee ke kanan --}}
             <div class="marquee-right flex space-x-6 whitespace-nowrap">
-                @foreach($topTestimonials as $testimonial)
+                @foreach($testimoni as $testimonial)
                     <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
                                 <span class="text-white font-bold text-lg">JD</span>
                             </div>
                             <div class="ml-3">
-                                <h3 class="font-semibold text-gray-800">John Doe</h3>
-                                <p class="text-gray-500 text-sm">yap</p>
+                                <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
+                                <p class="text-gray-500 text-sm">
+                                      <!-- Rating dalam bentuk ikon bintang -->
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
+                                </p>
                             </div>
                         </div>
-                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
+                        <p class="text-gray-700 whitespace-normal">{{ Str::limit($testimonial->deskripsi, 100, '...') }}</p>
                     </div>
                 @endforeach
-                @foreach($topTestimonials as $testimonial)
+                @foreach($testimoni as $testimonial)
                     <div class="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-6 max-w-80 flex-shrink-0">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center bg-black">
                                 <span class="text-white font-bold text-lg">JD</span>
                             </div>
                             <div class="ml-3">
-                                <h3 class="font-semibold text-gray-800">John Doe</h3>
-                                <p class="text-gray-500 text-sm">yap</p>
+                                <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
+                                <p class="text-gray-500 text-sm">  <!-- Rating dalam bentuk ikon bintang -->
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
+                                </p>
                             </div>
                         </div>
-                        <p class="text-gray-700 whitespace-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, recusandae!</p>
+                        <p class="text-gray-700 whitespace-normal">{{ Str::limit($testimonial->deskripsi, 100, '...') }}</p>
                     </div>
                 @endforeach
             </div>
@@ -566,105 +584,145 @@
                 </div>
             </div>
 
-        {{-- Services Grid --}}
-           {{-- Services Grid --}}
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {{-- Services Grid--}}
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
                 {{-- Service 1: Wedding Organizer --}}
-                <div data-aos="zoom-in-up" class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center relative">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-[--color-primary] text-white px-3 py-1 rounded-full text-sm font-semibold">Populer</span>
+                <div data-aos="fade-up" class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                    {{-- Image with modern overlay --}}
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                        
+                        {{-- Floating badge --}}
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-[--color-primary]/90  text-white px-3 py-1.5 rounded-full text-xs font-medium tracking-wide">
+                                POPULER
+                            </span>
+                        </div>
+                        
+                        {{-- Service icon --}}
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white/90 dark:bg-gray-800/90  rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <x-heroicon-o-heart class="w-6 h-6 text-[--color-primary]" />
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Wedding Organizer
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Perencana pernikahan lengkap dari konsep hingga eksekusi, menciptakan momen istimewa yang tak terlupakan.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Konsultasi dan perencanaan
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Koordinasi vendor
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Pengawasan acara
-                            </li>
-                        </ul>
-                        <button class="w-full bg-[--color-primary] text-white rounded-xl py-3 font-semibold hover:bg-opacity-90 transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
+                    
+                    {{-- Content --}}
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[--color-primary] transition-colors duration-300">
+                                Wedding Organizer
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Perencana pernikahan lengkap dari konsep hingga eksekusi yang tak terlupakan.
+                            </p>
+                        </div>
+                        
+                        {{-- Features with modern pills --}}
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Konsultasi
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Koordinasi
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Pengawasan
+                            </span>
+                        </div>
+                        
+                        {{-- CTA Button --}}
+                        <a href="/layananwedding" class="block">
+                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-[--color-primary]/25">
+                                Pelajari Selengkapnya
+                            </button>
+                        </a>
                     </div>
                 </div>
 
                 {{-- Service 2: Dekorasi --}}
-                <div data-aos="zoom-in-down" class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] bg-cover bg-center relative">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
+                <div data-aos="fade-down"  class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                        
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white/90 dark:bg-gray-800/90  rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <x-heroicon-o-sparkles class="w-6 h-6 text-[--color-primary]" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Dekorasi Acara
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Desain dekorasi kreatif dan elegan untuk berbagai jenis acara sesuai tema dan budget Anda.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Desain konsep tema
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Backdrop dan panggung
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Lighting artistik
-                            </li>
-                        </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
+                    
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[--color-primary] transition-colors duration-300">
+                                Dekorasi Acara
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Desain dekorasi kreatif dan elegan sesuai tema dan budget Anda.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Konsep Tema
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Backdrop
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Lighting
+                            </span>
+                        </div>
+                        <a href="/layanandekorasi" class="block">
+                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-[--color-primary]/25">
+                                Pelajari Selengkapnya
+                            </button>
+                        </a>
                     </div>
                 </div>
 
                 {{-- Service 3: Sewa Perlengkapan --}}
-                <div data-aos="zoom-in-up" class="group bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
-                    <div class="h-64 bg-[url({{ asset('storage/content/prop/kursi.jpg') }})] bg-cover bg-center relative">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
+                <div data-aos="fade-left" class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-[url({{ asset('storage/content/prop/kursi.jpg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                        
+                        <div class="absolute bottom-4 left-4">
+                            <div class="w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <x-heroicon-o-cube class="w-6 h-6 text-[--color-primary]" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
-                            Sewa Perlengkapan
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-4">
-                            Penyewaan berbagai perlengkapan acara berkualitas tinggi dengan harga terjangkau.
-                        </p>
-                        <ul class="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Furniture & sofa
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Sound system
-                            </li>
-                            <li class="flex items-center">
-                                <x-heroicon-o-check-circle class="w-4 h-4 text-[--color-primary] mr-2" />
-                                Tenda dan canopy
-                            </li>
-                        </ul>
-                        <button class="w-full border-2 border-[--color-primary] text-[--color-primary] rounded-xl py-3 font-semibold hover:bg-[--color-primary] hover:text-white transition-all duration-300">
-                            Pelajari Lebih Lanjut
-                        </button>
+                    
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[--color-primary] transition-colors duration-300">
+                                Sewa Perlengkapan
+                            </h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Penyewaan berbagai perlengkapan acara berkualitas tinggi.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Furniture
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Sound System
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                Tenda
+                            </span>
+                        </div>
+                        
+                        <a href="/layanansewa" class="block">
+                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-[--color-primary]/25">
+                                Pelajari Selengkapnya
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

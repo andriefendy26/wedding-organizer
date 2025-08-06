@@ -21,6 +21,8 @@ class LetterResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Surat';
     protected static ?string $pluralModelLabel = 'Surat';
+    // protected static ?string $navigationGroup = 'Manajemen Layanan';
+
 
     public static function form(Form $form): Form
     {

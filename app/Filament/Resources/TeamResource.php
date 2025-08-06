@@ -35,7 +35,7 @@ class TeamResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Tim';
     
-    protected static ?string $navigationGroup = 'Manajemen Konten';
+    protected static ?string $navigationGroup = 'Konten Website';
     
     protected static ?int $navigationSort = 3;
 

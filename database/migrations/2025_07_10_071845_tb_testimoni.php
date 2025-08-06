@@ -14,14 +14,14 @@ return new class extends Migration
         //
          Schema::create('tb_testimoni', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('foto');
+            // $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('foto')->nullable();
             $table->string('nama');
             $table->string('rating');
             $table->string('deskripsi');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

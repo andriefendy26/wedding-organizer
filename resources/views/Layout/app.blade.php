@@ -25,6 +25,8 @@
     {{-- Animate On Scroll --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <!-- Scripts - -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -602,6 +604,8 @@
         </button>
     </div>
 
+    <!-- Discount Overlay Component -->
+    {{-- @include('components.overlay') --}}
     
     <script>
         function closeAlert(alertId) {

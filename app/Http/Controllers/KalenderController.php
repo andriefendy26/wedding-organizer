@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class KalenderController extends Controller
 {
-    //
     public function index()
     {
         // halaman blade untuk fullcalendar
@@ -19,22 +18,39 @@ class KalenderController extends Controller
         $start = $request->query('start');
         $end = $request->query('end');
 
-        $query = \App\Models\Transaksi::with('customer');
+        $query = KalenderKetersediaan::query();
+        
         if ($start && $end) {
             $query->where(function($q) use ($start, $end) {
-                $q->whereBetween('tanggal_sewa', [$start, $end])
-                  ->orWhereBetween('tanggal_kembali', [$start, $end]);
+                $q->whereBetween('start_date', [$start, $end])
+                  ->orWhereBetween('end_date', [$start, $end])
+                  ->orWhere(function($subQ) use ($start, $end) {
+                      // Include events that span across the requested date range
+                      $subQ->where('start_date', '<=', $start)
+                           ->where('end_date', '>=', $end);
+                  });
             });
         }
 
         $events = $query->get()->map(function ($item) {
-            $nama = $item->customer ? $item->customer->nama : 'Tanpa Customer';
-            $layanan = $item->layanan ? $item->layanan->nama : '-';
+            // Tentukan warna berdasarkan status
+            $color = match($item->status) {
+                'tersedia' => '#38a169',      // hijau untuk tersedia
+                'tidak_tersedia' => '#e53e3e', // merah untuk tidak tersedia
+                'maintenance' => '#f56500',    // orange untuk maintenance
+                default => '#718096'           // abu-abu untuk status lainnya
+            };
+
             return [
-                'title' => $nama . ' | ' . $layanan,
-                'start' => $item->tanggal_sewa,
-                'end' => $item->tanggal_kembali,
-                'color' => $item->status ? '#38a169' : '#e53e3e',
+                'title' => ucfirst($item->status) . ($item->catatan ? ' - ' . $item->catatan : ''),
+                'start' => $item->start_date->format('Y-m-d'),
+                'end' => $item->end_date->format('Y-m-d'),
+                'color' => $color,
+                'extendedProps' => [
+                    'status' => $item->status,
+                    'catatan' => $item->catatan,
+                    'id' => $item->id
+                ]
             ];
         });
 
