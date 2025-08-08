@@ -66,30 +66,26 @@
             </div>
 
             
-            <div class="item bg-white dark:bg-gray-800 bg-[url({{ asset('storage/content/wedding01.jpg') }})] " >
+            <div x-data="{kursiIsOpen : true}" class="item sm bg-white  dark:bg-gray-800 bg-[url({{ asset('storage/content/gif03.gif') }})] " >
                 {{-- <div class="absolute inset-0 bg-white dark:bg-gray-800 "></div> --}}
-                <div class="content z-1 p-8 bg-white lg:dark:bg-gray-800 dark:bg-gray-800">
-                    <div class="lg:grid grid-cols-1 my-32 lg:my-0 lg:grid-cols-2 lg:px-20">
-                        {{-- <div class="absolute inset-0 bg-gray-800/50 lg:hidden"></div> --}}
-                        <div class="flex flex-col justify-center items-start">
-                            <h1 class="dark:text-white text-black text-2xl lg:text-4xl xl:text-5xl tracking-wide font-semibold edu-vic-wa-nt-hand">
-                                  Wujudkan Momen Spesial Anda Bersama Kami!
-                            </h1>
-                            <p class="my-3 text-gray-600 dark:text-gray-200 text-lg pt-serif-regular-italic">Dari pesta pernikahan yang elegan, event korporat profesional, hinggapenyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.</p>
-                            <div class="edu-vic-wa-nt-hand-500 font-semibold">
-                                <button class="border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300  border-[--color-primary] text-[--color-primary] dark:text-black dark:bg-white dark:border-none rounded-xl px-5 p-2">
-                                    Lihat Katalog Sewa 
-                                </button>
-                                <button class=" text-white bg-[--color-primary] rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 ">Hubungi Kami</button>
-                            </div>
-                        </div>
-
-                        <div class="lg:flex justify-center items-center hidden">
-                            <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Wedding Organizer" class=" [mask-image:url({{  asset('storage/content/masking/mask1.png') }})] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] rounded-lg shadow-lg">
+                <div class="content relative w-full h-full pt-48 flex text-center justify-center items-center">
+                    <div class="flex flex-col justify-center items-center">
+                        <h2 class="lg:w-[30%] text-white text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
+                                Wujudkan Momen Spesial Anda Bersama Kami!
+                        </h2>
+                        <p class="lg:w-[50%] my-6 text-gray-200 text-lg pt-serif-regular-italic">Dari pesta pernikahan yang elegan, event korporat profesional, hinggapenyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.</p>
+                        <div class="flex justify-center items-start edu-vic-wa-nt-hand-500 font-semibold gap-3">
+                            <button class="tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 text-black bg-white rounded-xl px-5 p-2">
+                                Konsultasi Gratis
+                            </button>
+                            <button class=" text-white bg-[--color-primary] rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 ">Lihat Portofolio</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            
+          
             
             <div x-data="{kursiIsOpen : true}" class="item bg-white  dark:bg-gray-800 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] " >
                 {{-- <div class="absolute inset-0 bg-white dark:bg-gray-800 "></div> --}}
@@ -118,30 +114,32 @@
                 </div>
                 
             </div>
-
-            
-            <div class="item bg-white dark:bg-gray-800 bg-[url({{ asset('storage/content/wedding01.jpg') }})] " >
+            <div x-data="{kursiIsOpen : true}" class="item bg-white  dark:bg-gray-800 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] " >
                 {{-- <div class="absolute inset-0 bg-white dark:bg-gray-800 "></div> --}}
-                <div class="content z-1 p-8 bg-white dark:bg-gray-800">
-                    <div class="grid grid-cols-2 px-20">
-                        <div class="flex flex-col justify-center items-start">
-                            <h1 class="dark:text-white text-black text-6xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
-                                  
-                                  Wujudkan Momen Spesial Anda Bersama Kami!
-                            </h1>
-                            <p class="my-6 text-gray-600 dark:text-gray-200 text-lg pt-serif-regular-italic">Dari pesta pernikahan yang elegan, event korporat profesional, hinggapenyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.</p>
-                            <div class="edu-vic-wa-nt-hand-500 font-semibold">
-                                <button class="border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300  border-[--color-primary] text-[--color-primary] dark:text-black dark:bg-white dark:border-none rounded-xl px-5 p-2">
-                                    Lihat Katalog Sewa 
-                                </button>
-                                <button class=" text-white bg-[--color-primary] rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 ">Hubungi Kami</button>
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Wedding Organizer" class=" [mask-image:url({{  asset('storage/content/masking/mask1.png') }})] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain] rounded-lg shadow-lg">
+                <div class="content relative w-full h-full pt-48 flex text-center justify-center items-center">
+                    <div class="flex flex-col justify-center items-center">
+                        <h2 class="w-[30%] dark:text-white text-black text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
+                                Sewa Perlengkapan Pernikahan & Acara Lengkap di 3Rasa
+                        </h2>
+                        <p class="w-[50%] my-6 text-black dark:text-gray-200 text-lg pt-serif-regular-italic">Dari pesta pernikahan yang elegan, event korporat profesional, hinggapenyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.</p>
+                    </div>
+
+                    
+                </div>
+                {{-- titik titik --}}
+                <div x-on:click="kursiIsOpen = ! kursiIsOpen" class="absolute z-[2] cursor-pointer top-[60%] left-[25%] w-4 h-4 rounded-full bg-white border-[3px]  border-gray-600 "></div>
+                {{-- Card kecil, letakkan di dalam salah satu .item --}}
+                
+                <div x-show="kursiIsOpen" class="tambahan absolute bottom-44 left-24 z-20">
+                    <div class="bg-white dark:bg-gray-800/80 rounded-xl shadow-lg p-4 flex items-center gap-4 min-w-[150px] max-w-[250px] border border-gray-200 dark:border-gray-700">
+                        <img src="{{ asset('storage/content/prop/kursi.jpg') }}" alt="Logo" class="w-20 h-20 rounded-lg shadow">
+                        <div>
+                            <div class="font-bold text-[--color-primary] text-sm">Sofa</div>
+                            <div class="text-xs text-gray-700 dark:text-gray-200">Sofa premium berbahan plastik tebal dengan rangka kokoh</div>
                         </div>
                     </div>
                 </div>
+                
             </div>
 
 

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('tb_portofolio', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('portofolio_id')->before('layanan_id')->nullable();
-            $table->foreign('portofolio_id')->references('id')->on('tb_team')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('team_id')->before('layanan_id')->nullable();
+            $table->foreign('team_id')->references('id')->on('tb_team')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

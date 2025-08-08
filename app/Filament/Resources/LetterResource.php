@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Filament\Notifications\Notification;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Http\Response;
 
 class LetterResource extends Resource
 {
@@ -21,8 +22,6 @@ class LetterResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Surat';
     protected static ?string $pluralModelLabel = 'Surat';
-    // protected static ?string $navigationGroup = 'Manajemen Layanan';
-
 
     public static function form(Form $form): Form
     {
@@ -102,12 +101,14 @@ class LetterResource extends Resource
                         'secondary' => 'draft',
                         'warning' => 'processed',
                         'success' => 'completed',
+                        'danger' => 'error',
                     ])
                     ->formatStateUsing(function ($state) {
                         return match($state) {
                             'draft' => 'Draft',
                             'processed' => 'Diproses',
                             'completed' => 'Selesai',
+                            'error' => 'Error',
                             default => $state
                         };
                     }),
@@ -123,25 +124,92 @@ class LetterResource extends Resource
                         'draft' => 'Draft',
                         'processed' => 'Diproses',
                         'completed' => 'Selesai',
+                        'error' => 'Error',
                     ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                
                 Tables\Actions\Action::make('download')
                     ->label('Download')
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(function (Letter $record) {
-                        if ($record->signed_file_path) {
-                            return response()->download(storage_path('app/' . $record->signed_file_path));
+                        try {
+                            if (!$record->signed_file_path) {
+                                throw new \Exception('File signed belum tersedia');
+                            }
+                            
+                            $filePath = storage_path('app/' . $record->signed_file_path);
+                            
+                            if (!file_exists($filePath)) {
+                                throw new \Exception('File tidak ditemukan di: ' . $filePath);
+                            }
+                            
+                            $fileName = 'surat_' . $record->nomor_surat . '.pdf';
+                            
+                            return response()->download($filePath, $fileName, [
+                                'Content-Type' => 'application/pdf',
+                            ]);
+                            
+                        } catch (\Exception $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title('Error Download')
+                                ->body('Gagal download file: ' . $e->getMessage())
+                                ->send();
+                                
+                            return null;
                         }
-                        
-                        Notification::make()
-                            ->warning()
-                            ->title('File belum tersedia')
-                            ->body('Surat belum diproses atau file tidak ditemukan.')
-                            ->send();
                     })
                     ->hidden(fn (Letter $record) => !$record->signed_file_path),
+                
+                Tables\Actions\Action::make('regenerate_qr')
+                    ->label('Regenerate QR')
+                    ->icon('heroicon-o-arrow-path')
+                    ->color('warning')
+                    ->requiresConfirmation()
+                    ->action(function (Letter $record) {
+                        try {
+                            $qrService = app(QrCodeService::class);
+                            
+                            // Generate ulang QR Code
+                            $qrCodePath = $qrService->generateQrCode(
+                                url($record->public_link),
+                                'qr_' . $record->id . '_' . time()
+                            );
+                            
+                            // Generate ulang PDF dengan QR
+                            $signedFileName = 'signed_' . $record->id . '_' . time() . '.pdf';
+                            $signedFilePath = 'letters/signed/' . $signedFileName;
+                            
+                            $finalPath = $qrService->addQrCodeToPdf(
+                                $record->original_file_path,
+                                $qrCodePath,
+                                $signedFilePath
+                            );
+                            
+                            // Update record
+                            $record->update([
+                                'signed_file_path' => $finalPath,
+                                'qr_code_path' => $qrCodePath,
+                                'status' => 'completed'
+                            ]);
+                            
+                            Notification::make()
+                                ->success()
+                                ->title('Berhasil')
+                                ->body('QR Code berhasil di-regenerate')
+                                ->send();
+                                
+                        } catch (\Exception $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title('Error')
+                                ->body('Gagal regenerate QR: ' . $e->getMessage())
+                                ->send();
+                        }
+                    })
+                    ->hidden(fn (Letter $record) => $record->status !== 'completed'),
                     
                 Tables\Actions\Action::make('view_public')
                     ->label('Lihat Public')

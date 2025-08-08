@@ -18,7 +18,8 @@ class KonsultasiResource extends Resource
     protected static ?string $model = Konsultasi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'UserManagement'; 
+    protected static ?string $navigationGroup = 'Manajemen Layanan';
+     
     public static function form(Form $form): Form
     {
         return $form

@@ -10,6 +10,7 @@
         "bezhansalleh/filament-shield": "^3.3",
         "codeat3/blade-simple-icons": "^7.7",
         "davidhsianturi/blade-bootstrap-icons": "^2.1",
+        "endroid/qr-code": "^5.0",
         "filament/filament": "^3.3",
         "graham-campbell/markdown": "^16.0",
         "guzzlehttp/guzzle": "^7.9",

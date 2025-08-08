@@ -17,8 +17,9 @@ class Team extends Model
         'email',
         'deskripsi',
     ];
+
     public function portofolios()
     {
-        return $this->hasMany(Portofolio::class, 'portofolio_id');
+        return $this->hasMany(Portofolio::class, 'team_id');
     }
 }

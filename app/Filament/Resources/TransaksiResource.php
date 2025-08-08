@@ -239,13 +239,13 @@ class TransaksiResource extends Resource
                     ->prefix('Rp ')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('public_id')
-                    ->label('Link Pembayaran')
-                    ->url(fn($record) => route('bayar.show', $record->public_id), true)
-                    ->openUrlInNewTab()
-                    ->copyable()
-                    ->copyMessage('Link disalin')
-                    ->copyMessageDuration(1500),
+                // TextColumn::make('public_id')
+                //     ->label('Link Pembayaran')
+                //     ->url(fn($record) => route('bayar.show', $record->public_id), true)
+                //     ->openUrlInNewTab()
+                //     ->copyable()
+                //     ->copyMessage('Link disalin')
+                //     ->copyMessageDuration(1500),
                 TextColumn::make('tanggal_sewa')
                     ->date()
                     ->sortable(),
@@ -261,6 +261,12 @@ class TransaksiResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                 Tables\Actions\Action::make('view_public')
+                    ->label('Lihat Public')
+                    ->icon('heroicon-o-eye')
+                    ->url(fn($record) => route('bayar.show', $record->public_id), true)
+                    ->openUrlInNewTab()
+                    // ->hidden(fn (Letter $record) => !$record->public_link)
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

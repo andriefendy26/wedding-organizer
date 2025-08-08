@@ -36,39 +36,6 @@
 
         {{-- Category Selection --}}
         <div class="mt-12 mb-16" x-data="{ activeCategory: 'furniture' }">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl lg:text-4xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-8">Kategori Penyewaan</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button 
-                        @click="activeCategory = 'furniture'"
-                        :class="activeCategory === 'furniture' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Furniture & Kursi
-                    </button>
-                    <button 
-                        @click="activeCategory = 'decoration'"
-                        :class="activeCategory === 'decoration' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Dekorasi & Backdrop
-                    </button>
-                    <button 
-                        @click="activeCategory = 'lighting'"
-                        :class="activeCategory === 'lighting' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Lighting & Sound
-                    </button>
-                    <button 
-                        @click="activeCategory = 'tableware'"
-                        :class="activeCategory === 'tableware' ? 'bg-[--color-primary] text-white' : 'border-2 border-[--color-primary] text-[--color-primary] hover:bg-[--color-primary] hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'"
-                        class="px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 edu-vic-wa-nt-hand tracking-wide"
-                    >
-                        Peralatan Makan
-                    </button>
-                </div>
-            </div>
 
             {{-- Featured Product Grid (similar to homepage cards) --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -117,223 +84,64 @@
             </div>
 
             {{-- Product Grid --}}
-            <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                {{-- Kursi Tiffany --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/prop/kursi.jpg') }}" alt="Kursi Tiffany" class="w-32 h-32 object-cover rounded-lg shadow">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Kursi Tiffany</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Kursi elegant transparan berkualitas tinggi</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 15.000</div>
-                                <div class="text-xs text-gray-500">per unit/hari</div>
+          
+           <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                @foreach ($dataBarang as $barang)
+                    <div class="group relative bg-white/70 dark:bg-gray-800/70 rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                        {{-- Image with modern overlay --}}
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="{{ asset('storage/barang/' . $barang['foto']) }}" 
+                                alt="{{ $barang['nama'] }}" 
+                                class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700" 
+                                onerror="this.src='{{ asset('storage/content/decoration01.jpeg') }}'">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
+                            
+                            {{-- Floating availability badge --}}
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-[--color-primary]/90 text-white px-3 py-1.5 rounded-full text-xs font-medium tracking-wide">
+                                    TERSEDIA
+                                </span>
                             </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
+                            
+                            {{-- Furniture icon --}}
+                            <div class="absolute bottom-4 left-4">
+                                <div class="w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 text-[--color-primary]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {{-- Content --}}
+                        <div class="p-6 space-y-4">
+                            <div class="space-y-2">
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[--color-primary] transition-colors duration-300 edu-vic-wa-nt-hand">
+                                    {{ $barang['nama'] }}
+                                </h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed pt-serif-regular">
+                                     {{ Str::limit($barang['deskripsi'], 100) }}
+                                </p>
+                            </div>
+                            
+                            {{-- Price section --}}
+                            <div class="space-y-1">
+                                <div class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">
+                                    Rp {{ number_format($barang['harga'], 0, ',', '.') }}
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                    per set/hari
+                                </span>
+                            </div>
+                            
+                            {{-- CTA Button --}}
+                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-[--color-primary]/25 hover:scale-105">
+                                Pesan Sekarang
                             </button>
                         </div>
                     </div>
-                </div>
-
-                {{-- Meja Bulat --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/prop/meja.jpg') }}" alt="Meja Bulat" class="w-32 h-32 object-cover rounded-lg shadow">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Meja Bulat Premium</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Meja bulat kapasitas 8-10 orang dengan taplak</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 85.000</div>
-                                <div class="text-xs text-gray-500">per unit/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Sofa VIP --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/prop/sofa-vip.jpg') }}" alt="Sofa VIP" class="w-32 h-32 object-cover rounded-lg shadow">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Sofa VIP Set</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set sofa VIP untuk pengantin dan keluarga</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 450.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Gazebo --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/prop/gazebo.jpg') }}" alt="Gazebo" class="w-32 h-32 object-cover rounded-lg shadow">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Gazebo Elegant</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Gazebo dengan dekorasi untuk akad nikah</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 750.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Decoration Category --}}
-            <div x-show="activeCategory === 'decoration'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                {{-- Backdrop Premium --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Backdrop" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Backdrop Premium</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Backdrop elegant dengan dekorasi bunga</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 650.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Pelaminan --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Pelaminan" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Pelaminan Mewah</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Pelaminan dengan ornamen traditional</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 1.200.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Lighting Category --}}
-            <div x-show="activeCategory === 'lighting'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                {{-- LED Strip --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-yellow-400 rounded-lg flex items-center justify-center">
-                            <span class="text-4xl">💡</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">LED Strip Premium</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Lampu LED strip dengan berbagai warna</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 150.000</div>
-                                <div class="text-xs text-gray-500">per meter/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Sound System --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-blue-400 rounded-lg flex items-center justify-center">
-                            <span class="text-4xl">🔊</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Sound System Pro</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Sound system professional dengan operator</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 450.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- Tableware Category --}}
-            <div x-show="activeCategory === 'tableware'" style="display: none;" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                {{-- Piring Set --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-green-400 rounded-lg flex items-center justify-center">
-                            <span class="text-4xl">🍽️</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Piring Set Premium</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set piring keramik berkualitas tinggi</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 5.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Gelas Set --}}
-                <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
-                    <div class="relative h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                        <div class="w-32 h-32 bg-purple-400 rounded-lg flex items-center justify-center">
-                            <span class="text-4xl">🥃</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="text-lg font-semibold mb-2 edu-vic-wa-nt-hand text-black dark:text-white">Gelas Set Premium</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4 pt-serif-regular">Set gelas kaca untuk minuman</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">Rp 3.000</div>
-                                <div class="text-xs text-gray-500">per set/hari</div>
-                            </div>
-                            <button class="px-4 py-2 bg-[--color-primary] text-white rounded-lg text-sm hover:scale-105 transition-transform">
-                                Pesan
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 

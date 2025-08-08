@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('layanan_id');
             $table->unsignedBigInteger('paket_layanan_id')->nullable();
             $table->date('tanggal_sewa');
-            $table->date('tanggal_kemdbali');
+            $table->date('tanggal_kemdali');
             $table->string('bukti_bayar')->nullable();
             $table->string('total_biaya');
             $table->string('status');

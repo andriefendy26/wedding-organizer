@@ -38,4 +38,3 @@ class PublicLetterController extends Controller
         );
     }
 }
-

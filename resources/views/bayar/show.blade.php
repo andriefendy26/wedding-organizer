@@ -35,16 +35,21 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach($transaksi->barangTransaksi as $item)
+                      <tbody>
+                        @forelse($transaksi->barangTransaksi as $item)
                             <tr>
-                                <td>{{ $item->barang->nama }}</td>
+                                <td>{{ $item->barang?->nama ?? '-' }}</td>
                                 <td>{{ $item->jumlah }}</td>
                                 <td>Rp {{ number_format($item->harga_satuan,0,',','.') }}</td>
                                 <td>Rp {{ number_format($item->total,0,',','.') }}</td>
                             </tr>
-                            @endforeach
-                        </tbody>
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center text-gray-500">Tidak ada barang dalam transaksi ini.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+
                         <tfoot>
                             <tr>
                                 <th colspan="3" class="text-end">Total Biaya</th>

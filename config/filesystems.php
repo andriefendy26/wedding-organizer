@@ -56,23 +56,23 @@ return [
             'throw' => false,
         ],
 
-        //news
+        // Disk khusus untuk letters
+        'letters' => [
+            'driver' => 'local',
+            'root' => storage_path('app/letters'),
+            'url' => env('APP_URL').'/storage/letters',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
-        // 'letters' => [
-        //     'driver' => 'local',
-        //     'root' => storage_path('app/letters'),
-        //     'url' => env('APP_URL').'/storage/letters',
-        //     'visibility' => 'public',
-        //     'throw' => false,
-        // ],
-        
-        // 'qr_codes' => [
-        //     'driver' => 'local',
-        //     'root' => storage_path('app/qr-codes'),
-        //     'url' => env('APP_URL').'/storage/qr-codes',
-        //     'visibility' => 'public',
-        //     'throw' => false,
-        // ],
+        // Disk khusus untuk QR codes
+        'qr-codes' => [
+            'driver' => 'local',
+            'root' => storage_path('app/qr-codes'),
+            'url' => env('APP_URL').'/storage/qr-codes',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
     ],
 
     /*
@@ -88,6 +88,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/letters') => storage_path('app/letters'),
+        public_path('storage/qr-codes') => storage_path('app/qr-codes'),
     ],
 
 ];

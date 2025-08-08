@@ -256,15 +256,15 @@
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
                             <span class="text-gray-700 dark:text-gray-300">Sabtu</span>
-                            <span class="font-medium text-black dark:text-white">09.00 - 16.00</span>
+                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
                             <span class="text-gray-700 dark:text-gray-300">Minggu</span>
-                            <span class="text-red-500 font-medium">Tutup</span>
+                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
                         <div class="flex justify-between items-center py-2">
                             <span class="text-gray-700 dark:text-gray-300">Hari Libur Nasional</span>
-                            <span class="text-red-500 font-medium">Tutup</span>
+                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
                     </div>
                     

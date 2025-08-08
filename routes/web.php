@@ -9,10 +9,13 @@ use App\Http\Controllers\KalenderController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\DocumentVerificationController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\PublicLetterController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TestimoniController;
+use App\Models\Portofolio;
 use App\Models\Testimoni;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -60,23 +63,22 @@ Route::get('/tentang', function () {
 Route::get('/team', [ContentController::class, 'GetTeam'])->name('team');
 Route::get('/team/{id}', [ContentController::class, 'getTeamMember'])->name('team.member'); // optional
 
-Route::get('/portofolio', function () {
-    return view('portofolio');
-});
+Route::get('/galery', [PortofolioController::class, 'indexGalery'])->name('Galery');
+Route::get('/portofolio', [PortofolioController::class, 'index'])->name('Portofolio');
 
 // route layanan
 Route::get('/layanan', function () {
     return view('layanan');
 });
-Route::get('/detaillayanan', function () {
-    return view('detaillayanan');
-});
-Route::get('/layanansewa', function () {
-    return view('sewabarang');
-});
-Route::get('/layananwedding', function () {
-    return view('weddingorganizer');
-});
+// Route::get('/detaillayanan', function () {
+//     return view('detaillayanan');
+// });
+// Route::get('/layanansewa', function () {
+//     return view('sewabarang');
+// });
+Route::get('/layanansewa', [LayananController::class, 'IndexSewaBarang'])->name('sewa');
+Route::get('/layananwedding', [LayananController::class, 'IndexWedding'])->name('wedding');
+
 Route::get('/layanandekorasi', function () {
     return view('dekorasi');
 });
@@ -100,3 +102,7 @@ Route::prefix('letters/public')->group(function () {
     Route::get('/{slug}/download', [PublicLetterController::class, 'download'])
         ->name('letters.public.download');
 });
+
+// routes/web.php
+// Route::get('/letters/public/{slug}', [PublicLetterController::class, 'show'])->name('letters.public');
+// Route::get('/letters/public/{slug}/download', [PublicLetterController::class, 'download'])->name('letters.public.download');

@@ -39,7 +39,7 @@
     <div class="px-30 py-16">
         {{-- Our Story Section --}}
         <div class="grid grid-cols-2 gap-20 mb-20 items-center">
-            <div>
+            <div data-aos="fade-right" >
                 <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-6">
                     Cerita Kami
                 </h2>
@@ -64,8 +64,8 @@
                     </div>
                 </button>
             </div>
-            <div class="relative">
-                <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="3Rasa Story" class="rounded-2xl shadow-2xl">
+            <div data-aos="fade-left" class="relative">
+                <img src="{{ asset('storage/content/wedding07.jpg') }}" alt="3Rasa Story" class="rounded-2xl shadow-2xl">
                 <div class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-700 rounded-xl p-6 shadow-xl border border-gray-200 dark:border-gray-600">
                     <div class="text-4xl edu-vic-wa-nt-hand text-[--color-primary] font-bold">100+</div>
                     <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
@@ -75,7 +75,7 @@
 
         {{-- Vision & Mission --}}
         <div class="grid grid-cols-2 gap-10 mb-20">
-            <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
+            <div data-aos="fade-up"  class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
                 <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -89,7 +89,7 @@
                 </p>
             </div>
             
-            <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
+            <div data-aos="fade-down"  class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
                 <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -105,7 +105,7 @@
         </div>
 
         {{-- Our Values --}}
-        <div class="mb-20">
+        <div data-aos="fade-up"  class="mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Nilai-Nilai Kami</h2>
                 <p class="text-gray-700 dark:text-gray-300 pt-serif-regular-italic text-xl max-w-3xl mx-auto">
@@ -116,7 +116,7 @@
             <div class="grid grid-cols-3 gap-8">
                 <div class="text-center group hover:scale-105 transition-all duration-300">
                     <div class="w-20 h-20 bg-gradient-to-br from-[--color-primary] to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
                         </svg>
                     </div>
@@ -128,7 +128,7 @@
                 
                 <div class="text-center group hover:scale-105 transition-all duration-300">
                     <div class="w-20 h-20 bg-gradient-to-br from-[--color-primary] to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M5,16L3,14L5,12L6.5,13.5L11,9L12.5,10.5L6.5,16.5L5,16M19,7H22V9H19V12H17V9H14V7H17V4H19V7M17,17V15H15V17H17M13,17V15H11V17H13M9,17V15H7V17H9Z" />
                         </svg>
                     </div>
@@ -140,7 +140,7 @@
                 
                 <div class="text-center group hover:scale-105 transition-all duration-300">
                     <div class="w-20 h-20 bg-gradient-to-br from-[--color-primary] to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
                         </svg>
                     </div>
@@ -152,78 +152,9 @@
             </div>
         </div>
 
-        {{-- Team Section --}}
-        <div class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Tim Profesional Kami</h2>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular-italic text-xl max-w-3xl mx-auto">
-                    Berpengalaman bertahun-tahun dalam industri wedding dan event organizer
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-3 gap-8">
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <img src="{{ asset('storage/content/team/founder.jpg') }}" alt="Founder" class="w-48 h-48 rounded-full mx-auto object-cover shadow-xl group-hover:scale-105 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[--color-primary]/20 to-transparent rounded-full"></div>
-                    </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-2">Sarah Wijaya</h3>
-                    <p class="text-[--color-primary] poppins-medium mb-3">Founder & Creative Director</p>
-                    <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm px-4">
-                        Memiliki pengalaman 8+ tahun di industri wedding. Lulusan Desain Interior yang passionate dengan detail dan estetika.
-                    </p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <img src="{{ asset('storage/content/team/coordinator.jpg') }}" alt="Event Coordinator" class="w-48 h-48 rounded-full mx-auto object-cover shadow-xl group-hover:scale-105 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[--color-primary]/20 to-transparent rounded-full"></div>
-                    </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-2">Michael Chen</h3>
-                    <p class="text-[--color-primary] poppins-medium mb-3">Senior Event Coordinator</p>
-                    <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm px-4">
-                        Expert dalam koordinasi vendor dan timeline management. Berpengalaman menangani 200+ wedding events.
-                    </p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <img src="{{ asset('storage/content/team/decorator.jpg') }}" alt="Lead Decorator" class="w-48 h-48 rounded-full mx-auto object-cover shadow-xl group-hover:scale-105 transition-all duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[--color-primary]/20 to-transparent rounded-full"></div>
-                    </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-2">Ayu Lestari</h3>
-                    <p class="text-[--color-primary] poppins-medium mb-3">Lead Decorator</p>
-                    <p class="text-gray-600 dark:text-gray-400 pt-serif-regular text-sm px-4">
-                        Spesialis dekorasi pernikahan adat dan modern. Kreativitas tinggi dalam transformasi ruang dan konsep tema.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        {{-- Statistics Section --}}
-        <div class="bg-gradient-to-r from-[--color-primary]/10 to-[--color-primary]/20 dark:from-gray-700 dark:to-gray-600 rounded-3xl p-12 mb-20">
-            <div class="grid grid-cols-4 gap-8 text-center">
-                <div class="group hover:scale-105 transition-all duration-300">
-                    <div class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] font-bold mb-2">100+</div>
-                    <div class="text-gray-700 dark:text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
-                </div>
-                <div class="group hover:scale-105 transition-all duration-300">
-                    <div class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] font-bold mb-2">7</div>
-                    <div class="text-gray-700 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</div>
-                </div>
-                <div class="group hover:scale-105 transition-all duration-300">
-                    <div class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] font-bold mb-2">50+</div>
-                    <div class="text-gray-700 dark:text-gray-300 pt-serif-regular">Vendor Partner</div>
-                </div>
-                <div class="group hover:scale-105 transition-all duration-300">
-                    <div class="text-5xl edu-vic-wa-nt-hand text-[--color-primary] font-bold mb-2">98%</div>
-                    <div class="text-gray-700 dark:text-gray-300 pt-serif-regular">Kepuasan Klien</div>
-                </div>
-            </div>
-        </div>
 
         {{-- Why Choose Us --}}
-        <div class="mb-20">
+        <div data-aos="fade-up"  class="mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Mengapa Memilih 3Rasa?</h2>
                 <p class="text-gray-700 dark:text-gray-300 pt-serif-regular-italic text-xl max-w-3xl mx-auto">
@@ -490,232 +421,6 @@
         }
     }
 </style>
-@endpush
-
-@push('scripts')
-<script>
-    // Smooth scroll animation for internal links
-    document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        const animateElements = document.querySelectorAll('.group, .bg-gray-100, .bg-gradient-to-r');
-        animateElements.forEach(el => {
-            observer.observe(el);
-        });
-
-        // Counter animation
-        const counters = document.querySelectorAll('.text-5xl');
-        
-        const countObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = parseInt(counter.textContent.replace(/\D/g, ''));
-                    const suffix = counter.textContent.replace(/[0-9]/g, '');
-                    let current = 0;
-                    const increment = target / 50;
-                    
-                    const updateCounter = () => {
-                        if (current < target) {
-                            current += increment;
-                            counter.textContent = Math.floor(current) + suffix;
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target + suffix;
-                        }
-                    };
-                    
-                    counter.classList.add('animate-count');
-                    updateCounter();
-                    countObserver.unobserve(counter);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => {
-            countObserver.observe(counter);
-        });
-
-        // Parallax effect for hero section
-        const hero = document.querySelector('.relative.h-96');
-        const heroImage = hero?.querySelector('.absolute.inset-0');
-        
-        window.addEventListener('scroll', () => {
-            if (heroImage) {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                heroImage.style.transform = `translateY(${rate}px)`;
-            }
-        });
-
-        // Lazy loading images
-        const images = document.querySelectorAll('img[src]');
-        
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.classList.add('loaded');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        images.forEach(img => {
-            img.setAttribute('loading', 'lazy');
-            imageObserver.observe(img);
-        });
-
-        // Button interactions
-        const buttons = document.querySelectorAll('button');
-        
-        buttons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.classList.add('btn-pulse');
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.classList.remove('btn-pulse');
-            });
-
-            // Add click handlers for functionality
-            button.addEventListener('click', function() {
-                const buttonText = this.querySelector('p').textContent.trim();
-                
-                switch(buttonText) {
-                    case 'Hubungi Kami':
-                        // Add WhatsApp or contact functionality
-                        window.open('https://wa.me/1234567890', '_blank');
-                        break;
-                    case 'Konsultasi Gratis':
-                        // Add consultation booking functionality
-                        window.open('https://wa.me/1234567890?text=Halo, saya ingin konsultasi gratis untuk wedding organizer', '_blank');
-                        break;
-                    case 'Lihat Portfolio':
-                        // Navigate to portfolio page
-                        window.location.href = '/portfolio';
-                        break;
-                }
-            });
-        });
-
-        // Dark mode toggle functionality (if needed)
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('click', function() {
-                document.documentElement.classList.toggle('dark');
-                localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-            });
-
-            // Check for saved dark mode preference
-            if (localStorage.getItem('darkMode') === 'true') {
-                document.documentElement.classList.add('dark');
-            }
-        }
-
-        // Add smooth transitions to all hover effects
-        const hoverElements = document.querySelectorAll('.group, .hover\\:scale-105, .hover\\:shadow-xl');
-        hoverElements.forEach(element => {
-            element.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-
-        // Add typing effect to main heading (optional)
-        const mainHeading = document.querySelector('.text-6xl');
-        if (mainHeading) {
-            const text = mainHeading.textContent;
-            mainHeading.textContent = '';
-            let i = 0;
-            
-            const typeWriter = () => {
-                if (i < text.length) {
-                    mainHeading.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            };
-            
-            // Start typing effect after a short delay
-            setTimeout(typeWriter, 500);
-        }
-
-        // Add floating animation to decorative elements
-        const floatingElements = document.querySelectorAll('.w-20.h-20, .w-16.h-16');
-        floatingElements.forEach((element, index) => {
-            element.style.animation = `float ${3 + (index * 0.5)}s ease-in-out infinite`;
-        });
-
-        // Add CSS for floating animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-            }
-        `;
-        document.head.appendChild(style);
-
-        console.log('3Rasa About Us page loaded successfully!');
-    });
-
-    // Performance optimization
-    window.addEventListener('load', function() {
-        // Remove loading states
-        document.body.classList.add('loaded');
-        
-        // Preload critical images
-        const criticalImages = [
-            "{{ asset('storage/content/wedding01.jpg') }}",
-            "{{ asset('storage/content/team/founder.jpg') }}",
-            "{{ asset('storage/content/team/coordinator.jpg') }}",
-            "{{ asset('storage/content/team/decorator.jpg') }}"
-        ];
-
-        criticalImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
-    });
-
-    // Error handling for missing images
-    document.addEventListener('error', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
-            e.target.alt = 'Image not found';
-        }
-    }, true);
-</script>
 @endpush
 
 @endsection

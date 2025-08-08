@@ -33,6 +33,7 @@ class PortofolioResource extends Resource
         return $form
             ->schema([
                 Select::make('layanan_id')->relationship('layanan', 'nama')->label('Layanan')->required(),
+                Select::make('team_id')->relationship('team', 'nama')->label('Team'),
                 TextInput::make('judul')->required(),
                 TextInput::make('kategori')->required(),
                 Textarea::make('deskripsi'),

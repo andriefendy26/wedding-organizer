@@ -58,7 +58,7 @@
             transition: transform 0.3s ease;
         }
         
-        /* Custom navbar styles */
+        /* Custom navbar styles
         .navbar {
             @apply bg-white dark:bg-gray-800 shadow-md;
         }
@@ -77,7 +77,7 @@
         
         .navbar-toggler {
             @apply lg:hidden p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200;
-        }
+        } */
         
         .container {
             @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -115,154 +115,227 @@
         /* alert */
 
         .custom-alert {
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 9999;
-    min-width: 300px;
-    max-width: 500px;
-    backdrop-filter: blur(16px);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: slideIn 0.3s ease-out;
-}
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            max-width: 500px;
+            backdrop-filter: blur(16px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideIn 0.3s ease-out;
+        }
 
-.custom-alert.success {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
-    border-left: 4px solid #10b981;
-}
+        .custom-alert.success {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
+            border-left: 4px solid #10b981;
+        }
 
-.custom-alert.error {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
-    border-left: 4px solid #ef4444;
-}
+        .custom-alert.error {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(220, 38, 38, 0.9));
+            border-left: 4px solid #ef4444;
+        }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
 
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+
+        
+
+        
 
     </style>
 </head>
 <body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
 
     <!-- Custom Alert HTML (tambahkan setelah tag body) -->
-@if(session('success'))
-<div id="successAlert" class="custom-alert success text-white p-4 shadow-2xl">
-    <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <div class="flex-shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    @if(session('success'))
+    <div id="successAlert" class="custom-alert success text-white p-4 shadow-2xl">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="flex-shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Berhasil!</h4>
+                    <p class="text-sm opacity-90">{{ session('success') }}</p>
+                </div>
+            </div>
+            <button onclick="closeAlert('successAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-            </div>
-            <div>
-                <h4 class="font-semibold">Berhasil!</h4>
-                <p class="text-sm opacity-90">{{ session('success') }}</p>
-            </div>
+            </button>
         </div>
-        <button onclick="closeAlert('successAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
     </div>
-</div>
-@endif
+    @endif
 
-@if(session('error'))
-<div id="errorAlert" class="custom-alert error text-white p-4 shadow-2xl">
-    <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <div class="flex-shrink-0">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    @if(session('error'))
+    <div id="errorAlert" class="custom-alert error text-white p-4 shadow-2xl">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="flex-shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Gagal!</h4>
+                    <p class="text-sm opacity-90">{{ session('error') }}</p>
+                </div>
+            </div>
+            <button onclick="closeAlert('errorAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-            </div>
-            <div>
-                <h4 class="font-semibold">Gagal!</h4>
-                <p class="text-sm opacity-90">{{ session('error') }}</p>
-            </div>
+            </button>
         </div>
-        <button onclick="closeAlert('errorAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
     </div>
-</div>
-@endif
+    @endif
 
-@if($errors->any())
-<div id="validationAlert" class="custom-alert error text-white p-4 shadow-2xl">
-    <div class="flex items-start justify-between">
-        <div class="flex items-start space-x-3">
-            <div class="flex-shrink-0 mt-1">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    @if($errors->any())
+    <div id="validationAlert" class="custom-alert error text-white p-4 shadow-2xl">
+        <div class="flex items-start justify-between">
+            <div class="flex items-start space-x-3">
+                <div class="flex-shrink-0 mt-1">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Validation Error!</h4>
+                    <ul class="text-sm opacity-90 mt-1 space-y-1">
+                        @foreach($errors->all() as $error)
+                            <li>• {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+            <button onclick="closeAlert('validationAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-            </div>
-            <div>
-                <h4 class="font-semibold">Validation Error!</h4>
-                <ul class="text-sm opacity-90 mt-1 space-y-1">
-                    @foreach($errors->all() as $error)
-                        <li>• {{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            </button>
         </div>
-        <button onclick="closeAlert('validationAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
     </div>
-</div>
-@endif
+    @endif
 
-    <!-- Header with Dark Mode Toggle -->
-    <header class="backdrop-blur-md bg-white fixed top-0 z-[999999999] w-full dark:bg-gray-800/30 shadow-sm border-b border-gray-200 dark:border-gray-700 px-30">
-        <div class="container">
-            <div class="flex justify-between items-center py-4">
+    <!-- Unified Header dengan Navigation -->
+    <header x-data="{ mobileMenuOpen : true }" class="backdrop-blur-md bg-white/95 dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Header Content -->
+            <div class="flex justify-between items-center">
                 <!-- Logo/Brand -->
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('storage/content/LogoFont.png') }}" class="w-20 drop-shadow-lg rounded-xl"></img>
-                    {{-- <h1 class="text-2xl text-[--color-primary] font-bold italic  dark:text-white">
-                        Wedding Organizer
-                    </h1> --}}
+                <div class="flex items-center space-x-2">
+                    <div class="w-24 h-24 rounded-xl  flex items-center justify-center">
+                        <img src={{ asset('storage/content/Logo.png') }} alt="Logo 3Rasa">
+                    </div>
+                    {{-- <div class="hidden sm:block">
+                        <h1 class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
+                            <span class="text-[#B2110E]">3</span>
+                            <span class="text-[#D1A64A]">Rasa</span> --}}
+                             {{-- Production</h1> --}}
+                        {{-- <p class="text-sm text-gray-600 dark:text-gray-400">Production</p> --}}
+                    {{-- </div> --}}
+                    <div class="hidden sm:block">
+                        <h1 class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
+                             Event Organizer</h1>
+                        
+                        {{-- <p class="text-sm text-gray-600 dark:text-gray-400">&</p> --}}
+                        <p class="text-sm text-gray-600 dark:text-gray-400">& Wedding Organizer</p>
+                    </div>
                 </div>
                 
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        Home
+                    </a>
+                    
+                    <!-- Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                            <span>Pages</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div class="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-transition">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-48 backdrop-blur-md">
+                                <a href="/tentang" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
+                                    <i class="fas fa-info-circle w-4 mr-3"></i>
+                                    Tentang Kami
+                                </a>
+                                <a href="/layanan" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
+                                    <i class="fas fa-concierge-bell w-4 mr-3"></i>
+                                    Layanan
+                                </a>
+                                <a href="/galery" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
+                                    <i class="fas fa-images w-4 mr-3"></i>
+                                    Galery
+                                </a>
+                                <a href="/portofolio" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
+                                    <i class="fas fa-images w-4 mr-3"></i>
+                                    Portofolio
+                                </a>
+                                <hr class="my-1 border-gray-200 dark:border-gray-600">
+                                <a href="/team" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
+                                    <i class="fas fa-users w-4 mr-3"></i>
+                                    Tim Kami
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/artikel" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        Artikel
+                    </a>
+                    <a href="/faq" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        FAQ
+                    </a>
+                    <a href="/kalender" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        Kalender
+                    </a>
+                    <a href="/kontak" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        Kontak
+                    </a>
+                </nav>
+
+                <!-- Right Side Controls -->
                 <div class="flex items-center space-x-4">
                     <!-- Language Switcher -->
-                    <div class="relative" x-data="languageSwitcher()">
+                    {{-- <div class="relative hidden sm:block" x-data="languageSwitcher()">
                         <button 
                             @click="open = !open"
                             @click.away="open = false"
-                            class="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200"
+                            class="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200"
                         >
                             <img :src="currentLanguage.flag" :alt="currentLanguage.name" class="w-5 h-4 rounded-sm">
                             <span x-text="currentLanguage.code.toUpperCase()"></span>
                             <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-xs text-gray-500 transition-transform duration-200"></i>
                         </button>
 
-                        <!-- Dropdown Menu -->
                         <div 
                             x-show="open"
                             x-transition:enter="transition ease-out duration-200"
@@ -271,181 +344,175 @@
                             x-transition:leave="transition ease-in duration-150"
                             x-transition:leave-start="opacity-100 scale-100"
                             x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50"
                         >
                             <div class="py-1">
                                 <template x-for="language in languages" :key="language.code">
                                     <button
                                         @click="setLanguage(language)"
-                                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
-                                        :class="currentLanguage.code === language.code ? 'bg-blue-50 text-blue-900' : ''"
+                                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors duration-150"
+                                        :class="currentLanguage.code === language.code ? 'bg-red-50 dark:bg-red-900/20 text-red-600' : ''"
                                     >
                                         <img :src="language.flag" :alt="language.name" class="w-5 h-4 rounded-sm mr-3">
                                         <span x-text="language.name"></span>
-                                        <i x-show="currentLanguage.code === language.code" class="fas fa-check ml-auto text-blue-600"></i>
+                                        <i x-show="currentLanguage.code === language.code" class="fas fa-check ml-auto text-red-600"></i>
                                     </button>
                                 </template>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     
                     <!-- Dark Mode Toggle -->
-                    <div class="flex items-center space-x-3">
-                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden sm:inline">Light</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden md:inline">
+                            <i class="fas fa-sun"></i>
+                        </span>
                         
                         <button 
                             @click="darkMode = !darkMode"
-                            class="relative inline-flex h-8 w-14 items-center rounded-full toggle-bg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 dark:focus:ring-offset-gray-800"
-                            :class="darkMode ? 'bg-[#B2110E]' : 'bg-gray-300'"
+                            class="relative inline-flex h-6 w-11 items-center rounded-full toggle-bg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                            :class="darkMode ? 'bg-red-600' : 'bg-gray-300'"
                             type="button"
                             role="switch"
                             :aria-checked="darkMode"
-                            :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'"
                         >
                             <span class="sr-only">Toggle dark mode</span>
                             <span 
-                                class="inline-block h-6 w-6 transform rounded-full bg-white shadow-lg ring-0 transition duration-300 ease-in-out toggle-dot"
-                                :class="darkMode ? 'translate-x-3.5' : 'translate-x-0.5'"
+                                class="inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition duration-300 ease-in-out toggle-dot"
+                                :class="darkMode ? 'translate-x-3' : 'translate-x-0.5'"
                             >
-                                <!-- Sun Icon -->
-                                <svg x-show="!darkMode" class="h-6 w-6 p-1 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-                                </svg>
-                                
-                                <!-- Moon Icon -->
-                                <svg x-show="darkMode" class="h-6 w-6 p-1 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                                </svg>
                             </span>
                         </button>
                         
-                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden sm:inline">Dark</span>
+                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden md:inline">
+                            <i class="fas fa-moon"></i>
+                        </span>
                     </div>
-                </div>
 
+                    <!-- Mobile Menu Button -->
+                    <button 
+                        @click="mobileMenuOpen = !mobileMenuOpen"
+                        class="lg:hidden relative z-50 flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
+                        :class="mobileMenuOpen ? 'space-y-0' : 'space-y-1'"
+                    >
+                        <span 
+                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            :class="mobileMenuOpen ? 'rotate-[20deg] translate-y-0.5' : ''"
+                        ></span>
+                        <span 
+                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            :class="mobileMenuOpen ? 'opacity-0' : ''"
+                        ></span>
+                        <span 
+                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            :class="mobileMenuOpen ? '-rotate-[20deg] ' : ''"
+                        ></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div 
+                x-show="mobileMenuOpen" 
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="lg:hidden"
+            >
+                <nav class="flex flex-col space-y-2 pt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
+                    <a href="/" 
+                       @click="mobileMenuOpen = false"
+                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="fas fa-home w-5 mr-3"></i>
+                        Home
+                    </a>
+                    
+                    <!-- Mobile Pages Section -->
+                    <div x-data="{ pagesOpen: false }">
+                        <button 
+                            @click="pagesOpen = !pagesOpen"
+                            class="flex items-center justify-between w-full px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        >
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt w-5 mr-3"></i>
+                                Pages
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform" :class="pagesOpen ? 'rotate-180' : ''"></i>
+                        </button>
+                        
+                        <div x-show="pagesOpen" 
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0 scale-y-0"
+                             x-transition:enter-end="opacity-100 scale-y-100"
+                             x-transition:leave="transition ease-in duration-150"
+                             x-transition:leave-start="opacity-100 scale-y-100"
+                             x-transition:leave-end="opacity-0 scale-y-0"
+                             class="ml-4 mt-2 space-y-1 origin-top">
+                            <a href="/tentang" 
+                               @click="mobileMenuOpen = false"
+                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                                <i class="fas fa-info-circle w-4 mr-3"></i>
+                                Tentang Kami
+                            </a>
+                            <a href="/layanan" 
+                               @click="mobileMenuOpen = false"
+                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                                <i class="fas fa-concierge-bell w-4 mr-3"></i>
+                                Layanan
+                            </a>
+                            <a href="/portofolio" 
+                               @click="mobileMenuOpen = false"
+                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                                <i class="fas fa-images w-4 mr-3"></i>
+                                Portofolio
+                            </a>
+                            <a href="/galery" 
+                               @click="mobileMenuOpen = false"
+                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                                <i class="fas fa-images w-4 mr-3"></i>
+                                Galery
+                            </a>
+                            <a href="/team" 
+                               @click="mobileMenuOpen = false"
+                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                                <i class="fas fa-users w-4 mr-3"></i>
+                                Tim Kami
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="/artikel" 
+                       @click="mobileMenuOpen = false"
+                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="fas fa-newspaper w-5 mr-3"></i>
+                        Artikel
+                    </a>
+                    <a href="/faq" 
+                       @click="mobileMenuOpen = false"
+                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="fas fa-question-circle w-5 mr-3"></i>
+                        FAQ
+                    </a>
+                    <a href="/kalender" 
+                       @click="mobileMenuOpen = false"
+                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="fas fa-calendar-alt w-5 mr-3"></i>
+                        Kalender
+                    </a>
+                    <a href="/kontak" 
+                       @click="mobileMenuOpen = false"
+                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="fas fa-envelope w-5 mr-3"></i>
+                        Kontak
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
 
-     <!-- Navigation -->
-    <nav x-data="{ mobileMenuOpen: false }" class="flex justify-center w-full fixed top-20 z-50">
-        <div class="my-4 text-gray-900 dark:text-white backdrop-blur-md bg-white/40 dark:bg-gray-800/30 rounded-full shadow-lg border border-black/10 dark:border-gray-700/40 px-6 py-3 flex items-center justify-between space-x-6">
-            
-            <!-- Navigation Links (Desktop) -->
-            <div class="flex items-center gap-6 text-black dark:text-white font-medium">
-                
-                <!-- Home -->
-                <a href="/" class="hover:text-red-600 transition">Home</a>
-                
-                <!-- Pages dengan Dropdown -->
-                <div class="relative group">
-                    <a href="/" class="hover:text-red-600 transition flex items-center gap-1 cursor-pointer">
-                        Pages
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </a>
-                    
-                    <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-transition">
-                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-48 backdrop-blur-md">
-                            <a href="/tentang" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    Tentang Kami
-                                </div>
-                            </a>
-                            <a href="/layanan" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
-                                    </svg>
-                                    Layanan
-                                </div>
-                            </a>
-                            <a href="/portofolio" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                                    </svg>
-                                    Portofolio
-                                </div>
-                            </a>
-                            <hr class="my-1 border-gray-200 dark:border-gray-600">
-                            <a href="/team" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                    </svg>
-                                    Tim Kami
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Artikel dengan Dropdown -->
-                <div class="relative group">
-                    <a href="/artikel" class="hover:text-red-600 transition flex items-center gap-1 cursor-pointer">
-                        Artikel
-                        {{-- <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg> --}}
-                    </a>
-                    
-                    {{-- <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-transition">
-                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-48 backdrop-blur-md">
-                            <a href="/artikel/terbaru" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    Artikel Terbaru
-                                </div>
-                            </a>
-                            <a href="/artikel/populer" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                                    </svg>
-                                    Artikel Populer
-                                </div>
-                            </a>
-                            <a href="/artikel/teknologi" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                    Teknologi
-                                </div>
-                            </a>
-                            <a href="/artikel/bisnis" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
-                                    </svg>
-                                    Bisnis
-                                </div>
-                            </a>
-                        </div>
-                    </div> --}}
-                </div>
-                
-                <!-- FAQ -->
-                <a href="/faq" class="hover:text-red-600 transition">FAQ</a>
-                
-                <!-- Kalender -->
-                <a href="/kalender" class="hover:text-red-600 transition">Kalender</a>
-                
-                <!-- Kontak -->
-                <a href="/kontak" class="hover:text-red-600 transition">Kontak</a>
-                
-            </div>
-        </div>
-    </nav>
 
     @yield('content')
     <!-- Footer Section -->

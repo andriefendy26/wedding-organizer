@@ -193,7 +193,7 @@
     <div class="bg-white dark:bg-gray-800 py-20 px-6 lg:px-20">
         <div class="max-w-7xl mx-auto">
             {{-- Section Header --}}
-            <div class="text-center mb-16">
+            <div data-aos="fade-down"  class="text-center mb-16">
                 <h2 class="text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">
                     Layanan Unggulan
                 </h2>
@@ -203,9 +203,9 @@
             </div>
 
             {{-- Services Grid--}}
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            <div  class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
                 {{-- Service 1: Wedding Organizer --}}
-                <div class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                <div data-aos="fade-down"  class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
                     {{-- Image with modern overlay --}}
                     <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-[url({{ asset('storage/content/wedding01.jpg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
@@ -260,7 +260,7 @@
                 </div>
 
                 {{-- Service 2: Dekorasi --}}
-                <div class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                <div data-aos="fade-up"  class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
                     <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-[url({{ asset('storage/content/decoration01.jpeg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
@@ -302,7 +302,7 @@
                 </div>
 
                 {{-- Service 3: Sewa Perlengkapan --}}
-                <div class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                <div data-aos="fade-left"  class="group relative bg-white/70 dark:bg-gray-800/70  rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
                     <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 bg-[url({{ asset('storage/content/prop/kursi.jpg') }})] bg-cover bg-center scale-105 group-hover:scale-100 transition-transform duration-700"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500"></div>
@@ -435,30 +435,6 @@
                 </button>
             </div>
             
-            {{-- Contact Info --}}
-            <div class="mt-16 grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <x-heroicon-o-phone class="w-8 h-8 text-white" />
-                    </div>
-                    <h3 class="font-bold text-black dark:text-white mb-2">Telepon</h3>
-                    <p class="text-gray-600 dark:text-gray-300">+62 123 456 7890</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <x-heroicon-o-envelope class="w-8 h-8 text-white" />
-                    </div>
-                    <h3 class="font-bold text-black dark:text-white mb-2">Email</h3>
-                    <p class="text-gray-600 dark:text-gray-300">info@3rasa.com</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <x-heroicon-o-map-pin class="w-8 h-8 text-white" />
-                    </div>
-                    <h3 class="font-bold text-black dark:text-white mb-2">Lokasi</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Tarakan, Kalimantan Utara</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>
