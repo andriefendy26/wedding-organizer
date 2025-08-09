@@ -1,3 +1,22 @@
+@php
+    $phoneNumber = config('app.phone');
+    $message = <<<TEXT
+    ==============================
+    *HALO, SAYA INGIN KONSULTASI*
+    ==============================
+
+    Halo *3Rasa Production* 👋
+
+    Saya tertarik untuk berkonsultasi mengenai layanan yang tersedia.
+
+    🙏 Terima kasih atas waktunya.
+    📩 Pesan ini dikirim via: https://3rasaproduction.com
+TEXT;
+
+    $encodedMessage = urlencode($message);
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en" x-data="{ darkMode: false }" x-init="
     darkMode = localStorage.getItem('darkMode') === 'true';
@@ -12,12 +31,15 @@
     if (darkMode) document.documentElement.classList.add('dark');
 " :class="{ 'dark': darkMode }">
 <head>
+    @yield('head')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="zB6SVGsTVSYRLNyidvPyG1w8dkMFUAuorzn2fzESQ6o" />
+    {{-- <link rel="stylesheet" href=""> --}}
 
-    <title>@yield('title', 'Wedding Organizer')</title>
-    
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -47,7 +69,7 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-    @vite('resources/css/font.css')
+
 
     @stack('styles')
     <style>
@@ -57,27 +79,6 @@
         .toggle-dot {
             transition: transform 0.3s ease;
         }
-        
-        /* Custom navbar styles
-        .navbar {
-            @apply bg-white dark:bg-gray-800 shadow-md;
-        }
-        
-        .navbar-nav {
-            @apply flex space-x-6;
-        }
-        
-        .nav-link {
-            @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
-        }
-        
-        .nav-link:hover {
-            @apply bg-gray-100 dark:bg-gray-700;
-        }
-        
-        .navbar-toggler {
-            @apply lg:hidden p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200;
-        } */
         
         .container {
             @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -243,7 +244,7 @@
     @endif
 
     <!-- Unified Header dengan Navigation -->
-    <header x-data="{ mobileMenuOpen : true }" class="backdrop-blur-md bg-white/95 dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
+    <header x-data="{ mobileMenuOpen : false }" class="backdrop-blur-md bg-white/80 dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Main Header Content -->
             <div class="flex justify-between items-center">
@@ -260,8 +261,8 @@
                         {{-- <p class="text-sm text-gray-600 dark:text-gray-400">Production</p> --}}
                     {{-- </div> --}}
                     <div class="hidden sm:block">
-                        <h1 class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
-                             Event Organizer</h1>
+                        <span class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
+                             Event Organizer</span>
                         
                         {{-- <p class="text-sm text-gray-600 dark:text-gray-400">&</p> --}}
                         <p class="text-sm text-gray-600 dark:text-gray-400">& Wedding Organizer</p>
@@ -535,7 +536,7 @@
                     
                     <!-- Social Media -->
                     <div class="flex gap-4">
-                        <a href="#" class="group">
+                        <a href="https://www.instagram.com/3rasa_production/" class="group">
                             <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-[--color-primary] flex items-center justify-center transition-all duration-300 hover:scale-110">
                                 <x-bi-instagram class="w-5 h-5 group-hover:text-[--color-primary] transition-colors duration-300" />
                             </div>
@@ -644,7 +645,7 @@
                     <div class="flex gap-6 poppins-regular text-sm">
                         <a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">Kebijakan Privasi</a>
                         <a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">Syarat & Ketentuan</a>
-                        <a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">FAQ</a>
+                        <a href="/faq" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">FAQ</a>
                     </div>
                     <div class="text-gray-400 text-sm poppins-regular">
                         © 2025 3Rasa Wedding Organizer. All rights reserved.
@@ -662,12 +663,14 @@
     <!-- Call to Action Floating Button -->
     <div class="fixed bottom-6 right-6 z-50">
         <button class="group bg-[--color-primary] text-white rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl">
-            <div class="flex items-center gap-3">
-                <x-bi-whatsapp class="w-6 h-6" />
-                <span class="hidden group-hover:block edu-vic-wa-nt-hand-500 pr-2 transition-all duration-300">
-                    Hubungi Kami
-                </span>
-            </div>
+             <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                <div class="flex items-center gap-3">
+                    <x-bi-whatsapp class="w-6 h-6" />
+                        <span class="hidden group-hover:block edu-vic-wa-nt-hand-500 pr-2 transition-all duration-300">
+                            Hubungi Kami
+                        </span>
+                </div>
+            </a>
         </button>
     </div>
 

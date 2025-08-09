@@ -12,6 +12,6 @@ $writer = new PngWriter();
 $result = $writer->write($qrCode);
 
 // Simpan ke file
-file_put_contents('test_qr.png', $result->getString());
+('test_qr.png', $result->getString());
 
 echo "QR Code berhasil dibuat!\n";

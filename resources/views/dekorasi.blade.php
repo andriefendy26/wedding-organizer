@@ -1,499 +1,533 @@
+@php
+    $phoneNumber = config('app.phone');
+    $message = <<<TEXT
+    ==============================
+    *HALO, SAYA INGIN KONSULTASI*
+    ==============================
+
+    Halo *3Rasa Production* 👋
+
+    Saya tertarik untuk berkonsultasi mengenai layanan Event Organizer.
+
+    🙏 Terima kasih atas waktunya.
+    📩 Pesan ini dikirim via: https://3rasaproduction.com
+TEXT;
+
+    $encodedMessage = urlencode($message);
+@endphp
+
 @extends('Layout.app')
 
-@section('title', 'Layanan Dekorasi - 3Rasa Wedding')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Event Organizer | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Layanan Event Organizer profesional di Tarakan. Perencanaan acara lengkap dari konsep hingga eksekusi yang sempurna." />
+    <meta name="keywords" content="event organizer Tarakan, jasa EO Tarakan, perencanaan acara Tarakan, event perusahaan Tarakan, acara ulang tahun Tarakan, koordinasi acara, 3Rasa Event Organizer" />
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Event Organizer | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Layanan perencanaan acara profesional dan terorganisir untuk berbagai jenis event di Tarakan." />
+    <meta property="og:image" content="https://www.3rasaeventorganizer.com/storage/content/event01.png" />
+@endsection
 
 @section('content')
 
-
 {{-- Main Content --}}
-<div class="bg-white dark:bg-gray-800 px-10 md:px-16 lg:px-24 xl:px-32">
-
-    {{-- Service Overview Section --}}
-    <div class="py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="bg-white dark:bg-gray-800 px-4 md:px-16 lg:px-24 xl:px-32 pt-32">
+    
+    {{-- Service Overview --}}
+    <section id="layanan-detail" class="py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-right">
-                <h2 class="text-3xl lg:text-5xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
-                    Menciptakan Suasana yang 
-                    <span class="pt-serif-regular-italic text-[--color-primary]">Memukau</span>
-                </h2>
+                <div class="relative edu-vic-wa-nt-hand-500 text-black dark:text-white mb-8">
+                    <div class="text-lg text-gray-500 dark:text-gray-400 mb-4">Layanan Unggulan Kami</div>
+                    <h2 class="text-4xl lg:text-6xl font-bold">Event Organizer</h2>
+                </div>
+                
                 <p class="text-gray-600 dark:text-gray-300 text-lg mb-6 pt-serif-regular leading-relaxed">
-                    Setiap acara memiliki cerita uniknya sendiri. Kami hadir untuk menerjemahkan visi Anda menjadi realitas visual yang menawan melalui desain dekorasi yang thoughtful dan detail-oriented.
-                </p>
-                <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 pt-serif-regular leading-relaxed">
-                    Dari konsep awal hingga eksekusi final, tim kreatif kami berkomitmen menghadirkan dekorasi yang tidak hanya indah dipandang, tetapi juga mencerminkan kepribadian dan gaya Anda.
+                    Kami menghadirkan solusi lengkap untuk setiap kebutuhan acara Anda. Dari perencanaan konsep hingga eksekusi di hari H, tim profesional kami siap mewujudkan visi acara impian Anda.
                 </p>
                 
-                <div class="grid grid-cols-2 gap-6 mb-8">
-                    <div class="text-center p-4 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                        <h3 class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">500+</h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Dekorasi Terealisasi</p>
+                <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 pt-serif-regular leading-relaxed">
+                    Dengan pengalaman bertahun-tahun dan jaringan vendor terpercaya, kami memastikan setiap detail acara berjalan sempurna sesuai ekspektasi Anda.
+                </p>
+                
+                {{-- Key Features --}}
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
+                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-light-bulb class="w-6 h-6 text-[--color-primary]" />
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-black dark:text-white">Konsep Kreatif</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Ide-ide fresh dan inovatif untuk acara yang berkesan</p>
+                        </div>
                     </div>
-                    <div class="text-center p-4 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                        <h3 class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">5+</h3>
-                        <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</p>
+                    
+                    <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
+                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-users class="w-6 h-6 text-[--color-primary]" />
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-black dark:text-white">Tim Profesional</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Koordinator berpengalaman yang menguasai bidangnya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
+                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-clock class="w-6 h-6 text-[--color-primary]" />
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-black dark:text-white">Tepat Waktu</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Manajemen waktu yang presisi dan deadline yang terjaga</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div data-aos="fade-left" class="relative">
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Dekorasi 1" class="rounded-2xl shadow-lg h-48 w-full object-cover">
-                    <img src="{{ asset('storage/content/decoration04.png') }}" alt="Dekorasi 2" class="rounded-2xl shadow-lg h-32 w-full object-cover mt-16">
-                    <img src="{{ asset('storage/content/decoration05.png') }}" alt="Dekorasi 3" class="rounded-2xl shadow-lg h-32 w-full object-cover -mt-8">
-                    <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Dekorasi 4" class="rounded-2xl shadow-lg h-48 w-full object-cover">
+                <div class="grid grid-cols-2 gap-6">
+                    <img src="{{ asset('storage/content/event01.png') }}" alt="Event 1" class="rounded-2xl shadow-lg h-48 w-full object-cover">
+                    <img src="{{ asset('storage/content/wedding11.jpg') }}" alt="Event 2" class="rounded-2xl shadow-lg h-32 w-full object-cover mt-16">
+                    <img src="{{ asset('storage/content/decoration13.jpg') }}" alt="Event 3" class="rounded-2xl shadow-lg h-32 w-full object-cover">
+                    <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Event 4" class="rounded-2xl shadow-lg h-48 w-full object-cover">
                 </div>
                 
-                {{-- Floating card --}}
+                {{-- Floating Stats Card --}}
                 <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-[--color-primary] rounded-full flex items-center justify-center">
-                            <x-heroicon-o-sparkles class="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-black dark:text-white">Desain Custom</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-300">Sesuai Keinginan Anda</p>
-                        </div>
+                    <div class="text-center">
+                        <h4 class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">200+</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Event Sukses</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    {{-- Services Detail Section --}}
-    <div class="py-20">
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
-                Layanan Dekorasi Lengkap
-            </h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-3xl mx-auto">
-                Dari konsep kreatif hingga instalasi final, kami menyediakan solusi dekorasi menyeluruh untuk berbagai jenis acara
-            </p>
+    </section>
+    
+    {{-- Services Offered --}}
+    <section class="py-20 bg-gray-50 dark:bg-gray-900 -mx-4 md:-mx-16 lg:-mx-24 xl:-mx-32 px-4 md:px-16 lg:px-24 xl:px-32">
+        <div class="text-center mb-16">
+            <div data-aos="zoom-in-down" class="relative edu-vic-wa-nt-hand-500 text-black dark:text-white">
+                <div class="text-lg absolute top-[30%] left-[30%] text-gray-500 dark:text-gray-400">Apa Yang Kami Tawarkan</div>
+                <h2 class="md:tracking-[20px] xl:tracking-[30px] text-[50px] md:text-[100px] xl:text-[120px] opacity-20">  
+                    LAYANAN
+                </h2>
+            </div>
+            <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
+                <h3 class="text-2xl md:text-3xl lg:text-5xl poppins-medium text-black dark:text-white mb-4">Paket Event Organizer</h3>
+                <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-3xl mx-auto">
+                    Berbagai pilihan layanan yang dapat disesuaikan dengan kebutuhan dan budget acara Anda
+                </p>
+            </div>
         </div>
-
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{-- Service 1 --}}
-            <div data-aos="fade-up" data-aos-delay="100" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-[--color-primary]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <x-heroicon-o-heart class="w-8 h-8 text-black dark:text-white" />
+            {{-- Corporate Event --}}
+            <div data-aos="fade-up" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <x-heroicon-o-building-office class="w-8 h-8 text-black dark:text-white" />
+                    </div>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Corporate Event</h3>
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-4 edu-vic-wa-nt-hand-500">Dekorasi Pernikahan</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-6">Desain romantis dan elegan untuk hari bahagia Anda, dengan perpaduan tradisi dan modernitas.</p>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Backdrop Utama</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Dekorasi Altar</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Centerpiece Meja</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Lighting Design</li>
+                
+                <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Seminar & Workshop</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Meeting & Conference</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Team Building</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Product Launching</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Company Anniversary</span>
+                    </li>
                 </ul>
+                
+                <div class="text-center">
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">Mulai dari</p>
+                    <div class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Rp 15.000.000</div>
+                    <button class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
+                        Pilih Paket
+                    </button>
+                </div>
             </div>
-
-            {{-- Service 2 --}}
-            <div data-aos="fade-up" data-aos-delay="200" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-[--color-primary]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <x-heroicon-o-building-office class="w-8 h-8 text-black dark:text-white" />
+            
+            {{-- Social Event --}}
+            <div data-aos="fade-up" data-aos-delay="200" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700 relative">
+                <div class="mb-6 mt-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <x-heroicon-o-heart class="w-8 h-8 text-black dark:text-white" />
+                    </div>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Social Event</h3>
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-4 edu-vic-wa-nt-hand-500">Event Korporat</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-6">Dekorasi profesional untuk acara bisnis, peluncuran produk, dan gathering perusahaan.</p>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Branding Integration</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Stage Design</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Welcome Area</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Photo Booth</li>
+                
+                <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Birthday Party</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Graduation Party</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Family Gathering</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Reunion Event</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Anniversary Celebration</span>
+                    </li>
                 </ul>
+                
+                <div class="text-center">
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">Mulai dari</p>
+                    <div class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Rp 8.000.000</div>
+                    <button class="w-full bg-gradient-to-r from-[--color-primary] to-pink-500 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
+                        Pilih Paket
+                    </button>
+                </div>
             </div>
-
-            {{-- Service 3 --}}
-            <div data-aos="fade-up" data-aos-delay="300" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:shadow-[--color-primary]/10 transition-all duration-500 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <x-heroicon-o-gift class="w-8 h-8 text-black dark:text-white" />
+            
+            {{-- Custom Event --}}
+            <div data-aos="fade-up" data-aos-delay="400" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <x-heroicon-o-cog-6-tooth class="w-8 h-8 text-black dark:text-white" />
+                    </div>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Custom Event</h3>
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-4 edu-vic-wa-nt-hand-500">Acara Khusus</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-6">Dekorasi kreatif untuk ulang tahun, anniversary, baby shower, dan perayaan istimewa lainnya.</p>
-                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Custom Theme</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Balloon Decoration</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Dessert Table</li>
-                    <li class="flex items-center"><x-heroicon-o-check class="w-4 h-4 text-[--color-primary] mr-2" /> Interactive Elements</li>
+                
+                <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Konsep Sesuai Keinginan</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Tema Custom</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Dekorasi Eksklusif</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Entertainment Khusus</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <x-heroicon-o-check-circle class="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span>Full Customization</span>
+                    </li>
                 </ul>
+                
+                <div class="text-center">
+                    <p class="text-gray-500 dark:text-gray-400 mb-4">Konsultasi</p>
+                    <div class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Gratis</div>
+                    <button class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-300">
+                        Konsultasi Sekarang
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-
-    {{-- Process Section --}}
-    <div class="py-20">
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
-                Proses Kerja Kami
+    </section>
+    
+    {{-- Process Timeline --}}
+    <section class="py-20">
+        <div class="text-center mb-16">
+            <div data-aos="zoom-in-down" class="relative edu-vic-wa-nt-hand-500 text-black dark:text-white">
+                <div class="text-lg absolute top-[30%] left-[38%] text-gray-500 dark:text-gray-400">Bagaimana Kami Bekerja</div>
+                <h2 class="md:tracking-[20px] xl:tracking-[30px] text-[50px] md:text-[100px] xl:text-[120px] opacity-20">  
+                    PROSES
+                </h2>
+            </div>
+            <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
+                <h3 class="text-2xl md:text-3xl lg:text-5xl poppins-medium text-black dark:text-white mb-4">Langkah Demi Langkah</h3>
+                <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-3xl mx-auto">
+                    Proses kerja yang terstruktur untuk memastikan acara Anda berjalan dengan sempurna
+                </p>
+            </div>
+        </div>
+        
+        <div class="relative">
+            {{-- Timeline Line --}}
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[--color-primary] to-pink-500 hidden lg:block"></div>
+            
+            {{-- Timeline Items --}}
+            <div class="space-y-16">
+                {{-- Step 1 --}}
+                <div data-aos="fade-right" class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="lg:w-1/2 lg:text-right lg:pr-8">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center justify-center lg:justify-end gap-4 mb-6">
+                                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Konsultasi & Brief</h3>
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">01</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                                Diskusi mendalam tentang konsep acara, budget, timeline, dan ekspektasi Anda. Kami mendengarkan setiap detail untuk memahami visi acara impian Anda.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="{{ asset('storage/content/event01.png') }}" alt="Konsultasi" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+                
+                {{-- Step 2 --}}
+                <div data-aos="fade-left" class="flex flex-col lg:flex-row-reverse items-center gap-8">
+                    <div class="lg:w-1/2 lg:text-left lg:pl-8">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-2xl flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">02</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Perencanaan & Proposal</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                                Penyusunan konsep detail, timeline, vendor selection, dan proposal lengkap. Setiap aspek acara direncanakan dengan matang dan sistematis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="{{ asset('storage/content/wedding11.jpg') }}" alt="Perencanaan" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+                
+                {{-- Step 3 --}}
+                <div data-aos="fade-right" class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="lg:w-1/2 lg:text-right lg:pr-8">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center justify-center lg:justify-end gap-4 mb-6">
+                                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Koordinasi & Persiapan</h3>
+                                <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">03</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                                Koordinasi dengan vendor, persiapan venue, pengaturan dekorasi, dan semua hal teknis. Tim kami memastikan semuanya siap sempurna.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="{{ asset('storage/content/decoration13.jpg') }}" alt="Koordinasi" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+                
+                {{-- Step 4 --}}
+                <div data-aos="fade-left" class="flex flex-col lg:flex-row-reverse items-center gap-8">
+                    <div class="lg:w-1/2 lg:text-left lg:pl-8">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+                                    <span class="text-white font-bold text-xl">04</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Eksekusi & Monitoring</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                                Hari H tiba! Tim kami hadir sejak pagi untuk memastikan semua berjalan sesuai rencana. Monitoring ketat dari awal hingga acara selesai.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Eksekusi" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {{-- Why Choose Us --}}
+    <section class="py-20 bg-gray-50 dark:bg-gray-900 -mx-4 md:-mx-16 lg:-mx-24 xl:-mx-32 px-4 md:px-16 lg:px-24 xl:px-32">
+        <div class="text-center mb-16">
+            <h2 data-aos="zoom-in-down" class="text-3xl lg:text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-6">
+                Mengapa Memilih <span class="text-[--color-primary]">3Rasa</span>?
             </h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-3xl mx-auto">
-                Dari konsultasi awal hingga eksekusi sempurna, setiap langkah dirancang untuk memberikan hasil terbaik
+            <p data-aos="zoom-in-up" class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-3xl mx-auto">
+                Keunggulan dan komitmen kami dalam menghadirkan acara yang tak terlupakan
             </p>
         </div>
-
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {{-- Step 1 --}}
-            <div data-aos="fade-up" data-aos-delay="100" class="text-center group">
-                <div class="relative mb-6">
-                    <div class="w-20 h-20 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <span class="text-2xl font-bold text-white edu-vic-wa-nt-hand-500">1</span>
-                    </div>
-                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full"></div>
+            <div data-aos="fade-up" class="text-center group">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <x-heroicon-o-star class="w-10 h-10 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-3 edu-vic-wa-nt-hand-500">Konsultasi</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Diskusi mendalam tentang visi, tema, budget, dan requirement khusus Anda.</p>
+                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">Pengalaman</h3>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Lebih dari 5 tahun melayani berbagai jenis acara dengan tingkat kepuasan tinggi</p>
             </div>
-
-            {{-- Step 2 --}}
+            
             <div data-aos="fade-up" data-aos-delay="200" class="text-center group">
-                <div class="relative mb-6">
-                    <div class="w-20 h-20 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <span class="text-2xl font-bold text-white edu-vic-wa-nt-hand-500">2</span>
-                    </div>
-                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-400 rounded-full"></div>
+                <div class="w-20 h-20 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <x-heroicon-o-users class="w-10 h-10 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-3 edu-vic-wa-nt-hand-500">Desain Konsep</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pembuatan mood board, sketsa, dan visualisasi 3D untuk approval.</p>
+                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">Tim Profesional</h3>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Koordinator berpengalaman yang ahli dalam bidangnya masing-masing</p>
             </div>
-
-            {{-- Step 3 --}}
-            <div data-aos="fade-up" data-aos-delay="300" class="text-center group">
-                <div class="relative mb-6">
-                    <div class="w-20 h-20 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <span class="text-2xl font-bold text-white edu-vic-wa-nt-hand-500">3</span>
-                    </div>
-                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full"></div>
-                </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-3 edu-vic-wa-nt-hand-500">Persiapan</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Sourcing material, koordinasi vendor, dan persiapan teknis detail.</p>
-            </div>
-
-            {{-- Step 4 --}}
+            
             <div data-aos="fade-up" data-aos-delay="400" class="text-center group">
-                <div class="relative mb-6">
-                    <div class="w-20 h-20 bg-[--color-primary] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <span class="text-2xl font-bold text-white edu-vic-wa-nt-hand-500">4</span>
-                    </div>
-                    <div class="absolute -top-2 -right-2 w-6 h-6 bg-purple-400 rounded-full"></div>
+                <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <x-heroicon-o-shield-check class="w-10 h-10 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white mb-3 edu-vic-wa-nt-hand-500">Eksekusi</h3>
-                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Setup profesional dengan supervisi ketat hingga acara selesai.</p>
+                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">Jaminan Kualitas</h3>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Komitmen terhadap kualitas terbaik dengan garansi kepuasan pelanggan</p>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="600" class="text-center group">
+                <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <x-heroicon-o-currency-dollar class="w-10 h-10 text-black dark:text-white" />
+                </div>
+                <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">Harga Kompetitif</h3>
+                <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Paket lengkap dengan harga terjangkau tanpa mengurangi kualitas layanan</p>
             </div>
         </div>
-    </div>
-
-    {{-- Portfolio Gallery Section --}}
-    <div class="py-20">
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
-                Galeri Karya Kami
-            </h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-3xl mx-auto">
-                Setiap proyek adalah masterpiece unik yang mencerminkan dedikasi dan kreativitas tim kami
-            </p>
+    </section>
+    
+    {{-- Portfolio Gallery --}}
+    <section class="py-20">
+        <div class="text-center mb-16">
+            <div data-aos="zoom-in-down" class="relative edu-vic-wa-nt-hand-500 text-black dark:text-white">
+                <div class="text-lg absolute top-[30%] left-[35%] text-gray-500 dark:text-gray-400">Karya Terbaik Kami</div>
+                <h2 class="md:tracking-[20px] xl:tracking-[30px] text-[50px] md:text-[100px] xl:text-[120px] opacity-20">  
+                    PORTOFOLIO
+                </h2>
+            </div>
+            <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
+                <h3 class="text-2xl md:text-3xl lg:text-5xl poppins-medium text-black dark:text-white mb-4">Event Yang Telah Terlaksana</h3>
+                <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-3xl mx-auto">
+                    Lihat berbagai acara sukses yang telah kami tangani dengan kepuasan penuh dari klien
+                </p>
+            </div>
         </div>
-
+        
+        {{-- Gallery Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {{-- Gallery Item 1 --}}
-            <div data-aos="zoom-in" data-aos-delay="100" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Dekorasi Pernikahan 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Pernikahan Tradisional</h3>
-                    <p class="text-sm pt-serif-regular">Perpaduan elegan antara budaya lokal dengan sentuhan modern</p>
+            <div data-aos="zoom-in" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/event01.png') }}" alt="Corporate Event" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Corporate Meeting</h4>
+                        <p class="text-sm pt-serif-regular">PT. Surya Mandiri</p>
+                    </div>
                 </div>
             </div>
-
-            {{-- Gallery Item 2 --}}
-            <div data-aos="zoom-in" data-aos-delay="200" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/decoration04.png') }}" alt="Dekorasi Modern" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Event Korporat</h3>
-                    <p class="text-sm pt-serif-regular">Desain profesional dengan branding yang kuat dan memorable</p>
+            
+            <div data-aos="zoom-in" data-aos-delay="200" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Birthday Party" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Birthday Celebration</h4>
+                        <p class="text-sm pt-serif-regular">Sweet 17th Party</p>
+                    </div>
                 </div>
             </div>
-
-            {{-- Gallery Item 3 --}}
-            <div data-aos="zoom-in" data-aos-delay="300" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Dekorasi Outdoor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Garden Party</h3>
-                    <p class="text-sm pt-serif-regular">Konsep outdoor yang fresh dengan nuansa natural yang memukau</p>
+            
+            <div data-aos="zoom-in" data-aos-delay="400" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Family Gathering" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Family Gathering</h4>
+                        <p class="text-sm pt-serif-regular">Keluarga Besar Wijaya</p>
+                    </div>
                 </div>
             </div>
-
-            {{-- Gallery Item 4 --}}
-            <div data-aos="zoom-in" data-aos-delay="100" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Dekorasi Intimate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Intimate Wedding</h3>
-                    <p class="text-sm pt-serif-regular">Dekorasi hangat dan personal untuk momen yang lebih intim</p>
+            
+            <div data-aos="zoom-in" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/decoration13.jpg') }}" alt="Product Launch" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Product Launching</h4>
+                        <p class="text-sm pt-serif-regular">Tech Innovation 2024</p>
+                    </div>
                 </div>
             </div>
-
-            {{-- Gallery Item 5 --}}
-            <div data-aos="zoom-in" data-aos-delay="200" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/wedding04.jpg') }}" alt="Dekorasi Luxury" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Luxury Wedding</h3>
-                    <p class="text-sm pt-serif-regular">Kemewahan dan elegansi dalam setiap detail dekorasi</p>
+            
+            <div data-aos="zoom-in" data-aos-delay="200" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/wedding11.jpg') }}" alt="Anniversary" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Anniversary Event</h4>
+                        <p class="text-sm pt-serif-regular">25th Wedding Anniversary</p>
+                    </div>
                 </div>
             </div>
-
-            {{-- Gallery Item 6 --}}
-            <div data-aos="zoom-in" data-aos-delay="300" class="group relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                <div class="aspect-square overflow-hidden">
-                    <img src="{{ asset('storage/content/wedding05.jpeg') }}" alt="Dekorasi Rustic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand-500">Rustic Theme</h3>
-                    <p class="text-sm pt-serif-regular">Konsep natural dengan sentuhan vintage yang menawan</p>
+            
+            <div data-aos="zoom-in" data-aos-delay="400" class="group relative overflow-hidden rounded-2xl">
+                <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Graduation" class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h4 class="text-lg font-bold edu-vic-wa-nt-hand">Graduation Party</h4>
+                        <p class="text-sm pt-serif-regular">Medical School Graduation</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    {{-- Pricing Section --}}
-    <div class="py-20">
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
-                Paket Dekorasi
-            </h2>
-            <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-3xl mx-auto">
-                Pilihan paket yang fleksibel dan disesuaikan dengan kebutuhan serta budget Anda
-            </p>
+        
+        <div data-aos="fade-up" class="text-center mt-12">
+            <a href="/portofolio" class="inline-flex items-center gap-3 bg-[--color-primary] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-[--color-primary] hover:shadow-xl transition-all duration-300 border-2 border-[--color-primary] group">
+                <span class="edu-vic-wa-nt-hand-500">Lihat Semua Portofolio</span>
+                <x-heroicon-o-arrow-right class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+            </a>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {{-- Basic Package --}}
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-black dark:text-white mb-2 edu-vic-wa-nt-hand-500">Paket Basic</h3>
-                    <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Untuk acara intimate & simple</p>
-                    <div class="mt-4">
-                        <span class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">5jt</span>
-                        <span class="text-gray-600 dark:text-gray-300">/ acara</span>
-                    </div>
-                </div>
-                
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Backdrop utama (3x3m)
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Dekorasi meja utama
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Centerpiece (5 buah)
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Basic lighting
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Setup & breakdown
-                    </li>
-                </ul>
-                
-                <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 edu-vic-wa-nt-hand-500">
-                    Pilih Paket Basic
-                </button>
-            </div>
-
-            {{-- Premium Package --}}
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800 rounded-3xl p-8 border-2 border-[--color-primary] shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden transform hover:-translate-y-2">
-                <div class="absolute top-4 right-4">
-                    <span class="bg-[--color-primary] text-white px-3 py-1 rounded-full text-xs font-medium">
-                        TERPOPULER
-                    </span>
-                </div>
-                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-black dark:text-white mb-2 edu-vic-wa-nt-hand-500">Paket Premium</h3>
-                    <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Untuk acara menengah & elegant</p>
-                    <div class="mt-4">
-                        <span class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">12jt</span>
-                        <span class="text-gray-600 dark:text-gray-300">/ acara</span>
-                    </div>
-                </div>
-                
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Backdrop utama (5x4m)
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Dekorasi altar/panggung
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Centerpiece (10 buah)
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Premium lighting design
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Welcome gate decoration
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Photo booth area
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Setup & breakdown
-                    </li>
-                </ul>
-                
-                <button class="w-full bg-[--color-primary] text-white rounded-2xl py-3 px-4 font-medium hover:bg-[--color-primary]/90 transition-all duration-300 edu-vic-wa-nt-hand-500 shadow-lg">
-                    Pilih Paket Premium
-                </button>
-            </div>
-
-            {{-- Luxury Package --}}
-            <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-black dark:text-white mb-2 edu-vic-wa-nt-hand-500">Paket Luxury</h3>
-                    <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Untuk acara besar & mewah</p>
-                    <div class="mt-4">
-                        <span class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">25jt</span>
-                        <span class="text-gray-600 dark:text-gray-300">/ acara</span>
-                    </div>
-                </div>
-                
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Custom backdrop design
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Full venue decoration
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Unlimited centerpiece
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Advanced lighting system
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Luxury welcome area
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Multiple photo spots
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Fresh flower arrangements
-                    </li>
-                    <li class="flex items-center text-gray-600 dark:text-gray-300">
-                        <x-heroicon-o-check class="w-5 h-5 text-[--color-primary] mr-3" />
-                        Dedicated project manager
-                    </li>
-                </ul>
-                
-                <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 edu-vic-wa-nt-hand-500">
-                    Pilih Paket Luxury
-                </button>
-            </div>
-        </div>
-
-        {{-- Custom Package Info --}}
-        {{-- <div data-aos="fade-up" data-aos-delay="400" class="mt-12 text-center bg-gray-50 dark:bg-gray-900 rounded-3xl p-8">
-            <h3 class="text-2xl font-bold text-black dark:text-white mb-4 edu-vic-wa-nt-hand-500">Butuh Paket Custom?</h3>
-            <p class="text-gray-600 dark:text-gray-300 pt-serif-regular mb-6 max-w-2xl mx-auto">
-                Setiap acara unik memiliki kebutuhan khusus. Kami siap merancang paket custom yang sesuai dengan visi, budget, dan requirement spesifik Anda.
-            </p>
-            <button class="bg-[--color-primary] text-white px-8 py-3 rounded-2xl font-medium hover:bg-[--color-primary]/90 transition-all duration-300 edu-vic-wa-nt-hand-500">
-                Konsultasi Paket Custom
-            </button>
-        </div> --}}
-    </div>
+    </section>
+    
 
 </div>
 
 @push('styles')
 <style>
-    /* Custom animations for scroll effects */
-    [data-aos] {
-        opacity: 0;
-        transition: opacity 0.6s ease-in-out;
+    /* Custom animations and effects matching the homepage style */
+    .mask-x-from-90\% {
+        -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
     }
     
-    [data-aos].aos-animate {
-        opacity: 1;
+    .mask-x-to-100\% {
+        -webkit-mask: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
+        mask: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
     }
 </style>
 @endpush
 
 @push('scripts')
+{{-- AOS Animation Script --}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize AOS (Animate On Scroll)
-    document.addEventListener('DOMContentLoaded', function() {
-        // Simulate AOS functionality
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+</script>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('aos-animate');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            observer.observe(el);
+{{-- Smooth Scroll --}}
+<script>
+    document.querySelector('a[href="#layanan-detail"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#layanan-detail').scrollIntoView({
+            behavior: 'smooth'
         });
     });
-
-    // FAQ Toggle Function
-    function toggleFAQ(button) {
-        const faqItem = button.parentElement;
-        const content = faqItem.querySelector('.faq-content');
-        const icon = faqItem.querySelector('.faq-icon');
-        
-        // Close other open FAQs
-        document.querySelectorAll('.faq-content').forEach(otherContent => {
-            if (otherContent !== content && !otherContent.classList.contains('hidden')) {
-                otherContent.classList.add('hidden');
-                const otherIcon = otherContent.parentElement.querySelector('.faq-icon');
-                otherIcon.classList.remove('rotate-180');
-            }
-        });
-        
-        // Toggle current FAQ
-        content.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
-    }
 </script>
 @endpush
 

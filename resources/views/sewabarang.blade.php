@@ -4,23 +4,7 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
-
-      <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
-            <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
-                    Layanan Penyewaan
-                </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
-                    Wujudkan pernikahan impian Anda dengan koleksi perlengkapan premium berkualitas tinggi dari 3Rasa
-                </p>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-white dark:bg-gray-800 px-10 md:px-16 lg:px-24 xl:px-32">
+    <div class="bg-white dark:bg-gray-800 px-10 md:px-16 lg:px-24 xl:px-32 pt-32">
         
         {{-- Header Section --}}
         <h2 class="text-black text-center py-8 text-2xl lg:text-3xl poppins-medium mx-8 md:mx-20 lg:mx-40 dark:text-white">
@@ -41,7 +25,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 
                 {{-- Card 1 - Featured Sofa Set --}}
-                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/sofa-premium.jpg') }})] bg-no-repeat bg-center bg-cover">
+                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/decoration04.png') }})] bg-no-repeat bg-center bg-cover">
                     <h3 class="w-auto self-end border-2 dark:border-white px-3 py-1 rounded-full text-xs">Premium Collection</h3>
                     <div>
                         <h4 class="text-xl edu-vic-wa-nt-hand-400 tracking-widest mb-2">Sofa Premium Set</h4>
@@ -131,7 +115,7 @@
                                     Rp {{ number_format($barang['harga'], 0, ',', '.') }}
                                 </div>
                                 <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                                    per set/hari
+                                    per item/hari
                                 </span>
                             </div>
                             

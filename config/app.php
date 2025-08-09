@@ -15,6 +15,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'phone' => env('APP_PHONE', '6282255187877'),
 
     'name' => env('APP_NAME', 'Laravel'),
 

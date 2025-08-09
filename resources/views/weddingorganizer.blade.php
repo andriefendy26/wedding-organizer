@@ -458,38 +458,44 @@
                 </p>
             </div>
 
-            {{-- Include Items Grid --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                @foreach($dataInclude as $index => $include)
-                <div data-aos="fade-up" 
-                    data-aos-delay="{{ $index * 100 }}" 
-                    class="group relative">
-                    
-                    {{-- Card Container --}}
-                    <div class="relative h-full bg-white/80 dark:bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:bg-white/90 dark:hover:bg-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
-                        
-                    
-                        {{-- Title --}}
-                        <h3 class="text-2xl font-bold text-center text-black dark:text-white edu-vic-wa-nt-hand mb-6">
-                            {{ $include->nama_include }}
-                        </h3>
-
-                        {{-- Items List --}}
-                        <div class="space-y-3">
-                            @foreach($include->items as $item)
-                            <div class="flex items-start group-hover:translate-x-1 transition-transform duration-300">
-                                <div class="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3"></div>
-                                <span class="text-gray-700 dark:text-white/80 text-sm leading-relaxed">{{ $item }}</span>
-                            </div>
-                            @endforeach
-                        </div>
-
-                        {{-- Floating decoration --}}
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-70 group-hover:scale-150 transition-transform duration-300"></div>
-                    </div>
+       {{-- Include Items Grid --}}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+    @foreach($dataInclude as $index => $include)
+    <div data-aos="fade-up" 
+         data-aos-delay="{{ $index * 100 }}"
+         class="group">
+        
+        {{-- Card Container --}}
+        <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-[--color-primary]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[--color-primary]/10">
+            
+            {{-- Header with Icon --}}
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <x-heroicon-o-check class="w-5 h-5 text-white" />
+                </div>
+                <h3 class="text-lg font-semibold text-black dark:text-white poppins-medium group-hover:text-[--color-primary] transition-colors duration-300">
+                    {{ $include->nama_include }}
+                </h3>
+            </div>
+            
+            {{-- Items List --}}
+            <div class="space-y-2.5">
+                @foreach($include->items as $item)
+                <div class="flex items-start gap-3 group/item">
+                    <div class="flex-shrink-0 w-1.5 h-1.5 bg-[--color-primary] rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-200"></div>
+                    <span class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-200">
+                        {{ $item }}
+                    </span>
                 </div>
                 @endforeach
             </div>
+            
+            {{-- Bottom accent line --}}
+            <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-[--color-primary]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+    </div>
+    @endforeach
+</div>
 
         </div>
     </div>
