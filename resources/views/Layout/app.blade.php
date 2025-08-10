@@ -149,11 +149,11 @@ TEXT;
         }
     </style>
 </head>
-<body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans overflow-hidden">
+<body class="font-sans transition-colors duration-300  bg-gray-50 dark:bg-gray-900">
 
     <!-- Custom Alert HTML (tambahkan setelah tag body) -->
     @if(session('success'))
-    <div id="successAlert" class="custom-alert success text-white p-4 shadow-2xl">
+    <div id="successAlert" class="p-4 text-white shadow-2xl custom-alert success">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="flex-shrink-0">
@@ -166,7 +166,7 @@ TEXT;
                     <p class="text-sm opacity-90">{{ session('success') }}</p>
                 </div>
             </div>
-            <button onclick="closeAlert('successAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <button onclick="closeAlert('successAlert')" class="ml-4 text-white transition-colors hover:text-gray-200">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -176,7 +176,7 @@ TEXT;
     @endif
 
     @if(session('error'))
-    <div id="errorAlert" class="custom-alert error text-white p-4 shadow-2xl">
+    <div id="errorAlert" class="p-4 text-white shadow-2xl custom-alert error">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="flex-shrink-0">
@@ -189,7 +189,7 @@ TEXT;
                     <p class="text-sm opacity-90">{{ session('error') }}</p>
                 </div>
             </div>
-            <button onclick="closeAlert('errorAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <button onclick="closeAlert('errorAlert')" class="ml-4 text-white transition-colors hover:text-gray-200">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -199,7 +199,7 @@ TEXT;
     @endif
 
     @if($errors->any())
-    <div id="validationAlert" class="custom-alert error text-white p-4 shadow-2xl">
+    <div id="validationAlert" class="p-4 text-white shadow-2xl custom-alert error">
         <div class="flex items-start justify-between">
             <div class="flex items-start space-x-3">
                 <div class="flex-shrink-0 mt-1">
@@ -209,14 +209,14 @@ TEXT;
                 </div>
                 <div>
                     <h4 class="font-semibold">Validation Error!</h4>
-                    <ul class="text-sm opacity-90 mt-1 space-y-1">
+                    <ul class="mt-1 space-y-1 text-sm opacity-90">
                         @foreach($errors->all() as $error)
                             <li>• {{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
             </div>
-            <button onclick="closeAlert('validationAlert')" class="ml-4 text-white hover:text-gray-200 transition-colors">
+            <button onclick="closeAlert('validationAlert')" class="ml-4 text-white transition-colors hover:text-gray-200">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -226,24 +226,24 @@ TEXT;
     @endif
 
     <!-- Unified Header dengan Navigation -->
-    <header x-data="{ mobileMenuOpen : false }" class=" bg-white dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header x-data="{ mobileMenuOpen : false }" class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg  dark:bg-gray-900/95 dark:border-gray-700">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <!-- Main Header Content -->
-            <div class="flex justify-between items-center">
+            <div class="flex items-center justify-between">
                 <!-- Logo/Brand -->
                 <div class="flex items-center space-x-2">
-                    <div class="w-24 h-24 rounded-xl  flex items-center justify-center">
+                    <div class="flex items-center justify-center w-24 h-24 rounded-xl">
                         <img src={{ asset('storage/content/Logo.png') }} alt="Logo 3Rasa">
                     </div>
                     {{-- <div class="hidden sm:block">
-                        <h1 class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
+                        <h1 class="text-xl font-bold text-gray-900 edu-vic-wa-nt-hand dark:text-white">
                             <span class="text-[#B2110E]">3</span>
                             <span class="text-[#D1A64A]">Rasa</span> --}}
                              {{-- Production</h1> --}}
                         {{-- <p class="text-sm text-gray-600 dark:text-gray-400">Production</p> --}}
                     {{-- </div> --}}
                     <div class="hidden sm:block">
-                        <span class="edu-vic-wa-nt-hand text-xl font-bold text-gray-900 dark:text-white">
+                        <span class="text-xl font-bold text-gray-900 edu-vic-wa-nt-hand dark:text-white">
                              Event Organizer</span>
                         
                         {{-- <p class="text-sm text-gray-600 dark:text-gray-400">&</p> --}}
@@ -252,55 +252,55 @@ TEXT;
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a href="/" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                <nav class="items-center hidden space-x-8 lg:flex">
+                    <a href="/" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                         Home
                     </a>
                     
                     <!-- Pages Dropdown -->
                     <div class="relative group">
-                        <button class="nav-link flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                        <button class="flex items-center space-x-1 font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                             <span>Pages</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                            <i class="text-xs transition-transform fas fa-chevron-down group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute top-full left-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-transition">
-                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-2 min-w-48 backdrop-blur-md">
-                                <a href="/tentang" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
-                                    <i class="fas fa-info-circle w-4 mr-3"></i>
+                        <div class="absolute left-0 invisible mt-2 opacity-0 top-full group-hover:opacity-100 group-hover:visible dropdown-transition">
+                            <div class="py-2 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700 min-w-48 backdrop-blur-md">
+                                <a href="/tentang" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
+                                    <i class="w-4 mr-3 fas fa-info-circle"></i>
                                     Tentang Kami
                                 </a>
-                                <a href="/layanan" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
-                                    <i class="fas fa-concierge-bell w-4 mr-3"></i>
+                                <a href="/layanan" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
+                                    <i class="w-4 mr-3 fas fa-concierge-bell"></i>
                                     Layanan
                                 </a>
-                                <a href="/galery" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
-                                    <i class="fas fa-images w-4 mr-3"></i>
+                                <a href="/galery" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
+                                    <i class="w-4 mr-3 fas fa-images"></i>
                                     Galery
                                 </a>
-                                <a href="/portofolio" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
-                                    <i class="fas fa-images w-4 mr-3"></i>
+                                <a href="/portofolio" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
+                                    <i class="w-4 mr-3 fas fa-images"></i>
                                     Portofolio
                                 </a>
                                 <hr class="my-1 border-gray-200 dark:border-gray-600">
-                                <a href="/team" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors">
-                                    <i class="fas fa-users w-4 mr-3"></i>
+                                <a href="/team" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
+                                    <i class="w-4 mr-3 fas fa-users"></i>
                                     Tim Kami
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="/artikel" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                    <a href="/artikel" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                         Artikel
                     </a>
-                    <a href="/faq" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                    <a href="/faq" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                         FAQ
                     </a>
-                    <a href="/kalender" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                    <a href="/kalender" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                         Kalender
                     </a>
-                    <a href="/kontak" class="nav-link text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors">
+                    <a href="/kontak" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
                         Kontak
                     </a>
                 </nav>
@@ -312,7 +312,7 @@ TEXT;
                         <button 
                             @click="open = !open"
                             @click.away="open = false"
-                            class="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200"
+                            class="flex items-center px-3 py-2 space-x-2 text-sm font-medium text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                         >
                             <img :src="currentLanguage.flag" :alt="currentLanguage.name" class="w-5 h-4 rounded-sm">
                             <span x-text="currentLanguage.code.toUpperCase()"></span>
@@ -327,18 +327,18 @@ TEXT;
                             x-transition:leave="transition ease-in duration-150"
                             x-transition:leave-start="opacity-100 scale-100"
                             x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50"
+                            class="absolute right-0 z-50 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700"
                         >
                             <div class="py-1">
                                 <template x-for="language in languages" :key="language.code">
                                     <button
                                         @click="setLanguage(language)"
-                                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600 transition-colors duration-150"
+                                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 transition-colors duration-150 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600"
                                         :class="currentLanguage.code === language.code ? 'bg-red-50 dark:bg-red-900/20 text-red-600' : ''"
                                     >
-                                        <img :src="language.flag" :alt="language.name" class="w-5 h-4 rounded-sm mr-3">
+                                        <img :src="language.flag" :alt="language.name" class="w-5 h-4 mr-3 rounded-sm">
                                         <span x-text="language.name"></span>
-                                        <i x-show="currentLanguage.code === language.code" class="fas fa-check ml-auto text-red-600"></i>
+                                        <i x-show="currentLanguage.code === language.code" class="ml-auto text-red-600 fas fa-check"></i>
                                     </button>
                                 </template>
                             </div>
@@ -347,13 +347,13 @@ TEXT;
                     
                     <!-- Dark Mode Toggle -->
                     <div class="flex items-center space-x-2">
-                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden md:inline">
+                        <span class="hidden text-sm text-gray-600 dark:text-gray-400 md:inline">
                             <i class="fas fa-sun"></i>
                         </span>
                         
                         <button 
                             @click="darkMode = !darkMode"
-                            class="relative inline-flex h-6 w-11 items-center rounded-full toggle-bg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                            class="relative inline-flex items-center h-6 rounded-full w-11 toggle-bg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                             :class="darkMode ? 'bg-red-600' : 'bg-gray-300'"
                             type="button"
                             role="switch"
@@ -361,13 +361,13 @@ TEXT;
                         >
                             <span class="sr-only">Toggle dark mode</span>
                             <span 
-                                class="inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition duration-300 ease-in-out toggle-dot"
+                                class="inline-block w-4 h-4 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg toggle-dot"
                                 :class="darkMode ? 'translate-x-6' : 'translate-x-0.5'"
                             >
                             </span>
                         </button>
                         
-                        <span class="text-sm text-gray-600 dark:text-gray-400 hidden md:inline">
+                        <span class="hidden text-sm text-gray-600 dark:text-gray-400 md:inline">
                             <i class="fas fa-moon"></i>
                         </span>
                     </div>
@@ -375,7 +375,7 @@ TEXT;
                     <!-- Mobile Menu Button -->
                     <button 
                         @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="lg:hidden relative z-50 flex flex-col justify-center items-center w-8 h-8 focus:outline-none"
+                        class="relative z-50 flex flex-col items-center justify-center w-8 h-8 lg:hidden focus:outline-none"
                         :class="mobileMenuOpen ? 'space-y-0' : 'space-y-1'"
                     >
                         <span 
@@ -405,11 +405,11 @@ TEXT;
                 x-transition:leave-end="opacity-0 -translate-y-4"
                 class="lg:hidden"
             >
-                <nav class="flex flex-col space-y-2 pt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
+                <nav class="flex flex-col pt-4 pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
                     <a href="/" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <i class="fas fa-home w-5 mr-3"></i>
+                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="w-5 mr-3 fas fa-home"></i>
                         Home
                     </a>
                     
@@ -417,13 +417,13 @@ TEXT;
                     <div x-data="{ pagesOpen: false }">
                         <button 
                             @click="pagesOpen = !pagesOpen"
-                            class="flex items-center justify-between w-full px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                            class="flex items-center justify-between w-full px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                         >
                             <div class="flex items-center">
-                                <i class="fas fa-file-alt w-5 mr-3"></i>
+                                <i class="w-5 mr-3 fas fa-file-alt"></i>
                                 Pages
                             </div>
-                            <i class="fas fa-chevron-down transition-transform" :class="pagesOpen ? 'rotate-180' : ''"></i>
+                            <i class="transition-transform fas fa-chevron-down" :class="pagesOpen ? 'rotate-180' : ''"></i>
                         </button>
                         
                         <div x-show="pagesOpen" 
@@ -433,35 +433,35 @@ TEXT;
                              x-transition:leave="transition ease-in duration-150"
                              x-transition:leave-start="opacity-100 scale-y-100"
                              x-transition:leave-end="opacity-0 scale-y-0"
-                             class="ml-4 mt-2 space-y-1 origin-top">
+                             class="mt-2 ml-4 space-y-1 origin-top">
                             <a href="/tentang" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                                <i class="fas fa-info-circle w-4 mr-3"></i>
+                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="w-4 mr-3 fas fa-info-circle"></i>
                                 Tentang Kami
                             </a>
                             <a href="/layanan" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                                <i class="fas fa-concierge-bell w-4 mr-3"></i>
+                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="w-4 mr-3 fas fa-concierge-bell"></i>
                                 Layanan
                             </a>
                             <a href="/portofolio" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                                <i class="fas fa-images w-4 mr-3"></i>
+                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="w-4 mr-3 fas fa-images"></i>
                                 Portofolio
                             </a>
                             <a href="/galery" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                                <i class="fas fa-images w-4 mr-3"></i>
+                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="w-4 mr-3 fas fa-images"></i>
                                 Galery
                             </a>
                             <a href="/team" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                                <i class="fas fa-users w-4 mr-3"></i>
+                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="w-4 mr-3 fas fa-users"></i>
                                 Tim Kami
                             </a>
                         </div>
@@ -469,26 +469,26 @@ TEXT;
 
                     <a href="/artikel" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <i class="fas fa-newspaper w-5 mr-3"></i>
+                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="w-5 mr-3 fas fa-newspaper"></i>
                         Artikel
                     </a>
                     <a href="/faq" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <i class="fas fa-question-circle w-5 mr-3"></i>
+                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="w-5 mr-3 fas fa-question-circle"></i>
                         FAQ
                     </a>
                     <a href="/kalender" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <i class="fas fa-calendar-alt w-5 mr-3"></i>
+                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="w-5 mr-3 fas fa-calendar-alt"></i>
                         Kalender
                     </a>
                     <a href="/kontak" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-                        <i class="fas fa-envelope w-5 mr-3"></i>
+                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="w-5 mr-3 fas fa-envelope"></i>
                         Kontak
                     </a>
                 </nav>
@@ -500,21 +500,21 @@ TEXT;
     @yield('content')
     
     <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white relative overflow-hidden">
+    <footer class="relative overflow-hidden text-white bg-gray-800">
         <!-- Background decoration -->
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-no-repeat bg-cover bg-center opacity-5"
             style="background: url({{ asset('storage/content/decoration01.jpeg') }}); background-size: cover; background-position: center; background-repeat: no-repeat;"
         ></div>
         
-        <div class="relative z-10 px-10 lg:px-32 py-16">
+        <div class="relative z-10 px-10 py-16 lg:px-32">
             <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 gap-12 mb-12 md:grid-cols-4">
                 
                 <!-- Brand Section -->
                 <div class="col-span-1 md:col-span-2">
                     <div class="mb-6">
-                        <h3 class="text-4xl edu-vic-wa-nt-hand-500 text-white mb-4">3Rasa</h3>
-                        <p class="text-gray-300 pt-serif-regular-italic text-lg leading-relaxed">
+                        <h3 class="mb-4 text-4xl text-white edu-vic-wa-nt-hand-500">3Rasa</h3>
+                        <p class="text-lg leading-relaxed text-gray-300 pt-serif-regular-italic">
                             Wujudkan momen spesial Anda bersama kami. Dari pesta pernikahan yang elegan, event korporat profesional, hingga penyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.
                         </p>
                     </div>
@@ -522,23 +522,23 @@ TEXT;
                     <!-- Social Media -->
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/3rasa_production/" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-instagram class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                                <x-bi-instagram class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-telephone class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                                <x-bi-telephone class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-tiktok class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                                <x-bi-tiktok class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-whatsapp class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                                <x-bi-whatsapp class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                     </div>
@@ -546,60 +546,60 @@ TEXT;
 
                 <!-- Services -->
                 <div>
-                    <h4 class="text-xl edu-vic-wa-nt-hand-500 mb-6 text-white">Layanan Kami</h4>
+                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">Layanan Kami</h4>
                     <ul class="space-y-3 poppins-regular">
-                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Wedding Organizer</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Dekorasi Pernikahan</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Event Korporat</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Sewa Perlengkapan</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Dokumentasi</a></li>
+                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Wedding Organizer</a></li>
+                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dekorasi Pernikahan</a></li>
+                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Event Korporat</a></li>
+                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Sewa Perlengkapan</a></li>
+                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dokumentasi</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-xl edu-vic-wa-nt-hand-500 mb-6 text-white">Kontak</h4>
+                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">Kontak</h4>
                     <div class="space-y-4 poppins-regular">
                         <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
+                            <div class="flex items-center justify-center w-6 h-6 mt-1 rounded-full bg-primary">
                                 <x-heroicon-o-map-pin class="w-3 h-3 text-white" />
                             </div>
                             <div>
-                                <p class="text-gray-300 text-sm">Jl. Contoh No. 123</p>
-                                <p class="text-gray-300 text-sm">Tarakan, Kalimantan Utara</p>
+                                <p class="text-sm text-gray-300">Jl. Contoh No. 123</p>
+                                <p class="text-sm text-gray-300">Tarakan, Kalimantan Utara</p>
                             </div>
                         </div>
                         
                         <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-phone class="w-3 h-3 text-white" />
                             </div>
-                            <p class="text-gray-300 text-sm">+62 812-3456-7890</p>
+                            <p class="text-sm text-gray-300">+62 812-3456-7890</p>
                         </div>
                         
                         <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-envelope class="w-3 h-3 text-white" />
                             </div>
-                            <p class="text-gray-300 text-sm">info@3rasa.com</p>
+                            <p class="text-sm text-gray-300">info@3rasa.com</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Newsletter Section -->
-            <div class="border-t border-gray-700 pt-8 mb-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="pt-8 mb-8 border-t border-gray-700">
+                <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
                     <div>
-                        <h4 class="text-2xl edu-vic-wa-nt-hand-500 text-white mb-2">Dapatkan Update Terbaru</h4>
+                        <h4 class="mb-2 text-2xl text-white edu-vic-wa-nt-hand-500">Dapatkan Update Terbaru</h4>
                         <p class="text-gray-300 pt-serif-regular-italic">Berlangganan newsletter kami untuk mendapatkan tips pernikahan dan penawaran spesial</p>
                     </div>
                     <div class="flex gap-4">
                         <form method="POST" action="{{ route('subscribe') }}">
                             @csrf
                             <input type="email" name="email" id="email" required placeholder="Masukkan email Anda"
-                            class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300">
-                            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 transition-all duration-300 hover:tracking-wider">
+                            class="flex-1 px-4 py-3 text-white placeholder-gray-400 transition-colors duration-300 bg-gray-800 border border-gray-600 rounded-xl focus:border-primary focus:outline-none">
+                            <button type="submit" class="px-6 py-3 text-white transition-all duration-300 bg-primary rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 hover:tracking-wider">
                                 Berlangganan
                             </button>
                         </form>
@@ -609,30 +609,30 @@ TEXT;
 
 
             <!-- Customer Testimonial Banner -->
-            <div class="bg-gradient-to-r from-primary/20 to-transparent rounded-2xl p-6 mb-8 border border-primary/30">
+            <div class="p-6 mb-8 border bg-gradient-to-r from-primary/20 to-transparent rounded-2xl border-primary/30">
                 <div class="flex items-center gap-6">
                     <div class="text-center">
                         <div class="text-4xl edu-vic-wa-nt-hand-500 text-primary">100+</div>
-                        <div class="text-gray-300 text-sm pt-serif-regular">Pasangan Bahagia</div>
+                        <div class="text-sm text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
                     </div>
                     <div class="flex-1">
-                        <p class="text-white pt-serif-regular-italic text-lg">
+                        <p class="text-lg text-white pt-serif-regular-italic">
                             "Terima kasih 3Rasa telah membuat hari pernikahan kami menjadi sempurna dan tak terlupakan"
                         </p>
-                        <p class="text-primary text-sm mt-2 edu-vic-wa-nt-hand-500">- Pasangan yang Puas</p>
+                        <p class="mt-2 text-sm text-primary edu-vic-wa-nt-hand-500">- Pasangan yang Puas</p>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom Footer -->
-            <div class="border-t border-gray-700 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div class="flex gap-6 poppins-regular text-sm">
-                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Kebijakan Privasi</a>
-                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Syarat & Ketentuan</a>
-                        <a href="/faq" class="text-gray-300 hover:text-primary transition-colors duration-300">FAQ</a>
+            <div class="pt-8 border-t border-gray-700">
+                <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+                    <div class="flex gap-6 text-sm poppins-regular">
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">Kebijakan Privasi</a>
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">Syarat & Ketentuan</a>
+                        <a href="/faq" class="text-gray-300 transition-colors duration-300 hover:text-primary">FAQ</a>
                     </div>
-                    <div class="text-gray-400 text-sm poppins-regular">
+                    <div class="text-sm text-gray-400 poppins-regular">
                         © 2025 3Rasa Wedding Organizer. All rights reserved.
                     </div>
                 </div>
@@ -641,17 +641,17 @@ TEXT;
 
         <!-- Decorative Elements -->
         <div class="absolute bottom-0 right-0 w-64 h-64 opacity-10">
-            <div class="w-full h-full bg-gradient-to-tl from-primary/30 to-transparent rounded-full"></div>
+            <div class="w-full h-full rounded-full bg-gradient-to-tl from-primary/30 to-transparent"></div>
         </div>
     </footer>
 
     <!-- Call to Action Floating Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <button class="group bg-primary text-white rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl">
+    <div class="fixed z-50 bottom-6 right-6">
+        <button class="p-4 text-white transition-all duration-300 rounded-full shadow-lg group bg-primary hover:scale-110 hover:shadow-2xl">
              <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
                 <div class="flex items-center gap-3">
                     <x-bi-whatsapp class="w-6 h-6" />
-                        <span class="hidden group-hover:block edu-vic-wa-nt-hand-500 pr-2 transition-all duration-300">
+                        <span class="hidden pr-2 transition-all duration-300 group-hover:block edu-vic-wa-nt-hand-500">
                             Hubungi Kami
                         </span>
                 </div>

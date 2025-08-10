@@ -158,17 +158,17 @@
     <div class="shooting-star"></div>
 </div>
 
-<div class="content-wrapper">
+<div class="overflow-hidden content-wrapper">
 
     <div class="relative h-[70vh] overflow-hidden" 
     style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
                     Layanan Kami
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Wujudkan acara impian Anda dengan layanan profesional dan berkualitas tinggi
                 </p>
                 </p>
@@ -177,14 +177,14 @@
     </div>
 
     {{-- Main Services Section --}}
-    <div class="bg-white dark:bg-gray-800 py-20 px-6 lg:px-20">
-        <div class="max-w-7xl mx-auto">
+    <div class="px-6 py-20 bg-white dark:bg-gray-800 lg:px-20">
+        <div class="mx-auto max-w-7xl">
             {{-- Section Header --}}
-            <div data-aos="fade-down"  class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">
+            <div data-aos="fade-down"  class="mb-16 text-center">
+                <h2 class="mb-4 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                     Layanan Unggulan
                 </h2>
-                <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic max-w-3xl mx-auto">
+                <p class="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
                     Dari pernikahan tradisional hingga event korporat modern, kami siap menghadirkan pengalaman tak terlupakan
                 </p>
             </div>
@@ -192,11 +192,11 @@
             {{-- Services Grid--}}
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {{-- Service 1: Wedding Organizer --}}
-                <div data-aos="fade-up" class="overflow-hidden relative rounded-3xl border transition-all duration-500 group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+                <div data-aos="fade-up" class="relative overflow-hidden transition-all duration-500 border rounded-3xl group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                     {{-- Image with modern overlay --}}
-                    <div class="overflow-hidden relative h-48">
+                    <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 transition-transform duration-700 scale-105 group-hover:scale-100" style="background-image: url('{{ asset('storage/content/wedding11.jpg') }}'); background-size: cover; background-position: center;"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t to-transparent transition-all duration-500 from-black/60 via-black/20 group-hover:from-black/40"></div>
+                        <div class="absolute inset-0 transition-all duration-500 bg-gradient-to-t to-transparent from-black/60 via-black/20 group-hover:from-black/40"></div>
                         
                         {{-- Floating badge --}}
                         <div class="absolute top-4 right-4">
@@ -207,7 +207,7 @@
                         
                         {{-- Service icon --}}
                         <div class="absolute bottom-4 left-4">
-                            <div class="flex justify-center items-center w-12 h-12 rounded-2xl transition-transform duration-300 bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
+                            <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
                                 <x-heroicon-o-heart class="w-6 h-6 text-primary" />
                             </div>
                         </div>
@@ -239,7 +239,7 @@
                         
                         {{-- CTA Button --}}
                         <a href="/layananwedding" class="block">
-                            <button class="px-4 py-3 w-full text-sm font-medium rounded-2xl border-2 transition-all duration-300 border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
+                            <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
                                 Pelajari Selengkapnya
                             </button>
                         </a>
@@ -247,13 +247,13 @@
                 </div>
 
                 {{-- Service 2: Event --}}
-                <div data-aos="fade-down"  class="overflow-hidden relative rounded-3xl border transition-all duration-500 group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
-                    <div class="overflow-hidden relative h-48">
+                <div data-aos="fade-down"  class="relative overflow-hidden transition-all duration-500 border rounded-3xl group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 transition-transform duration-700 scale-105 group-hover:scale-100" style="background-image: url('{{ asset('storage/content/event01.png') }}'); background-size: cover; background-position: center;"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t to-transparent transition-all duration-500 from-black/60 via-black/20 group-hover:from-black/40"></div>
+                        <div class="absolute inset-0 transition-all duration-500 bg-gradient-to-t to-transparent from-black/60 via-black/20 group-hover:from-black/40"></div>
                         
                         <div class="absolute bottom-4 left-4">
-                            <div class="flex justify-center items-center w-12 h-12 rounded-2xl transition-transform duration-300 bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
+                            <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
                                 <x-heroicon-o-sparkles class="w-6 h-6 text-primary" />
                             </div>
                         </div>
@@ -281,7 +281,7 @@
                             </span>
                         </div>
                         <a href="/layanandekorasi" class="block">
-                            <button class="px-4 py-3 w-full text-sm font-medium rounded-2xl border-2 transition-all duration-300 border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
+                            <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
                                 Pelajari Selengkapnya
                             </button>
                         </a>
@@ -289,13 +289,13 @@
                 </div>
 
                 {{-- Service 3: Sewa Perlengkapan --}}
-                <div data-aos="fade-left" class="overflow-hidden relative rounded-3xl border transition-all duration-500 group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
-                    <div class="overflow-hidden relative h-48">
+                <div data-aos="fade-left" class="relative overflow-hidden transition-all duration-500 border rounded-3xl group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+                    <div class="relative h-48 overflow-hidden">
                         <div class="absolute inset-0 transition-transform duration-700 scale-105 group-hover:scale-100" style="background-image: url('{{ asset('storage/content/decoration01.jpeg') }}'); background-size: cover; background-position: center;"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t to-transparent transition-all duration-500 from-black/60 via-black/20 group-hover:from-black/40"></div>
+                        <div class="absolute inset-0 transition-all duration-500 bg-gradient-to-t to-transparent from-black/60 via-black/20 group-hover:from-black/40"></div>
                         
                         <div class="absolute bottom-4 left-4">
-                            <div class="flex justify-center items-center w-12 h-12 rounded-2xl transition-transform duration-300 bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
+                            <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
                                 <x-heroicon-o-cube class="w-6 h-6 text-primary" />
                             </div>
                         </div>
@@ -324,7 +324,7 @@
                         </div>
                         
                         <a href="/layanansewa" class="block">
-                            <button class="px-4 py-3 w-full text-sm font-medium rounded-2xl border-2 transition-all duration-300 border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
+                            <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
                                 Pelajari Selengkapnya
                             </button>
                         </a>
@@ -335,10 +335,10 @@
     </div>
 
     {{-- Process Section --}}
-    <div class="bg-gray-50 dark:bg-gray-900 py-20 px-6 lg:px-20">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">
+    <div class="px-6 py-20 bg-gray-50 dark:bg-gray-900 lg:px-20">
+        <div class="mx-auto max-w-7xl">
+            <div class="mb-16 text-center">
+                <h2 class="mb-4 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                     Proses Kerja Kami
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
@@ -346,13 +346,13 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 {{-- Step 1 --}}
                 <div class="text-center group">
-                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-white text-2xl font-bold">01</span>
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-primary group-hover:scale-110">
+                        <span class="text-2xl font-bold text-white">01</span>
                     </div>
-                    <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
+                    <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                         Konsultasi
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
@@ -362,10 +362,10 @@
 
                 {{-- Step 2 --}}
                 <div class="text-center group">
-                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-white text-2xl font-bold">02</span>
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-primary group-hover:scale-110">
+                        <span class="text-2xl font-bold text-white">02</span>
                     </div>
-                    <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
+                    <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                         Perencanaan
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
@@ -375,10 +375,10 @@
 
                 {{-- Step 3 --}}
                 <div class="text-center group">
-                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-white text-2xl font-bold">03</span>
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-primary group-hover:scale-110">
+                        <span class="text-2xl font-bold text-white">03</span>
                     </div>
-                    <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
+                    <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                         Persiapan
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
@@ -388,10 +388,10 @@
 
                 {{-- Step 4 --}}
                 <div class="text-center group">
-                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
-                        <span class="text-white text-2xl font-bold">04</span>
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-primary group-hover:scale-110">
+                        <span class="text-2xl font-bold text-white">04</span>
                     </div>
-                    <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">
+                    <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                         Eksekusi
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
@@ -403,22 +403,22 @@
     </div>
 
     {{-- CTA Section --}}
-    <div class="bg-white dark:bg-gray-800 py-20 px-6 lg:px-20">
+    <div class="px-6 py-20 bg-white dark:bg-gray-800 lg:px-20">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-6">
+            <h2 class="mb-6 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                 Siap Mewujudkan Acara Impian Anda?
             </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic mb-10">
+            <p class="mb-10 text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
                 Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button class="flex group hover:scale-105 transition-all duration-300 bg-primary text-white rounded-xl px-8 py-4 font-semibold">
-                    <span class="mr-3 edu-vic-wa-nt-hand text-lg">Konsultasi Gratis</span>
-                    <x-heroicon-o-arrow-small-up class="h-6 w-6 group-hover:rotate-45 duration-300 transition-all" />
+            <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <button class="flex px-8 py-4 font-semibold text-white transition-all duration-300 group hover:scale-105 bg-primary rounded-xl">
+                    <span class="mr-3 text-lg edu-vic-wa-nt-hand">Konsultasi Gratis</span>
+                    <x-heroicon-o-arrow-small-up class="w-6 h-6 transition-all duration-300 group-hover:rotate-45" />
                 </button>
-                <button class="flex group hover:scale-105 transition-all duration-300 border-2 border-primary text-primary dark:text-white dark:border-white rounded-xl px-8 py-4 font-semibold">
-                    <span class="mr-3 edu-vic-wa-nt-hand text-lg">Lihat Portfolio</span>
-                    <x-heroicon-o-arrow-small-up class="h-6 w-6 group-hover:rotate-45 duration-300 transition-all" />
+                <button class="flex px-8 py-4 font-semibold transition-all duration-300 border-2 group hover:scale-105 border-primary text-primary dark:text-white dark:border-white rounded-xl">
+                    <span class="mr-3 text-lg edu-vic-wa-nt-hand">Lihat Portfolio</span>
+                    <x-heroicon-o-arrow-small-up class="w-6 h-6 transition-all duration-300 group-hover:rotate-45" />
                 </button>
             </div>
             

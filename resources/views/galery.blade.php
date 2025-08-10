@@ -3,16 +3,16 @@
 @section('title', 'Portfolio')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen">
+<div class="min-h-screen bg-white dark:bg-gray-800">
    <div class="relative h-[70vh] overflow-hidden"
     style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
                     Galery Kami
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Koleksi momen indah yang telah kami wujudkan bersama pasangan-pasangan bahagia
                 </p>
                 </p>
@@ -20,22 +20,22 @@
         </div>
     </div>
     {{-- Filter Categories --}}
-    <div class="container mx-auto px-6 py-12">
+    <div class="container px-6 py-12 mx-auto">
         {{-- Portfolio Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" id="portfolio-grid">
             
             @if($allImage->count() > 0) 
             @foreach ($allImage as $image) 
                 {{-- @dd($image['foto']);    --}}
-                <div class="portfolio-item wedding group cursor-pointer" data-category="wedding">
-                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                    <div class="relative overflow-hidden shadow-lg rounded-xl">
                         <img src="{{ $image['foto_url'] }}" alt="Pernikahan Adat Bugis" 
-                            class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="absolute bottom-6 left-6 text-white">
+                            class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                        <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                            <div class="absolute text-white bottom-6 left-6">
                                 <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ $image['nama'] }}</h3>
                                 {{-- <p class="text-sm pt-serif-regular-italic">Rina & Andi - Tarakan</p> --}}
-                                <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
+                                <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">Pernikahan</span>
                             </div>
                         </div>
                     </div>
@@ -43,130 +43,130 @@
             @endforeach
             @else
             {{-- Wedding Projects --}}
-            <div class="portfolio-item wedding group cursor-pointer" data-category="wedding">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Pernikahan Adat Bugis" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Adat Bugis</h3>
                             <p class="text-sm pt-serif-regular-italic">Rina & Andi - Tarakan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">Pernikahan</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item wedding group cursor-pointer" data-category="wedding">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Pernikahan Modern" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Modern</h3>
                             <p class="text-sm pt-serif-regular-italic">Sarah & Budi - Balikpapan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">Pernikahan</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item wedding group cursor-pointer" data-category="wedding">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding04.jpg') }}" alt="Pernikahan Outdoor" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Outdoor</h3>
                             <p class="text-sm pt-serif-regular-italic">Maya & Doni - Tarakan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">Pernikahan</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- Decoration Projects --}}
-            <div class="portfolio-item decoration group cursor-pointer" data-category="decoration">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Dekorasi Elegant" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Dekorasi Elegant</h3>
                             <p class="text-sm pt-serif-regular-italic">Tema Gold & White</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-purple-500 rounded-full text-xs">Dekorasi</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">Dekorasi</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item decoration group cursor-pointer" data-category="decoration">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Dekorasi Tradisional" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Dekorasi Tradisional</h3>
                             <p class="text-sm pt-serif-regular-italic">Adat Kalimantan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-purple-500 rounded-full text-xs">Dekorasi</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">Dekorasi</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- Corporate Events --}}
-            <div class="portfolio-item corporate group cursor-pointer" data-category="corporate">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item corporate group" data-category="corporate">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding05.jpeg') }}" alt="Corporate Event" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Corporate Meeting</h3>
                             <p class="text-sm pt-serif-regular-italic">PT. Borneo Sejahtera</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-blue-500 rounded-full text-xs">Corporate</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs bg-blue-500 rounded-full">Corporate</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- Additional Items --}}
-            <div class="portfolio-item wedding group cursor-pointer" data-category="wedding">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Pernikahan Indoor" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Indoor</h3>
                             <p class="text-sm pt-serif-regular-italic">Lina & Agus - Samarinda</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">Pernikahan</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item decoration group cursor-pointer" data-category="decoration">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/decoration04.png') }}" alt="Dekorasi Minimalis" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Dekorasi Minimalis</h3>
                             <p class="text-sm pt-serif-regular-italic">Modern & Clean</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-purple-500 rounded-full text-xs">Dekorasi</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">Dekorasi</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-item corporate group cursor-pointer" data-category="corporate">
-                <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="cursor-pointer portfolio-item corporate group" data-category="corporate">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
                     <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Product Launch" 
-                         class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="absolute bottom-6 left-6 text-white">
+                         class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Product Launch</h3>
                             <p class="text-sm pt-serif-regular-italic">Tech Company</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-blue-500 rounded-full text-xs">Corporate</span>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs bg-blue-500 rounded-full">Corporate</span>
                         </div>
                     </div>
                 </div>
@@ -175,35 +175,35 @@
         </div>
 
         {{-- Load More Button --}}
-        <div class="text-center mt-12">
-            <button class="flex mx-auto group hover:scale-105 transition-all duration-300 bg-gray-300 rounded-full justify-center items-center">
-                <p class="my-2 mx-3 ml-4 pt-serif-regular text-black">
+        <div class="mt-12 text-center">
+            <button class="flex items-center justify-center mx-auto transition-all duration-300 bg-gray-300 rounded-full group hover:scale-105">
+                <p class="mx-3 my-2 ml-4 text-black pt-serif-regular">
                     Lihat Lebih Banyak
                 </p>
-                <x-heroicon-o-arrow-small-down class="h-10 w-10 border-2 bg-black text-white rounded-full p-1 group-hover:rotate-180 duration-300 transition-all" />
+                <x-heroicon-o-arrow-small-down class="w-10 h-10 p-1 text-white transition-all duration-300 bg-black border-2 rounded-full group-hover:rotate-180" />
             </button>
         </div>
     </div>
 
     {{-- Statistics Section --}}
-    <div class="bg-gray-100 dark:bg-gray-900 py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container px-6 mx-auto">
+            <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">100+</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Pasangan Bahagia</p>
+                    <h3 class="text-4xl font-bold transition-transform duration-300 text-primary edu-vic-wa-nt-hand group-hover:scale-110">100+</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 pt-serif-regular">Pasangan Bahagia</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">200+</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Proyek Selesai</p>
+                    <h3 class="text-4xl font-bold transition-transform duration-300 text-primary edu-vic-wa-nt-hand group-hover:scale-110">200+</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 pt-serif-regular">Proyek Selesai</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">5+</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Tahun Pengalaman</p>
+                    <h3 class="text-4xl font-bold transition-transform duration-300 text-primary edu-vic-wa-nt-hand group-hover:scale-110">5+</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 pt-serif-regular">Tahun Pengalaman</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">50+</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Event Corporate</p>
+                    <h3 class="text-4xl font-bold transition-transform duration-300 text-primary edu-vic-wa-nt-hand group-hover:scale-110">50+</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400 pt-serif-regular">Event Corporate</p>
                 </div>
             </div>
         </div>
@@ -211,18 +211,18 @@
 
     {{-- CTA Section --}}
     <div class="py-16 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
+        <div class="container px-6 mx-auto text-center">
+            <h2 class="mb-6 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
                 Siap Mewujudkan Acara Impian Anda?
             </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 pt-serif-regular-italic max-w-2xl mx-auto">
+            <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 Hubungi kami sekarang dan biarkan tim profesional kami membantu merencanakan momen spesial Anda
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-primary text-primary dark:text-black dark:bg-white dark:border-none rounded-xl px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
+            <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                <button class="p-2 px-5 font-semibold tracking-wide transition-all duration-300 border-2 hover:tracking-widest hover:px-8 border-primary text-primary dark:text-black dark:bg-white dark:border-none rounded-xl edu-vic-wa-nt-hand-500">
                     Lihat Katalog Sewa
                 </button>
-                <button class="text-white bg-primary rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
+                <button class="p-2 px-5 font-semibold tracking-wide text-white transition-all duration-300 border-2 bg-primary rounded-xl hover:tracking-widest hover:px-8 edu-vic-wa-nt-hand-500">
                     Hubungi Kami
                 </button>
             </div>

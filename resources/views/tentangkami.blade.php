@@ -3,16 +3,16 @@
 @section('title', 'Tentang Kami - 3Rasa Wedding Organizer')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen pt-14">
+<div class="min-h-screen overflow-hidden bg-white dark:bg-gray-800 pt-14">
     {{-- Hero Section --}}
     {{-- <div class="relative h-96 bg-gradient-to-r from-primary/20 to-primary/40 dark:from-gray-700 dark:to-gray-600">
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-cover bg-center opacity-20"></div>
         <div class="relative z-10 flex items-center justify-center h-full">
             <div class="text-center">
-                <h1 class="text-6xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand mb-4">
+                <h1 class="mb-4 text-6xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand">
                     Tentang 3Rasa
                 </h1>
-                <p class="text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="max-w-2xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
                     Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi
                 </p>
             </div>
@@ -24,10 +24,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
                     Tentang 3Rasa
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi
                 </p>
             </div>
@@ -39,26 +39,26 @@
     {{-- Main Content --}}
     <div class="px-10 md:px-16 lg:px-24 xl:px-32">
         {{-- Our Story Section --}}
-        <div class="grid grid-cols-2 gap-20 mb-20 items-center">
+        <div class="grid items-center grid-cols-2 gap-20 mb-20">
             <div data-aos="fade-right" >
-                <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-6">
+                <h2 class="mb-6 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">
                     Cerita Kami
                 </h2>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular text-lg leading-relaxed mb-6">
+                <p class="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
                     3Rasa lahir dari impian sederhana untuk menciptakan momen-momen berharga yang tak terlupakan. 
                     Dimulai pada tahun 2018 di Tarakan, Kalimantan Utara, kami hadir dengan semangat melayani 
                     setiap pasangan yang ingin merayakan cinta mereka dengan cara yang istimewa.
                 </p>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular text-lg leading-relaxed mb-8">
+                <p class="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
                     Nama "3Rasa" mencerminkan tiga pilar utama kami: <strong>Rasa Cinta</strong> dalam setiap detail, 
                     <strong>Rasa Bangga</strong> atas kepercayaan klien, dan <strong>Rasa Bahagia</strong> 
                     melihat senyum pengantin di hari bahagia mereka.
                 </p>
-                <button class="flex group hover:scale-105 transition-all duration-300 bg-primary text-white rounded-full justify-center items-center">
-                    <p class="my-3 mx-4 ml-6 pt-serif-regular">
+                <button class="flex items-center justify-center text-white transition-all duration-300 rounded-full group hover:scale-105 bg-primary">
+                    <p class="mx-4 my-3 ml-6 pt-serif-regular">
                         Hubungi Kami
                     </p>
-                    <div class="h-10 w-10 border-2 bg-white text-primary rounded-full p-1 group-hover:rotate-45 duration-300 transition-all flex items-center justify-center">
+                    <div class="flex items-center justify-center w-10 h-10 p-1 transition-all duration-300 bg-white border-2 rounded-full text-primary group-hover:rotate-45">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12l4-4 4 4m0 6l-4-4-4 4"></path>
                         </svg>
@@ -66,9 +66,9 @@
                 </button>
             </div>
             <div data-aos="fade-left" class="relative">
-                <img src="{{ asset('storage/content/wedding07.jpg') }}" alt="3Rasa Story" class="rounded-2xl shadow-2xl">
-                <div class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-700 rounded-xl p-6 shadow-xl border border-gray-200 dark:border-gray-600">
-                    <div class="text-4xl edu-vic-wa-nt-hand text-primary font-bold">100+</div>
+                <img src="{{ asset('storage/content/wedding07.jpg') }}" alt="3Rasa Story" class="shadow-2xl rounded-2xl">
+                <div class="absolute p-6 bg-white border border-gray-200 shadow-xl -bottom-10 -left-10 dark:bg-gray-700 rounded-xl dark:border-gray-600">
+                    <div class="text-4xl font-bold edu-vic-wa-nt-hand text-primary">100+</div>
                     <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
                 </div>
             </div>
@@ -76,28 +76,28 @@
 
         {{-- Vision & Mission --}}
         <div class="grid grid-cols-2 gap-10 mb-20">
-            <div data-aos="fade-up"  class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+            <div data-aos="fade-up"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                     </svg>
                 </div>
-                <h3 class="text-3xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Visi Kami</h3>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Visi Kami</h3>
+                <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
                     Menjadi wedding organizer terdepan di Kalimantan Utara yang dikenal dengan pelayanan berkualitas tinggi, 
                     kreativitas tanpa batas, dan dedikasi penuh dalam mewujudkan setiap impian pernikahan klien kami.
                 </p>
             </div>
             
-            <div data-aos="fade-down"  class="bg-gray-100 dark:bg-gray-700 rounded-2xl p-8">
-                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+            <div data-aos="fade-down"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
-                <h3 class="text-3xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Misi Kami</h3>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular leading-relaxed">
+                <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Misi Kami</h3>
+                <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
                     Memberikan layanan wedding organizer yang profesional, inovatif, dan personal untuk setiap klien. 
                     Kami berkomitmen menciptakan pengalaman pernikahan yang tak terlupakan dengan sentuhan tradisi 
                     dan kemewahan modern.
@@ -107,45 +107,45 @@
 
         {{-- Our Values --}}
         <div data-aos="fade-up"  class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Nilai-Nilai Kami</h2>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular-italic text-xl max-w-3xl mx-auto">
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">Nilai-Nilai Kami</h2>
+                <p class="max-w-3xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
                     Tiga pilar yang menjadi fondasi dalam setiap layanan yang kami berikan
                 </p>
             </div>
             
             <div class="grid grid-cols-3 gap-8">
-                <div class="text-center group hover:scale-105 transition-all duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
+                <div class="text-center transition-all duration-300 group hover:scale-105">
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
                         <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-3">Rasa Cinta</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Cinta</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                         Setiap detail dikerjakan dengan cinta dan perhatian penuh untuk menciptakan momen yang sempurna
                     </p>
                 </div>
                 
-                <div class="text-center group hover:scale-105 transition-all duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
+                <div class="text-center transition-all duration-300 group hover:scale-105">
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
                         <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M5,16L3,14L5,12L6.5,13.5L11,9L12.5,10.5L6.5,16.5L5,16M19,7H22V9H19V12H17V9H14V7H17V4H19V7M17,17V15H15V17H17M13,17V15H11V17H13M9,17V15H7V17H9Z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-3">Rasa Bangga</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Bangga</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                         Bangga menjadi bagian dari momen bahagia Anda dan dipercaya menghadirkan yang terbaik
                     </p>
                 </div>
                 
-                <div class="text-center group hover:scale-105 transition-all duration-300">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-xl transition-all duration-300">
+                <div class="text-center transition-all duration-300 group hover:scale-105">
+                    <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
                         <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
                         </svg>
                     </div>
-                    <h3 class="text-2xl edu-vic-wa-nt-hand-500 text-black dark:text-white mb-3">Rasa Bahagia</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Bahagia</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                         Kebahagiaan Anda adalah kebahagiaan kami, senyum Anda adalah reward terbesar bagi kami
                     </p>
@@ -156,64 +156,64 @@
 
         {{-- Why Choose Us --}}
         <div data-aos="fade-up" class="pb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl edu-vic-wa-nt-hand text-black dark:text-white mb-4">Mengapa Memilih 3Rasa?</h2>
-                <p class="text-gray-700 dark:text-gray-300 pt-serif-regular-italic text-xl max-w-3xl mx-auto">
+            <div class="mb-12 text-center">
+                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">Mengapa Memilih 3Rasa?</h2>
+                <p class="max-w-3xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
                     Komitmen kami untuk memberikan yang terbaik dalam setiap detail pernikahan Anda
                 </p>
             </div>
             
             <div class="grid grid-cols-2 gap-8">
-                <div class="flex gap-6 p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
+                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl poppins-medium text-black dark:text-white mb-2">Pengalaman Terpercaya</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Pengalaman Terpercaya</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                             Lebih dari 7 tahun melayani pasangan di Kalimantan Utara dengan track record yang sempurna.
                         </p>
                     </div>
                 </div>
                 
-                <div class="flex gap-6 p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
+                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl poppins-medium text-black dark:text-white mb-2">Personal Touch</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Personal Touch</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                             Setiap pernikahan adalah unik. Kami memberikan sentuhan personal yang sesuai dengan kepribadian Anda.
                         </p>
                     </div>
                 </div>
                 
-                <div class="flex gap-6 p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
+                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl poppins-medium text-black dark:text-white mb-2">Tim Profesional</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Tim Profesional</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                             Didukung oleh tim profesional yang berpengalaman dan passionate di bidangnya masing-masing.
                         </p>
                     </div>
                 </div>
                 
-                <div class="flex gap-6 p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
+                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl poppins-medium text-black dark:text-white mb-2">Harga Transparan</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Harga Transparan</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
                             Tidak ada biaya tersembunyi. Semua detail biaya akan dijelaskan dengan jelas sejak awal.
                         </p>
