@@ -6,8 +6,9 @@
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     {{-- Hero Section --}}
 
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
-        <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative h-[70vh] bg-cover bg-center overflow-hidden"
+    style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
@@ -56,7 +57,7 @@
                                 x-model="form.name"
                                 type="text" 
                                 required
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                                 placeholder="Masukkan nama lengkap Anda"
                             />
                         </div>
@@ -69,7 +70,7 @@
                                 @input="formatPhone"
                                 type="tel" 
                                 required
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                                 placeholder="contoh: 081234567890"
                             />
                         </div>
@@ -82,7 +83,7 @@
                         <input 
                             x-model="form.email"
                             type="email" 
-                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                             placeholder="nama@email.com"
                         />
                     </div>
@@ -98,7 +99,7 @@
                                 type="date" 
                                 required
                                 :min="new Date().toISOString().split('T')[0]"
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                             />
                         </div>
                         <div>
@@ -107,7 +108,7 @@
                             </label>
                             <select 
                                 x-model="form.budget"
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
                             >
                                 <option value="">Pilih range budget</option>
                                 <option value="10-25">10 - 25 Juta</option>
@@ -128,7 +129,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="wedding-organizer"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Wedding Organizer</span>
                             </label>
@@ -137,7 +138,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="decoration"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Dekorasi</span>
                             </label>
@@ -146,7 +147,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="catering"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Catering</span>
                             </label>
@@ -155,7 +156,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="photography"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Fotografi</span>
                             </label>
@@ -164,7 +165,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="sound-system"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Sound System</span>
                             </label>
@@ -173,7 +174,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="mc"
-                                    class="rounded border-gray-300 text-[--color-primary] focus:ring-[--color-primary]"
+                                    class="rounded border-gray-300 text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">MC</span>
                             </label>
@@ -188,7 +189,7 @@
                             x-model="form.message"
                             rows="5" 
                             required
-                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors resize-none"
+                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors resize-none"
                             placeholder="Ceritakan konsep pernikahan impian Anda, jumlah tamu, lokasi yang diinginkan, dan detail lainnya..."
                         ></textarea>
                     </div>
@@ -196,7 +197,7 @@
                     <button 
                         type="submit"
                         :disabled="loading"
-                        class="w-full bg-[--color-primary] text-white py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 font-medium text-lg edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-full bg-primary text-white py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 font-medium text-lg edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         <span x-show="!loading">Kirim Pesan</span>
                         <span x-show="loading" class="flex items-center justify-center gap-2">
@@ -303,7 +304,7 @@
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 1 }" 
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            class="w-6 h-6 text-primary transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -327,7 +328,7 @@
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 2 }" 
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            class="w-6 h-6 text-primary transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -351,7 +352,7 @@
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 3 }" 
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            class="w-6 h-6 text-primary transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -375,7 +376,7 @@
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 4 }" 
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            class="w-6 h-6 text-primary transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -399,7 +400,7 @@
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 5 }" 
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300"
+                            class="w-6 h-6 text-primary transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>

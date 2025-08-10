@@ -4,22 +4,19 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
-    {{-- Hero Section --}}
-    <div class="relative h-[70vh] bg-gradient-to-br from-purple-900 via-red-900 to-indigo-900 overflow-hidden">
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-6">
+
+    <div class="relative h-[70vh] overflow-hidden"
+    style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 class="text-6xl font-bold mb-6 edu-vic-wa-nt-hand tracking-wide">
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Portfolio Kami
                 </h1>
-                <p class="text-xl pt-serif-regular-italic max-w-3xl mx-auto mb-8">
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Menampilkan keahlian dan dedikasi kami dalam menciptakan momen tak terlupakan melalui berbagai layanan event organizer profesional
                 </p>
-                <div class="flex gap-4 justify-center">
-                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">Event Planning</span>
-                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">Wedding Organizer</span>
-                    <span class="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">Corporate Events</span>
-                </div>
+                </p>
             </div>
         </div>
     </div>
@@ -42,7 +39,7 @@
                 <div class="relative overflow-hidden rounded-2xl shadow-xl">
                     <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Wedding Services" 
                          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-pink-900/90 via-pink-600/50 to-transparent">
+                    <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute bottom-6 left-6 right-6 text-white">
                             <h3 class="text-2xl font-bold mb-2 edu-vic-wa-nt-hand">Wedding Organizer</h3>
                             <p class="text-sm mb-4 opacity-90">Pernikahan impian dengan sentuhan personal dan detail yang sempurna</p>
@@ -77,7 +74,7 @@
                 <div class="relative overflow-hidden rounded-2xl shadow-xl">
                     <img src="{{ asset('storage/content/wedding05.jpeg') }}" alt="Corporate Events" 
                          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-600/50 to-transparent">
+                    <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute bottom-6 left-6 right-6 text-white">
                             <h3 class="text-2xl font-bold mb-2 edu-vic-wa-nt-hand">Corporate Events</h3>
                             <p class="text-sm mb-4 opacity-90">Event perusahaan yang profesional dan berkesan untuk kesuksesan bisnis</p>
@@ -112,7 +109,7 @@
                 <div class="relative overflow-hidden rounded-2xl shadow-xl">
                     <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Decoration Services" 
                          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 via-purple-600/50 to-transparent">
+                    <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute bottom-6 left-6 right-6 text-white">
                             <h3 class="text-2xl font-bold mb-2 edu-vic-wa-nt-hand">Event Decoration</h3>
                             <p class="text-sm mb-4 opacity-90">Dekorasi menawan yang menghadirkan suasana magis di setiap acara</p>
@@ -237,80 +234,6 @@
             </div>
         </div>
 
-        {{-- Process Timeline --}}
-        <div class="mb-16">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 edu-vic-wa-nt-hand text-gray-800 dark:text-white">
-                    Proses Kerja Kami
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
-                    Metodologi yang terbukti untuk hasil yang sempurna
-                </p>
-            </div>
-
-            <div class="relative">
-                {{-- Timeline Line --}}
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-pink-400 to-purple-600 hidden lg:block"></div>
-                
-                <div class="space-y-12">
-                    {{-- Step 1 --}}
-                    <div class="flex flex-col lg:flex-row items-center">
-                        <div class="lg:w-1/2 lg:pr-12 text-center lg:text-right">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand text-pink-600">01. Konsultasi</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Memahami visi, kebutuhan, dan budget klien secara detail</p>
-                            </div>
-                        </div>
-                        <div class="relative z-10 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold my-4 lg:my-0">
-                            1
-                        </div>
-                        <div class="lg:w-1/2 lg:pl-12"></div>
-                    </div>
-
-                    {{-- Step 2 --}}
-                    <div class="flex flex-col lg:flex-row items-center">
-                        <div class="lg:w-1/2 lg:pr-12"></div>
-                        <div class="relative z-10 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold my-4 lg:my-0">
-                            2
-                        </div>
-                        <div class="lg:w-1/2 lg:pl-12 text-center lg:text-left">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand text-purple-600">02. Perencanaan</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Menyusun konsep, timeline, dan strategi eksekusi yang komprehensif</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Step 3 --}}
-                    <div class="flex flex-col lg:flex-row items-center">
-                        <div class="lg:w-1/2 lg:pr-12 text-center lg:text-right">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand text-blue-600">03. Persiapan</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Koordinasi vendor, persiapan venue, dan final checking detail</p>
-                            </div>
-                        </div>
-                        <div class="relative z-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold my-4 lg:my-0">
-                            3
-                        </div>
-                        <div class="lg:w-1/2 lg:pl-12"></div>
-                    </div>
-
-                    {{-- Step 4 --}}
-                    <div class="flex flex-col lg:flex-row items-center">
-                        <div class="lg:w-1/2 lg:pr-12"></div>
-                        <div class="relative z-10 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold my-4 lg:my-0">
-                            4
-                        </div>
-                        <div class="lg:w-1/2 lg:pl-12 text-center lg:text-left">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
-                                <h3 class="text-xl font-bold mb-2 edu-vic-wa-nt-hand text-green-600">04. Eksekusi</h3>
-                                <p class="text-gray-600 dark:text-gray-400">Menjalankan acara dengan sempurna dan penuh perhatian detail</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

@@ -4,8 +4,9 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
-   <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
-        <div class="absolute inset-0 bg-black/50"></div>
+   <div class="relative h-[70vh] overflow-hidden"
+    style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
@@ -34,7 +35,7 @@
                             <div class="absolute bottom-6 left-6 text-white">
                                 <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ $image['nama'] }}</h3>
                                 {{-- <p class="text-sm pt-serif-regular-italic">Rina & Andi - Tarakan</p> --}}
-                                <span class="inline-block mt-2 px-3 py-1 bg-[--color-primary] rounded-full text-xs">Pernikahan</span>
+                                <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
                             </div>
                         </div>
                     </div>
@@ -50,7 +51,7 @@
                         <div class="absolute bottom-6 left-6 text-white">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Adat Bugis</h3>
                             <p class="text-sm pt-serif-regular-italic">Rina & Andi - Tarakan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-[--color-primary] rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                         <div class="absolute bottom-6 left-6 text-white">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Modern</h3>
                             <p class="text-sm pt-serif-regular-italic">Sarah & Budi - Balikpapan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-[--color-primary] rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                         <div class="absolute bottom-6 left-6 text-white">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Outdoor</h3>
                             <p class="text-sm pt-serif-regular-italic">Maya & Doni - Tarakan</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-[--color-primary] rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
                         </div>
                     </div>
                 </div>
@@ -137,7 +138,7 @@
                         <div class="absolute bottom-6 left-6 text-white">
                             <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">Pernikahan Indoor</h3>
                             <p class="text-sm pt-serif-regular-italic">Lina & Agus - Samarinda</p>
-                            <span class="inline-block mt-2 px-3 py-1 bg-[--color-primary] rounded-full text-xs">Pernikahan</span>
+                            <span class="inline-block mt-2 px-3 py-1 bg-primary rounded-full text-xs">Pernikahan</span>
                         </div>
                     </div>
                 </div>
@@ -189,19 +190,19 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">100+</h3>
+                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">100+</h3>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Pasangan Bahagia</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">200+</h3>
+                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">200+</h3>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Proyek Selesai</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">5+</h3>
+                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">5+</h3>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Tahun Pengalaman</p>
                 </div>
                 <div class="group">
-                    <h3 class="text-4xl font-bold text-[--color-primary] edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">50+</h3>
+                    <h3 class="text-4xl font-bold text-primary edu-vic-wa-nt-hand group-hover:scale-110 transition-transform duration-300">50+</h3>
                     <p class="text-gray-600 dark:text-gray-400 mt-2 pt-serif-regular">Event Corporate</p>
                 </div>
             </div>
@@ -218,10 +219,10 @@
                 Hubungi kami sekarang dan biarkan tim profesional kami membantu merencanakan momen spesial Anda
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-[--color-primary] text-[--color-primary] dark:text-black dark:bg-white dark:border-none rounded-xl px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
+                <button class="border-2 tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-primary text-primary dark:text-black dark:bg-white dark:border-none rounded-xl px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
                     Lihat Katalog Sewa
                 </button>
-                <button class="text-white bg-[--color-primary] rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
+                <button class="text-white bg-primary rounded-xl tracking-wide hover:tracking-widest hover:px-8 transition-all duration-300 border-2 px-5 p-2 edu-vic-wa-nt-hand-500 font-semibold">
                     Hubungi Kami
                 </button>
             </div>

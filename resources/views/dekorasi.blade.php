@@ -58,8 +58,8 @@ TEXT;
                 {{-- Key Features --}}
                 <div class="space-y-4">
                     <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
-                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
-                            <x-heroicon-o-light-bulb class="w-6 h-6 text-[--color-primary]" />
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-light-bulb class="w-6 h-6 text-primary" />
                         </div>
                         <div>
                             <h3 class="font-semibold text-black dark:text-white">Konsep Kreatif</h3>
@@ -68,8 +68,8 @@ TEXT;
                     </div>
                     
                     <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
-                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
-                            <x-heroicon-o-users class="w-6 h-6 text-[--color-primary]" />
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-users class="w-6 h-6 text-primary" />
                         </div>
                         <div>
                             <h3 class="font-semibold text-black dark:text-white">Tim Profesional</h3>
@@ -78,8 +78,8 @@ TEXT;
                     </div>
                     
                     <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl">
-                        <div class="w-12 h-12 bg-[--color-primary]/10 rounded-xl flex items-center justify-center">
-                            <x-heroicon-o-clock class="w-6 h-6 text-[--color-primary]" />
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <x-heroicon-o-clock class="w-6 h-6 text-primary" />
                         </div>
                         <div>
                             <h3 class="font-semibold text-black dark:text-white">Tepat Waktu</h3>
@@ -100,7 +100,7 @@ TEXT;
                 {{-- Floating Stats Card --}}
                 <div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border border-gray-200 dark:border-gray-700">
                     <div class="text-center">
-                        <h4 class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand-500">200+</h4>
+                        <h4 class="text-3xl font-bold text-primary edu-vic-wa-nt-hand-500">200+</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Event Sukses</p>
                     </div>
                 </div>
@@ -129,10 +129,10 @@ TEXT;
             {{-- Corporate Event --}}
             <div data-aos="fade-up" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                 <div class="mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                         <x-heroicon-o-building-office class="w-8 h-8 text-black dark:text-white" />
                     </div>
-                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Corporate Event</h3>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-primary transition-colors">Corporate Event</h3>
                 </div>
                 
                 <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
@@ -160,8 +160,8 @@ TEXT;
                 
                 <div class="text-center">
                     <p class="text-gray-500 dark:text-gray-400 mb-4">Mulai dari</p>
-                    <div class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Rp 15.000.000</div>
-                    <button class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
+                    <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand mb-6">Rp 15.000.000</div>
+                    <button class="w-full border-primary border-2 text-primary hover:bg-primary hover:text-white dark:bg-primary text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-300">
                         Pilih Paket
                     </button>
                 </div>
@@ -170,10 +170,10 @@ TEXT;
             {{-- Social Event --}}
             <div data-aos="fade-up" data-aos-delay="200" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700 relative">
                 <div class="mb-6 mt-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                         <x-heroicon-o-heart class="w-8 h-8 text-black dark:text-white" />
                     </div>
-                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Social Event</h3>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-primary transition-colors">Social Event</h3>
                 </div>
                 
                 <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
@@ -201,8 +201,8 @@ TEXT;
                 
                 <div class="text-center">
                     <p class="text-gray-500 dark:text-gray-400 mb-4">Mulai dari</p>
-                    <div class="text-3xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Rp 8.000.000</div>
-                    <button class="w-full bg-gradient-to-r from-[--color-primary] to-pink-500 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
+                    <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand mb-6">Rp 8.000.000</div>
+                    <button class="w-full border-primary border-2 text-primary hover:bg-primary hover:text-white dark:bg-primary text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-300">
                         Pilih Paket
                     </button>
                 </div>
@@ -211,10 +211,10 @@ TEXT;
             {{-- Custom Event --}}
             <div data-aos="fade-up" data-aos-delay="400" class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
                 <div class="mb-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                         <x-heroicon-o-cog-6-tooth class="w-8 h-8 text-black dark:text-white" />
                     </div>
-                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-[--color-primary] transition-colors">Custom Event</h3>
+                    <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand group-hover:text-primary transition-colors">Custom Event</h3>
                 </div>
                 
                 <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
@@ -242,8 +242,8 @@ TEXT;
                 
                 <div class="text-center">
                     <p class="text-gray-500 dark:text-gray-400 mb-4">Konsultasi</p>
-                    <div class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand mb-6">Gratis</div>
-                    <button class="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-300">
+                    <div class="text-2xl font-bold text-primary edu-vic-wa-nt-hand mb-6">Gratis</div>
+                    <button class="w-full border-primary border-2 text-primary hover:bg-primary hover:text-white dark:bg-primary text-black dark:text-white py-3 px-6 rounded-2xl font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all duration-300">
                         Konsultasi Sekarang
                     </button>
                 </div>
@@ -270,7 +270,7 @@ TEXT;
         
         <div class="relative">
             {{-- Timeline Line --}}
-            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[--color-primary] to-pink-500 hidden lg:block"></div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-pink-500 hidden lg:block"></div>
             
             {{-- Timeline Items --}}
             <div class="space-y-16">
@@ -299,7 +299,7 @@ TEXT;
                     <div class="lg:w-1/2 lg:text-left lg:pl-8">
                         <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-2xl flex items-center justify-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-primary to-pink-500 rounded-2xl flex items-center justify-center">
                                     <span class="text-white font-bold text-xl">02</span>
                                 </div>
                                 <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Perencanaan & Proposal</h3>
@@ -361,7 +361,7 @@ TEXT;
     <section class="py-20 bg-gray-50 dark:bg-gray-900 -mx-4 md:-mx-16 lg:-mx-24 xl:-mx-32 px-4 md:px-16 lg:px-24 xl:px-32">
         <div class="text-center mb-16">
             <h2 data-aos="zoom-in-down" class="text-3xl lg:text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-6">
-                Mengapa Memilih <span class="text-[--color-primary]">3Rasa</span>?
+                Mengapa Memilih <span class="text-primary">3Rasa</span>?
             </h2>
             <p data-aos="zoom-in-up" class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-3xl mx-auto">
                 Keunggulan dan komitmen kami dalam menghadirkan acara yang tak terlupakan
@@ -378,7 +378,7 @@ TEXT;
             </div>
             
             <div data-aos="fade-up" data-aos-delay="200" class="text-center group">
-                <div class="w-20 h-20 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <x-heroicon-o-users class="w-10 h-10 text-black dark:text-white" />
                 </div>
                 <h3 class="text-2xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-4">Tim Profesional</h3>
@@ -484,7 +484,7 @@ TEXT;
         </div>
         
         <div data-aos="fade-up" class="text-center mt-12">
-            <a href="/portofolio" class="inline-flex items-center gap-3 bg-[--color-primary] text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-[--color-primary] hover:shadow-xl transition-all duration-300 border-2 border-[--color-primary] group">
+            <a href="/portofolio" class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-primary hover:shadow-xl transition-all duration-300 border-2 border-primary group">
                 <span class="edu-vic-wa-nt-hand-500">Lihat Semua Portofolio</span>
                 <x-heroicon-o-arrow-right class="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </a>
@@ -494,20 +494,6 @@ TEXT;
 
 </div>
 
-@push('styles')
-<style>
-    /* Custom animations and effects matching the homepage style */
-    .mask-x-from-90\% {
-        -webkit-mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-        mask: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
-    
-    .mask-x-to-100\% {
-        -webkit-mask: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
-        mask: linear-gradient(90deg, black 0%, black 90%, transparent 100%);
-    }
-</style>
-@endpush
 
 @push('scripts')
 {{-- AOS Animation Script --}}

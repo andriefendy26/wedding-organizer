@@ -4,16 +4,17 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-900 min-h-screen">
-    <!-- Hero Section -->
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden mb-16">
+    <div class="relative h-[70vh] overflow-hidden mb-16"
+    style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center; mb-16">
         <div class="absolute inset-0 bg-black/70"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 data-aos="zoom-in-right" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Tim Profesional Kami
                 </h1>
-                <p data-aos="zoom-in-left" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
                     Dibalik setiap momen spesial yang kami ciptakan, terdapat tim profesional yang berdedikasi tinggi dengan pengalaman bertahun-tahun dalam industri wedding organizer.
+                </p>
                 </p>
             </div>
         </div>
@@ -24,19 +25,19 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="group text-center p-8 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                    <h3 class="text-6xl edu-vic-wa-nt-hand text-[--color-primary] mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['experience_years'] }}</h3>
+                    <h3 class="text-6xl edu-vic-wa-nt-hand text-primary mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['experience_years'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular font-medium">Tahun Pengalaman</p>
                 </div>
                 <div class="group text-center p-8 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                    <h3 class="text-6xl edu-vic-wa-nt-hand text-[--color-primary] mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['successful_events'] }}</h3>
+                    <h3 class="text-6xl edu-vic-wa-nt-hand text-primary mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['successful_events'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular font-medium">Event Sukses</p>
                 </div>
                 <div class="group text-center p-8 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                    <h3 class="text-6xl edu-vic-wa-nt-hand text-[--color-primary] mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['team_members'] }}</h3>
+                    <h3 class="text-6xl edu-vic-wa-nt-hand text-primary mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['team_members'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular font-medium">Tim Ahli</p>
                 </div>
                 <div class="group text-center p-8 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-500">
-                    <h3 class="text-6xl edu-vic-wa-nt-hand text-[--color-primary] mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['client_satisfaction'] }}</h3>
+                    <h3 class="text-6xl edu-vic-wa-nt-hand text-primary mb-3 group-hover:scale-110 transition-transform duration-300">{{ $teamStats['client_satisfaction'] }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular font-medium">Kepuasan Klien</p>
                 </div>
             </div>
@@ -71,7 +72,7 @@
                 @endphp
 
                 @foreach($teams as $index => $member)
-                 <div data-aos="fade-up" data-aos-delay="{{ $index * 100 }}" class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl hover:border-[--color-primary]/30 transition-all duration-700 hover:-translate-y-3 {{ $member['is_core'] ? 'lg:col-span-1' : '' }}">
+                 <div data-aos="fade-up" data-aos-delay="{{ $index * 100 }}" class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700 hover:shadow-3xl hover:border-primary/30 transition-all duration-700 hover:-translate-y-3 {{ $member['is_core'] ? 'lg:col-span-1' : '' }}">
                     
                         <!-- Support Team - Compact Cards -->
                         <div class="p-8 text-center">
@@ -85,19 +86,19 @@
                                 </div>
                             @endif
                             
-                            <h4 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2 group-hover:text-[--color-primary] transition-colors duration-300">{{ $member['nama'] }}</h4>
-                            <p class="text-[--color-primary] font-semibold mb-4 text-base">{{ $member['jabatan'] }}</p>
+                            <h4 class="text-2xl edu-vic-wa-nt-hand text-black dark:text-white mb-2 group-hover:text-primary transition-colors duration-300">{{ $member['nama'] }}</h4>
+                            <p class="text-primary font-semibold mb-4 text-base">{{ $member['jabatan'] }}</p>
                             <p class="text-gray-600 dark:text-gray-300 text-sm pt-serif-regular leading-relaxed mb-6">{{ $member['deskripsi'] }}</p>
                             
                             @if((isset($member['telepon']) && $member['telepon']) || (isset($member['email']) && $member['email']))
                             <div class="flex justify-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                                 @if(isset($member['email']) && $member['email'])
-                                <a href="mailto:{{ $member['email'] }}" class="text-xs text-[--color-primary] hover:text-[--color-primary]/80 hover:underline pt-serif-regular font-medium transition-all duration-300">
+                                <a href="mailto:{{ $member['email'] }}" class="text-xs text-primary hover:text-primary/80 hover:underline pt-serif-regular font-medium transition-all duration-300">
                                     Email
                                 </a>
                                 @endif
                                 @if(isset($member['telepon']) && $member['telepon'])
-                                <a href="tel:{{ $member['telepon'] }}" class="text-xs text-[--color-primary] hover:text-[--color-primary]/80 hover:underline pt-serif-regular font-medium transition-all duration-300">
+                                <a href="tel:{{ $member['telepon'] }}" class="text-xs text-primary hover:text-primary/80 hover:underline pt-serif-regular font-medium transition-all duration-300">
                                     Call
                                 </a>
                                 @endif
@@ -124,11 +125,11 @@
                 @endphp
 
                 @foreach($defaultSupportTeam as $index => $member)
-                <div class="group text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-[--color-primary]/30 hover:-translate-y-2 transition-all duration-500">
+                <div class="group text-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-primary/30 hover:-translate-y-2 transition-all duration-500">
                     <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br {{ $member['bg'] }} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500 border-4 border-white dark:border-gray-600">
                         <span class="text-white font-bold text-xl drop-shadow-lg">{{ substr($member['name'], 0, 1) }}</span>
                     </div>
-                    <h4 class="text-xl edu-vic-wa-nt-hand text-black dark:text-white mb-2 group-hover:text-[--color-primary] transition-colors duration-300">{{ $member['name'] }}</h4>
+                    <h4 class="text-xl edu-vic-wa-nt-hand text-black dark:text-white mb-2 group-hover:text-primary transition-colors duration-300">{{ $member['name'] }}</h4>
                     <p class="text-sm text-gray-600 dark:text-gray-400 pt-serif-regular font-medium mb-3">{{ $member['role'] }}</p>
                     <p class="text-xs text-gray-500 dark:text-gray-500 pt-serif-regular leading-relaxed">{{ $member['description'] }}</p>
                 </div>

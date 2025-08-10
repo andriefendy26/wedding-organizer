@@ -5,8 +5,9 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen pt-14" x-data="faqManager()">
     {{-- Hero Section --}}
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif01.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
-        <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative h-[70vh]"
+     style="background: url({{ asset('storage/content/gif01.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
@@ -27,7 +28,7 @@
                 <input 
                     type="text" 
                     placeholder="Cari pertanyaan..." 
-                    class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white focus:border-[--color-primary] focus:outline-none transition-colors duration-300"
+                    class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white focus:border-primary focus:outline-none transition-colors duration-300"
                     x-model="searchQuery"
                     @input="filterFAQs()"
                 >
@@ -40,42 +41,42 @@
             <div class="flex flex-wrap gap-4 justify-center">
                 <button 
                     @click="setActiveCategory('all')" 
-                    :class="activeCategory === 'all' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'all' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Semua (<span x-text="getCategoryCount('all')"></span>)
                 </button>
                 <button 
                     @click="setActiveCategory('wedding')" 
-                    :class="activeCategory === 'wedding' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'wedding' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Pernikahan (<span x-text="getCategoryCount('wedding')"></span>)
                 </button>
                 <button 
                     @click="setActiveCategory('decoration')" 
-                    :class="activeCategory === 'decoration' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'decoration' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Dekorasi (<span x-text="getCategoryCount('decoration')"></span>)
                 </button>
                 <button 
                     @click="setActiveCategory('rental')" 
-                    :class="activeCategory === 'rental' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'rental' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Penyewaan (<span x-text="getCategoryCount('rental')"></span>)
                 </button>
                 <button 
                     @click="setActiveCategory('pricing')" 
-                    :class="activeCategory === 'pricing' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'pricing' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Harga & Paket (<span x-text="getCategoryCount('pricing')"></span>)
                 </button>
                 <button 
                     @click="setActiveCategory('general')" 
-                    :class="activeCategory === 'general' ? 'bg-[--color-primary] text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
+                    :class="activeCategory === 'general' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'"
                     class="px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
                 >
                     Umum (<span x-text="getCategoryCount('general')"></span>)
@@ -114,7 +115,7 @@
                         </div>
                         <svg 
                             :class="openItems[faq.id] ? 'rotate-180' : ''"
-                            class="w-6 h-6 text-[--color-primary] transition-transform duration-300 flex-shrink-0 ml-4" 
+                            class="w-6 h-6 text-primary transition-transform duration-300 flex-shrink-0 ml-4" 
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -139,7 +140,7 @@
         </div>
 
         {{-- Quick Actions --}}
-        <div class="mt-16 bg-gradient-to-r from-[--color-primary]/10 to-[--color-primary]/20 dark:from-gray-700 dark:to-gray-600 rounded-xl p-8 text-center">
+        <div class="mt-16 bg-gradient-to-r from-primary/10 to-primary/20 dark:from-gray-700 dark:to-gray-600 rounded-xl p-8 text-center">
             <h3 class="text-2xl font-semibold text-black dark:text-white poppins-medium mb-4">
                 Masih ada pertanyaan lain?
             </h3>

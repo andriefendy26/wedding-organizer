@@ -25,7 +25,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 
                 {{-- Card 1 - Featured Sofa Set --}}
-                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl bg-[url({{ asset('storage/content/prop/decoration04.png') }})] bg-no-repeat bg-center bg-cover">
+                <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl"
+                style="background-image: url('{{ asset('storage/content/prop/decoration04.png') }}'); background-size: cover; background-position: center;">
                     <h3 class="w-auto self-end border-2 dark:border-white px-3 py-1 rounded-full text-xs">Premium Collection</h3>
                     <div>
                         <h4 class="text-xl edu-vic-wa-nt-hand-400 tracking-widest mb-2">Sofa Premium Set</h4>
@@ -71,7 +72,7 @@
           
            <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                 @foreach ($dataBarang as $barang)
-                    <div class="group relative bg-white/70 dark:bg-gray-800/70 rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-[--color-primary]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[--color-primary]/10 hover:-translate-y-2">
+                    <div class="group relative bg-white/70 dark:bg-gray-800/70 rounded-3xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                         {{-- Image with modern overlay --}}
                         <div class="relative h-48 overflow-hidden">
                             <img src="{{ asset('storage/barang/' . $barang['foto']) }}" 
@@ -83,7 +84,7 @@
                             
                             {{-- Floating availability badge --}}
                             <div class="absolute top-4 right-4">
-                                <span class="bg-[--color-primary]/90 text-white px-3 py-1.5 rounded-full text-xs font-medium tracking-wide">
+                                <span class="bg-primary/90 text-white px-3 py-1.5 rounded-full text-xs font-medium tracking-wide">
                                     TERSEDIA
                                 </span>
                             </div>
@@ -91,7 +92,7 @@
                             {{-- Furniture icon --}}
                             <div class="absolute bottom-4 left-4">
                                 <div class="w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-6 h-6 text-[--color-primary]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                     </svg>
                                 </div>
@@ -101,7 +102,7 @@
                         {{-- Content --}}
                         <div class="p-6 space-y-4">
                             <div class="space-y-2">
-                                <h4 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[--color-primary] transition-colors duration-300 edu-vic-wa-nt-hand">
+                                <h4 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300 edu-vic-wa-nt-hand">
                                     {{ $barang['nama'] }}
                                 </h4>
                                 <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed pt-serif-regular">
@@ -111,7 +112,7 @@
                             
                             {{-- Price section --}}
                             <div class="space-y-1">
-                                <div class="text-2xl font-bold text-[--color-primary] edu-vic-wa-nt-hand">
+                                <div class="text-2xl font-bold text-primary edu-vic-wa-nt-hand">
                                     Rp {{ number_format($barang['harga'], 0, ',', '.') }}
                                 </div>
                                 <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
@@ -120,7 +121,7 @@
                             </div>
                             
                             {{-- CTA Button --}}
-                            <button class="w-full border-2 border-[--color-primary] text-[--color-primary] dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-[--color-primary] hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-[--color-primary]/25 hover:scale-105">
+                            <button class="w-full border-2 border-primary text-primary dark:text-white dark:border-white rounded-2xl py-3 px-4 font-medium text-sm hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
                                 Pesan Sekarang
                             </button>
                         </div>
@@ -135,7 +136,7 @@
                 <div class="col-span-3 bg-gray-200 rounded-2xl p-6">
                     <h3 class="text-black text-lg poppins-regular">Keunggulan layanan penyewaan kami :</h3>
                     <p class="mt-2 edu-vic-wa-nt-hand-500 text-gray-800 text-sm">"Kualitas premium, harga terjangkau, dan layanan antar-jemput gratis area Tarakan!"
-                        <span class="font-semibold text-[--color-primary]">- Tim 3Rasa</span>
+                        <span class="font-semibold text-primary">- Tim 3Rasa</span>
                     </p>
                 </div>
 

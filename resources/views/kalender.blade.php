@@ -5,11 +5,12 @@
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen">
     
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
-        <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative h-[70vh] overflow-hidden"
+     style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="text-4xl lg:text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
                     Kalender Ketersediaan
                 </h1>
                 <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
@@ -61,7 +62,7 @@
                 <!-- Content akan diisi oleh JavaScript -->
             </div>
             <div class="mt-6 flex gap-3">
-                <button id="consultationBtn" class="flex-1 bg-[--color-primary] text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular">
+                <button id="consultationBtn" class="flex-1 bg-primary text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular">
                     Konsultasi Gratis
                 </button>
                 <button onclick="closeModal()" class="px-4 py-3 border-2 border-gray-300 rounded-xl text-gray-600 hover:border-gray-400 transition-all duration-300">
@@ -626,7 +627,7 @@
             };
         } else {
             consultationBtn.textContent = 'Konsultasi Gratis';
-            consultationBtn.className = 'flex-1 bg-[--color-primary] text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular';
+            consultationBtn.className = 'flex-1 bg-primary text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular';
             consultationBtn.onclick = () => {
                 openWhatsAppConsultation(formattedDate, statusText, props.services);
             };
@@ -697,7 +698,7 @@
         `;
 
         consultationBtn.textContent = 'Tanya Ketersediaan';
-        consultationBtn.className = 'flex-1 bg-[--color-primary] text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular';
+        consultationBtn.className = 'flex-1 bg-primary text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular';
         consultationBtn.onclick = () => {
             openWhatsAppConsultation(formattedDate, 'Belum Dikonfirmasi', ['Wedding Organizer', 'Dekorasi', 'Sewa Perlengkapan']);
         };

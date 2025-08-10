@@ -4,26 +4,10 @@
 
 @section('content')
 <div class="bg-white dark:bg-gray-800 min-h-screen pt-16">
-    {{-- Hero Section --}}
-    {{-- <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-20">
-        <div class="container mx-auto px-30">
-            <div class="text-center">
-                <h1 class="text-6xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white tracking-wide">
-                    Artikel & Inspirasi
-                </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic max-w-2xl mx-auto">
-                    Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda
-                </p>
-            </div>
-        </div> --}}
-        
-        {{-- Decorative elements --}}
-        {{-- <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20"></div>
-        <div class="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-20"></div>
-    </div> --}}
 
     {{-- Hero Section --}}
-    <div class="relative h-[70vh] bg-[url({{ asset('storage/content/gif02.gif') }})] bg-cover bg-center rounded-b-[150px] overflow-hidden">
+    <div class="relative h-[60vh]  overflow-hidden"
+     style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
@@ -50,7 +34,7 @@
                     <input 
                         type="text" 
                         placeholder="Cari artikel..."
-                        class="pl-2 pr-4 py-3 w-full lg:w-80 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-[--color-primary] focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular shadow-sm"
+                        class="pl-2 pr-4 py-3 w-full lg:w-80 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular shadow-sm"
                         x-model="searchQuery"
                     />
                 </div>
@@ -128,7 +112,7 @@
                                 </div>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">{{ $artikel->author }}</span>
                             </div>
-                            <a href="{{ route('artikel.show', $artikel->slug) }}" class="text-[--color-primary] hover:underline text-sm font-medium">
+                            <a href="{{ route('artikel.show', $artikel->slug) }}" class="text-primary hover:underline text-sm font-medium">
                                 Baca →
                             </a>
                         </div>
@@ -224,11 +208,11 @@
     }
     
     .pagination .page-link {
-        @apply px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-[--color-primary] transition-colors text-gray-600 dark:text-gray-300 no-underline;
+        @apply px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-primary transition-colors text-gray-600 dark:text-gray-300 no-underline;
     }
     
     .pagination .page-item.active .page-link {
-        @apply bg-[--color-primary] text-white border-[--color-primary];
+        @apply bg-primary text-white border-primary;
     }
     
     .pagination .page-item.disabled .page-link {

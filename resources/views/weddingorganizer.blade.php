@@ -148,15 +148,15 @@
                 </p>
                 <div class="flex flex-wrap gap-4 mb-8">
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-[--color-primary] mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
                         <span class="text-gray-700 dark:text-gray-300">Perencanaan Menyeluruh</span>
                     </div>
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-[--color-primary] mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
                         <span class="text-gray-700 dark:text-gray-300">Tim Berpengalaman</span>
                     </div>
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-[--color-primary] mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
                         <span class="text-gray-700 dark:text-gray-300">Garansi Kepuasan</span>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
             <div data-aos="fade-left" class="relative">
                 <div class="relative">
                     <img src="{{ asset('storage/content/wedding06.jpg') }}" alt="Wedding Planning" class="rounded-2xl shadow-xl">
-                    <div class="absolute -bottom-6 -right-6 bg-[--color-primary] text-white p-6 rounded-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl">
                         <div class="text-3xl font-bold edu-vic-wa-nt-hand">100+</div>
                         <div class="text-sm">Pasangan Bahagia</div>
                     </div>
@@ -436,15 +436,8 @@
     </div>
 
     {{-- Include Section --}}
-    <div class="md:px-16 lg:px-24 xl:px-32 py-20 relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900">
-        {{-- Background Pattern --}}
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-20 left-20 w-32 h-32 border-2 border-purple-400 rounded-full animate-pulse"></div>
-            <div class="absolute top-40 right-32 w-24 h-24 border-2 border-pink-400 rounded-full animate-pulse delay-300"></div>
-            <div class="absolute bottom-32 left-40 w-20 h-20 border-2 border-purple-400 rounded-full animate-pulse delay-500"></div>
-            <div class="absolute bottom-20 right-20 w-28 h-28 border-2 border-pink-400 rounded-full animate-pulse delay-700"></div>
-        </div>
-
+    <div class="md:px-16 lg:px-24 xl:px-32 py-20 relative overflow-hidden ">
+  
         <div class="relative z-10">
             <div class="text-center mb-16">
                 <div class="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full px-8 py-3 mb-6">
@@ -466,14 +459,14 @@
          class="group">
         
         {{-- Card Container --}}
-        <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-[--color-primary]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[--color-primary]/10">
+        <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
             
             {{-- Header with Icon --}}
             <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-gradient-to-br from-[--color-primary] to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <x-heroicon-o-check class="w-5 h-5 text-white" />
                 </div>
-                <h3 class="text-lg font-semibold text-black dark:text-white poppins-medium group-hover:text-[--color-primary] transition-colors duration-300">
+                <h3 class="text-lg font-semibold text-black dark:text-white poppins-medium group-hover:text-primary transition-colors duration-300">
                     {{ $include->nama_include }}
                 </h3>
             </div>
@@ -482,7 +475,7 @@
             <div class="space-y-2.5">
                 @foreach($include->items as $item)
                 <div class="flex items-start gap-3 group/item">
-                    <div class="flex-shrink-0 w-1.5 h-1.5 bg-[--color-primary] rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-200"></div>
+                    <div class="flex-shrink-0 w-1.5 h-1.5 bg-primary rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-200"></div>
                     <span class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-200">
                         {{ $item }}
                     </span>
@@ -491,7 +484,7 @@
             </div>
             
             {{-- Bottom accent line --}}
-            <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-[--color-primary]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
     </div>
     @endforeach
@@ -505,7 +498,7 @@
         <div class="text-center mb-16">
             <h2 class="text-black text-center text-3xl lg:text-4xl poppins-medium mx-8 md:mx-20 lg:mx-40 dark:text-white mb-4">
                 Layanan Wedding Organizer yang 
-                <span class="pt-serif-regular-italic text-[--color-primary]">Komprehensif</span>
+                <span class="pt-serif-regular-italic text-primary">Komprehensif</span>
             </h2>
             <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-2xl mx-auto">
                 Setiap aspek pernikahan Anda ditangani dengan profesional dan penuh perhatian
@@ -583,13 +576,13 @@
         <div class="max-w-4xl mx-auto">
             <div class="relative">
                 {{-- Timeline line --}}
-                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-[--color-primary] opacity-30"></div>
+                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-primary opacity-30"></div>
                 
                 {{-- Timeline items --}}
                 <div class="space-y-12">
                     {{-- 6 Months Before --}}
                     <div data-aos="fade-right" class="relative flex items-center">
-                        <div class="flex-shrink-0 w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center text-white font-bold z-10">
+                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">
                             6M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pr-8">
@@ -602,7 +595,7 @@
 
                     {{-- 4 Months Before --}}
                     <div data-aos="fade-left" class="relative flex items-center md:flex-row-reverse">
-                        <div class="flex-shrink-0 w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
+                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
                             4M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pl-8">
@@ -615,7 +608,7 @@
 
                     {{-- 2 Months Before --}}
                     <div data-aos="fade-right" class="relative flex items-center">
-                        <div class="flex-shrink-0 w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center text-white font-bold z-10">
+                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">
                             2M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pr-8">
@@ -628,7 +621,7 @@
 
                     {{-- 1 Week Before --}}
                     <div data-aos="fade-left" class="relative flex items-center md:flex-row-reverse">
-                        <div class="flex-shrink-0 w-16 h-16 bg-[--color-primary] rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
+                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
                             1W
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pl-8">

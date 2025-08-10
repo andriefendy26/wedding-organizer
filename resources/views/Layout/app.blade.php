@@ -39,40 +39,28 @@ TEXT;
     {{-- <link rel="stylesheet" href=""> --}}
 
     <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}">
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        
     {{-- Animate On Scroll --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Scripts - -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Figtree', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Styles -->
-    @vite('resources/css/app.css')
-
+    @vite(['resources/css/app.css', 'resources/css/font.css', 'resources/js/app.js'])
 
     @stack('styles')
-    <style>
+    <style> 
         .toggle-bg {
             transition: background-color 0.3s ease;
         }
@@ -93,7 +81,7 @@ TEXT;
             @apply text-gray-600 dark:text-gray-400;
         }
 
-          .dropdown-enter {
+        .dropdown-enter {
             opacity: 0;
             transform: translateY(-10px);
         }
@@ -159,15 +147,9 @@ TEXT;
                 opacity: 0;
             }
         }
-
-
-        
-
-        
-
     </style>
 </head>
-<body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans ">
+<body class=" transition-colors duration-300 bg-gray-50 dark:bg-gray-900 font-sans overflow-hidden">
 
     <!-- Custom Alert HTML (tambahkan setelah tag body) -->
     @if(session('success'))
@@ -244,7 +226,7 @@ TEXT;
     @endif
 
     <!-- Unified Header dengan Navigation -->
-    <header x-data="{ mobileMenuOpen : false }" class="backdrop-blur-md bg-white/80 dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
+    <header x-data="{ mobileMenuOpen : false }" class=" bg-white dark:bg-gray-900/95 fixed top-0 z-50 w-full shadow-lg border-b border-gray-200 dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Main Header Content -->
             <div class="flex justify-between items-center">
@@ -380,7 +362,7 @@ TEXT;
                             <span class="sr-only">Toggle dark mode</span>
                             <span 
                                 class="inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition duration-300 ease-in-out toggle-dot"
-                                :class="darkMode ? 'translate-x-3' : 'translate-x-0.5'"
+                                :class="darkMode ? 'translate-x-6' : 'translate-x-0.5'"
                             >
                             </span>
                         </button>
@@ -398,7 +380,7 @@ TEXT;
                     >
                         <span 
                             class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
-                            :class="mobileMenuOpen ? 'rotate-[20deg] translate-y-0.5' : ''"
+                            :class="mobileMenuOpen ? 'rotate-45 translate-y-1' : ''"
                         ></span>
                         <span 
                             class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
@@ -406,7 +388,7 @@ TEXT;
                         ></span>
                         <span 
                             class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
-                            :class="mobileMenuOpen ? '-rotate-[20deg] ' : ''"
+                            :class="mobileMenuOpen ? '-rotate-45 ' : ''"
                         ></span>
                     </button>
                 </div>
@@ -516,10 +498,13 @@ TEXT;
 
 
     @yield('content')
+    
     <!-- Footer Section -->
-    <footer class="bg-gray-800  text-white relative overflow-hidden">
+    <footer class="bg-gray-800 text-white relative overflow-hidden">
         <!-- Background decoration -->
-        <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-no-repeat bg-cover bg-center opacity-5"></div>
+        <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-no-repeat bg-cover bg-center opacity-5"
+            style="background: url({{ asset('storage/content/decoration01.jpeg') }}); background-size: cover; background-position: center; background-repeat: no-repeat;"
+        ></div>
         
         <div class="relative z-10 px-10 lg:px-32 py-16">
             <!-- Main Footer Content -->
@@ -537,23 +522,23 @@ TEXT;
                     <!-- Social Media -->
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/3rasa_production/" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-[--color-primary] flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-instagram class="w-5 h-5 group-hover:text-[--color-primary] transition-colors duration-300" />
+                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <x-bi-instagram class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-[--color-primary] flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-telephone class="w-5 h-5 group-hover:text-[--color-primary] transition-colors duration-300" />
+                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <x-bi-telephone class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-[--color-primary] flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-tiktok class="w-5 h-5 group-hover:text-[--color-primary] transition-colors duration-300" />
+                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <x-bi-tiktok class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-[--color-primary] flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                <x-bi-whatsapp class="w-5 h-5 group-hover:text-[--color-primary] transition-colors duration-300" />
+                            <div class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <x-bi-whatsapp class="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
                             </div>
                         </a>
                     </div>
@@ -563,11 +548,11 @@ TEXT;
                 <div>
                     <h4 class="text-xl edu-vic-wa-nt-hand-500 mb-6 text-white">Layanan Kami</h4>
                     <ul class="space-y-3 poppins-regular">
-                        <li><a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300 hover:tracking-wider">Wedding Organizer</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300 hover:tracking-wider">Dekorasi Pernikahan</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300 hover:tracking-wider">Event Korporat</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300 hover:tracking-wider">Sewa Perlengkapan</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300 hover:tracking-wider">Dokumentasi</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Wedding Organizer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Dekorasi Pernikahan</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Event Korporat</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Sewa Perlengkapan</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300 hover:tracking-wider">Dokumentasi</a></li>
                     </ul>
                 </div>
 
@@ -576,7 +561,7 @@ TEXT;
                     <h4 class="text-xl edu-vic-wa-nt-hand-500 mb-6 text-white">Kontak</h4>
                     <div class="space-y-4 poppins-regular">
                         <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-[--color-primary] flex items-center justify-center mt-1">
+                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center mt-1">
                                 <x-heroicon-o-map-pin class="w-3 h-3 text-white" />
                             </div>
                             <div>
@@ -586,14 +571,14 @@ TEXT;
                         </div>
                         
                         <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-[--color-primary] flex items-center justify-center">
+                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                                 <x-heroicon-o-phone class="w-3 h-3 text-white" />
                             </div>
                             <p class="text-gray-300 text-sm">+62 812-3456-7890</p>
                         </div>
                         
                         <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-[--color-primary] flex items-center justify-center">
+                            <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                                 <x-heroicon-o-envelope class="w-3 h-3 text-white" />
                             </div>
                             <p class="text-gray-300 text-sm">info@3rasa.com</p>
@@ -613,8 +598,8 @@ TEXT;
                         <form method="POST" action="{{ route('subscribe') }}">
                             @csrf
                             <input type="email" name="email" id="email" required placeholder="Masukkan email Anda"
-                            class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:border-[--color-primary] focus:outline-none transition-colors duration-300">
-                            <button type="submit" class="bg-[--color-primary] text-white px-6 py-3 rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 transition-all duration-300 hover:tracking-wider">
+                            class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:border-primary focus:outline-none transition-colors duration-300">
+                            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 transition-all duration-300 hover:tracking-wider">
                                 Berlangganan
                             </button>
                         </form>
@@ -624,17 +609,17 @@ TEXT;
 
 
             <!-- Customer Testimonial Banner -->
-            <div class="bg-gradient-to-r from-[--color-primary]/20 to-transparent rounded-2xl p-6 mb-8 border border-[--color-primary]/30">
+            <div class="bg-gradient-to-r from-primary/20 to-transparent rounded-2xl p-6 mb-8 border border-primary/30">
                 <div class="flex items-center gap-6">
                     <div class="text-center">
-                        <div class="text-4xl edu-vic-wa-nt-hand-500 text-[--color-primary]">100+</div>
+                        <div class="text-4xl edu-vic-wa-nt-hand-500 text-primary">100+</div>
                         <div class="text-gray-300 text-sm pt-serif-regular">Pasangan Bahagia</div>
                     </div>
                     <div class="flex-1">
                         <p class="text-white pt-serif-regular-italic text-lg">
                             "Terima kasih 3Rasa telah membuat hari pernikahan kami menjadi sempurna dan tak terlupakan"
                         </p>
-                        <p class="text-[--color-primary] text-sm mt-2 edu-vic-wa-nt-hand-500">- Pasangan yang Puas</p>
+                        <p class="text-primary text-sm mt-2 edu-vic-wa-nt-hand-500">- Pasangan yang Puas</p>
                     </div>
                 </div>
             </div>
@@ -643,9 +628,9 @@ TEXT;
             <div class="border-t border-gray-700 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="flex gap-6 poppins-regular text-sm">
-                        <a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">Kebijakan Privasi</a>
-                        <a href="#" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">Syarat & Ketentuan</a>
-                        <a href="/faq" class="text-gray-300 hover:text-[--color-primary] transition-colors duration-300">FAQ</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Kebijakan Privasi</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-300">Syarat & Ketentuan</a>
+                        <a href="/faq" class="text-gray-300 hover:text-primary transition-colors duration-300">FAQ</a>
                     </div>
                     <div class="text-gray-400 text-sm poppins-regular">
                         © 2025 3Rasa Wedding Organizer. All rights reserved.
@@ -656,13 +641,13 @@ TEXT;
 
         <!-- Decorative Elements -->
         <div class="absolute bottom-0 right-0 w-64 h-64 opacity-10">
-            <div class="w-full h-full bg-gradient-to-tl from-[--color-primary]/30 to-transparent rounded-full"></div>
+            <div class="w-full h-full bg-gradient-to-tl from-primary/30 to-transparent rounded-full"></div>
         </div>
     </footer>
 
     <!-- Call to Action Floating Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <button class="group bg-[--color-primary] text-white rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl">
+        <button class="group bg-primary text-white rounded-full p-4 shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-2xl">
              <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
                 <div class="flex items-center gap-3">
                     <x-bi-whatsapp class="w-6 h-6" />
