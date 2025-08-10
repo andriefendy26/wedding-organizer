@@ -3,7 +3,7 @@
 @section('title', 'Tentang Kami - 3Rasa Wedding Organizer')
 
 @section('content')
-<div class="min-h-screen overflow-hidden bg-white dark:bg-gray-800 pt-14">
+<div class="min-h-screen overflow-hidden pt-14">
     {{-- Hero Section --}}
     {{-- <div class="relative h-96 bg-gradient-to-r from-primary/20 to-primary/40 dark:from-gray-700 dark:to-gray-600">
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-cover bg-center opacity-20"></div>

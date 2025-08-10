@@ -3,7 +3,7 @@
 @section('title', 'Artikel & Blog')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen pt-16">
+<div class="min-h-screen pt-16 ">
 
     {{-- Hero Section --}}
     <div class="relative h-[60vh]  overflow-hidden"
@@ -11,10 +11,10 @@
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
                     Artikel & Inspirasi
                 </h1>
-                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda
                 </p>
             </div>
@@ -23,18 +23,18 @@
 
 
     {{-- Filter & Search Section --}}
-    <div class="container mx-auto px-10 lg:px-30 py-8" x-data="artikelFilter()">
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
+    <div class="container px-10 py-8 mx-auto lg:px-30" x-data="artikelFilter()">
+        <div class="flex flex-col items-start justify-between gap-6 mb-8 lg:flex-row lg:items-center">
 
 
             {{-- Search Box --}}
             <div data-aos="zoom-in-down" class="w-full lg:w-auto">
-                <h3 class="text-lg font-medium text-black dark:text-white mb-4 poppins-regular">Pencarian:</h3>
+                <h3 class="mb-4 text-lg font-medium text-black dark:text-white poppins-regular">Pencarian:</h3>
                 <div class="relative">
                     <input 
                         type="text" 
                         placeholder="Cari artikel..."
-                        class="pl-2 pr-4 py-3 w-full lg:w-80 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular shadow-sm"
+                        class="w-full py-3 pl-2 pr-4 text-black bg-white border-2 border-gray-300 shadow-sm lg:w-80 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                         x-model="searchQuery"
                     />
                 </div>
@@ -45,29 +45,29 @@
         @if($artikels->count() > 0)
             @php $featuredArtikel = $artikels->first(); @endphp
             <div class="mb-12">
-                <h2 class="text-3xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">Artikel Unggulan</h2>
+                <h2 class="mb-6 text-3xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">Artikel Unggulan</h2>
                 <div class="relative {{ $featuredArtikel->image_url ? 'bg-cover bg-center' : 'bg-gradient-to-r from-purple-600 to-pink-600' }} rounded-2xl overflow-hidden h-96"
                      @if($featuredArtikel->image_url) style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ $featuredArtikel->image_url }}')" @endif>
                     <div class="absolute inset-0 {{ !$featuredArtikel->image_url ? 'bg-black/40' : '' }}"></div>
                     <div class="absolute inset-0 flex items-center">
-                        <div class="container mx-auto px-10 lg:px-30">
+                        <div class="container px-10 mx-auto lg:px-30">
                             <div class="max-w-2xl text-white">
                                 @if($featuredArtikel->formatted_tags && count($featuredArtikel->formatted_tags) > 0)
-                                    <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm mb-4">
+                                    <span class="inline-block px-4 py-1 mb-4 text-sm rounded-full bg-white/20 backdrop-blur-sm">
                                         {{ ucfirst(str_replace('-', ' ', $featuredArtikel->formatted_tags[0])) }}
                                     </span>
                                 @endif
-                                <h3 class="text-4xl font-bold mb-4 edu-vic-wa-nt-hand">
+                                <h3 class="mb-4 text-4xl font-bold edu-vic-wa-nt-hand">
                                     {{ $featuredArtikel->judul }}
                                 </h3>
-                                <p class="text-lg pt-serif-regular-italic mb-6 opacity-90">
+                                <p class="mb-6 text-lg pt-serif-regular-italic opacity-90">
                                     {{ $featuredArtikel->sub_judul ?? $featuredArtikel->excerpt }}
                                 </p>
-                                <a href="{{ route('artikel.show', $featuredArtikel->slug) }}" class="inline-flex group hover:scale-105 transition-all duration-300 bg-white rounded-full justify-center items-center">
-                                    <span class="my-2 mx-3 ml-4 pt-serif-regular text-black">
+                                <a href="{{ route('artikel.show', $featuredArtikel->slug) }}" class="inline-flex items-center justify-center transition-all duration-300 bg-white rounded-full group hover:scale-105">
+                                    <span class="mx-3 my-2 ml-4 text-black pt-serif-regular">
                                         Baca Selengkapnya
                                     </span>
-                                    <svg class="h-10 w-10 border-2 bg-black text-white rounded-full p-2 group-hover:rotate-45 duration-300 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-10 h-10 p-2 text-white transition-all duration-300 bg-black border-2 rounded-full group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l9.2-9.2M17 17V7H7"></path>
                                     </svg>
                                 </a>
@@ -79,9 +79,9 @@
         @endif
 
         {{-- Articles Grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" id="articles-grid">
             @forelse($artikels->skip(1) as $artikel)
-                <article class="artikel-card bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-600"
+                <article class="overflow-hidden transition-all duration-300 bg-white border border-gray-200 shadow-lg artikel-card dark:bg-gray-700 rounded-2xl hover:shadow-2xl hover:-translate-y-2 dark:border-gray-600"
                          data-category="{{ $artikel->formatted_tags ? implode(',', $artikel->formatted_tags) : '' }}"
                          data-title="{{ strtolower($artikel->judul) }}"
                          data-content="{{ strtolower(strip_tags($artikel->content)) }}">
@@ -89,42 +89,42 @@
                          @if($artikel->image_url) style="background-image: url('{{ $artikel->image_url }}')" @endif>
                         @if($artikel->formatted_tags && count($artikel->formatted_tags) > 0)
                             <div class="absolute top-4 left-4">
-                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
+                                <span class="px-3 py-1 text-xs text-white rounded-full bg-white/20 backdrop-blur-sm">
                                     {{ ucfirst(str_replace('-', ' ', $artikel->formatted_tags[0])) }}
                                 </span>
                             </div>
                         @endif
                         <div class="absolute bottom-4 right-4">
-                            <span class="text-white/80 text-sm">{{ $artikel->formatted_date }}</span>
+                            <span class="text-sm text-white/80">{{ $artikel->formatted_date }}</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-black dark:text-white edu-vic-wa-nt-hand">
+                        <h3 class="mb-3 text-xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand">
                             {{ $artikel->judul }}
                         </h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4 pt-serif-regular">
+                        <p class="mb-4 text-gray-600 dark:text-gray-300 pt-serif-regular">
                             {{ $artikel->sub_judul ?? Str::limit(strip_tags($artikel->content), 100) }}
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white text-xs font-bold">{{ substr($artikel->author, 0, 1) }}</span>
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                                    <span class="text-xs font-bold text-white">{{ substr($artikel->author, 0, 1) }}</span>
                                 </div>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">{{ $artikel->author }}</span>
                             </div>
-                            <a href="{{ route('artikel.show', $artikel->slug) }}" class="text-primary hover:underline text-sm font-medium">
+                            <a href="{{ route('artikel.show', $artikel->slug) }}" class="text-sm font-medium text-primary hover:underline">
                                 Baca →
                             </a>
                         </div>
                     </div>
                 </article>
             @empty
-                <div class="col-span-full text-center py-12">
+                <div class="py-12 text-center col-span-full">
                     <div class="text-gray-500 dark:text-gray-400">
                         <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
-                        <h3 class="text-xl font-semibold mb-2">Belum Ada Artikel</h3>
+                        <h3 class="mb-2 text-xl font-semibold">Belum Ada Artikel</h3>
                         <p>Artikel sedang dalam persiapan. Silakan kembali lagi nanti.</p>
                     </div>
                 </div>
@@ -132,12 +132,12 @@
         </div>
 
         {{-- No Results Message --}}
-        <div id="no-results" class="hidden col-span-full text-center py-12">
+        <div id="no-results" class="hidden py-12 text-center col-span-full">
             <div class="text-gray-500 dark:text-gray-400">
                 <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
-                <h3 class="text-xl font-semibold mb-2">Artikel Tidak Ditemukan</h3>
+                <h3 class="mb-2 text-xl font-semibold">Artikel Tidak Ditemukan</h3>
                 <p>Tidak ada artikel yang sesuai dengan pencarian atau filter Anda.</p>
             </div>
         </div>

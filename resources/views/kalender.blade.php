@@ -3,17 +3,17 @@
 @section('title', 'Kalender Ketersediaan')
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen">
+<div class="min-h-screen ">
     
     <div class="relative h-[70vh] overflow-hidden"
      style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 data-aos="zoom-in-down" class="text-4xl lg:text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
                     Kalender Ketersediaan
                 </h1>
-                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Periksa tanggal yang tersedia untuk acara pernikahan dan event spesial Anda bersama 3Rasa
                 </p>
             </div>
@@ -22,12 +22,12 @@
 
 
     <!-- Main Content -->
-    <div class="px-10 lg:px-32 py-12 bg-white dark:bg-gray-800">
+    <div class="px-10 py-12 lg:px-32 ">
         
         <!-- Legend Section -->
         <div class="max-w-6xl mx-auto mb-8">
             <div class="mb-8">
-                <h2 class="text-4xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500 mb-4">
+                <h2 class="mb-4 text-4xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500">
                     Jadwal Ketersediaan Layanan
                 </h2>
                 <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
@@ -38,7 +38,7 @@
 
         <!-- Calendar Container -->
         <div class="max-w-6xl mx-auto">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700 p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="p-6 transition-shadow duration-300 bg-white border-2 border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700 hover:shadow-xl">
                 <div id="calendar"></div>
             </div>
         </div>
@@ -48,11 +48,11 @@
     </div>
 
     <!-- Event Detail Modal -->
-    <div id="eventModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md mx-4 shadow-2xl">
-            <div class="flex justify-between items-start mb-4">
+    <div id="eventModal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-50">
+        <div class="max-w-md p-6 mx-4 bg-white shadow-2xl dark:bg-gray-800 rounded-2xl">
+            <div class="flex items-start justify-between mb-4">
                 <h3 class="text-2xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500" id="modalTitle">Detail Tanggal</h3>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 transition-colors">
+                <button onclick="closeModal()" class="text-gray-500 transition-colors hover:text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -61,11 +61,11 @@
             <div id="modalContent" class="space-y-4">
                 <!-- Content akan diisi oleh JavaScript -->
             </div>
-            <div class="mt-6 flex gap-3">
-                <button id="consultationBtn" class="flex-1 bg-primary text-white rounded-xl py-3 px-4 font-semibold hover:scale-105 transition-all duration-300 poppins-regular">
+            <div class="flex gap-3 mt-6">
+                <button id="consultationBtn" class="flex-1 px-4 py-3 font-semibold text-white transition-all duration-300 bg-primary rounded-xl hover:scale-105 poppins-regular">
                     Konsultasi Gratis
                 </button>
-                <button onclick="closeModal()" class="px-4 py-3 border-2 border-gray-300 rounded-xl text-gray-600 hover:border-gray-400 transition-all duration-300">
+                <button onclick="closeModal()" class="px-4 py-3 text-gray-600 transition-all duration-300 border-2 border-gray-300 rounded-xl hover:border-gray-400">
                     Tutup
                 </button>
             </div>
@@ -541,7 +541,7 @@
         if (props.services && props.services.length > 0) {
             servicesHtml = `
                 <div>
-                    <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 poppins-regular">Layanan Tersedia:</h4>
+                    <h4 class="mb-2 font-semibold text-gray-700 dark:text-gray-300 poppins-regular">Layanan Tersedia:</h4>
                     <ul class="space-y-1">
                         ${props.services.map(service => `
                             <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -559,8 +559,8 @@
         let discountHtml = '';
         if (props.discount) {
             discountHtml = `
-                <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
-                    <p class="text-blue-700 dark:text-blue-300 font-semibold text-sm">
+                <div class="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/30">
+                    <p class="text-sm font-semibold text-blue-700 dark:text-blue-300">
                         🎉 Diskon ${props.discount} untuk paket lengkap!
                     </p>
                 </div>
@@ -571,13 +571,13 @@
         if (props.maxBookings && props.currentBookings !== undefined) {
             const availableSlots = props.maxBookings - props.currentBookings;
             bookingInfoHtml = `
-                <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
+                <div class="p-3 rounded-lg bg-gray-50 dark:bg-gray-700">
                     <div class="flex justify-between text-sm">
                         <span class="text-gray-600 dark:text-gray-400">Slot Tersedia:</span>
                         <span class="font-semibold ${availableSlots > 0 ? 'text-green-600' : 'text-red-600'}">${availableSlots}/${props.maxBookings}</span>
                     </div>
-                    <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-2">
-                        <div class="bg-green-500 h-2 rounded-full transition-all duration-300" style="width: ${((props.maxBookings - props.currentBookings) / props.maxBookings) * 100}%"></div>
+                    <div class="w-full h-2 mt-2 bg-gray-200 rounded-full dark:bg-gray-600">
+                        <div class="h-2 transition-all duration-300 bg-green-500 rounded-full" style="width: ${((props.maxBookings - props.currentBookings) / props.maxBookings) * 100}%"></div>
                     </div>
                 </div>
             `;
@@ -599,16 +599,16 @@
                 ${servicesHtml}
                 
                 ${props.status === 'booked' ? `
-                    <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded-lg">
-                        <p class="text-red-700 dark:text-red-300 text-sm">
+                    <div class="p-3 rounded-lg bg-red-50 dark:bg-red-900/30">
+                        <p class="text-sm text-red-700 dark:text-red-300">
                             ⚠️ Tanggal ini sudah penuh. Silakan pilih tanggal lain atau hubungi kami untuk alternatif.
                         </p>
                     </div>
                 ` : ''}
 
                 ${props.specialOffer ? `
-                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 p-3 rounded-lg border border-purple-200 dark:border-purple-700">
-                        <p class="text-purple-700 dark:text-purple-300 font-semibold text-sm">
+                    <div class="p-3 border border-purple-200 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 dark:border-purple-700">
+                        <p class="text-sm font-semibold text-purple-700 dark:text-purple-300">
                             ✨ ${props.specialOffer}
                         </p>
                     </div>
@@ -655,7 +655,7 @@
         modalContent.innerHTML = `
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-4 h-4 rounded-full bg-gray-400"></div>
+                    <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
                     <span class="font-semibold text-gray-600 dark:text-gray-400 poppins-regular">Belum Ada Informasi</span>
                 </div>
                 
@@ -665,8 +665,8 @@
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
-                    <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-2 poppins-regular">Layanan yang Tersedia:</h4>
+                <div class="p-3 rounded-lg bg-gray-50 dark:bg-gray-700">
+                    <h4 class="mb-2 font-semibold text-gray-700 dark:text-gray-300 poppins-regular">Layanan yang Tersedia:</h4>
                     <ul class="space-y-1">
                         <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                             <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -689,8 +689,8 @@
                     </ul>
                 </div>
 
-                <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-lg">
-                    <p class="text-blue-700 dark:text-blue-300 text-sm">
+                <div class="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/30">
+                    <p class="text-sm text-blue-700 dark:text-blue-300">
                         💡 <strong>Tips:</strong> Booking lebih awal memberikan fleksibilitas lebih dalam memilih paket dan layanan sesuai keinginan Anda.
                     </p>
                 </div>
@@ -817,16 +817,16 @@ Mohon informasi lebih lanjut mengenai paket dan harga. Terima kasih! 🙏`;
         calendarEl.innerHTML = `
             <div class="flex items-center justify-center h-64">
                 <div class="text-center">
-                    <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">Gagal Memuat Kalender</h3>
-                    <p class="text-gray-500 dark:text-gray-500 mb-4">Terjadi kesalahan saat memuat data kalender.</p>
-                    <button onclick="location.reload()" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors poppins-regular">
+                    <h3 class="mb-2 text-lg font-semibold text-gray-600 dark:text-gray-400">Gagal Memuat Kalender</h3>
+                    <p class="mb-4 text-gray-500 dark:text-gray-500">Terjadi kesalahan saat memuat data kalender.</p>
+                    <button onclick="location.reload()" class="px-6 py-2 text-white transition-colors bg-purple-600 rounded-lg hover:bg-purple-700 poppins-regular">
                         Coba Lagi
                     </button>
                     <br>
-                    <button onclick="openWhatsAppConsultation('', 'Konsultasi Langsung', [])" class="mt-2 text-purple-600 hover:text-purple-800 transition-colors poppins-regular">
+                    <button onclick="openWhatsAppConsultation('', 'Konsultasi Langsung', [])" class="mt-2 text-purple-600 transition-colors hover:text-purple-800 poppins-regular">
                         Atau Hubungi Kami Langsung
                     </button>
                 </div>
@@ -881,7 +881,7 @@ Mohon informasi lebih lanjut mengenai paket dan harga. Terima kasih! 🙏`;
     function addButtonLoadingState(button, originalText) {
         button.disabled = true;
         button.innerHTML = `
-            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg class="inline w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>

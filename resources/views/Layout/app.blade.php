@@ -49,12 +49,13 @@ TEXT;
     <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         
     {{-- Animate On Scroll --}}
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    {{-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Scripts - -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     @vite(['resources/css/app.css', 'resources/css/font.css', 'resources/js/app.js'])
@@ -147,10 +148,233 @@ TEXT;
                 opacity: 0;
             }
         }
-    </style>
-</head>
-<body class="font-sans transition-colors duration-300  bg-gray-50 dark:bg-gray-900">
+        
+    /* Different shooting star variants */
+    .shooting-star:nth-child(1) {
+        top: 10%;
+        left: -100px;
+        animation-duration: 3s;
+        animation-delay: 0s;
+    }
 
+    .shooting-star:nth-child(2) {
+        top: 20%;
+        left: -100px;
+        animation-duration: 4s;
+        animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(3) {
+        top: 30%;
+        left: -100px;
+        animation-duration: 2.5s;
+        animation-delay: 4s;
+    }
+
+    .shooting-star:nth-child(4) {
+        top: 40%;
+        left: -100px;
+        animation-duration: 3.5s;
+        animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(5) {
+        top: 60%;
+        left: -100px;
+        animation-duration: 4.5s;
+        animation-delay: 5s;
+    }
+
+    .shooting-star:nth-child(6) {
+        top: 70%;
+        left: -100px;
+        animation-duration: 2.8s;
+        animation-delay: 3s;
+    }
+
+    .shooting-star:nth-child(7) {
+        top: 80%;
+        left: -100px;
+        animation-duration: 3.2s;
+        animation-delay: 6s;
+    }
+
+    .shooting-star:nth-child(8) {
+        top: 15%;
+        left: -100px;
+        animation-duration: 3.8s;
+        animation-delay: 7s;
+    }
+
+    /* Ensure content is above shooting stars */
+    .content-wrapper {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Add subtle glow effect for dark theme */
+    .dark .shooting-star {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .dark .shooting-star::before {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+    }
+    </style>
+    <style>
+    /* Shooting Stars Animation */
+    .shooting-stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .shooting-star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        opacity: 0;
+        animation: shoot linear infinite;
+    }
+
+    .shooting-star::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+        transform: translateY(-50%);
+        animation: tail linear infinite;
+    }
+
+    @keyframes shoot {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px) translateY(100px);
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(calc(100vw + 100px)) translateY(-100px);
+        }
+    }
+
+    @keyframes tail {
+        0% {
+            width: 0;
+        }
+        10% {
+            width: 50px;
+        }
+        90% {
+            width: 50px;
+        }
+        100% {
+            width: 0;
+        }
+    }
+
+    /* Different shooting star variants */
+    .shooting-star:nth-child(1) {
+        top: 10%;
+        left: -100px;
+        animation-duration: 3s;
+        animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(2) {
+        top: 20%;
+        left: -100px;
+        animation-duration: 4s;
+        animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(3) {
+        top: 30%;
+        left: -100px;
+        animation-duration: 2.5s;
+        animation-delay: 4s;
+    }
+
+    .shooting-star:nth-child(4) {
+        top: 40%;
+        left: -100px;
+        animation-duration: 3.5s;
+        animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(5) {
+        top: 60%;
+        left: -100px;
+        animation-duration: 4.5s;
+        animation-delay: 5s;
+    }
+
+    .shooting-star:nth-child(6) {
+        top: 70%;
+        left: -100px;
+        animation-duration: 2.8s;
+        animation-delay: 3s;
+    }
+
+    .shooting-star:nth-child(7) {
+        top: 80%;
+        left: -100px;
+        animation-duration: 3.2s;
+        animation-delay: 6s;
+    }
+
+    .shooting-star:nth-child(8) {
+        top: 15%;
+        left: -100px;
+        animation-duration: 3.8s;
+        animation-delay: 7s;
+    }
+
+    /* Ensure content is above shooting stars */
+    .content-wrapper {
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Add subtle glow effect for dark theme */
+    .dark .shooting-star {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .dark .shooting-star::before {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+    }
+</style>
+</head>
+<body class="font-sans transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
+    {{-- Shooting Stars Background --}}
+    <div class="shooting-stars">
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+    </div>
     <!-- Custom Alert HTML (tambahkan setelah tag body) -->
     @if(session('success'))
     <div id="successAlert" class="p-4 text-white shadow-2xl custom-alert success">
@@ -226,7 +450,7 @@ TEXT;
     @endif
 
     <!-- Unified Header dengan Navigation -->
-    <header x-data="{ mobileMenuOpen : false }" class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg  dark:bg-gray-900/95 dark:border-gray-700">
+    <header x-data="{ mobileMenuOpen : false }" class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900/95 dark:border-gray-700">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <!-- Main Header Content -->
             <div class="flex items-center justify-between">
@@ -496,7 +720,7 @@ TEXT;
         </div>
     </header>
 
-
+    {{-- <div></div> --}}
     @yield('content')
     
     <!-- Footer Section -->
@@ -907,13 +1131,12 @@ TEXT;
         }
     </script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
+    {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1500,
         });
-    </script>
+    </script> --}}
 
     @stack('scripts')
 </body>

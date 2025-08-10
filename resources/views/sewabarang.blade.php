@@ -3,7 +3,7 @@
 @section('title', 'Layanan Penyewaan')
 
 @section('content')
-<div class="min-h-screen bg-white dark:bg-gray-800">
+<div class="min-h-screen ">
     <div class="px-10 pt-32 bg-white dark:bg-gray-800 md:px-16 lg:px-24 xl:px-32">
         
         {{-- Header Section --}}
@@ -26,14 +26,14 @@
                 
                 {{-- Card 1 - Featured Sofa Set --}}
                 <div class="flex poppins-regular h-72 md:h-[400px] flex-col p-4 text-black dark:text-white border-2 border-gray-300 justify-between rounded-xl"
-                style="background-image: url('{{ asset('storage/content/decoration04.png') }}'); background-size: cover; background-position: center;">
-                    <h3 class="self-end px-3 py-1 w-auto text-xs rounded-full border-2 dark:border-white">Premium Collection</h3>
+                style="background-image: url('{{ asset('storage/content/decoration04.jpg') }}'); background-size: cover; background-position: center;">
+                    <h3 class="self-end w-auto px-3 py-1 text-xs border-2 rounded-full dark:border-white">Premium Collection</h3>
                     <div>
                         <h4 class="mb-2 text-xl tracking-widest edu-vic-wa-nt-hand-400">Sofa Premium Set</h4>
                         <p class="tracking-widest text-md xl:text-lg edu-vic-wa-nt-hand-400">Set sofa premium berbahan kulit sintetis berkualitas tinggi dengan rangka kayu solid.</p>
-                        <div class="flex justify-between items-center mt-4">
+                        <div class="flex items-center justify-between mt-4">
                             <div class="text-2xl font-bold edu-vic-wa-nt-hand">Rp 350.000</div>
-                            <button class="px-4 py-2 text-sm text-black bg-white rounded-lg transition-transform hover:scale-105">
+                            <button class="px-4 py-2 text-sm text-black transition-transform bg-white rounded-lg hover:scale-105">
                                 Pesan
                             </button>
                         </div>
@@ -41,15 +41,15 @@
                 </div>
 
                 {{-- Card 2 - Info Card --}}
-                <div class="flex flex-col gap-4 justify-center items-center p-4 text-center rounded-xl border-2 border-gray-200">
+                <div class="flex flex-col items-center justify-center gap-4 p-4 text-center border-2 border-gray-200 rounded-xl">
                     <h3 class="text-3xl text-black lg:text-4xl edu-vic-wa-nt-hand-500 dark:text-white">Kualitas Premium Terjamin</h3>
                     <p class="text-sm tracking-wider text-gray-600 pt-serif-regular lg:text-md dark:text-gray-400">Semua perlengkapan dalam kondisi prima dan selalu terawat. Kami pastikan kualitas terbaik untuk acara istimewa Anda.</p>
                     
-                    <button class="flex justify-center items-center bg-gray-300 rounded-full transition-all duration-300 group hover:scale-105">
+                    <button class="flex items-center justify-center transition-all duration-300 bg-gray-300 rounded-full group hover:scale-105">
                         <p class="mx-3 my-2 ml-4 text-sm text-black pt-serif-regular lg:text-lg">
                             Konsultasi Gratis
                         </p>
-                        <x-heroicon-o-arrow-small-up class="p-1 w-8 h-8 text-white bg-black rounded-full border-2 transition-all duration-300 lg:h-10 lg:w-10 group-hover:rotate-45" />
+                        <x-heroicon-o-arrow-small-up class="w-8 h-8 p-1 text-white transition-all duration-300 bg-black border-2 rounded-full lg:h-10 lg:w-10 group-hover:rotate-45" />
                     </button>
                 </div>
 
@@ -57,7 +57,7 @@
                 <div class="h-40 lg:h-[400px] md:col-span-2 lg:col-span-1 flex relative overflow-hidden poppins-regular flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl"
                 style="background-image: url('{{ asset('storage/content/wedding04.jpg') }}'); background-size: cover; background-position: center;">
                     <div class="absolute inset-0 bg-black/60"></div>
-                    <div class="flex relative z-10 gap-3 text-xs">
+                    <div class="relative z-10 flex gap-3 text-xs">
                         <span class="p-1 px-5 rounded-full backdrop-blur-sm bg-white/40">Gratis Antar</span>
                         <span class="p-1 px-5 rounded-full backdrop-blur-sm bg-white/40">Setup</span>
                         <span class="p-1 px-5 rounded-full backdrop-blur-sm bg-white/40">Maintenance</span>
@@ -73,22 +73,22 @@
           
            <div x-show="activeCategory === 'furniture'" class="grid grid-cols-1 gap-6 mb-16 md:grid-cols-2 lg:grid-cols-4">
                 @foreach ($dataBarang as $barang)
-                    <div class="overflow-hidden relative rounded-3xl border transition-all duration-500 group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+                    <div class="relative overflow-hidden transition-all duration-500 border rounded-3xl group bg-white/70 dark:bg-gray-800/70 border-gray-200/50 dark:border-gray-700/50 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                         {{-- Image with modern overlay --}}
-                        <div class="overflow-hidden relative h-48">
+                        <div class="relative h-48 overflow-hidden">
                             @if($barang['foto'] && !empty($barang['foto']))
                                 {{-- Show image if available --}}
                                 <img src="{{ asset('storage/barang/' . $barang['foto']) }}" 
                                     alt="{{ $barang['nama'] }}" 
-                                    class="object-cover absolute inset-0 w-full h-full transition-transform duration-700 scale-105 group-hover:scale-100" 
+                                    class="absolute inset-0 object-cover w-full h-full transition-transform duration-700 scale-105 group-hover:scale-100" 
                                     >
                                 
-                                <div class="absolute inset-0 bg-gradient-to-t to-transparent transition-all duration-500 from-black/60 via-black/20 group-hover:from-black/40"></div>
+                                <div class="absolute inset-0 transition-all duration-500 bg-gradient-to-t to-transparent from-black/60 via-black/20 group-hover:from-black/40"></div>
                             @else
                                 {{-- No image layer --}}
-                                <div class="flex absolute inset-0 justify-center items-center bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700">
+                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700">
                                     <div class="text-center">
-                                        <svg class="mx-auto mb-2 w-16 h-16 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-16 h-16 mx-auto mb-2 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                         </svg>
                                         <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Tidak Ada Gambar</p>
@@ -105,7 +105,7 @@
                             
                             {{-- Furniture icon --}}
                             <div class="absolute bottom-4 left-4">
-                                <div class="flex justify-center items-center w-12 h-12 rounded-2xl transition-transform duration-300 bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
+                                <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
                                     <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                     </svg>
@@ -135,7 +135,7 @@
                             </div>
                             
                             {{-- CTA Button --}}
-                            <button class="px-4 py-3 w-full text-sm font-medium rounded-2xl border-2 transition-all duration-300 border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
+                            <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
                                 Pesan Sekarang
                             </button>
                         </div>
@@ -158,18 +158,18 @@
                 style="background: url({{ asset('storage/content/degoration13.jpg') }}); background-size: cover; background-position: center;"
                 ></div>
                 
-                <div class="flex flex-col col-span-2 gap-4 justify-center items-center p-4 text-sm text-center rounded-2xl border-2 border-gray-200 xl:col-span-1">
+                <div class="flex flex-col items-center justify-center col-span-2 gap-4 p-4 text-sm text-center border-2 border-gray-200 rounded-2xl xl:col-span-1">
                     <p class="tracking-wider text-center text-gray-600 pt-serif-regular dark:text-gray-400">Semua perlengkapan dalam kondisi prima dan selalu terawat untuk acara istimewa Anda.</p>
                     
-                    <button class="flex justify-center items-center bg-gray-300 rounded-full transition-all duration-300 group hover:scale-105">
+                    <button class="flex items-center justify-center transition-all duration-300 bg-gray-300 rounded-full group hover:scale-105">
                         <p class="mx-3 my-2 ml-4 text-black pt-serif-regular">
                             Konsultasi
                         </p>
-                        <x-heroicon-o-arrow-small-up class="p-1 w-8 h-8 text-white bg-black rounded-full border-2 transition-all duration-300 group-hover:rotate-45" />
+                        <x-heroicon-o-arrow-small-up class="w-8 h-8 p-1 text-white transition-all duration-300 bg-black border-2 rounded-full group-hover:rotate-45" />
                     </button>
                 </div>
 
-                <div class="flex flex-col gap-4 justify-center items-center p-4 text-sm text-center bg-gray-200 rounded-2xl border-2 border-gray-200">
+                <div class="flex flex-col items-center justify-center gap-4 p-4 text-sm text-center bg-gray-200 border-2 border-gray-200 rounded-2xl">
                     <p class="text-3xl tracking-wider text-center text-gray-600 pt-serif-regular xl:text-5xl dark:text-gray-400">500 +</p>
                     <p class="tracking-wider text-center text-gray-600 pt-serif-regular dark:text-gray-400">Item tersedia</p>
                 </div>

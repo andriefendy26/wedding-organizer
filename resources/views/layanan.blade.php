@@ -3,160 +3,10 @@
 @section('title', 'Layanan Kami')
 
 @push('styles')
-<style>
-    /* Shooting Stars Animation */
-    .shooting-stars {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
-    }
 
-    .shooting-star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        opacity: 0;
-        animation: shoot linear infinite;
-    }
-
-    .shooting-star::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        width: 0;
-        height: 1px;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
-        transform: translateY(-50%);
-        animation: tail linear infinite;
-    }
-
-    @keyframes shoot {
-        0% {
-            opacity: 0;
-            transform: translateX(-100px) translateY(100px);
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            transform: translateX(calc(100vw + 100px)) translateY(-100px);
-        }
-    }
-
-    @keyframes tail {
-        0% {
-            width: 0;
-        }
-        10% {
-            width: 50px;
-        }
-        90% {
-            width: 50px;
-        }
-        100% {
-            width: 0;
-        }
-    }
-
-    /* Different shooting star variants */
-    .shooting-star:nth-child(1) {
-        top: 10%;
-        left: -100px;
-        animation-duration: 3s;
-        animation-delay: 0s;
-    }
-
-    .shooting-star:nth-child(2) {
-        top: 20%;
-        left: -100px;
-        animation-duration: 4s;
-        animation-delay: 2s;
-    }
-
-    .shooting-star:nth-child(3) {
-        top: 30%;
-        left: -100px;
-        animation-duration: 2.5s;
-        animation-delay: 4s;
-    }
-
-    .shooting-star:nth-child(4) {
-        top: 40%;
-        left: -100px;
-        animation-duration: 3.5s;
-        animation-delay: 1s;
-    }
-
-    .shooting-star:nth-child(5) {
-        top: 60%;
-        left: -100px;
-        animation-duration: 4.5s;
-        animation-delay: 5s;
-    }
-
-    .shooting-star:nth-child(6) {
-        top: 70%;
-        left: -100px;
-        animation-duration: 2.8s;
-        animation-delay: 3s;
-    }
-
-    .shooting-star:nth-child(7) {
-        top: 80%;
-        left: -100px;
-        animation-duration: 3.2s;
-        animation-delay: 6s;
-    }
-
-    .shooting-star:nth-child(8) {
-        top: 15%;
-        left: -100px;
-        animation-duration: 3.8s;
-        animation-delay: 7s;
-    }
-
-    /* Ensure content is above shooting stars */
-    .content-wrapper {
-        position: relative;
-        z-index: 10;
-    }
-
-    /* Add subtle glow effect for dark theme */
-    .dark .shooting-star {
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-    }
-
-    .dark .shooting-star::before {
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
-    }
-</style>
 @endpush
 
 @section('content')
-{{-- Shooting Stars Background --}}
-<div class="shooting-stars">
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-</div>
 
 <div class="overflow-hidden content-wrapper">
 
@@ -177,7 +27,7 @@
     </div>
 
     {{-- Main Services Section --}}
-    <div class="px-6 py-20 bg-white dark:bg-gray-800 lg:px-20">
+    <div class="px-6 py-20 lg:px-20">
         <div class="mx-auto max-w-7xl">
             {{-- Section Header --}}
             <div data-aos="fade-down"  class="mb-16 text-center">
@@ -335,7 +185,7 @@
     </div>
 
     {{-- Process Section --}}
-    <div class="px-6 py-20 bg-gray-50 dark:bg-gray-900 lg:px-20">
+    <div class="px-6 py-20 lg:px-20">
         <div class="mx-auto max-w-7xl">
             <div class="mb-16 text-center">
                 <h2 class="mb-4 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
@@ -402,28 +252,6 @@
         </div>
     </div>
 
-    {{-- CTA Section --}}
-    <div class="px-6 py-20 bg-white dark:bg-gray-800 lg:px-20">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="mb-6 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                Siap Mewujudkan Acara Impian Anda?
-            </h2>
-            <p class="mb-10 text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
-                Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik
-            </p>
-            <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <button class="flex px-8 py-4 font-semibold text-white transition-all duration-300 group hover:scale-105 bg-primary rounded-xl">
-                    <span class="mr-3 text-lg edu-vic-wa-nt-hand">Konsultasi Gratis</span>
-                    <x-heroicon-o-arrow-small-up class="w-6 h-6 transition-all duration-300 group-hover:rotate-45" />
-                </button>
-                <button class="flex px-8 py-4 font-semibold transition-all duration-300 border-2 group hover:scale-105 border-primary text-primary dark:text-white dark:border-white rounded-xl">
-                    <span class="mr-3 text-lg edu-vic-wa-nt-hand">Lihat Portfolio</span>
-                    <x-heroicon-o-arrow-small-up class="w-6 h-6 transition-all duration-300 group-hover:rotate-45" />
-                </button>
-            </div>
-            
-        </div>
-    </div>
 </div>
 
 @endsection

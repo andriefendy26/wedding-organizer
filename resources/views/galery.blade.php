@@ -3,7 +3,7 @@
 @section('title', 'Portfolio')
 
 @section('content')
-<div class="min-h-screen bg-white dark:bg-gray-800">
+<div class="min-h-screen ">
    <div class="relative h-[70vh] overflow-hidden"
     style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black/70"></div>
@@ -209,25 +209,6 @@
         </div>
     </div>
 
-    {{-- CTA Section --}}
-    <div class="py-16 bg-white dark:bg-gray-800">
-        <div class="container px-6 mx-auto text-center">
-            <h2 class="mb-6 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
-                Siap Mewujudkan Acara Impian Anda?
-            </h2>
-            <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
-                Hubungi kami sekarang dan biarkan tim profesional kami membantu merencanakan momen spesial Anda
-            </p>
-            <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                <button class="p-2 px-5 font-semibold tracking-wide transition-all duration-300 border-2 hover:tracking-widest hover:px-8 border-primary text-primary dark:text-black dark:bg-white dark:border-none rounded-xl edu-vic-wa-nt-hand-500">
-                    Lihat Katalog Sewa
-                </button>
-                <button class="p-2 px-5 font-semibold tracking-wide text-white transition-all duration-300 border-2 bg-primary rounded-xl hover:tracking-widest hover:px-8 edu-vic-wa-nt-hand-500">
-                    Hubungi Kami
-                </button>
-            </div>
-        </div>
-    </div>
 </div>
 
 @push('styles')

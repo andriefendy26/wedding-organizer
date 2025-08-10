@@ -76,10 +76,6 @@
     .shooting-star:nth-child(4) { top: 40%; animation-duration: 3.5s; animation-delay: 1s; }
     .shooting-star:nth-child(5) { top: 60%; animation-duration: 4.5s; animation-delay: 5s; }
 
-    .content-wrapper {
-        position: relative;
-        z-index: 10;
-    }
 
     .dark .shooting-star {
         background: rgba(255, 255, 255, 0.9);
@@ -131,71 +127,67 @@
     <div class="shooting-star"></div>
 </div>
 
-<div class="content-wrapper">
+<div>
 
     {{-- About Service Section --}}
-    <div class="bg-white dark:bg-gray-800 px-10 md:px-16 lg:px-24 xl:px-32 py-20 mt-14">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="px-10 py-20 overflow-hidden bg-white dark:bg-gray-800 md:px-16 lg:px-24 xl:px-32 mt-14">
+        <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
             <div data-aos="fade-right">
-                <h2 class="text-3xl lg:text-5xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand mb-6">
+                <h2 class="mb-6 text-3xl font-semibold text-black lg:text-5xl dark:text-white edu-vic-wa-nt-hand">
                     Pernikahan Impian Anda, Misi Kami
                 </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 pt-serif-regular mb-6">
+                <p class="mb-6 text-lg text-gray-600 dark:text-gray-300 pt-serif-regular">
                     Kami memahami bahwa pernikahan adalah momen paling berharga dalam hidup Anda. Dengan pengalaman lebih dari 5 tahun, tim profesional kami siap menghadirkan pernikahan yang sempurna sesuai dengan visi dan budget Anda.
                 </p>
-                <p class="text-lg text-gray-600 dark:text-gray-300 pt-serif-regular mb-8">
+                <p class="mb-8 text-lg text-gray-600 dark:text-gray-300 pt-serif-regular">
                     Dari pernikahan adat tradisional hingga konsep modern kontemporer, kami menangani setiap detail dengan penuh perhatian dan dedikasi tinggi.
                 </p>
                 <div class="flex flex-wrap gap-4 mb-8">
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 mr-2 text-primary" />
                         <span class="text-gray-700 dark:text-gray-300">Perencanaan Menyeluruh</span>
                     </div>
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 mr-2 text-primary" />
                         <span class="text-gray-700 dark:text-gray-300">Tim Berpengalaman</span>
                     </div>
                     <div class="flex items-center">
-                        <x-heroicon-o-check-circle class="w-6 h-6 text-primary mr-2" />
+                        <x-heroicon-o-check-circle class="w-6 h-6 mr-2 text-primary" />
                         <span class="text-gray-700 dark:text-gray-300">Garansi Kepuasan</span>
                     </div>
                 </div>
             </div>
             <div data-aos="fade-left" class="relative">
                 <div class="relative">
-                    <img src="{{ asset('storage/content/wedding06.jpg') }}" alt="Wedding Planning" class="rounded-2xl shadow-xl">
-                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl">
+                    <img src="{{ asset('storage/content/wedding06.jpg') }}" alt="Wedding Planning" class="shadow-xl rounded-2xl">
+                    <div class="absolute p-6 text-white -bottom-6 -right-6 bg-primary rounded-2xl">
                         <div class="text-3xl font-bold edu-vic-wa-nt-hand">100+</div>
                         <div class="text-sm">Pasangan Bahagia</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
- 
-
-  
+    </div>  
 
     {{-- Venue Packages Section --}}
-    <div class="md:px-16 lg:px-24 xl:px-32 py-20 relative overflow-hidden">
+    <div class="relative px-10 py-20 overflow-hidden md:px-16 lg:px-24 xl:px-32">
         {{-- Background Pattern --}}
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-20 h-20 border-2 border-black dark:border-white rounded-full"></div>
-            <div class="absolute top-32 right-20 w-16 h-16 border-2 border-black dark:border-white rounded-full"></div>
-            <div class="absolute bottom-20 left-32 w-12 h-12 border-2 border-black dark:border-white rounded-full"></div>
-            <div class="absolute bottom-40 right-10 w-24 h-24 border-2 border-black dark:border-white rounded-full"></div>
+            <div class="absolute w-20 h-20 border-2 border-black rounded-full top-10 left-10 dark:border-white"></div>
+            <div class="absolute w-16 h-16 border-2 border-black rounded-full top-32 right-20 dark:border-white"></div>
+            <div class="absolute w-12 h-12 border-2 border-black rounded-full bottom-20 left-32 dark:border-white"></div>
+            <div class="absolute w-24 h-24 border-2 border-black rounded-full bottom-40 right-10 dark:border-white"></div>
         </div>
 
         <div class="relative z-10">
-            <div class="text-center mb-16">
-                <div class="inline-block bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-                    <span class="text-black dark:text-white font-medium tracking-wider text-sm ">PAKET VENUE EKSKLUSIF</span>
+            <div class="mb-16 text-center">
+                <div class="inline-block px-6 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-sm">
+                    <span class="text-sm font-medium tracking-wider text-black dark:text-white ">PAKET VENUE EKSKLUSIF</span>
                 </div>
-                <h2 class="text-4xl lg:text-6xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-6">
+                <h2 class="mb-6 text-4xl font-bold text-black lg:text-6xl dark:text-white edu-vic-wa-nt-hand">
                     Daftar Venue Terbaik 2024
                 </h2>
-                <p class="text-gray-700 dark:text-white/80 text-xl max-w-3xl mx-auto pt-serif-regular-italic">
+                <p class="max-w-3xl mx-auto text-xl text-gray-700 dark:text-white/80 pt-serif-regular-italic">
                     Venue mewah dan eksklusif untuk momen berharga Anda dengan fasilitas lengkap dan pelayanan premium
                 </p>
             </div>
@@ -206,7 +198,7 @@
                 <div class="flex flex-wrap justify-center mb-12 space-x-2">
                     <button @click="activeTab = 'rumahan'" 
                             :class="activeTab === 'rumahan' ? 'tab-active' : ' bg-gray-300 text-gray-800 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'" 
-                            class="px-6 py-3 rounded-full font-medium transition-all duration-300 mb-2">
+                            class="px-6 py-3 mb-2 font-medium transition-all duration-300 rounded-full">
                         <span class="flex items-center">
                             <x-heroicon-o-home class="w-5 h-5 mr-2" />
                             Rumahan
@@ -214,7 +206,7 @@
                     </button>
                     <button @click="activeTab = 'gedung'" 
                             :class="activeTab === 'gedung' ? 'tab-active' : 'bg-gray-300 text-gray-800 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'" 
-                            class="px-6 py-3 rounded-full font-medium transition-all duration-300 mb-2">
+                            class="px-6 py-3 mb-2 font-medium transition-all duration-300 rounded-full">
                         <span class="flex items-center">
                             <x-heroicon-o-building-office-2 class="w-5 h-5 mr-2" />
                             Gedung
@@ -222,7 +214,7 @@
                     </button>
                     <button @click="activeTab = 'hotel'" 
                             :class="activeTab === 'hotel' ? 'tab-active' : 'bg-gray-300 text-gray-800 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'" 
-                            class="px-6 py-3 rounded-full font-medium transition-all duration-300 mb-2">
+                            class="px-6 py-3 mb-2 font-medium transition-all duration-300 rounded-full">
                         <span class="flex items-center">
                             <x-heroicon-o-building-office class="w-5 h-5 mr-2" />
                             Hotel
@@ -234,7 +226,7 @@
                 <div class="min-h-[600px]">
                     {{-- Rumahan Tab --}}
                     <div x-show="activeTab === 'rumahan'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-3">
                             @php
                                 $rumahanPakets = $dataPaket->filter(function($paket) {
                                     $namaPaket = strtolower($paket->nama_paket);
@@ -248,20 +240,20 @@
                                     @if($index % 2 == 1) data-aos-delay="300" @endif
                                     class="border-[1px] dark:backdrop-blur-[10px] bg-gray-100 dark:bg-gray-100/10 rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                                     <div class="flex items-center justify-between mb-4">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center">
+                                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500">
                                             <x-heroicon-o-home class="w-6 h-6 text-black dark:text-white" />
                                         </div>
                                         <div class="text-right">
                                             <div class="text-2xl font-bold text-[#B2110E]">
                                                 Rp {{ number_format($paket->harga, 0, ',', '.') }}
                                             </div>
-                                            <div class="text-gray-600 dark:text-white/60 text-sm">per acara</div>
+                                            <div class="text-sm text-gray-600 dark:text-white/60">per acara</div>
                                         </div>
                                     </div>
-                                    <h4 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">
+                                    <h4 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
                                         {{ $paket->nama_paket }}
                                     </h4>
-                                    <p class="text-gray-700 dark:text-white/70 text-sm mb-4">
+                                    <p class="mb-4 text-sm text-gray-700 dark:text-white/70">
                                         @if(str_contains($paket->nama_paket, 'C'))
                                             Kapasitas 200-250 tamu
                                         @elseif(str_contains($paket->nama_paket, 'D'))
@@ -291,7 +283,7 @@
 
                     {{-- Gedung Tab --}}
                     <div x-show="activeTab === 'gedung'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-3">
                             @php
                                 $gedungPakets = $dataPaket->filter(function($paket) {
                                     return str_contains(strtolower($paket->nama_paket), 'gedung');
@@ -301,16 +293,16 @@
                             @foreach($gedungPakets as $index => $paket)
                                 <div data-aos="fade-up" data-aos-delay="{{ $index * 100 }}" class="border-[1px] dark:backdrop-blur-[10px] bg-gray-100 dark:bg-gray-100/10 rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                                     <div class="flex items-center justify-between mb-4">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center">
+                                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500">
                                             <x-heroicon-o-building-office-2 class="w-6 h-6 text-black dark:text-white" />
                                         </div>
                                         <div class="text-right">
                                             <div class="text-2xl font-bold text-[#B2110E]">Rp {{ number_format($paket->harga, 0, ',', '.') }}</div>
-                                            <div class="text-white/60 text-sm">per acara</div>
+                                            <div class="text-sm text-white/60">per acara</div>
                                         </div>
                                     </div>
-                                    <h4 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">{{ $paket->nama_paket }}</h4>
-                                    <p class="text-gray-700 dark:text-white/70 text-sm mb-4">
+                                    <h4 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">{{ $paket->nama_paket }}</h4>
+                                    <p class="mb-4 text-sm text-gray-700 dark:text-white/70">
                                         @if($paket->harga >= 40000000)
                                             Kapasitas 400-500 tamu
                                         @elseif($paket->harga >= 35000000)
@@ -358,7 +350,7 @@
 
                     {{-- Hotel Tab --}}
                     <div x-show="activeTab === 'hotel'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-3">
                             @php
                                 $hotelPakets = $dataPaket->filter(function($paket) {
                                     return str_contains(strtolower($paket->nama_paket), 'hotel');
@@ -368,16 +360,16 @@
                             @foreach($hotelPakets as $index => $paket)
                                 <div data-aos="fade-up" data-aos-delay="{{ $index * 100 }}" class="border-[1px] dark:backdrop-blur-[10px] bg-gray-100 dark:bg-gray-100/10 rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                                     <div class="flex items-center justify-between mb-4">
-                                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center">
+                                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500">
                                             <x-heroicon-o-building-office class="w-6 h-6 text-black dark:text-white" />
                                         </div>
                                         <div class="text-right">
                                             <div class="text-2xl font-bold text-[#B2110E]">Rp {{ number_format($paket->harga, 0, ',', '.') }}</div>
-                                            <div class="text-white/60 text-sm">per acara</div>
+                                            <div class="text-sm text-white/60">per acara</div>
                                         </div>
                                     </div>
-                                    <h4 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">{{ $paket->nama_paket }}</h4>
-                                     <p class="text-gray-700 dark:text-white/70 text-sm mb-4">
+                                    <h4 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">{{ $paket->nama_paket }}</h4>
+                                     <p class="mb-4 text-sm text-gray-700 dark:text-white/70">
                                         @if(str_contains($paket->nama_paket, 'C'))
                                             Kapasitas 200-250 tamu
                                         @elseif(str_contains($paket->nama_paket, 'D'))
@@ -436,139 +428,139 @@
     </div>
 
     {{-- Include Section --}}
-    <div class="md:px-16 lg:px-24 xl:px-32 py-20 relative overflow-hidden ">
+    <div class="relative px-10 py-20 overflow-hidden md:px-16 lg:px-24 xl:px-32 ">
   
         <div class="relative z-10">
-            <div class="text-center mb-16">
-                <div class="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full px-8 py-3 mb-6">
-                    <span class="text-black dark:text-white font-bold tracking-wider text-sm uppercase">WHAT'S INCLUDED</span>
+            <div class="mb-16 text-center">
+                <div class="inline-block px-8 py-3 mb-6 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm">
+                    <span class="text-sm font-bold tracking-wider text-black uppercase dark:text-white">WHAT'S INCLUDED</span>
                 </div>
-                <h2 class="text-4xl text-black dark:text-white lg:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text edu-vic-wa-nt-hand mb-6">
+                <h2 class="mb-6 text-4xl font-bold text-black dark:text-white lg:text-6xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text edu-vic-wa-nt-hand">
                     Paket Lengkap untuk Hari Bahagia Anda
                 </h2>
-                <p class="text-gray-700 dark:text-white/80 text-xl max-w-4xl mx-auto pt-serif-regular-italic leading-relaxed">
+                <p class="max-w-4xl mx-auto text-xl leading-relaxed text-gray-700 dark:text-white/80 pt-serif-regular-italic">
                     Semua yang Anda butuhkan untuk pernikahan impian, mulai dari dekorasi mewah hingga dokumentasi profesional, telah kami siapkan dalam satu paket komprehensif
                 </p>
             </div>
 
-       {{-- Include Items Grid --}}
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-    @foreach($dataInclude as $index => $include)
-    <div data-aos="fade-up" 
-         data-aos-delay="{{ $index * 100 }}"
-         class="group">
-        
-        {{-- Card Container --}}
-        <div class="relative h-full bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
-            
-            {{-- Header with Icon --}}
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-gradient-to-br from-primary to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <x-heroicon-o-check class="w-5 h-5 text-white" />
-                </div>
-                <h3 class="text-lg font-semibold text-black dark:text-white poppins-medium group-hover:text-primary transition-colors duration-300">
-                    {{ $include->nama_include }}
-                </h3>
-            </div>
-            
-            {{-- Items List --}}
-            <div class="space-y-2.5">
-                @foreach($include->items as $item)
-                <div class="flex items-start gap-3 group/item">
-                    <div class="flex-shrink-0 w-1.5 h-1.5 bg-primary rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-200"></div>
-                    <span class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-200">
-                        {{ $item }}
-                    </span>
+            {{-- Include Items Grid --}}
+            <div class="grid grid-cols-1 gap-6 mb-16 md:grid-cols-2 lg:grid-cols-4">
+                @foreach($dataInclude as $index => $include)
+                <div data-aos="fade-up" 
+                    data-aos-delay="{{ $index * 100 }}"
+                    class="group">
+                    
+                    {{-- Card Container --}}
+                    <div class="relative h-full p-6 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-800 rounded-2xl dark:border-gray-700 hover:border-primary/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
+                        
+                        {{-- Header with Icon --}}
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="flex items-center justify-center w-10 h-10 transition-transform duration-300 bg-gradient-to-br from-primary to-pink-500 rounded-xl group-hover:scale-110">
+                                <x-heroicon-o-check class="w-5 h-5 text-white" />
+                            </div>
+                            <h3 class="text-lg font-semibold text-black transition-colors duration-300 dark:text-white poppins-medium group-hover:text-primary">
+                                {{ $include->nama_include }}
+                            </h3>
+                        </div>
+                        
+                        {{-- Items List --}}
+                        <div class="space-y-2.5">
+                            @foreach($include->items as $item)
+                            <div class="flex items-start gap-3 group/item">
+                                <div class="flex-shrink-0 w-1.5 h-1.5 bg-primary rounded-full mt-2 group-hover/item:scale-125 transition-transform duration-200"></div>
+                                <span class="text-sm leading-relaxed text-gray-600 transition-colors duration-200 dark:text-gray-300 group-hover/item:text-gray-900 dark:group-hover/item:text-white">
+                                    {{ $item }}
+                                </span>
+                            </div>
+                            @endforeach
+                        </div>
+                        
+                        {{-- Bottom accent line --}}
+                        <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                 </div>
                 @endforeach
             </div>
-            
-            {{-- Bottom accent line --}}
-            <div class="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-    </div>
-    @endforeach
-</div>
 
         </div>
     </div>
 
     {{-- Service Features Section --}}
-    <div class="bg-gray-50 dark:bg-gray-900 px-10 md:px-16 lg:px-24 xl:px-32 py-20">
-        <div class="text-center mb-16">
-            <h2 class="text-black text-center text-3xl lg:text-4xl poppins-medium mx-8 md:mx-20 lg:mx-40 dark:text-white mb-4">
+    <div class="px-10 py-20 overflow-hidden bg-gray-50 dark:bg-gray-900 md:px-16 lg:px-24 xl:px-32">
+        <div class="mb-16 text-center">
+            <h2 class="mx-8 mb-4 text-3xl text-center text-black lg:text-4xl poppins-medium md:mx-20 lg:mx-40 dark:text-white">
                 Layanan Wedding Organizer yang 
                 <span class="pt-serif-regular-italic text-primary">Komprehensif</span>
             </h2>
-            <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-2xl mx-auto">
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 Setiap aspek pernikahan Anda ditangani dengan profesional dan penuh perhatian
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {{-- Feature 1 --}}
-            <div data-aos="fade-up" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl">
                     <x-heroicon-o-heart class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Konsultasi & Perencanaan</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Konsultasi & Perencanaan</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Diskusi mendalam tentang visi pernikahan, pemilihan vendor, dan penyusunan timeline yang detail.</p>
             </div>
 
             {{-- Feature 2 --}}
-            <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" data-aos-delay="100" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl">
                     <x-heroicon-o-users class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Koordinasi Vendor</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Koordinasi Vendor</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Mengelola semua vendor mulai dari catering, fotografer, hingga entertainment dengan koordinasi yang rapi.</p>
             </div>
 
             {{-- Feature 3 --}}
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" data-aos-delay="200" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl">
                     <x-heroicon-o-sparkles class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Desain & Dekorasi</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Desain & Dekorasi</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Konsep dekorasi yang disesuaikan dengan tema dan preferensi Anda untuk menciptakan suasana yang magis.</p>
             </div>
 
             {{-- Feature 4 --}}
-            <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" data-aos-delay="300" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl">
                     <x-heroicon-o-calendar-days class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Manajemen Hari-H</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Manajemen Hari-H</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pengawasan penuh selama acara berlangsung untuk memastikan semuanya berjalan sesuai rencana.</p>
             </div>
 
             {{-- Feature 5 --}}
-            <div data-aos="fade-up" data-aos-delay="400" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" data-aos-delay="400" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl">
                     <x-heroicon-o-document-text class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Administrasi & Perizinan</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Administrasi & Perizinan</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pengurusan semua dokumen dan perizinan yang diperlukan untuk kelancaran acara pernikahan.</p>
             </div>
 
             {{-- Feature 6 --}}
-            <div data-aos="fade-up" data-aos-delay="500" class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-4">
+            <div data-aos="fade-up" data-aos-delay="500" class="p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-800 rounded-2xl hover:shadow-xl hover:-translate-y-2">
+                <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl">
                     <x-heroicon-o-gift class="w-8 h-8 text-black dark:text-white" />
                 </div>
-                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-3">Paket Customizable</h3>
+                <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Paket Customizable</h3>
                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Berbagai pilihan paket yang dapat disesuaikan dengan budget dan kebutuhan spesifik Anda.</p>
             </div>
         </div>
     </div>
 
     {{-- Process Timeline Section --}}
-    <div class="bg-gray-50 dark:bg-gray-900 px-10 md:px-16 lg:px-24 xl:px-32 py-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand mb-4">
+    <div class="px-10 py-20 overflow-hidden bg-gray-50 dark:bg-gray-900 md:px-16 lg:px-24 xl:px-32">
+        <div class="mb-16 text-center">
+            <h2 class="mb-4 text-3xl font-semibold text-black lg:text-5xl dark:text-white edu-vic-wa-nt-hand">
                 Timeline Persiapan Pernikahan
             </h2>
-            <p class="text-gray-600 dark:text-gray-400 pt-serif-regular-italic text-lg max-w-2xl mx-auto">
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 Dari konsultasi awal hingga hari bahagia Anda, kami akan mendampingi setiap langkah perjalanan
             </p>
         </div>
@@ -576,18 +568,18 @@
         <div class="max-w-4xl mx-auto">
             <div class="relative">
                 {{-- Timeline line --}}
-                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-primary opacity-30"></div>
+                <div class="absolute top-0 bottom-0 w-1 transform left-8 md:left-1/2 md:-translate-x-1/2 bg-primary opacity-30"></div>
                 
                 {{-- Timeline items --}}
                 <div class="space-y-12">
                     {{-- 6 Months Before --}}
                     <div data-aos="fade-right" class="relative flex items-center">
-                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">
+                        <div class="z-10 flex items-center justify-center flex-shrink-0 w-16 h-16 font-bold text-white rounded-full bg-primary">
                             6M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pr-8">
-                            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">Konsultasi Awal</h3>
+                            <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
+                                <h3 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Konsultasi Awal</h3>
                                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Diskusi visi pernikahan, budget planning, dan pemilihan tanggal. Pembahasan konsep tema dan style yang diinginkan.</p>
                             </div>
                         </div>
@@ -595,12 +587,12 @@
 
                     {{-- 4 Months Before --}}
                     <div data-aos="fade-left" class="relative flex items-center md:flex-row-reverse">
-                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
+                        <div class="z-10 flex items-center justify-center flex-shrink-0 w-16 h-16 font-bold text-white rounded-full bg-primary md:ml-8">
                             4M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pl-8">
-                            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">Booking Vendor</h3>
+                            <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
+                                <h3 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Booking Vendor</h3>
                                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pemilihan dan booking venue, catering, fotografer, entertainment, dan vendor lainnya sesuai kebutuhan.</p>
                             </div>
                         </div>
@@ -608,12 +600,12 @@
 
                     {{-- 2 Months Before --}}
                     <div data-aos="fade-right" class="relative flex items-center">
-                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10">
+                        <div class="z-10 flex items-center justify-center flex-shrink-0 w-16 h-16 font-bold text-white rounded-full bg-primary">
                             2M
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pr-8">
-                            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">Finalisasi Detail</h3>
+                            <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
+                                <h3 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Finalisasi Detail</h3>
                                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Konfirmasi menu, dekorasi detail, rundown acara, dan koordinasi final dengan semua vendor.</p>
                             </div>
                         </div>
@@ -621,12 +613,12 @@
 
                     {{-- 1 Week Before --}}
                     <div data-aos="fade-left" class="relative flex items-center md:flex-row-reverse">
-                        <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 md:ml-8">
+                        <div class="z-10 flex items-center justify-center flex-shrink-0 w-16 h-16 font-bold text-white rounded-full bg-primary md:ml-8">
                             1W
                         </div>
                         <div class="ml-8 md:ml-0 md:w-1/2 md:pl-8">
-                            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                                <h3 class="text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand mb-2">Final Check</h3>
+                            <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-2xl">
+                                <h3 class="mb-2 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">Final Check</h3>
                                 <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">Rehearsal, final meeting dengan vendor, dan persiapan emergency kit untuk mengantisipasi hal tak terduga.</p>
                             </div>
                         </div>
@@ -634,12 +626,12 @@
 
                     {{-- Wedding Day --}}
                     <div data-aos="zoom-in" class="relative flex items-center justify-center">
-                        <div class="w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-black dark:text-white font-bold text-lg z-10">
+                        <div class="z-10 flex items-center justify-center w-20 h-20 text-lg font-bold text-black rounded-full bg-gradient-to-br from-pink-500 to-rose-500 dark:text-white">
                             <x-heroicon-o-heart class="w-8 h-8" />
                         </div>
-                        <div class="absolute left-24 md:left-1/2 md:transform md:translate-x-8 w-64">
-                            <div class="bg-gradient-to-br from-pink-500 to-rose-500 text-black dark:text-white rounded-2xl p-6 shadow-lg">
-                                <h3 class="text-xl font-bold edu-vic-wa-nt-hand mb-2">Hari Bahagia Anda!</h3>
+                        <div class="absolute w-64 left-24 md:left-1/2 md:transform md:translate-x-8">
+                            <div class="p-6 text-black shadow-lg bg-gradient-to-br from-pink-500 to-rose-500 dark:text-white rounded-2xl">
+                                <h3 class="mb-2 text-xl font-bold edu-vic-wa-nt-hand">Hari Bahagia Anda!</h3>
                                 <p class="pt-serif-regular">Full supervision dan koordinasi untuk memastikan semuanya berjalan sempurna sesuai rencana.</p>
                             </div>
                         </div>

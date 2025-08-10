@@ -3,7 +3,7 @@
 @section('title', 'Portfolio')
 
 @section('content')
-<div class="min-h-screen bg-white dark:bg-gray-800">
+<div class="min-h-screen">
 
     <div class="relative h-[70vh] overflow-hidden"
     style="background-image: url('{{ asset('storage/content/gif02.gif') }}'); background-size: cover; background-position: center;">
