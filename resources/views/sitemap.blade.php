@@ -58,7 +58,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>htt{{ url('/layananwedding') }}</loc>
+  <loc>{{ url('/layananwedding') }}</loc>
   <lastmod>{{ \Carbon\Carbon::parse(date('Y-m-d H:i:s'))->toIso8601String() }}</lastmod>
   <priority>0.80</priority>
 </url>
