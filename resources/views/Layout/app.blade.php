@@ -750,7 +750,7 @@ TEXT;
                                 <x-bi-instagram class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
-                        <a href="#" class="group">
+                        {{-- <a href="#" class="group">
                             <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
                                 <x-bi-telephone class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
@@ -759,8 +759,8 @@ TEXT;
                             <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
                                 <x-bi-tiktok class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
-                        </a>
-                        <a href="#" class="group">
+                        </a> --}}
+                        <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank" class="group">
                             <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
                                 <x-bi-whatsapp class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
@@ -772,11 +772,11 @@ TEXT;
                 <div>
                     <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">Layanan Kami</h4>
                     <ul class="space-y-3 poppins-regular">
-                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Wedding Organizer</a></li>
-                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dekorasi Pernikahan</a></li>
-                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Event Korporat</a></li>
-                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Sewa Perlengkapan</a></li>
-                        <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dokumentasi</a></li>
+                        <li><a href="/layananwedding" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Wedding Organizer</a></li>
+                        {{-- <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dekorasi Pernikahan</a></li> --}}
+                        <li><a href="/layanandekorasi" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Event Organizer</a></li>
+                        <li><a href="/layanansewa" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Sewa Perlengkapan</a></li>
+                        <li><a href="/galery" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dokumentasi</a></li>
                     </ul>
                 </div>
 
@@ -789,8 +789,8 @@ TEXT;
                                 <x-heroicon-o-map-pin class="w-3 h-3 text-white" />
                             </div>
                             <div>
-                                <p class="text-sm text-gray-300">Jl. Contoh No. 123</p>
-                                <p class="text-sm text-gray-300">Tarakan, Kalimantan Utara</p>
+                                <p class="text-sm text-gray-300">Jl. Padat Karya No.3, Kp. Enam, 77123</p>
+                                <p class="text-sm text-gray-300">Kec.Tarakan Timur, Tarakan, Kalimantan Utara</p>
                             </div>
                         </div>
                         
@@ -805,7 +805,7 @@ TEXT;
                             <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-envelope class="w-3 h-3 text-white" />
                             </div>
-                            <p class="text-sm text-gray-300">info@3rasa.com</p>
+                            <p class="text-sm text-gray-300">3rasaproduction2012@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -1130,14 +1130,6 @@ TEXT;
             };
         }
     </script>
-
-    {{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1500,
-        });
-    </script> --}}
-
     @stack('scripts')
 </body>
 </html>

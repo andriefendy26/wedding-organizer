@@ -27,8 +27,8 @@ class KonsultasiResource extends Resource
                 \Filament\Forms\Components\TextInput::make('nama')->required(),
                 \Filament\Forms\Components\TextInput::make('email')->email()->required(),
                 \Filament\Forms\Components\TextInput::make('no_hp')->label('No HP')->required(),
-                \Filament\Forms\Components\Textarea::make('deskripsi')->label('Deskripsi')->required(),
                 \Filament\Forms\Components\DatePicker::make('tanggal')->label('Tanggal')->required(),
+                \Filament\Forms\Components\Textarea::make('deskripsi')->label('Deskripsi')->rows(8)->required(),
             ]);
     }
 

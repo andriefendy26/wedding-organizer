@@ -48,6 +48,78 @@ TEXT;
     <meta name="twitter:image" content={{ asset('storage/content/wedding11.jpg') }} />
 @endsection
 
+@push('styles')
+    <style>
+        /* Fireworks Container */
+        .fireworks-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        
+        /* Individual Firework */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        /* Firework Explosion Animation */
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+                filter: brightness(2);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1) rotate(72deg);
+                filter: brightness(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2) rotate(360deg);
+                filter: brightness(0.5);
+            }
+        }
+
+        /* Trail Animation */
+        @keyframes trail {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+        /* Particle Animation */
+        @keyframes particle {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) scale(0.3);
+            }
+        }
+    </style>
+@endpush
+
+
 @section('content')
 <div class="relative w-full h-screen"
     x-data="{}"
@@ -152,7 +224,7 @@ TEXT;
 </div>
 
 {{-- Services Section --}}
-<div class="px-10 pt-20 pb-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
+<div class="px-10 pt-20 pb-10 overflow-hidden section md:px-16 lg:px-24 xl:px-32">
 
     {{-- Header Instagram --}}
     <div class="mb-12 text-center">
@@ -314,6 +386,8 @@ TEXT;
         </div>
 </div>
 
+<!-- Fireworks Container -->
+<div class="fireworks-container" id="fireworksContainer"></div>
 {{-- Hiasan --}}
 <div class="px-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
     <h2 data-aos="fade-right" class="py-8 mx-8 text-2xl text-center text-black lg:text-3xl poppins-medium md:mx-20 lg:mx-40 dark:text-white">Hadirkan yang 
@@ -1060,5 +1134,203 @@ TEXT;
         document.getElementById('slide').prepend(lists[lists.length - 1]);
     }
 </script>
+
+    <script>
+        // Fireworks System
+        class FireworksSystem {
+            constructor() {
+                this.container = document.getElementById('fireworksContainer');
+                this.colors = [
+                    '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', 
+                    '#55a3ff', '#fd79a8', '#fdcb6e', '#6c5ce7',
+                    '#a29bfe', '#fab1a0', '#00b894', '#e84393'
+                ];
+                this.lastScrollY = window.scrollY;
+                this.scrollThreshold = 50;
+                this.fireworkCount = 0;
+                this.maxFireworks = 3;
+                
+                this.init();
+            }
+
+            init() {
+                window.addEventListener('scroll', () => this.handleScroll());
+            }
+
+            handleScroll() {
+                const currentScrollY = window.scrollY;
+                const scrollDelta = Math.abs(currentScrollY - this.lastScrollY);
+                
+                if (scrollDelta > this.scrollThreshold && this.fireworkCount < this.maxFireworks) {
+                    this.createFirework();
+                    this.lastScrollY = currentScrollY;
+                }
+                
+                this.updateScrollProgress();
+            }
+
+            createFirework() {
+                if (this.fireworkCount >= this.maxFireworks) return;
+                
+                this.fireworkCount++;
+                
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight * 0.7 + window.innerHeight * 0.15;
+                
+                // Create trail first
+                this.createTrail(x, y);
+                
+                // Then create explosion
+                setTimeout(() => {
+                    this.createExplosion(x, y);
+                    setTimeout(() => {
+                        this.fireworkCount--;
+                    }, 2000);
+                }, 500);
+            }
+
+            createTrail(x, y) {
+                const trail = document.createElement('div');
+                trail.style.position = 'absolute';
+                trail.style.left = x + 'px';
+                trail.style.top = (window.innerHeight + 50) + 'px';
+                trail.style.width = '3px';
+                trail.style.height = '20px';
+                trail.style.background = 'linear-gradient(to top, ' + this.getRandomColor() + ', transparent)';
+                trail.style.borderRadius = '50%';
+                trail.style.animation = `trail 0.8s ease-out forwards`;
+                trail.style.transform = `translateY(${window.innerHeight - y + 50}px)`;
+                
+                this.container.appendChild(trail);
+                
+                setTimeout(() => {
+                    if (trail.parentNode) {
+                        trail.parentNode.removeChild(trail);
+                    }
+                }, 1000);
+            }
+
+            createExplosion(x, y) {
+                const particleCount = 25 + Math.random() * 15;
+                const baseColor = this.getRandomColor();
+                
+                for (let i = 0; i < particleCount; i++) {
+                    this.createParticle(x, y, baseColor, i * 360 / particleCount);
+                }
+                
+                // Create center flash
+                this.createFlash(x, y, baseColor);
+            }
+
+            createParticle(x, y, baseColor, angle) {
+                const particle = document.createElement('div');
+                const distance = 80 + Math.random() * 120;
+                const size = 2 + Math.random() * 4;
+                
+                const dx = Math.cos(angle * Math.PI / 180) * distance;
+                const dy = Math.sin(angle * Math.PI / 180) * distance;
+                
+                particle.style.position = 'absolute';
+                particle.style.left = (x - size/2) + 'px';
+                particle.style.top = (y - size/2) + 'px';
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.backgroundColor = this.getColorVariation(baseColor);
+                particle.style.borderRadius = '50%';
+                particle.style.boxShadow = `0 0 ${size * 2}px ${baseColor}`;
+                particle.style.setProperty('--dx', dx + 'px');
+                particle.style.setProperty('--dy', dy + 'px');
+                particle.style.animation = `particle ${1.5 + Math.random() * 0.5}s ease-out forwards`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 2500);
+            }
+
+            createFlash(x, y, color) {
+                const flash = document.createElement('div');
+                flash.style.position = 'absolute';
+                flash.style.left = (x - 15) + 'px';
+                flash.style.top = (y - 15) + 'px';
+                flash.style.width = '30px';
+                flash.style.height = '30px';
+                flash.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
+                flash.style.borderRadius = '50%';
+                flash.style.animation = 'explode 1s ease-out forwards';
+                
+                this.container.appendChild(flash);
+                
+                setTimeout(() => {
+                    if (flash.parentNode) {
+                        flash.parentNode.removeChild(flash);
+                    }
+                }, 1000);
+            }
+
+            getRandomColor() {
+                return this.colors[Math.floor(Math.random() * this.colors.length)];
+            }
+
+            getColorVariation(baseColor) {
+                // Create slight variations of the base color
+                const variations = [baseColor, baseColor + '80', baseColor + 'cc'];
+                return variations[Math.floor(Math.random() * variations.length)];
+            }
+
+            updateScrollProgress() {
+                const scrollProgress = document.getElementById('scrollProgress');
+                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        }
+
+        // Section Animation System
+        class SectionAnimator {
+            constructor() {
+                this.sections = document.querySelectorAll('.section');
+                this.init();
+            }
+
+            init() {
+                window.addEventListener('scroll', () => this.animateSections());
+                // Initial check
+                this.animateSections();
+            }
+
+            animateSections() {
+                this.sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
+                    
+                    if (isVisible) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        // Initialize Systems
+        document.addEventListener('DOMContentLoaded', () => {
+            new FireworksSystem();
+            new SectionAnimator();
+            
+            // Welcome firework
+            setTimeout(() => {
+                const fireworks = new FireworksSystem();
+                fireworks.createFirework();
+            }, 1000);
+        });
+
+        // Prevent context menu for better UX
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+    </script>
 @endpush
 @endsection

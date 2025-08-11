@@ -48,10 +48,10 @@ class ContentController extends Controller
         
         // Statistik tim 
         $teamStats = [
-            'experience_years' => '15+',
-            'successful_events' => '500+',
+            'experience_years' => '15',
+            'successful_events' => '500',
             'team_members' => $teams->count(),
-            'client_satisfaction' => '100%'
+            'client_satisfaction' => '100'
         ];
         
         return view('timkami', compact('teams', 'coreTeam', 'supportTeam', 'teamStats'));

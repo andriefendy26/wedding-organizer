@@ -86,14 +86,16 @@ class ManageInvoiceSettings extends Page
                             ->maxLength(500),
 
                         Forms\Components\FileUpload::make('company_logo')
+                            // ->defaul
                             ->label('Company Logo')
-                            ->image()
-                            ->imageEditor()
                             ->directory('invoice-settings')
-                            ->disk('public')
-                            ->visibility('public')
+                            ->image()
+                            // ->imageEditor()
+                            // ->disk('public')
+                            // ->visibility('public')
                             ->maxSize(2048)
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
+                            // ->default(fn () => \App\Models\InvoiceSetting::first()?->company_logo)
                             ->helperText('Upload your company logo (max 2MB)'),
                     ])
                     ->collapsible()
@@ -104,7 +106,7 @@ class ManageInvoiceSettings extends Page
                     ->description('Configure invoice numbering and display settings')
                     ->icon('heroicon-o-document-text')
                     ->schema([
-                        Forms\Components\Grid::make(3)
+                        Forms\Components\Grid::make(2)
                             ->schema([
                                 Forms\Components\TextInput::make('invoice_prefix')
                                     ->label('Invoice Prefix')
@@ -119,143 +121,143 @@ class ManageInvoiceSettings extends Page
                                     ->maxValue(10)
                                     ->step(1),
 
-                                Forms\Components\Select::make('invoice_template')
-                                    ->label('Template Style')
-                                    ->options([
-                                        'default' => 'Default',
-                                        'modern' => 'Modern',
-                                        'classic' => 'Classic',
-                                        'minimal' => 'Minimal',
-                                    ])
-                                    ->default('default'),
+                                // Forms\Components\Select::make('invoice_template')
+                                //     ->label('Template Style')
+                                //     ->options([
+                                //         'default' => 'Default',
+                                //         'modern' => 'Modern',
+                                //         'classic' => 'Classic',
+                                //         'minimal' => 'Minimal',
+                                //     ])
+                                //     ->default('default'),
                             ]),
 
-                        Forms\Components\Grid::make(2)
-                            ->schema([
-                                Forms\Components\Textarea::make('invoice_footer')
-                                    ->label('Invoice Footer')
-                                    ->placeholder('Thank you for your business!')
-                                    ->rows(2)
-                                    ->maxLength(500),
+                        // Forms\Components\Grid::make(2)
+                        //     ->schema([
+                        //         Forms\Components\Textarea::make('invoice_footer')
+                        //             ->label('Invoice Footer')
+                        //             ->placeholder('Thank you for your business!')
+                        //             ->rows(2)
+                        //             ->maxLength(500),
 
-                                Forms\Components\Textarea::make('invoice_notes')
-                                    ->label('Default Notes')
-                                    ->placeholder('Please pay within the specified payment terms.')
-                                    ->rows(2)
-                                    ->maxLength(500),
-                            ]),
+                        //         Forms\Components\Textarea::make('invoice_notes')
+                        //             ->label('Default Notes')
+                        //             ->placeholder('Please pay within the specified payment terms.')
+                        //             ->rows(2)
+                        //             ->maxLength(500),
+                        //     ]),
                     ])
                     ->collapsible()
                     ->persistCollapsed(),
 
                 // Currency & Tax Section
-                Forms\Components\Section::make('Currency & Tax Settings')
-                    ->description('Configure currency display and tax calculations')
-                    ->icon('heroicon-o-currency-dollar')
-                    ->schema([
-                        Forms\Components\Grid::make(4)
-                            ->schema([
-                                Forms\Components\TextInput::make('default_currency')
-                                    ->label('Currency Code')
-                                    ->placeholder('USD')
-                                    ->maxLength(3),
-                                    // ->uppercase(),
+                // Forms\Components\Section::make('Currency & Tax Settings')
+                //     ->description('Configure currency display and tax calculations')
+                //     ->icon('heroicon-o-currency-dollar')
+                //     ->schema([
+                //         Forms\Components\Grid::make(4)
+                //             ->schema([
+                //                 Forms\Components\TextInput::make('default_currency')
+                //                     ->label('Currency Code')
+                //                     ->placeholder('USD')
+                //                     ->maxLength(3),
+                //                     // ->uppercase(),
 
-                                Forms\Components\TextInput::make('currency_symbol')
-                                    ->label('Currency Symbol')
-                                    ->placeholder('$')
-                                    ->maxLength(5),
+                //                 Forms\Components\TextInput::make('currency_symbol')
+                //                     ->label('Currency Symbol')
+                //                     ->placeholder('$')
+                //                     ->maxLength(5),
 
-                                Forms\Components\Select::make('currency_position')
-                                    ->label('Symbol Position')
-                                    ->options([
-                                        'before' => 'Before Amount ($100)',
-                                        'after' => 'After Amount (100$)',
-                                    ])
-                                    ->default('before'),
+                //                 Forms\Components\Select::make('currency_position')
+                //                     ->label('Symbol Position')
+                //                     ->options([
+                //                         'before' => 'Before Amount ($100)',
+                //                         'after' => 'After Amount (100$)',
+                //                     ])
+                //                     ->default('before'),
 
-                                Forms\Components\TextInput::make('decimal_places')
-                                    ->label('Decimal Places')
-                                    ->numeric()
-                                    ->placeholder('2')
-                                    ->minValue(0)
-                                    ->maxValue(4)
-                                    ->step(1),
-                            ]),
+                //                 Forms\Components\TextInput::make('decimal_places')
+                //                     ->label('Decimal Places')
+                //                     ->numeric()
+                //                     ->placeholder('2')
+                //                     ->minValue(0)
+                //                     ->maxValue(4)
+                //                     ->step(1),
+                //             ]),
 
-                        Forms\Components\Grid::make(3)
-                            ->schema([
-                                Forms\Components\TextInput::make('default_tax_rate')
-                                    ->label('Default Tax Rate (%)')
-                                    ->numeric()
-                                    ->placeholder('10.00')
-                                    ->step(0.01)
-                                    ->minValue(0)
-                                    ->maxValue(100)
-                                    ->suffix('%'),
+                //         Forms\Components\Grid::make(3)
+                //             ->schema([
+                //                 Forms\Components\TextInput::make('default_tax_rate')
+                //                     ->label('Default Tax Rate (%)')
+                //                     ->numeric()
+                //                     ->placeholder('10.00')
+                //                     ->step(0.01)
+                //                     ->minValue(0)
+                //                     ->maxValue(100)
+                //                     ->suffix('%'),
 
-                                Forms\Components\TextInput::make('tax_name')
-                                    ->label('Tax Label')
-                                    ->placeholder('VAT')
-                                    ->maxLength(50),
+                //                 Forms\Components\TextInput::make('tax_name')
+                //                     ->label('Tax Label')
+                //                     ->placeholder('VAT')
+                //                     ->maxLength(50),
 
-                                Forms\Components\Toggle::make('include_tax')
-                                    ->label('Include Tax by Default')
-                                    ->onColor('success')
-                                    ->offColor('gray'),
-                            ]),
-                    ])
-                    ->collapsible()
-                    ->persistCollapsed(),
+                //                 Forms\Components\Toggle::make('include_tax')
+                //                     ->label('Include Tax by Default')
+                //                     ->onColor('success')
+                //                     ->offColor('gray'),
+                //             ]),
+                //     ])
+                //     ->collapsible()
+                //     ->persistCollapsed(),
 
                 // Payment Settings Section
-                Forms\Components\Section::make('Payment Settings')
-                    ->description('Configure payment terms and methods')
-                    ->icon('heroicon-o-credit-card')
-                    ->schema([
-                        Forms\Components\Grid::make(2)
-                            ->schema([
-                                Forms\Components\TextInput::make('default_payment_terms')
-                                    ->label('Default Payment Terms (Days)')
-                                    ->numeric()
-                                    ->placeholder('30')
-                                    ->minValue(1)
-                                    ->maxValue(365)
-                                    ->step(1)
-                                    ->suffix('days'),
+                // Forms\Components\Section::make('Payment Settings')
+                //     ->description('Configure payment terms and methods')
+                //     ->icon('heroicon-o-credit-card')
+                //     ->schema([
+                //         Forms\Components\Grid::make(2)
+                //             ->schema([
+                //                 Forms\Components\TextInput::make('default_payment_terms')
+                //                     ->label('Default Payment Terms (Days)')
+                //                     ->numeric()
+                //                     ->placeholder('30')
+                //                     ->minValue(1)
+                //                     ->maxValue(365)
+                //                     ->step(1)
+                //                     ->suffix('days'),
 
-                                Forms\Components\Select::make('date_format')
-                                    ->label('Date Format')
-                                    ->options([
-                                        'Y-m-d' => '2024-12-31',
-                                        'd/m/Y' => '31/12/2024',
-                                        'm/d/Y' => '12/31/2024',
-                                        'd-M-Y' => '31-Dec-2024',
-                                        'F j, Y' => 'December 31, 2024',
-                                    ])
-                                    ->default('Y-m-d'),
-                            ]),
+                //                 Forms\Components\Select::make('date_format')
+                //                     ->label('Date Format')
+                //                     ->options([
+                //                         'Y-m-d' => '2024-12-31',
+                //                         'd/m/Y' => '31/12/2024',
+                //                         'm/d/Y' => '12/31/2024',
+                //                         'd-M-Y' => '31-Dec-2024',
+                //                         'F j, Y' => 'December 31, 2024',
+                //                     ])
+                //                     ->default('Y-m-d'),
+                //             ]),
 
-                        Forms\Components\Textarea::make('payment_methods')
-                            ->label('Available Payment Methods (JSON)')
-                            ->placeholder('{"bank_transfer": "Bank Transfer", "credit_card": "Credit Card", "paypal": "PayPal"}')
-                            ->rows(4)
-                            ->helperText('Enter valid JSON format for payment methods')
-                            ->rules([
-                                function () {
-                                    return function (string $attribute, $value, \Closure $fail) {
-                                        if (!empty($value)) {
-                                            json_decode($value);
-                                            if (json_last_error() !== JSON_ERROR_NONE) {
-                                                $fail('Please enter valid JSON format.');
-                                            }
-                                        }
-                                    };
-                                },
-                            ]),
-                    ])
-                    ->collapsible()
-                    ->persistCollapsed(),
+                //         Forms\Components\Textarea::make('payment_methods')
+                //             ->label('Available Payment Methods (JSON)')
+                //             ->placeholder('{"bank_transfer": "Bank Transfer", "credit_card": "Credit Card", "paypal": "PayPal"}')
+                //             ->rows(4)
+                //             ->helperText('Enter valid JSON format for payment methods')
+                //             ->rules([
+                //                 function () {
+                //                     return function (string $attribute, $value, \Closure $fail) {
+                //                         if (!empty($value)) {
+                //                             json_decode($value);
+                //                             if (json_last_error() !== JSON_ERROR_NONE) {
+                //                                 $fail('Please enter valid JSON format.');
+                //                             }
+                //                         }
+                //                     };
+                //                 },
+                //             ]),
+                //     ])
+                //     ->collapsible()
+                //     ->persistCollapsed(),
 
                 // Email Settings Section
                 Forms\Components\Section::make('Email Settings')
@@ -284,28 +286,28 @@ class ManageInvoiceSettings extends Page
                     ->collapsible()
                     ->persistCollapsed(),
 
-                // Number Formatting Section
-                Forms\Components\Section::make('Number Formatting')
-                    ->description('Configure how numbers are displayed')
-                    ->icon('heroicon-o-calculator')
-                    ->schema([
-                        Forms\Components\Grid::make(2)
-                            ->schema([
-                                Forms\Components\TextInput::make('thousand_separator')
-                                    ->label('Thousand Separator')
-                                    ->placeholder(',')
-                                    ->maxLength(1)
-                                    ->helperText('Example: 1,000'),
+                // // Number Formatting Section
+                // Forms\Components\Section::make('Number Formatting')
+                //     ->description('Configure how numbers are displayed')
+                //     ->icon('heroicon-o-calculator')
+                //     ->schema([
+                //         Forms\Components\Grid::make(2)
+                //             ->schema([
+                //                 Forms\Components\TextInput::make('thousand_separator')
+                //                     ->label('Thousand Separator')
+                //                     ->placeholder(',')
+                //                     ->maxLength(1)
+                //                     ->helperText('Example: 1,000'),
 
-                                Forms\Components\TextInput::make('decimal_separator')
-                                    ->label('Decimal Separator')
-                                    ->placeholder('.')
-                                    ->maxLength(1)
-                                    ->helperText('Example: 10.50'),
-                            ]),
-                    ])
-                    ->collapsible()
-                    ->persistCollapsed(),
+                //                 Forms\Components\TextInput::make('decimal_separator')
+                //                     ->label('Decimal Separator')
+                //                     ->placeholder('.')
+                //                     ->maxLength(1)
+                //                     ->helperText('Example: 10.50'),
+                //             ]),
+                //     ])
+                //     ->collapsible()
+                //     ->persistCollapsed(),
             ])
             ->statePath('data');
     }

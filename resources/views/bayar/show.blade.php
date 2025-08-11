@@ -29,16 +29,31 @@
             align-items: center;
             gap: 1rem;
         }
-        .logo-placeholder {
+        .logo-container {
             width: 80px;
             height: 80px;
-            background: rgba(255,255,255,0.2);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             border: 2px solid rgba(255,255,255,0.3);
+            overflow: hidden;
+        }
+        .logo-placeholder {
+            background: rgba(255,255,255,0.2);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .company-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(255,255,255,0.9);
+            border-radius: 6px;
         }
         .invoice-title {
             font-size: 2.5rem;
@@ -98,6 +113,15 @@
             border-radius: 8px;
             margin-top: 1rem;
         }
+        .website-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .website-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
         @media print {
             .upload-section { display: none; }
             .invoice-container { box-shadow: none; margin: 0; }
@@ -112,22 +136,36 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="company-info">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-building"></i>
+                        <div class="logo-container">
+                            @if($company_logo && $company_logo !== 'Default Company')
+                                <img src="{{ asset($company_logo) }}" alt="{{ $company_name }}" class="company-logo">
+                            @else
+                                <img src="{{ asset('storage/content/Logo.png') }}" alt="{{ $company_name }}" class="company-logo">
+                                {{-- <div class="logo-placeholder">
+                                    <i class="fas fa-building"></i>
+                                </div> --}}
+                            @endif
                         </div>
                         <div>
                             <h1 class="invoice-title">INVOICE</h1>
-                            <p class="invoice-number">No: INV-{{ str_pad($transaksi->id, 6, '0', STR_PAD_LEFT) }}</p>
+                            <p class="invoice-number">No: {{ $invoice_prefix ?? 'INV' }}-{{ str_pad($transaksi->id, 6, '0', STR_PAD_LEFT) }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 text-md-end">
                     <div class="text-white">
-                        <h5>PT. NAMA PERUSAHAAN</h5>
-                        <p class="mb-1">Jl. Contoh Alamat No. 123</p>
-                        <p class="mb-1">Jakarta Selatan 12345</p>
-                        <p class="mb-1">Telp: (021) 1234-5678</p>
-                        <p class="mb-0">Email: info@perusahaan.com</p>
+                        <h5>{{ $company_name ?? 'PT. NAMA PERUSAHAAN' }}</h5>
+                        <p class="mb-1">{{ $company_address ?? 'Jl. Contoh Alamat No. 123' }}</p>
+                        <p class="mb-1">{{ $company_city ?? 'Jakarta Selatan 12345' }}</p>
+                        <p class="mb-1">Telp: {{ $company_phone ?? '(021) 1234-5678' }}</p>
+                        <p class="mb-1">Email: {{ $company_email ?? 'info@perusahaan.com' }}</p>
+                        @if($company_website && $company_website !== 'https://3rasaproduction.com/')
+                            <p class="mb-0">
+                                <a href="{{ $company_website }}" class="website-link" target="_blank">
+                                    {{ str_replace(['http://', 'https://'], '', $company_website) }}
+                                </a>
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -142,7 +180,7 @@
                         <h5 class="mb-3 text-primary">BILL TO:</h5>
                         <h6>{{ $transaksi->customer->nama }}</h6>
                         <p class="mb-1">{{ $transaksi->customer->alamat ?? 'Alamat belum diisi' }}</p>
-                        <p class="mb-1">Telp: {{ $transaksi->customer->telepon ?? '-' }}</p>
+                        <p class="mb-1">Telp: {{ $transaksi->customer->telpon ?? '-' }}</p>
                         <p class="mb-0">Email: {{ $transaksi->customer->email ?? '-' }}</p>
                     </div>
                 </div>
@@ -221,14 +259,14 @@
                             <div class="col-6"><strong>Subtotal:</strong></div>
                             <div class="col-6 text-end">Rp {{ number_format($transaksi->total_biaya, 0, ',', '.') }}</div>
                         </div>
-                        <div class="mb-2 row">
+                        {{-- <div class="mb-2 row">
                             <div class="col-6">PPN (11%):</div>
                             <div class="col-6 text-end">Rp {{ number_format($transaksi->total_biaya * 0.11, 0, ',', '.') }}</div>
-                        </div>
+                        </div> --}}
                         <hr>
                         <div class="row">
                             <div class="col-6"><h5><strong>TOTAL:</strong></h5></div>
-                            <div class="col-6 text-end"><h5 class="text-success"><strong>Rp {{ number_format($transaksi->total_biaya * 1.11, 0, ',', '.') }}</strong></h5></div>
+                            <div class="col-6 text-end"><h5 class="text-success"><strong>Rp {{ number_format($transaksi->total_biaya, 0, ',', '.') }}</strong></h5></div>
                         </div>
                     </div>
                 </div>
@@ -252,9 +290,9 @@
                 <div class="col-md-6">
                     <div class="bank-info">
                         <h6><i class="fas fa-university"></i> INFORMASI BANK</h6>
-                        <p class="mb-1"><strong>Bank Mandiri</strong></p>
-                        <p class="mb-1">No. Rek: 1234-5678-9012-3456</p>
-                        <p class="mb-0">a.n. PT. Nama Perusahaan</p>
+                        <p class="mb-1"><strong>{{ $companyBankName ?? 'Bank Mandiri' }}</strong></p>
+                        <p class="mb-1">No. Rek: {{ $bank_account ?? '1234-5678-9012-3456' }}</p>
+                        <p class="mb-0">a.n. {{ $bank_holder ?? $company_name ?? 'PT. Nama Perusahaan' }}</p>
                     </div>
                 </div>
             </div>

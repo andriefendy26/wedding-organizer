@@ -8,7 +8,7 @@ use Filament\Resources\Pages\ViewRecord;
 use Filament\Infolists;
 use Filament\Infolists\Infolist;
 
-class ViewInvoiceSetting extends ViewRecord
+class ViewInvoiceSettings extends ViewRecord
 {
     protected static string $resource = InvoiceSettingResource::class;
 

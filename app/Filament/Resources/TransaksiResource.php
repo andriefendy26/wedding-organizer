@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Exports\TransaksiExport;
 use App\Filament\Resources\TransaksiResource\Pages;
 use App\Filament\Resources\TransaksiResource\RelationManagers;
 use App\Models\Barang;
@@ -21,6 +22,8 @@ use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
+use Maatwebsite\Excel\Facades\Excel;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -258,6 +261,27 @@ class TransaksiResource extends Resource
             ])
             ->filters([
                 //
+            ])
+            ->headerActions([
+                Action::make('export')
+                    ->label('Export to Excel')
+                    ->icon('heroicon-o-arrow-down-tray')
+                    ->action(function (array $data, Table $table) {
+                        // Get current filters
+                        $filters = $table->getFilters();
+                        $filterData = [];
+                        
+                        foreach ($filters as $filter) {
+                            if ($filter->getName() === 'created_at') {
+                                $filterData = $filter->getState();
+                            }
+                        }
+
+                        return Excel::download(
+                            new TransaksiExport($filterData), 
+                            'Transaksi-' . date('Y-m-d-H-i-s') . '.xlsx'
+                        );
+                    }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

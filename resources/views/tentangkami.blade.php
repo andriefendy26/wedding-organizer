@@ -46,7 +46,7 @@
         </div>
     </div> --}}
 
-    <div class="relative h-[60vh] overflow-hidden mb-16 "
+    <div class="relative h-[60vh] overflow-hidden mb-10 "
      style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
@@ -61,76 +61,98 @@
         </div>
     </div>
 
-    
+    {{-- Logo & Company Introduction Section --}}
+    <div class="px-10 py-16 md:px-16 lg:px-24 xl:px-32">
+        <div class="mx-auto ">
+            {{-- Logo & Title --}}
+            <div data-aos="fade-down" class="mb-12 text-center">
+                <div class="flex justify-center mb-8">
+                    <img src="{{ asset('storage/content/Logo.png') }}" 
+                         alt="3Rasa Event Organizer Logo" 
+                         class="object-contain w-32 h-32 transition-transform duration-300 md:w-40 md:h-40 drop-shadow-lg hover:scale-105">
+                </div>
+                <h1 class="mb-4 text-4xl font-semibold dark:text-white md:text-6xl edu-vic-wa-nt-hand">
+                    3Rasa Event Organizer
+                </h1>
+                <div class="w-24 h-1 mx-auto mb-6 bg-gradient-to-r from-primary to-red-600"></div>
+                <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-600 md:text-xl dark:text-gray-300 pt-serif-regular-italic">
+                    "Menciptakan Momen Berharga dengan Tiga Rasa: Cinta, Bangga, dan Bahagia"
+                </p>
+            </div>
+
+            {{-- Company Overview --}}
+            <div data-aos="fade-up" class="grid items-center gap-12 md:grid-cols-2">
+                <div>
+                    <h2 class="mb-6 text-3xl font-semibold text-black md:text-4xl dark:text-white edu-vic-wa-nt-hand">
+                        Tentang 3Rasa
+                    </h2>
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300 pt-serif-regular">
+                        <p class="text-lg leading-relaxed">
+                            <strong class="text-primary">3Rasa Event Organizer</strong> adalah perusahaan jasa wedding organizer dan event organizer 
+                            terpercaya yang berlokasi di <strong>Tarakan, Kalimantan Utara</strong>. Sejak didirikan pada tahun 2018, 
+                            kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Dengan pengalaman lebih dari <strong class="text-primary">7 tahun</strong> dan telah menyelenggarakan 
+                            <strong class="text-primary">100+ acara pernikahan</strong>, kami memahami betul bahwa setiap momen 
+                            pernikahan adalah unik dan berharga. Tim profesional kami yang berpengalaman siap membantu Anda 
+                            menciptakan hari bahagia yang tak terlupakan.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Kami menyediakan paket wedding organizer lengkap yang meliputi <strong>dekorasi</strong>, 
+                            <strong>dokumentasi</strong>, <strong>MC profesional</strong>, <strong>sound system</strong>, 
+                            dan berbagai layanan pendukung lainnya untuk memastikan acara Anda berjalan sempurna.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="{{ asset('storage/content/wedding07.jpg') }}" 
+                         alt="3Rasa Event Organizer Services" 
+                         class="w-full h-auto shadow-2xl rounded-2xl">
+                    <div class="absolute p-6 bg-white border border-gray-200 shadow-xl -bottom-6 -right-6 dark:bg-gray-700 rounded-xl dark:border-gray-600">
+                        <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand">7+</div>
+                        <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Vision & Mission --}}
+    <div class="grid grid-cols-2 gap-10 px-10 py-16 mb-20 md:px-16 lg:px-24 xl:px-32">
+        <div data-aos="fade-up"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+            <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+            </div>
+            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Visi Kami</h3>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
+                Menjadi wedding organizer terdepan di Kalimantan Utara yang dikenal dengan pelayanan berkualitas tinggi, 
+                kreativitas tanpa batas, dan dedikasi penuh dalam mewujudkan setiap impian pernikahan klien kami.
+            </p>
+        </div>
+        
+        <div data-aos="fade-down"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
+            <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+            </div>
+            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Misi Kami</h3>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
+                Memberikan layanan wedding organizer yang profesional, inovatif, dan personal untuk setiap klien. 
+                Kami berkomitmen menciptakan pengalaman pernikahan yang tak terlupakan dengan sentuhan tradisi 
+                dan kemewahan modern.
+            </p>
+        </div>
+    </div>
 
     {{-- Main Content --}}
     <div class="px-10 md:px-16 lg:px-24 xl:px-32">
-        {{-- Our Story Section --}}
-        <div class="grid items-center grid-cols-2 gap-20 mb-20">
-            <div data-aos="fade-right" >
-                <h2 class="mb-6 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">
-                    Cerita Kami
-                </h2>
-                <p class="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                    3Rasa lahir dari impian sederhana untuk menciptakan momen-momen berharga yang tak terlupakan. 
-                    Dimulai pada tahun 2018 di Tarakan, Kalimantan Utara, kami hadir dengan semangat melayani 
-                    setiap pasangan yang ingin merayakan cinta mereka dengan cara yang istimewa.
-                </p>
-                <p class="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                    Nama "3Rasa" mencerminkan tiga pilar utama kami: <strong>Rasa Cinta</strong> dalam setiap detail, 
-                    <strong>Rasa Bangga</strong> atas kepercayaan klien, dan <strong>Rasa Bahagia</strong> 
-                    melihat senyum pengantin di hari bahagia mereka.
-                </p>
-                <button class="flex items-center justify-center text-white transition-all duration-300 rounded-full group hover:scale-105 bg-primary">
-                    <p class="mx-4 my-3 ml-6 pt-serif-regular">
-                        Hubungi Kami
-                    </p>
-                    <div class="flex items-center justify-center w-10 h-10 p-1 transition-all duration-300 bg-white border-2 rounded-full text-primary group-hover:rotate-45">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12l4-4 4 4m0 6l-4-4-4 4"></path>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-            <div data-aos="fade-left" class="relative">
-                <img src="{{ asset('storage/content/wedding07.jpg') }}" alt="3Rasa Story" class="shadow-2xl rounded-2xl">
-                <div class="absolute p-6 bg-white border border-gray-200 shadow-xl -bottom-10 -left-10 dark:bg-gray-700 rounded-xl dark:border-gray-600">
-                    <div class="text-4xl font-bold edu-vic-wa-nt-hand text-primary">100+</div>
-                    <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
-                </div>
-            </div>
-        </div>
 
-        {{-- Vision & Mission --}}
-        <div class="grid grid-cols-2 gap-10 mb-20">
-            <div data-aos="fade-up"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Visi Kami</h3>
-                <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                    Menjadi wedding organizer terdepan di Kalimantan Utara yang dikenal dengan pelayanan berkualitas tinggi, 
-                    kreativitas tanpa batas, dan dedikasi penuh dalam mewujudkan setiap impian pernikahan klien kami.
-                </p>
-            </div>
-            
-            <div data-aos="fade-down"  class="p-8 bg-gray-100 dark:bg-gray-700 rounded-2xl">
-                <div class="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-primary">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Misi Kami</h3>
-                <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                    Memberikan layanan wedding organizer yang profesional, inovatif, dan personal untuk setiap klien. 
-                    Kami berkomitmen menciptakan pengalaman pernikahan yang tak terlupakan dengan sentuhan tradisi 
-                    dan kemewahan modern.
-                </p>
-            </div>
-        </div>
+    
 
         {{-- Our Values --}}
         <div data-aos="fade-up"  class="mb-20">

@@ -119,7 +119,7 @@
     /* Custom FullCalendar Styling */
     #calendar {
         width: 100%;
-        height: 80vh;
+        height: 100vh;
         max-width: none;
         margin: 0;
         background: white;

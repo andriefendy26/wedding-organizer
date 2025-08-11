@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Exports\UsersExport;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
@@ -11,6 +12,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
+use Maatwebsite\Excel\Facades\Excel;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -66,6 +69,27 @@ class UserResource extends Resource
             ])
             ->filters([
                 //
+            ])
+            ->headerActions([
+                Action::make('export')
+                    ->label('Export to Excel')
+                    ->icon('heroicon-o-arrow-down-tray')
+                    ->action(function (array $data, Table $table) {
+                        // Get current filters
+                        $filters = $table->getFilters();
+                        $filterData = [];
+                        
+                        foreach ($filters as $filter) {
+                            if ($filter->getName() === 'created_at') {
+                                $filterData = $filter->getState();
+                            }
+                        }
+
+                        return Excel::download(
+                            new UsersExport($filterData), 
+                            'users-' . date('Y-m-d-H-i-s') . '.xlsx'
+                        );
+                    }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

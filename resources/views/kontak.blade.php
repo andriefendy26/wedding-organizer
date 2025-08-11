@@ -259,7 +259,7 @@
                     </h3>
                     <div class="overflow-hidden bg-gray-100 shadow-lg dark:bg-gray-700 rounded-2xl">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.32734509213!2d117.35089995!3d3.325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x321463d73b98b9bd%3A0x9b2c484fdad86b21!2sTarakan%2C%20North%20Kalimantan!5e0!3m2!1sen!2sid!4v1701234567890!5m2!1sen!2sid"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.791256998401!2d117.61308987388932!3d3.30932746315719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32138ba9e5fc4035%3A0x9789bc310bda2509!2sDekorasi%20tiga%20rasa!5e0!3m2!1sid!2sid!4v1754933077601!5m2!1sid!2sid"
                             width="100%" 
                             height="350" 
                             style="border:0;" 

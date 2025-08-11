@@ -202,14 +202,14 @@
         </div>
 
         {{-- Load More Button --}}
-        <div class="mt-12 text-center">
+        {{-- <div class="mt-12 text-center">
             <button class="flex items-center justify-center mx-auto transition-all duration-300 bg-gray-300 rounded-full group hover:scale-105">
                 <p class="mx-3 my-2 ml-4 text-black pt-serif-regular">
                     Lihat Lebih Banyak
                 </p>
                 <x-heroicon-o-arrow-small-down class="w-10 h-10 p-1 text-white transition-all duration-300 bg-black border-2 rounded-full group-hover:rotate-180" />
             </button>
-        </div>
+        </div> --}}
     </div>
 
     {{-- Statistics Section --}}

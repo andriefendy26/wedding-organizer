@@ -189,9 +189,11 @@ TEXT;
                 <div class="text-center">
                     <p class="mb-4 text-gray-500 dark:text-gray-400">Mulai dari</p>
                     <div class="mb-6 text-3xl font-bold text-primary edu-vic-wa-nt-hand">Rp 15.000.000</div>
-                    <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
-                        Pilih Paket
-                    </button>
+                    <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                        <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
+                            Pilih Paket
+                        </button>
+                    </a>
                 </div>
             </div>
             
@@ -230,9 +232,12 @@ TEXT;
                 <div class="text-center">
                     <p class="mb-4 text-gray-500 dark:text-gray-400">Mulai dari</p>
                     <div class="mb-6 text-3xl font-bold text-primary edu-vic-wa-nt-hand">Rp 8.000.000</div>
-                    <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
-                        Pilih Paket
-                    </button>
+                    <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                        <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
+                            Pilih Paket
+                        </button>
+                    </a>
+
                 </div>
             </div>
             
@@ -271,9 +276,11 @@ TEXT;
                 <div class="text-center">
                     <p class="mb-4 text-gray-500 dark:text-gray-400">Konsultasi</p>
                     <div class="mb-6 text-2xl font-bold text-primary edu-vic-wa-nt-hand">Gratis</div>
-                    <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
-                        Konsultasi Sekarang
-                    </button>
+                    <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                        <button class="w-full px-6 py-3 font-semibold text-black transition-all duration-300 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:bg-primary dark:text-white rounded-2xl hover:from-emerald-600 hover:to-teal-700">
+                            Konsultasi Sekarang
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

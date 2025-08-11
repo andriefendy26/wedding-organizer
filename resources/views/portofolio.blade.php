@@ -47,7 +47,7 @@
     </div>
 
     {{-- Services Overview --}}
-    <div class="container px-6 py-16 mx-auto">
+    <div class="container px-10 py-16 mx-auto md:px-16 lg:px-24 xl:px-32">
         <div class="mb-12 text-center">
             <h2 class="mb-4 text-4xl font-bold text-gray-800 edu-vic-wa-nt-hand dark:text-white">
                 Layanan Unggulan Kami
@@ -97,11 +97,11 @@
             {{-- Corporate Events --}}
             <div class="cursor-pointer group">
                 <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                    <img src="{{ asset('storage/content/wedding05.jpeg') }}" alt="Corporate Events" 
+                    <img src="{{ asset('storage/content/event01.png') }}" alt="Corporate Events" 
                          class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute text-white bottom-6 left-6 right-6">
-                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">Corporate Events</h3>
+                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">Events Organizer</h3>
                             <p class="mb-4 text-sm opacity-90">Event perusahaan yang profesional dan berkesan untuk kesuksesan bisnis</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Seminar</span>

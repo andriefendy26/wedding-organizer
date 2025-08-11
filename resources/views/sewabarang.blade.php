@@ -1,3 +1,22 @@
+@php
+    $phoneNumber = config('app.phone');
+    $message = <<<TEXT
+    ==============================
+    *HALO, SAYA INGIN KONSULTASI*
+    ==============================
+
+    Halo *3Rasa Production* 👋
+
+    Saya tertarik untuk berkonsultasi mengenai layanan yang tersedia.
+
+    🙏 Terima kasih atas waktunya.
+    📩 Pesan ini dikirim via: https://3rasaproduction.com
+TEXT;
+
+    $encodedMessage = urlencode($message);
+
+@endphp
+
 @extends('Layout.app')
 
 @section('head')
@@ -58,12 +77,7 @@
                     <div>
                         <h4 class="mb-2 text-xl tracking-widest edu-vic-wa-nt-hand-400">Sofa Premium Set</h4>
                         <p class="tracking-widest text-md xl:text-lg edu-vic-wa-nt-hand-400">Set sofa premium berbahan kulit sintetis berkualitas tinggi dengan rangka kayu solid.</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <div class="text-2xl font-bold edu-vic-wa-nt-hand">Rp 350.000</div>
-                            <button class="px-4 py-2 text-sm text-black transition-transform bg-white rounded-lg hover:scale-105">
-                                Pesan
-                            </button>
-                        </div>
+                     
                     </div>
                 </div>
 
@@ -71,13 +85,7 @@
                 <div class="flex flex-col items-center justify-center gap-4 p-4 text-center border-2 border-gray-200 rounded-xl">
                     <h3 class="text-3xl text-black lg:text-4xl edu-vic-wa-nt-hand-500 dark:text-white">Kualitas Premium Terjamin</h3>
                     <p class="text-sm tracking-wider text-gray-600 pt-serif-regular lg:text-md dark:text-gray-400">Semua perlengkapan dalam kondisi prima dan selalu terawat. Kami pastikan kualitas terbaik untuk acara istimewa Anda.</p>
-                    
-                    <button class="flex items-center justify-center transition-all duration-300 bg-gray-300 rounded-full group hover:scale-105">
-                        <p class="mx-3 my-2 ml-4 text-sm text-black pt-serif-regular lg:text-lg">
-                            Konsultasi Gratis
-                        </p>
-                        <x-heroicon-o-arrow-small-up class="w-8 h-8 p-1 text-white transition-all duration-300 bg-black border-2 rounded-full lg:h-10 lg:w-10 group-hover:rotate-45" />
-                    </button>
+               
                 </div>
 
                 {{-- Card 3 - Service Features --}}
@@ -147,7 +155,8 @@
                                     {{ $barang['nama'] }}
                                 </h4>
                                 <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300 pt-serif-regular">
-                                     {{ Str::limit($barang['deskripsi'], 100) }}
+                                     {{ Str::limit($barang['deskripsi'], 80) }}
+                                     
                                 </p>
                             </div>
                             
@@ -162,9 +171,11 @@
                             </div>
                             
                             {{-- CTA Button --}}
-                            <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
-                                Pesan Sekarang
-                            </button>
+                            <a class="block" href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                                <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
+                                    Pesan Sekarang
+                                </button>
+                            </a>    
                         </div>
                     </div>
                 @endforeach
@@ -182,7 +193,7 @@
                 </div>
 
                 <div class="h-52 xl:h-full bg-[url({{ asset('storage/content/prop/kursi.jpg') }})] rounded-xl xl:col-span-1 col-span-3 bg-cover bg-center"
-                style="background: url({{ asset('storage/content/degoration13.jpg') }}); background-size: cover; background-position: center;"
+                style="background: url({{ asset('storage/content/decoration13.jpg') }}); background-size: cover; background-position: center;"
                 ></div>
                 
                 <div class="flex flex-col items-center justify-center col-span-2 gap-4 p-4 text-sm text-center border-2 border-gray-200 rounded-2xl xl:col-span-1">
