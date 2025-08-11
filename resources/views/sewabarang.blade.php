@@ -1,6 +1,33 @@
 @extends('Layout.app')
 
-@section('title', 'Layanan Penyewaan')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Sewa Barang Acara | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="3Rasa Event Organizer di Tarakan menyediakan layanan sewa barang untuk acara, termasuk dekorasi, sound system, lighting, panggung, kursi, tenda, dan perlengkapan event lainnya." />
+
+    <meta name="keywords" content="sewa barang acara Tarakan, sewa dekorasi Tarakan, sewa sound system Tarakan, sewa lighting Tarakan, sewa panggung Tarakan, sewa kursi Tarakan, sewa tenda Tarakan, persewaan perlengkapan event Tarakan, sewa backdrop Tarakan, sewa meja Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/sewa-barang" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/sewa-barang" />
+    <meta property="og:title" content="Sewa Barang Acara | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Layanan sewa perlengkapan acara di Tarakan. Mulai dari dekorasi, sound system, lighting, panggung, kursi, hingga tenda untuk berbagai jenis event." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sewa Barang Acara | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Sewa perlengkapan event di Tarakan. Dekorasi, sound system, lighting, panggung, kursi, dan tenda untuk acara spesial Anda." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
+
 
 @section('content')
 <div class="min-h-screen ">

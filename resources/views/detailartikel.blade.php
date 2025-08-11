@@ -1,6 +1,34 @@
 @extends('Layout.app')
 
-@section('title', $artikel->judul)
+{{-- @section('title', $artikel->judul) --}}
+
+@section('head')
+    <meta charset="UTF-8" />
+    <title>{{ $artikel->judul }}</title>
+    <meta name="description" content={{ $artikel->sub_judul }} />
+
+    <meta name="keywords" content={{ $artikel->tags }}/>
+
+    <meta name="author" content={{ $artikel->author }} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/artikel/{{ $artikel->slug }}" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/artikel/{{ $artikel->slug }}" />
+    <meta property="og:title" content={{ $artikel->judul }} />
+    <meta property="og:description" content={{ $artikel->sub_judul }}  />
+    <meta property="og:image" content="{{ asset($artikel->gambar) }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={{ $artikel->judul }}/>
+    <meta name="twitter:description" content={{ $artikel->sub_judul }}  />
+    <meta name="twitter:image" content="{{ asset($artikel->gambar) }}" />
+@endsection
+
 
 @section('content')
 <div class="min-h-screen ">

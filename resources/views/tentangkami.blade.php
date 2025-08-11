@@ -1,6 +1,33 @@
 @extends('Layout.app')
 
-@section('title', 'Tentang Kami - 3Rasa Wedding Organizer')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Tentang Kami | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="3Rasa Event Organizer di Tarakan adalah penyedia layanan perencanaan dan penyelenggaraan acara profesional, siap membantu mewujudkan momen istimewa Anda dengan konsep kreatif dan tim berpengalaman." />
+
+    <meta name="keywords" content="tentang 3Rasa Event Organizer, profil 3Rasa Event Organizer Tarakan, event organizer Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, jasa MC Tarakan, fotografer Tarakan, videografer Tarakan, EO profesional Tarakan" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/tentang-kami" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/tentang-kami" />
+    <meta property="og:title" content="Tentang Kami | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Kenali 3Rasa Event Organizer, tim profesional di Tarakan yang mengutamakan kreativitas, detail, dan pelayanan terbaik untuk setiap acara Anda." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tentang Kami | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Profil dan cerita 3Rasa Event Organizer Tarakan, tim berpengalaman yang siap membantu mewujudkan acara impian Anda." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
+
 
 @section('content')
 <div class="min-h-screen overflow-hidden pt-14">

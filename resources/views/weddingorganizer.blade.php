@@ -1,6 +1,35 @@
 @extends('Layout.app')
 
-@section('title', 'Wedding Organizer - Layanan Pernikahan Terlengkap')
+{{-- @section('title', 'Wedding Organizer - Layanan Pernikahan Terlengkap') --}}
+
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Wedding Organizer Terbaik di Tarakan | 3Rasa Event Organizer</title>
+    <meta name="description" content="3Rasa Wedding Organizer di Tarakan siap mewujudkan pernikahan impian Anda dengan konsep elegan, dekorasi memukau, dan layanan profesional dari persiapan hingga hari H." />
+
+    <meta name="keywords" content="wedding organizer Tarakan, jasa WO Tarakan, dekorasi pernikahan Tarakan, sewa dekorasi wedding Tarakan, paket pernikahan Tarakan, jasa rias pengantin Tarakan, jasa dokumentasi pernikahan Tarakan, wedding planner Tarakan, pernikahan outdoor Tarakan, pernikahan indoor Tarakan, 3Rasa Wedding Organizer, jasa MC pernikahan Tarakan, jasa fotografer wedding Tarakan, jasa videografer wedding Tarakan" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/layananwedding" />
+    <link rel="icon" type="image/png" href="/Logo.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/layananwedding" />
+    <meta property="og:title" content="3Rasa Wedding Organizer | Tarakan" />
+    <meta property="og:description" content="Layanan wedding organizer profesional di Tarakan. Konsep pernikahan elegan, dekorasi menawan, dan tim berpengalaman untuk momen spesial Anda." />
+    <meta property="og:image" content="https://www.3rasaeventorganizer.com/Logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="3Rasa Wedding Organizer | Tarakan" />
+    <meta name="twitter:description" content="Wedding organizer terpercaya di Tarakan. Layanan profesional untuk pernikahan berkesan dan tak terlupakan." />
+    <meta name="twitter:image" content="https://www.3rasaeventorganizer.com/Logo.png" />
+@endsection
+
+
 
 @push('styles')
 <style>
@@ -133,9 +162,9 @@
     <div class="px-10 py-20 overflow-hidden bg-white dark:bg-gray-800 md:px-16 lg:px-24 xl:px-32 mt-14">
         <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
             <div data-aos="fade-right">
-                <h2 class="mb-6 text-3xl font-semibold text-black lg:text-5xl dark:text-white edu-vic-wa-nt-hand">
+                <h1 class="mb-6 text-3xl font-semibold text-black lg:text-5xl dark:text-white edu-vic-wa-nt-hand">
                     Pernikahan Impian Anda, Misi Kami
-                </h2>
+                </h1>
                 <p class="mb-6 text-lg text-gray-600 dark:text-gray-300 pt-serif-regular">
                     Kami memahami bahwa pernikahan adalah momen paling berharga dalam hidup Anda. Dengan pengalaman lebih dari 5 tahun, tim profesional kami siap menghadirkan pernikahan yang sempurna sesuai dengan visi dan budget Anda.
                 </p>

@@ -20,6 +20,34 @@ TEXT;
 
 @section('head')
     <meta charset="UTF-8" />
+    <title>3Rasa Event Organizer Tarakan | Layanan Pernikahan & Acara Terbaik</title>
+    <meta name="description" content="3Rasa Event Organizer di Tarakan siap membantu merencanakan dan mewujudkan acara impian Anda, mulai dari pernikahan, ulang tahun, hingga event korporat dengan pelayanan profesional." />
+
+    <meta name="keywords" content="event organizer Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, paket pernikahan Tarakan, EO profesional Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/" />
+    <meta property="og:title" content="3Rasa Event Organizer Tarakan | Profesional & Terpercaya" />
+    <meta property="og:description" content="Jadikan acara Anda berkesan bersama 3Rasa Event Organizer. Menyediakan layanan pernikahan, dekorasi, dan event profesional di Tarakan." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="3Rasa Event Organizer Tarakan | Profesional & Terpercaya" />
+    <meta name="twitter:description" content="3Rasa Event Organizer di Tarakan siap membantu merencanakan dan mewujudkan acara terbaik Anda dengan pelayanan profesional." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
+
+@section('head')
+    <meta charset="UTF-8" />
     <title>Event Organizer | 3Rasa Event Organizer Tarakan</title>
     <meta name="description" content="Layanan Event Organizer profesional di Tarakan. Perencanaan acara lengkap dari konsep hingga eksekusi yang sempurna." />
     <meta name="keywords" content="event organizer Tarakan, jasa EO Tarakan, perencanaan acara Tarakan, event perusahaan Tarakan, acara ulang tahun Tarakan, koordinasi acara, 3Rasa Event Organizer" />
@@ -36,7 +64,7 @@ TEXT;
 @section('content')
 
 {{-- Main Content --}}
-<div class="px-4 pt-32  md:px-16 lg:px-24 xl:px-32">
+<div class="px-4 pt-32 md:px-16 lg:px-24 xl:px-32">
     
     {{-- Service Overview --}}
     <section id="layanan-detail" class="py-20">

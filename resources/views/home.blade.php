@@ -32,20 +32,20 @@ TEXT;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="canonical" href="https://www.3rasaeventorganizer.com/" />
-    <link rel="icon" type="image/png" href="/Logo.png" />
+    <link rel="icon" type="image/png" href={{ asset('storage/content/Logo.png') }} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.3rasaeventorganizer.com/" />
     <meta property="og:title" content="3Rasa Event Organizer | Tarakan" />
     <meta property="og:description" content="Layanan event organizer profesional di Tarakan. Kami membantu merencanakan dan menyelenggarakan acara impian Anda dengan konsep unik dan berkesan." />
-    <meta property="og:image" content="https://www.3rasaeventorganizer.com/Logo.png" />
+    <meta property="og:image" content={{ asset('storage/content/wedding11.jpg') }} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="3Rasa Event Organizer | Tarakan" />
     <meta name="twitter:description" content="Event organizer terpercaya di Tarakan. Layanan profesional untuk pernikahan, ulang tahun, dan event perusahaan." />
-    <meta name="twitter:image" content="https://www.3rasaeventorganizer.com/Logo.png" />
+    <meta name="twitter:image" content={{ asset('storage/content/wedding11.jpg') }} />
 @endsection
 
 @section('content')
@@ -567,7 +567,7 @@ TEXT;
 </div>
 
 {{-- Instagram Section --}}
-<div class="px-10 pt-10 overflow-hidden  md:px-16 lg:px-24 xl:px-32">
+<div class="px-10 pt-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
     {{-- Header Instagram --}}
     <div  class="mb-12 text-center">
         <div data-aos="zoom-in-down" class="relative text-black edu-vic-wa-nt-hand-500 dark:text-white">

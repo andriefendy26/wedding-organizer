@@ -1,9 +1,35 @@
 @extends('Layout.app')
 
-@section('title', 'FAQ - Frequently Asked Questions')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>FAQ | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Temukan jawaban atas pertanyaan yang sering diajukan seputar layanan 3Rasa Event Organizer di Tarakan. Mulai dari perencanaan acara, dekorasi, hingga paket wedding." />
+
+    <meta name="keywords" content="FAQ event organizer Tarakan, pertanyaan wedding organizer Tarakan, informasi layanan 3Rasa Event Organizer, paket pernikahan Tarakan, tanya jawab event Tarakan" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/faq" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/faq" />
+    <meta property="og:title" content="FAQ | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Jawaban atas pertanyaan umum seputar layanan, paket, dan proses kerja 3Rasa Event Organizer di Tarakan." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FAQ | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Cari tahu informasi penting dan jawaban atas pertanyaan seputar layanan 3Rasa Event Organizer di Tarakan." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @section('content')
-<div class="min-h-screen  pt-14" x-data="faqManager()">
+<div class="min-h-screen pt-14" x-data="faqManager()">
     {{-- Hero Section --}}
     <div class="relative h-[70vh]"
      style="background: url({{ asset('storage/content/gif01.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">

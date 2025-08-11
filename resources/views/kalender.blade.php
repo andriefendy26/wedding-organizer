@@ -1,6 +1,32 @@
 @extends('Layout.app')
 
-@section('title', 'Kalender Ketersediaan')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Kalender Ketersediaan | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Hubungi 3Rasa Event Organizer di Tarakan untuk konsultasi dan pemesanan layanan wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC profesional, dan event perusahaan." />
+
+    <meta name="keywords" content="kontak event organizer Tarakan, hubungi wedding organizer Tarakan, jasa dekorasi Tarakan, sewa perlengkapan acara Tarakan, jasa MC Tarakan, jasa fotografer Tarakan, jasa videografer Tarakan, event perusahaan Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/kontak" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/kontak" />
+    <meta property="og:title" content="Kontak Kami | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Hubungi kami untuk konsultasi dan pemesanan layanan acara di Tarakan. 3Rasa Event Organizer siap membantu Anda mewujudkan acara impian." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kontak Kami | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Hubungi 3Rasa Event Organizer di Tarakan untuk layanan wedding organizer, dekorasi, sewa perlengkapan event, dan dokumentasi profesional." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @section('content')
 <div class="min-h-screen ">

@@ -1,6 +1,32 @@
 @extends('Layout.app')
 
-@section('title', 'Layanan Kami')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Layanan | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="3Rasa Event Organizer di Tarakan menyediakan berbagai layanan untuk acara Anda, termasuk wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC profesional, dan perencanaan acara perusahaan." />
+
+    <meta name="keywords" content="layanan event organizer Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, sewa perlengkapan acara Tarakan, jasa MC Tarakan, jasa fotografer Tarakan, jasa videografer Tarakan, event perusahaan Tarakan, layanan EO Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/layanan" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/layanan" />
+    <meta property="og:title" content="Layanan | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Layanan lengkap untuk acara Anda di Tarakan, mulai dari wedding organizer, dekorasi, sewa perlengkapan event, hingga dokumentasi foto & video profesional." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Layanan | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC, dan layanan profesional lainnya di Tarakan." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @push('styles')
 

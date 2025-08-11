@@ -1,6 +1,33 @@
 @extends('Layout.app')
 
-@section('title', 'Portfolio')
+
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Galeri | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Lihat koleksi foto dan dokumentasi acara yang telah ditangani oleh 3Rasa Event Organizer di Tarakan. Inspirasi dekorasi, wedding, dan event profesional." />
+
+    <meta name="keywords" content="galeri foto event Tarakan, galeri wedding organizer Tarakan, foto dekorasi acara Tarakan, dokumentasi event Tarakan, foto pernikahan Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/galeri" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/galeri" />
+    <meta property="og:title" content="Galeri | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Koleksi dokumentasi acara dan foto-foto terbaik karya 3Rasa Event Organizer di Tarakan." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Galeri | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Lihat dokumentasi foto dan inspirasi dekorasi acara oleh 3Rasa Event Organizer di Tarakan." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @section('content')
 <div class="min-h-screen ">

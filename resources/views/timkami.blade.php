@@ -1,6 +1,32 @@
 @extends('Layout.app')
 
-@section('title', 'Team Kami')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Tim Kami | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Kenali tim profesional 3Rasa Event Organizer di Tarakan yang berpengalaman dalam merencanakan, mendekorasi, dan menyukseskan acara Anda dengan sempurna." />
+
+    <meta name="keywords" content="tim 3Rasa Event Organizer Tarakan, profil tim EO Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, jasa MC Tarakan, fotografer Tarakan, videografer Tarakan, tim profesional event Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/tim-kami" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/tim-kami" />
+    <meta property="og:title" content="Tim Profesional | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Kenali tim berpengalaman 3Rasa Event Organizer Tarakan yang siap membantu mewujudkan acara impian Anda dengan pelayanan terbaik." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tim Profesional | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Tim berpengalaman 3Rasa Event Organizer siap mendukung kesuksesan acara Anda di Tarakan." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @section('content')
 <div class="min-h-screen bg-white dark:bg-gray-900">

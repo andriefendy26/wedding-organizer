@@ -1,9 +1,35 @@
 @extends('Layout.app')
 
-@section('title', 'Hubungi Kami - 3Rasa Wedding Organizer')
+@section('head')
+    <meta charset="UTF-8" />
+    <title>Kontak Kami | 3Rasa Event Organizer Tarakan</title>
+    <meta name="description" content="Hubungi 3Rasa Event Organizer di Tarakan untuk konsultasi dan pemesanan layanan wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC profesional, dan event perusahaan." />
+
+    <meta name="keywords" content="kontak event organizer Tarakan, hubungi wedding organizer Tarakan, jasa dekorasi Tarakan, sewa perlengkapan acara Tarakan, jasa MC Tarakan, jasa fotografer Tarakan, jasa videografer Tarakan, event perusahaan Tarakan, 3Rasa Event Organizer" />
+
+    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.3rasaeventorganizer.com/kontak" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.3rasaeventorganizer.com/kontak" />
+    <meta property="og:title" content="Kontak Kami | 3Rasa Event Organizer Tarakan" />
+    <meta property="og:description" content="Hubungi kami untuk konsultasi dan pemesanan layanan acara di Tarakan. 3Rasa Event Organizer siap membantu Anda mewujudkan acara impian." />
+    <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kontak Kami | 3Rasa Event Organizer Tarakan" />
+    <meta name="twitter:description" content="Hubungi 3Rasa Event Organizer di Tarakan untuk layanan wedding organizer, dekorasi, sewa perlengkapan event, dan dokumentasi profesional." />
+    <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
+@endsection
+
 
 @section('content')
-<div class="bg-white dark:bg-gray-800 min-h-screen">
+<div class="min-h-screen bg-white dark:bg-gray-800">
     {{-- Hero Section --}}
 
     <div class="relative h-[70vh] bg-cover bg-center overflow-hidden"
@@ -11,10 +37,10 @@
         <div class="absolute inset-0 bg-black/80"></div>
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
-                <h1 data-aos="zoom-in-down" class="text-6xl font-semibold mb-4 edu-vic-wa-nt-hand tracking-wide">
+                <h1 data-aos="zoom-in-down" class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
                     Hubungi Kami
                 </h1>
-                <p data-aos="zoom-in-up" class="text-xl pt-serif-regular-italic max-w-2xl mx-auto">
+                <p data-aos="zoom-in-up" class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
                     Siap mewujudkan pernikahan impian Anda? Mari berkonsultasi dan rencanakan momen spesial bersama tim profesional kami
                 </p>
             </div>
@@ -23,15 +49,15 @@
 
 
     {{-- Main Contact Section --}}
-    <div class="mx-auto px-4 sm:px-6 lg:px-32 py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div class="px-4 py-16 mx-auto sm:px-6 lg:px-32">
+        <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {{-- Get In Touch Form --}}
             <div>
                 <div class="mb-8">
-                    <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+                    <h2 class="mb-4 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
                         Get In Touch
                     </h2>
-                    <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
                         Ceritakan visi pernikahan impian Anda, dan biarkan kami membantu mewujudkannya menjadi kenyataan yang menakjubkan.
                     </p>
                 </div>
@@ -39,7 +65,7 @@
                 <!-- Tambahkan di dalam form section, setelah opening form tag -->
                 <form data-aos="fade-right" x-data="contactForm()" @submit.prevent="submitForm" class="space-y-6">
                     <!-- Error Message -->
-                    <div x-show="errorMessage" x-transition class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-4">
+                    <div x-show="errorMessage" x-transition class="p-4 border border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 rounded-xl">
                         <div class="flex items-center gap-2 text-red-800 dark:text-red-200">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -48,21 +74,21 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Nama Lengkap *
                             </label>
                             <input 
                                 x-model="form.name"
                                 type="text" 
                                 required
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                                 placeholder="Masukkan nama lengkap Anda"
                             />
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Nomor WhatsApp *
                             </label>
                             <input 
@@ -70,27 +96,27 @@
                                 @input="formatPhone"
                                 type="tel" 
                                 required
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                                 placeholder="contoh: 081234567890"
                             />
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                             Email
                         </label>
                         <input 
                             x-model="form.email"
                             type="email" 
-                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                            class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                             placeholder="nama@email.com"
                         />
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Tanggal Acara *
                             </label>
                             <input 
@@ -99,16 +125,16 @@
                                 type="date" 
                                 required
                                 :min="new Date().toISOString().split('T')[0]"
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                             />
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                            <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Estimasi Budget
                             </label>
                             <select 
                                 x-model="form.budget"
-                                class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors"
+                                class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                             >
                                 <option value="">Pilih range budget</option>
                                 <option value="10-25">10 - 25 Juta</option>
@@ -120,16 +146,16 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                             Jenis Layanan *
                         </label>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
                             <label class="flex items-center gap-2 cursor-pointer">
                                 <input 
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="wedding-organizer"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Wedding Organizer</span>
                             </label>
@@ -138,7 +164,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="decoration"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Dekorasi</span>
                             </label>
@@ -147,7 +173,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="catering"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Catering</span>
                             </label>
@@ -156,7 +182,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="photography"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Fotografi</span>
                             </label>
@@ -165,7 +191,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="sound-system"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">Sound System</span>
                             </label>
@@ -174,7 +200,7 @@
                                     type="checkbox" 
                                     x-model="form.services" 
                                     value="mc"
-                                    class="rounded border-gray-300 text-primary focus:ring-primary"
+                                    class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
                                 <span class="text-sm text-gray-700 dark:text-gray-300">MC</span>
                             </label>
@@ -182,14 +208,14 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                             Pesan & Detail Acara *
                         </label>
                         <textarea 
                             x-model="form.message"
                             rows="5" 
                             required
-                            class="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none bg-white dark:bg-gray-700 text-black dark:text-white poppins-regular transition-colors resize-none"
+                            class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 resize-none dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                             placeholder="Ceritakan konsep pernikahan impian Anda, jumlah tamu, lokasi yang diinginkan, dan detail lainnya..."
                         ></textarea>
                     </div>
@@ -197,11 +223,11 @@
                     <button 
                         type="submit"
                         :disabled="loading"
-                        class="w-full bg-primary text-white py-4 px-8 rounded-xl hover:scale-105 transition-all duration-300 font-medium text-lg edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-full px-8 py-4 text-lg font-medium text-white transition-all duration-300 bg-primary rounded-xl hover:scale-105 edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         <span x-show="!loading">Kirim Pesan</span>
                         <span x-show="loading" class="flex items-center justify-center gap-2">
-                            <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                 <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
@@ -210,7 +236,7 @@
                     </button>
 
                     <!-- Success Message -->
-                    <div x-show="success" x-transition class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-4">
+                    <div x-show="success" x-transition class="p-4 border border-green-200 bg-green-50 dark:bg-green-900/20 dark:border-green-800 rounded-xl">
                         <div class="flex items-center gap-2 text-green-800 dark:text-green-200">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -228,10 +254,10 @@
             <div data-aos="fade-left" class="space-y-8">
                 {{-- Google Maps --}}
                 <div>
-                    <h3 class="text-2xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+                    <h3 class="mb-4 text-2xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
                         Lokasi Kami
                     </h3>
-                    <div class="bg-gray-100 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg">
+                    <div class="overflow-hidden bg-gray-100 shadow-lg dark:bg-gray-700 rounded-2xl">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.32734509213!2d117.35089995!3d3.325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x321463d73b98b9bd%3A0x9b2c484fdad86b21!2sTarakan%2C%20North%20Kalimantan!5e0!3m2!1sen!2sid!4v1701234567890!5m2!1sen!2sid"
                             width="100%" 
@@ -246,31 +272,31 @@
                 </div>
 
                 {{-- Business Hours --}}
-                <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8">
-                    <h3 class="text-2xl font-semibold mb-6 edu-vic-wa-nt-hand text-black dark:text-white">
+                <div class="p-8 bg-gray-50 dark:bg-gray-700 rounded-2xl">
+                    <h3 class="mb-6 text-2xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
                         Jam Operasional
                     </h3>
                     <div class="space-y-4 pt-serif-regular">
-                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                        <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
                             <span class="text-gray-700 dark:text-gray-300">Senin - Jumat</span>
                             <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                        <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
                             <span class="text-gray-700 dark:text-gray-300">Sabtu</span>
                             <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-600">
+                        <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
                             <span class="text-gray-700 dark:text-gray-300">Minggu</span>
                             <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
-                        <div class="flex justify-between items-center py-2">
+                        <div class="flex items-center justify-between py-2">
                             <span class="text-gray-700 dark:text-gray-300">Hari Libur Nasional</span>
                             <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
                         </div>
                     </div>
                     
-                    <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
-                        <p class="text-blue-800 dark:text-blue-200 text-sm">
+                    <div class="p-4 mt-6 border border-blue-200 bg-blue-50 dark:bg-blue-900/20 rounded-xl dark:border-blue-800">
+                        <p class="text-sm text-blue-800 dark:text-blue-200">
                             <strong>Catatan:</strong> Untuk konsultasi di luar jam operasional, hubungi WhatsApp kami. Kami siap melayani konsultasi darurat 24/7.
                         </p>
                     </div>
@@ -281,30 +307,30 @@
     </div>
 
     {{-- FAQ Section --}}
-    <div class="bg-gray-50 dark:bg-gray-900 py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div data-aos="zoom-in-left" class="text-center mb-12">
-                <h2 class="text-4xl font-semibold mb-4 edu-vic-wa-nt-hand text-black dark:text-white">
+    <div class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container px-4 mx-auto sm:px-6 lg:px-8">
+            <div data-aos="zoom-in-left" class="mb-12 text-center">
+                <h2 class="mb-4 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
                     Pertanyaan yang Sering Diajukan
                 </h2>
-                <p class="text-gray-600 dark:text-gray-300 text-lg pt-serif-regular-italic max-w-2xl mx-auto">
+                <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
                     Temukan jawaban untuk pertanyaan umum seputar layanan wedding organizer kami
                 </p>
             </div>
 
             <div data-aos="fade-right" class="max-w-4xl mx-auto space-y-4" x-data="{ openFaq: null }">
                 {{-- FAQ Item 1 --}}
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700">
                     <button 
                         @click="openFaq = openFaq === 1 ? null : 1"
-                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                        class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
-                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                        <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
                             Berapa lama waktu yang dibutuhkan untuk merencanakan pernikahan?
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 1 }" 
-                            class="w-6 h-6 text-primary transition-transform duration-300"
+                            class="w-6 h-6 transition-transform duration-300 text-primary"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -318,17 +344,17 @@
                 </div>
 
                 {{-- FAQ Item 2 --}}
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700">
                     <button 
                         @click="openFaq = openFaq === 2 ? null : 2"
-                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                        class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
-                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                        <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
                             Apakah ada paket wedding organizer yang bisa disesuaikan dengan budget?
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 2 }" 
-                            class="w-6 h-6 text-primary transition-transform duration-300"
+                            class="w-6 h-6 transition-transform duration-300 text-primary"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -342,17 +368,17 @@
                 </div>
 
                 {{-- FAQ Item 3 --}}
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700">
                     <button 
                         @click="openFaq = openFaq === 3 ? null : 3"
-                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                        class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
-                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                        <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
                             Bagaimana proses konsultasi dan perencanaan dengan tim 3Rasa?
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 3 }" 
-                            class="w-6 h-6 text-primary transition-transform duration-300"
+                            class="w-6 h-6 transition-transform duration-300 text-primary"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -366,17 +392,17 @@
                 </div>
 
                 {{-- FAQ Item 4 --}}
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700">
                     <button 
                         @click="openFaq = openFaq === 4 ? null : 4"
-                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                        class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
-                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                        <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
                             Apakah 3Rasa melayani pernikahan adat tradisional?
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 4 }" 
-                            class="w-6 h-6 text-primary transition-transform duration-300"
+                            class="w-6 h-6 transition-transform duration-300 text-primary"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -390,17 +416,17 @@
                 </div>
 
                 {{-- FAQ Item 5 --}}
-                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white border border-gray-200 shadow-lg dark:bg-gray-800 rounded-2xl dark:border-gray-700">
                     <button 
                         @click="openFaq = openFaq === 5 ? null : 5"
-                        class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl transition-colors"
+                        class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
-                        <h3 class="text-lg font-semibold text-black dark:text-white pr-4">
+                        <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
                             Bagaimana jika ada perubahan mendadak pada hari pernikahan?
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 5 }" 
-                            class="w-6 h-6 text-primary transition-transform duration-300"
+                            class="w-6 h-6 transition-transform duration-300 text-primary"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
