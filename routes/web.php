@@ -15,6 +15,7 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\PublicLetterController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TestimoniController;
+use App\Models\Artikel;
 use App\Models\Portofolio;
 use App\Models\Testimoni;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -106,3 +107,12 @@ Route::prefix('letters/public')->group(function () {
 // routes/web.php
 // Route::get('/letters/public/{slug}', [PublicLetterController::class, 'show'])->name('letters.public');
 // Route::get('/letters/public/{slug}/download', [PublicLetterController::class, 'download'])->name('letters.public.download');
+
+
+// sitemap
+
+Route::get('/sitemap.xml', function () {
+    $artikel = Artikel::latest()->get();
+    // $category = artikel->tags;
+    return response()->view('sitemap', compact('artikel'))->header('Content-Type','text/xml');
+});
