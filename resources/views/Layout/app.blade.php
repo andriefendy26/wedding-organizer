@@ -620,104 +620,148 @@ TEXT;
             </div>
 
             <!-- Mobile Navigation Menu -->
-            <div 
-                x-show="mobileMenuOpen" 
-                x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 -translate-y-4"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-4"
-                class="lg:hidden"
-            >
-                <nav class="flex flex-col pt-4 pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
-                    <a href="/" 
-                       @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-home"></i>
-                        {{ __('app.home') }}
-                    </a>
-                    
-                    <!-- Mobile Pages Section -->
-                    <div x-data="{ pagesOpen: false }">
-                        <button 
-                            @click="pagesOpen = !pagesOpen"
-                            class="flex items-center justify-between w-full px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                        >
-                            <div class="flex items-center">
-                                <i class="w-5 mr-3 fas fa-file-alt"></i>
-                                {{ __('app.pages') }}
-                            </div>
-                            <i class="transition-transform fas fa-chevron-down" :class="pagesOpen ? 'rotate-180' : ''"></i>
-                        </button>
-                        
-                        <div x-show="pagesOpen" 
-                             x-transition:enter="transition ease-out duration-200"
-                             x-transition:enter-start="opacity-0 scale-y-0"
-                             x-transition:enter-end="opacity-100 scale-y-100"
-                             x-transition:leave="transition ease-in duration-150"
-                             x-transition:leave-start="opacity-100 scale-y-100"
-                             x-transition:leave-end="opacity-0 scale-y-0"
-                             class="mt-2 ml-4 space-y-1 origin-top">
-                            <a href="/tentang" 
-                               @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-info-circle"></i>
-                                {{ __('app.about_us') }}
-                            </a>
-                            <a href="/layanan" 
-                               @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-concierge-bell"></i>
-                                {{ __('app.services') }}
-                            </a>
-                            <a href="/portofolio" 
-                               @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-images"></i>
-                                {{ __('app.portfolio') }}
-                            </a>
-                            <a href="/galery" 
-                               @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-images"></i>
-                                {{ __('app.gallery') }}
-                            </a>
-                            <a href="/team" 
-                               @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-users"></i>
-                                {{ __('app.our_team') }}
-                            </a>
-                        </div>
+<div 
+    x-show="mobileMenuOpen" 
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 -translate-y-4"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-4"
+    class="lg:hidden"
+>
+    <nav class="flex flex-col pt-4 pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
+        <!-- Language Switcher Mobile -->
+        <div class="px-4 mb-4" x-data="languageSwitcher()">
+            <div class="relative">
+                <button 
+                    @click="open = !open"
+                    @click.away="open = false"
+                    class="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 border border-gray-200 rounded-lg dark:text-gray-300 dark:border-gray-600 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                >
+                    <div class="flex items-center space-x-3">
+                        <img :src="currentLanguage.flag" :alt="currentLanguage.name" class="w-6 h-5 rounded-sm">
+                        <span x-text="currentLanguage.name"></span>
                     </div>
+                    <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-xs text-gray-500 transition-transform duration-200"></i>
+                </button>
 
-                    <a href="/artikel" 
-                       @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-newspaper"></i>
-                        {{ __('app.articles') }}
-                    </a>
-                    <a href="/faq" 
-                       @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-question-circle"></i>
-                        {{ __('app.faq') }}
-                    </a>
-                    <a href="/kalender" 
-                       @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-calendar-alt"></i>
-                        {{ __('app.calendar') }}
-                    </a>
-                    <a href="/kontak" 
-                       @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-envelope"></i>
-                        {{ __('app.contact') }}
-                    </a>
-                </nav>
+                <div 
+                    x-show="open"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95"
+                    class="absolute left-0 right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700"
+                >
+                    <div class="py-1">
+                        <template x-for="language in languages" :key="language.code">
+                            <a
+                                :href="'/language/' + language.code"
+                                @click="mobileMenuOpen = false"
+                                class="flex items-center w-full px-4 py-3 text-sm text-gray-700 transition-colors duration-150 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600"
+                                :class="currentLanguage.code === language.code ? 'bg-red-50 dark:bg-red-900/20 text-red-600' : ''"
+                            >
+                                <img :src="language.flag" :alt="language.name" class="w-6 h-5 mr-3 rounded-sm">
+                                <span x-text="language.name"></span>
+                                <i x-show="currentLanguage.code === language.code" class="ml-auto text-red-600 fas fa-check"></i>
+                            </a>
+                        </template>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <a href="/" 
+           @click="mobileMenuOpen = false"
+           class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <i class="w-5 mr-3 fas fa-home"></i>
+            {{ __('app.home') }}
+        </a>
+        
+        <!-- Mobile Pages Section -->
+        <div x-data="{ pagesOpen: false }">
+            <button 
+                @click="pagesOpen = !pagesOpen"
+                class="flex items-center justify-between w-full px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+                <div class="flex items-center">
+                    <i class="w-5 mr-3 fas fa-file-alt"></i>
+                    {{ __('app.pages') }}
+                </div>
+                <i class="transition-transform fas fa-chevron-down" :class="pagesOpen ? 'rotate-180' : ''"></i>
+            </button>
+            
+            <div x-show="pagesOpen" 
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-y-0"
+                 x-transition:enter-end="opacity-100 scale-y-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 scale-y-100"
+                 x-transition:leave-end="opacity-0 scale-y-0"
+                 class="mt-2 ml-4 space-y-1 origin-top">
+                <a href="/tentang" 
+                   @click="mobileMenuOpen = false"
+                   class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <i class="w-4 mr-3 fas fa-info-circle"></i>
+                    {{ __('app.about_us') }}
+                </a>
+                <a href="/layanan" 
+                   @click="mobileMenuOpen = false"
+                   class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <i class="w-4 mr-3 fas fa-concierge-bell"></i>
+                    {{ __('app.services') }}
+                </a>
+                <a href="/portofolio" 
+                   @click="mobileMenuOpen = false"
+                   class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <i class="w-4 mr-3 fas fa-images"></i>
+                    {{ __('app.portfolio') }}
+                </a>
+                <a href="/galery" 
+                   @click="mobileMenuOpen = false"
+                   class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <i class="w-4 mr-3 fas fa-images"></i>
+                    {{ __('app.gallery') }}
+                </a>
+                <a href="/team" 
+                   @click="mobileMenuOpen = false"
+                   class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                    <i class="w-4 mr-3 fas fa-users"></i>
+                    {{ __('app.our_team') }}
+                </a>
+            </div>
+        </div>
+
+        <a href="/artikel" 
+           @click="mobileMenuOpen = false"
+           class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <i class="w-5 mr-3 fas fa-newspaper"></i>
+            {{ __('app.articles') }}
+        </a>
+        <a href="/faq" 
+           @click="mobileMenuOpen = false"
+           class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <i class="w-5 mr-3 fas fa-question-circle"></i>
+            {{ __('app.faq') }}
+        </a>
+        <a href="/kalender" 
+           @click="mobileMenuOpen = false"
+           class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <i class="w-5 mr-3 fas fa-calendar-alt"></i>
+            {{ __('app.calendar') }}
+        </a>
+        <a href="/kontak" 
+           @click="mobileMenuOpen = false"
+           class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <i class="w-5 mr-3 fas fa-envelope"></i>
+            {{ __('app.contact') }}
+        </a>
+    </nav>
+</div>
         </div>
     </header>
 

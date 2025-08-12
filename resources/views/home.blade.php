@@ -77,7 +77,7 @@ TEXT;
             </div>
             
             <div x-data="{kursiIsOpen : true}" class="bg-white item sm dark:bg-gray-800" style="background-image: url('{{ asset('storage/content/gif05.gif') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="absolute inset-0 bg-black/50"></div>
                 <div class="relative flex items-center justify-center w-full h-full pt-40 text-center content">
                     <div class="flex flex-col items-center justify-center">
                         <img class="object-cover w-52 md:w-64 flip-on-load" src="{{ asset('storage/content/Logo.png') }}" alt="3Rasa Production">
