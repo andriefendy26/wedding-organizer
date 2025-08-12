@@ -441,4 +441,311 @@ return [
         ],
     ],
 
+    // Kalender Page Tranlations
+    'kalender_page' => [
+        'hero' => [
+            'title' => "Kalender Ketersediaan",
+            'description' => 'Periksa tanggal yang tersedia untuk acara pernikahan dan event spesial Anda bersama 3Rasa'
+        ],
+        'main' =>[
+            'title' => 'Jadwal Ketersediaan Layanan',
+            'description' => 'Klik pada tanggal untuk melihat detail ketersediaan dan melakukan konsultasi'
+        ]
+        ],
+
+    // FAQ Page Tranlations
+
+    'faq_page' => [
+        'meta' => [
+            'title' => 'FAQ | 3Rasa Event Organizer Tarakan',
+            'description' => 'Temukan jawaban untuk pertanyaan yang sering diajukan tentang layanan 3Rasa Event Organizer di Tarakan. Mulai dari perencanaan acara, dekorasi, hingga paket pernikahan.',
+            'keywords' => 'FAQ event organizer Tarakan, pertanyaan wedding organizer Tarakan, informasi layanan 3Rasa Event Organizer, paket pernikahan Tarakan, tanya jawab acara Tarakan',
+            'og_description' => 'Jawaban atas pertanyaan umum tentang layanan, paket, dan proses kerja 3Rasa Event Organizer di Tarakan.',
+            'twitter_description' => 'Temukan informasi penting dan jawaban pertanyaan tentang layanan 3Rasa Event Organizer di Tarakan.',
+        ],
+        'hero' => [
+            'title' => 'Pertanyaan yang Sering Diajukan',
+            'subtitle' => 'Temukan jawaban atas pertanyaan paling umum tentang layanan pernikahan dan acara kami',
+        ],
+        'search_placeholder' => 'Cari pertanyaan...',
+        'categories' => [
+            'all' => 'Semua',
+            'wedding' => 'Pernikahan',
+            'decoration' => 'Dekorasi',
+            'rental' => 'Sewa',
+            'pricing' => 'Harga & Paket',
+            'general' => 'Umum',
+        ],
+        'no_results' => [
+            'title' => 'FAQ tidak ditemukan',
+            'description' => 'Coba ubah kata kunci pencarian atau pilih kategori lain',
+        ],
+        'contact_box' => [
+            'title' => 'Masih ada pertanyaan?',
+            'subtitle' => 'Tim customer service kami siap membantu Anda 24/7',
+            'whatsapp' => 'WhatsApp',
+            'phone' => 'Telepon',
+            'email' => 'Email',
+        ],
+        'faqs' => [
+            // Pernikahan
+            [
+                'id' => 'wedding1',
+                'category' => 'wedding',
+                'question' => 'Berapa lama sebelumnya saya harus memesan untuk pernikahan?',
+                'answer' => 'Kami menyarankan memesan minimal 3-6 bulan sebelum hari pernikahan. Untuk musim ramai (Juni-September) atau tanggal spesial, sebaiknya memesan 6-12 bulan sebelumnya agar ketersediaan dan dekorasi terbaik terjamin.'
+            ],
+            [
+                'id' => 'wedding2',
+                'category' => 'wedding',
+                'question' => 'Apakah 3Rasa menyediakan paket wedding organizer lengkap?',
+                'answer' => 'Ya, kami menyediakan paket lengkap mulai dari konsultasi awal, perencanaan konsep, dekorasi, penyewaan perlengkapan, koordinasi vendor, hingga eksekusi di hari pernikahan. Kami juga menyediakan layanan parsial sesuai kebutuhan Anda.'
+            ],
+            [
+                'id' => 'wedding3',
+                'category' => 'wedding',
+                'question' => 'Apakah bisa mengadakan pernikahan outdoor?',
+                'answer' => 'Tentu saja! Kami berpengalaman dalam mengatur pernikahan outdoor di berbagai lokasi seperti pantai, taman, vila, atau tempat terbuka lainnya. Kami memastikan semua aspek teknis dan logistik terpenuhi dengan baik.'
+            ],
+            [
+                'id' => 'wedding4',
+                'category' => 'wedding',
+                'question' => 'Bagaimana proses konsultasi awal untuk pernikahan?',
+                'answer' => 'Konsultasi awal gratis selama 1-2 jam. Kami akan membahas visi, anggaran, timeline, dan kebutuhan khusus Anda. Setelah itu, kami akan menyiapkan proposal detail beserta rincian harga dan jadwal pelaksanaan.'
+            ],
+
+            // Dekorasi
+            [
+                'id' => 'decoration1',
+                'category' => 'decoration',
+                'question' => 'Bisakah saya melihat contoh dekorasi sebelum memutuskan?',
+                'answer' => 'Tentu! Kami memiliki portofolio lengkap dan showroom yang dapat Anda kunjungi. Kami juga membuat mood board dan visualisasi 3D untuk memberi gambaran jelas konsep dekorasi acara Anda.'
+            ],
+            [
+                'id' => 'decoration2',
+                'category' => 'decoration',
+                'question' => 'Bisakah dekorasi disesuaikan dengan tema adat tertentu?',
+                'answer' => 'Tentu! Kami sangat berpengalaman dalam dekorasi pernikahan adat seperti Jawa, Sunda, Batak, Minang, dan lainnya. Tim kreatif kami memastikan setiap detail mencerminkan nilai budaya yang Anda inginkan.'
+            ],
+            [
+                'id' => 'decoration3',
+                'category' => 'decoration',
+                'question' => 'Berapa lama waktu yang dibutuhkan untuk pemasangan dekorasi?',
+                'answer' => 'Waktu pemasangan bervariasi tergantung kompleksitas. Dekorasi standar 4-6 jam, premium 6-8 jam, dan dekorasi custom bisa memakan waktu hingga 10-12 jam. Biasanya pemasangan dilakukan H-1 agar semua siap tepat waktu.'
+            ],
+            [
+                'id' => 'decoration4',
+                'category' => 'decoration',
+                'question' => 'Bisakah saya meminta bunga segar tertentu?',
+                'answer' => 'Ya, kami dapat menyediakan berbagai jenis bunga segar sesuai permintaan. Ketersediaan dan harga bergantung musim dan jenis bunga. Kami akan memberikan alternatif terbaik jika bunga yang diminta tidak tersedia.'
+            ],
+
+            // Sewa
+            [
+                'id' => 'rental1',
+                'category' => 'rental',
+                'question' => 'Peralatan apa saja yang tersedia untuk disewa?',
+                'answer' => 'Kami menyediakan berbagai peralatan seperti kursi tamu, meja bundar/persegi, tenda, sound system, lighting, backdrop, karpet, perlengkapan catering, gazebo, dan lainnya. Semua terawat dengan baik dan berkualitas premium.'
+            ],
+            [
+                'id' => 'rental2',
+                'category' => 'rental',
+                'question' => 'Apakah ada minimal pemesanan untuk sewa?',
+                'answer' => 'Tidak ada minimal pemesanan khusus, namun untuk efisiensi biaya pengiriman, kami menyarankan nilai sewa minimal Rp 500.000. Pesanan di bawah jumlah tersebut mungkin dikenakan biaya pengiriman tambahan.'
+            ],
+            [
+                'id' => 'rental3',
+                'category' => 'rental',
+                'question' => 'Bagaimana sistem pengiriman dan pengambilan barang sewa?',
+                'answer' => 'Kami menggunakan tim profesional untuk pengiriman dan pengambilan. Barang dikirim H-1 dan diambil H+1. Gratis pengiriman dalam kota Tarakan, biaya transport tambahan berlaku untuk luar kota.'
+            ],
+
+            // Harga
+            [
+                'id' => 'pricing1',
+                'category' => 'pricing',
+                'question' => 'Bagaimana sistem pembayaran dan apakah ada DP?',
+                'answer' => 'Syarat pembayaran: DP 30% saat kontrak, 40% dibayar H-14, dan 30% pelunasan H-1. Pembayaran bisa via transfer bank, tunai, atau sesuai kesepakatan. DP tidak dapat dikembalikan kecuali dalam kasus force majeure.'
+            ],
+            [
+                'id' => 'pricing2',
+                'category' => 'pricing',
+                'question' => 'Apakah ada diskon untuk paket lengkap atau pelanggan lama?',
+                'answer' => 'Ya! Kami menawarkan diskon hingga 30% untuk paket lengkap dan diskon khusus untuk pelanggan setia. Kami juga memiliki promo musiman dan early bird. Hubungi tim kami untuk mendapatkan penawaran terbaik.'
+            ],
+            [
+                'id' => 'pricing3',
+                'category' => 'pricing',
+                'question' => 'Apakah harga sudah termasuk PPN dan biaya lainnya?',
+                'answer' => 'Harga kami sudah termasuk PPN, biaya pemasangan, koordinasi, dan supervisi. Hanya biaya transport luar kota dan permintaan khusus di luar paket yang tidak termasuk.'
+            ],
+            [
+                'id' => 'pricing4',
+                'category' => 'pricing',
+                'question' => 'Bagaimana kebijakan pembatalan dan pengembalian dana?',
+                'answer' => 'Pembatalan: H-30 refund 70%, H-14 refund 50%, H-7 refund 25%, H-3 tidak ada refund. Untuk force majeure seperti bencana alam atau pandemi, berlaku kebijakan khusus yang akan dibicarakan bersama.'
+            ],
+
+            // Umum
+            [
+                'id' => 'general1',
+                'category' => 'general',
+                'question' => 'Wilayah mana saja yang dilayani oleh 3Rasa?',
+                'answer' => 'Kami melayani Tarakan dan sekitarnya termasuk Kalimantan Utara. Untuk luar Tarakan dikenakan biaya transportasi dan akomodasi tambahan. Hubungi kami untuk detail wilayah layanan.'
+            ],
+            [
+                'id' => 'general2',
+                'category' => 'general',
+                'question' => 'Bagaimana jika terjadi cuaca buruk saat acara outdoor?',
+                'answer' => 'Kami selalu memiliki rencana cadangan (Plan B) untuk acara outdoor, termasuk tenda tambahan, venue indoor alternatif, dan penyesuaian dekorasi sesuai kondisi cuaca. Kami memantau cuaca sejak H-3 dan berkoordinasi dengan Anda.'
+            ],
+            [
+                'id' => 'general3',
+                'category' => 'general',
+                'question' => 'Apakah 3Rasa menangani acara selain pernikahan?',
+                'answer' => 'Ya! Selain pernikahan, kami juga menangani ulang tahun, acara perusahaan, grand opening, seminar, pameran, dan perayaan lainnya. Tim kami berpengalaman untuk berbagai jenis acara.'
+            ],
+            [
+                'id' => 'general4',
+                'category' => 'general',
+                'question' => 'Bagaimana cara menghubungi customer service 3Rasa?',
+                'answer' => 'Anda dapat menghubungi kami via WhatsApp di +62 812-3456-7890, telepon ke nomor yang sama, email ke info@3rasa.com, atau kunjungi langsung showroom kami. Layanan pelanggan tersedia Senin-Sabtu, 08:00-17:00.'
+            ],
+            [
+                'id' => 'general5',
+                'category' => 'general',
+                'question' => 'Apakah ada garansi untuk layanan Anda?',
+                'answer' => 'Ya, kami memberikan garansi kepuasan untuk setiap layanan. Jika ada yang tidak sesuai harapan, kami akan melakukan perbaikan atau penggantian tanpa biaya tambahan. Garansi berlaku selama acara dan hingga 24 jam setelahnya.'
+            ]
+        ]
+    ],
+
+    // Artikel Page Tranlations
+    'artikel_page' => [
+        'meta' => [
+            'title' => 'Artikel & Blog | 3Rasa Event Organizer Tarakan',
+            'description' => '3Rasa Event Organizer di Tarakan siap membantu merencanakan dan mewujudkan acara impian Anda, mulai dari pernikahan, ulang tahun, hingga event korporat dengan pelayanan profesional.',
+            'keywords' => 'event organizer Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, paket pernikahan Tarakan, EO profesional Tarakan, 3Rasa Event Organizer',
+            'og_title' => '3Rasa Event Organizer Tarakan | Profesional & Terpercaya',
+            'og_description' => 'Jadikan acara Anda berkesan bersama 3Rasa Event Organizer. Menyediakan layanan pernikahan, dekorasi, dan event profesional di Tarakan.',
+            'twitter_title' => '3Rasa Event Organizer Tarakan | Profesional & Terpercaya',
+            'twitter_description' => '3Rasa Event Organizer di Tarakan siap membantu merencanakan dan mewujudkan acara terbaik Anda dengan pelayanan profesional.',
+        ],
+        'hero' => [
+            'title' => 'Artikel & Inspirasi',
+            'subtitle' => 'Temukan tips, tren terbaru, dan inspirasi untuk pernikahan dan acara impian Anda',
+        ],
+        'search' => [
+            'label' => 'Pencarian:',
+            'placeholder' => 'Cari artikel...',
+        ],
+        'featured' => [
+            'title' => 'Artikel Unggulan',
+            'read_more' => 'Baca Selengkapnya',
+        ],
+        'article_card' => [
+            'read_more' => 'Baca →',
+        ],
+        'empty_state' => [
+            'no_articles' => [
+                'title' => 'Belum Ada Artikel',
+                'description' => 'Artikel sedang dalam persiapan. Silakan kembali lagi nanti.',
+            ],
+            'no_results' => [
+                'title' => 'Artikel Tidak Ditemukan',
+                'description' => 'Tidak ada artikel yang sesuai dengan pencarian atau filter Anda.',
+            ],
+        ],
+    ],
+
+
+    // Tentang Kami Tranlations
+
+    'tentang_page' => [
+        'hero' => [
+            'title' => 'Tentang 3Rasa',
+            'subtitlle' => 'Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi'
+        ],
+        'sub_hero' => [
+            'title' => '3Rasa Event Organizer',
+            'subtitle' => '"Menciptakan Momen Berharga dengan Tiga Rasa: Cinta, Bangga, dan Bahagia"'
+        ],
+        'tentang' => [
+            'title' => 'Tentang 3Rasa',
+            'description' => [
+                'p1' => [
+                    'bold1' => '3Rasa Event Organizer',
+                    'isi1' => 'adalah perusahaan jasa wedding organizer dan event organizer terpercaya yang berlokasi di',
+                    'bold2' => 'Tarakan, Kalimantan Utara.',
+                    'isi2' => 'Sejak didirikan pada tahun 2018, kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.'
+                ],
+                'p2' => [
+                    'isi' => 'Dengan pengalaman lebih dari',
+                    'bold1' => '7 Tahun',
+                    'isi1' => 'dan telah menyelenggarakan',
+                    'bold2' => '100+ acara pernikahan',
+                    'isi2' => ' kami memahami betul bahwa setiap momen pernikahan adalah unik dan berharga. Tim profesional kami yang berpengalaman siap membantu Anda menciptakan hari bahagia yang tak terlupakan.'
+                ],
+                'p3' => [
+                    'isi' => 'Kami menyediakan paket wedding organizer lengkap yang meliputi',
+                    'bold1' => 'dekorasi, dokumentasi, MC profesional, sound system,',
+                    'isi1' => 'dan berbagai layanan pendukung lainnya untuk memastikan acara Anda berjalan sempurna.',
+                ],
+            ]
+            ],
+        'visimisi'=> [
+            'visi' => [
+                'title' => 'Visi Kami',
+                'description' => 'Menjadi wedding organizer terdepan di Kalimantan Utara yang dikenal dengan pelayanan berkualitas tinggi, kreativitas tanpa batas, dan dedikasi penuh dalam mewujudkan setiap impian pernikahan klien kami.'
+            ],
+            'misi' => [
+                'title' => 'Misi Kami',
+                'description' => 'Memberikan layanan wedding organizer yang profesional, inovatif, dan personal untuk setiap klien. Kami berkomitmen menciptakan pengalaman pernikahan yang tak terlupakan dengan sentuhan tradisi dan kemewahan modern.'
+            ],
+        ],
+        'nilai' => [
+            'head' => [
+                'title' => 'Nilai-Nilai Kami',
+                'subtitle' => 'Tiga pilar yang menjadi fondasi dalam setiap layanan yang kami berikan'
+            ],
+            'card' => [
+                'card1' => [
+                    'title' => 'Rasa Cinta',
+                    'description' => 'Setiap detail dikerjakan dengan cinta dan perhatian penuh untuk menciptakan momen yang sempurna'
+                ],
+                'card2' => [
+                    'title' => 'Rasa Bangga',
+                    'description' => 'Bangga menjadi bagian dari momen bahagia Anda dan dipercaya menghadirkan yang terbaik'
+                ],
+                'card3' => [
+                    'title' => 'Rasa Bahagia',
+                    'description' => 'Kebahagiaan Anda adalah kebahagiaan kami, senyum Anda adalah reward terbesar bagi kami'
+                ],
+            ]
+        ],
+        'mengapa' => [
+            'head' =>[
+                'title' => 'Mengapa Memilih 3Rasa?',
+                'subtitle' => 'Komitmen kami untuk memberikan yang terbaik dalam setiap detail pernikahan Anda'
+            ],
+            'card' => [
+                'card1' => [
+                    'title' => 'Pengalaman Terpercaya',
+                    'description' => 'Lebih dari 7 tahun melayani pasangan di Kalimantan Utara dengan track record yang sempurna.'
+                ],
+                'card2' => [
+                    'title' => 'Tim Profesional',
+                    'description' => 'Didukung oleh tim profesional yang berpengalaman dan passionate di bidangnya masing-masing.'
+                ],
+                'card3' => [
+                    'title' => 'Personal Touch',
+                    'description' => 'Setiap pernikahan adalah unik. Kami memberikan sentuhan personal yang sesuai dengan kepribadian Anda.'
+                ],
+                'card4' => [
+                    'title' => 'Harga Transparan',
+                    'description' => 'Tidak ada biaya tersembunyi. Semua detail biaya akan dijelaskan dengan jelas sejak awal.'
+                ],
+            ]
+        ]
+    ]
 ];

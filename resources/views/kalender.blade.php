@@ -37,10 +37,10 @@
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 data-aos="zoom-in-down" class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
-                    Kalender Ketersediaan
+                     {{ __('app.kalender_page.hero.title') }}
                 </h1>
                 <p data-aos="zoom-in-up" class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                    Periksa tanggal yang tersedia untuk acara pernikahan dan event spesial Anda bersama 3Rasa
+                     {{ __('app.kalender_page.hero.description') }}
                 </p>
             </div>
         </div>
@@ -54,10 +54,10 @@
         <div class="max-w-6xl mx-auto mb-8">
             <div class="mb-8">
                 <h2 class="mb-4 text-4xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand-500">
-                    Jadwal Ketersediaan Layanan
-                </h2>
+                     {{ __('app.kalender_page.main.title') }}
+                    </h2>
                 <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                    Klik pada tanggal untuk melihat detail ketersediaan dan melakukan konsultasi
+                    {{ __('app.kalender_page.main.description') }}
                 </p>
             </div>
         </div>

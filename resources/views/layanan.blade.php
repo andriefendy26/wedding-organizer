@@ -2,12 +2,12 @@
 
 @section('head')
     <meta charset="UTF-8" />
-    <title>Layanan | 3Rasa Event Organizer Tarakan</title>
-    <meta name="description" content="3Rasa Event Organizer di Tarakan menyediakan berbagai layanan untuk acara Anda, termasuk wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC profesional, dan perencanaan acara perusahaan." />
+    <title>{{ __('services.page_title') }}</title>
+    <meta name="description" content="{{ __('services.page_description') }}" />
 
-    <meta name="keywords" content="layanan event organizer Tarakan, wedding organizer Tarakan, jasa dekorasi Tarakan, sewa perlengkapan acara Tarakan, jasa MC Tarakan, jasa fotografer Tarakan, jasa videografer Tarakan, event perusahaan Tarakan, layanan EO Tarakan, 3Rasa Event Organizer" />
+    <meta name="keywords" content="{{ __('services.page_keywords') }}" />
 
-    <meta name="author" content="3Rasa Event Organizer" />
+    <meta name="author" content="{{ __('services.page_author') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="canonical" href="https://www.3rasaeventorganizer.com/layanan" />
@@ -16,14 +16,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.3rasaeventorganizer.com/layanan" />
-    <meta property="og:title" content="Layanan | 3Rasa Event Organizer Tarakan" />
-    <meta property="og:description" content="Layanan lengkap untuk acara Anda di Tarakan, mulai dari wedding organizer, dekorasi, sewa perlengkapan event, hingga dokumentasi foto & video profesional." />
+    <meta property="og:title" content="{{ __('services.og_title') }}" />
+    <meta property="og:description" content="{{ __('services.og_description') }}" />
     <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Layanan | 3Rasa Event Organizer Tarakan" />
-    <meta name="twitter:description" content="Wedding organizer, dekorasi, sewa perlengkapan event, dokumentasi foto & video, MC, dan layanan profesional lainnya di Tarakan." />
+    <meta name="twitter:title" content="{{ __('services.twitter_title') }}" />
+    <meta name="twitter:description" content="{{ __('services.twitter_description') }}" />
     <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
 @endsection
 
@@ -42,11 +42,10 @@
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
-                    Layanan Kami
+                    {{ __('services.hero_title') }}
                 </h1>
                 <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                    Wujudkan acara impian Anda dengan layanan profesional dan berkualitas tinggi
-                </p>
+                    {{ __('services.hero_subtitle') }}
                 </p>
             </div>
         </div>
@@ -58,10 +57,10 @@
             {{-- Section Header --}}
             <div data-aos="fade-down"  class="mb-16 text-center">
                 <h2 class="mb-4 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                    Layanan Unggulan
+                    {{ __('services.services_title') }}
                 </h2>
                 <p class="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
-                    Dari pernikahan tradisional hingga event korporat modern, kami siap menghadirkan pengalaman tak terlupakan
+                    {{ __('services.services_subtitle') }}
                 </p>
             </div>
 
@@ -77,7 +76,7 @@
                         {{-- Floating badge --}}
                         <div class="absolute top-4 right-4">
                             <span class="px-3 py-1.5 text-xs font-medium tracking-wide text-white rounded-full bg-primary/90">
-                                POPULER
+                                {{ __('services.popular_badge') }}
                             </span>
                         </div>
                         
@@ -93,30 +92,30 @@
                     <div class="p-6 space-y-4">
                         <div class="space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 dark:text-white group-hover:text-primary">
-                                Wedding Organizer
+                                {{ __('services.wedding_title') }}
                             </h3>
                             <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                                Perencana pernikahan lengkap dari konsep hingga eksekusi yang tak terlupakan.
+                                {{ __('services.wedding_description') }}
                             </p>
                         </div>
                         
                         {{-- Features with modern pills --}}
                         <div class="flex flex-wrap gap-2">
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Konsultasi
+                                {{ __('services.wedding_feature_1') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Koordinasi
+                                {{ __('services.wedding_feature_2') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Pengawasan
+                                {{ __('services.wedding_feature_3') }}
                             </span>
                         </div>
                         
                         {{-- CTA Button --}}
                         <a href="/layananwedding" class="block">
                             <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
-                                Pelajari Selengkapnya
+                                {{ __('services.learn_more_btn') }}
                             </button>
                         </a>
                     </div>
@@ -138,27 +137,27 @@
                     <div class="p-6 space-y-4">
                         <div class="space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 dark:text-white group-hover:text-primary">
-                                Event Organizer
+                                {{ __('services.event_title') }}
                             </h3>
                             <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                                Layanan perencanaan acara yang profesional dan terorganisir.
+                                {{ __('services.event_description') }}
                             </p>
                         </div>
                         
                         <div class="flex flex-wrap gap-2">
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Perencanaan Acara
+                                {{ __('services.event_feature_1') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Dekorasi
+                                {{ __('services.event_feature_2') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Koordinasi Tim
+                                {{ __('services.event_feature_3') }}
                             </span>
                         </div>
                         <a href="/layanandekorasi" class="block">
                             <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
-                                Pelajari Selengkapnya
+                                {{ __('services.learn_more_btn') }}
                             </button>
                         </a>
                     </div>
@@ -180,28 +179,28 @@
                     <div class="p-6 space-y-4">
                         <div class="space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300 dark:text-white group-hover:text-primary">
-                                Sewa Perlengkapan
+                                {{ __('services.rental_title') }}
                             </h3>
                             <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                                Penyewaan berbagai perlengkapan acara berkualitas tinggi.
+                                {{ __('services.rental_description') }}
                             </p>
                         </div>
                         
                         <div class="flex flex-wrap gap-2">
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Furniture
+                                {{ __('services.rental_feature_1') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Sound System
+                                {{ __('services.rental_feature_2') }}
                             </span>
                             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                                Tenda
+                                {{ __('services.rental_feature_3') }}
                             </span>
                         </div>
                         
                         <a href="/layanansewa" class="block">
                             <button class="w-full px-4 py-3 text-sm font-medium transition-all duration-300 border-2 rounded-2xl border-primary text-primary dark:text-white dark:border-white hover:bg-primary hover:text-white dark:hover:bg-white dark:hover:text-gray-900 hover:shadow-lg hover:shadow-primary/25">
-                                Pelajari Selengkapnya
+                                {{ __('services.learn_more_btn') }}
                             </button>
                         </a>
                     </div>
@@ -215,10 +214,10 @@
         <div class="mx-auto max-w-7xl">
             <div class="mb-16 text-center">
                 <h2 class="mb-4 text-5xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                    Proses Kerja Kami
+                    {{ __('services.process_title') }}
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
-                    Langkah demi langkah menuju acara impian Anda
+                    {{ __('services.process_subtitle') }}
                 </p>
             </div>
 
@@ -229,10 +228,10 @@
                         <span class="text-2xl font-bold text-white">01</span>
                     </div>
                     <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                        Konsultasi
+                        {{ __('services.step_1_title') }}
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                        Diskusi mendalam tentang visi, kebutuhan, dan budget acara Anda
+                        {{ __('services.step_1_description') }}
                     </p>
                 </div>
 
@@ -242,10 +241,10 @@
                         <span class="text-2xl font-bold text-white">02</span>
                     </div>
                     <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                        Perencanaan
+                        {{ __('services.step_2_title') }}
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                        Penyusunan timeline, konsep desain, dan koordinasi vendor
+                        {{ __('services.step_2_description') }}
                     </p>
                 </div>
 
@@ -255,10 +254,10 @@
                         <span class="text-2xl font-bold text-white">03</span>
                     </div>
                     <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                        Persiapan
+                        {{ __('services.step_3_title') }}
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                        Setup dekorasi, instalasi equipment, dan persiapan final
+                        {{ __('services.step_3_description') }}
                     </p>
                 </div>
 
@@ -268,10 +267,10 @@
                         <span class="text-2xl font-bold text-white">04</span>
                     </div>
                     <h3 class="mb-3 text-xl font-bold text-black dark:text-white edu-vic-wa-nt-hand">
-                        Eksekusi
+                        {{ __('services.step_4_title') }}
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                        Pelaksanaan acara dengan pengawasan penuh dan koordinasi tim
+                        {{ __('services.step_4_description') }}
                     </p>
                 </div>
             </div>

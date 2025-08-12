@@ -2,10 +2,10 @@
 
 @section('head')
     <meta charset="UTF-8" />
-    <title>Portofolio | 3Rasa Event Organizer Tarakan</title>
-    <meta name="description" content="Lihat portofolio 3Rasa Event Organizer di Tarakan. Dokumentasi berbagai acara pernikahan, ulang tahun, event perusahaan, dan dekorasi kreatif yang telah kami tangani." />
+    <title>{{ __('portfolio.title') }}</title>
+    <meta name="description" content="{{ __('portfolio.meta_description') }}" />
 
-    <meta name="keywords" content="portofolio event organizer Tarakan, portofolio 3Rasa Event Organizer, dokumentasi acara Tarakan, wedding organizer Tarakan, hasil dekorasi pernikahan Tarakan, dokumentasi event perusahaan Tarakan, EO profesional Tarakan, foto acara Tarakan, galeri acara Tarakan" />
+    <meta name="keywords" content="{{ __('portfolio.meta_keywords') }}" />
 
     <meta name="author" content="3Rasa Event Organizer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,14 +16,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.3rasaeventorganizer.com/portofolio" />
-    <meta property="og:title" content="Portofolio | 3Rasa Event Organizer Tarakan" />
-    <meta property="og:description" content="Dokumentasi event yang telah kami tangani, mulai dari pernikahan, ulang tahun, hingga acara perusahaan di Tarakan." />
+    <meta property="og:title" content="{{ __('portfolio.title') }}" />
+    <meta property="og:description" content="{{ __('portfolio.meta_description') }}" />
     <meta property="og:image" content="{{ asset('storage/content/Logo.png') }}" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Portofolio | 3Rasa Event Organizer Tarakan" />
-    <meta name="twitter:description" content="Galeri foto dan dokumentasi event yang telah sukses kami selenggarakan di Tarakan." />
+    <meta name="twitter:title" content="{{ __('portfolio.title') }}" />
+    <meta name="twitter:description" content="{{ __('portfolio.meta_description') }}" />
     <meta name="twitter:image" content="{{ asset('storage/content/Logo.png') }}" />
 @endsection
 
@@ -36,11 +36,10 @@
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 class="mb-4 text-4xl font-semibold tracking-wide lg:text-6xl edu-vic-wa-nt-hand">
-                    Portfolio Kami
+                    {{ __('portfolio.hero.title') }}
                 </h1>
                 <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                    Menampilkan keahlian dan dedikasi kami dalam menciptakan momen tak terlupakan melalui berbagai layanan event organizer profesional
-                </p>
+                    {{ __('portfolio.hero.subtitle') }}
                 </p>
             </div>
         </div>
@@ -50,10 +49,10 @@
     <div class="container px-10 py-16 mx-auto md:px-16 lg:px-24 xl:px-32">
         <div class="mb-12 text-center">
             <h2 class="mb-4 text-4xl font-bold text-gray-800 edu-vic-wa-nt-hand dark:text-white">
-                Layanan Unggulan Kami
+                {{ __('portfolio.services.title') }}
             </h2>
             <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
-                Setiap proyek adalah karya seni yang kami ciptakan dengan penuh passion dan profesionalitas
+                {{ __('portfolio.services.subtitle') }}
             </p>
         </div>
 
@@ -62,16 +61,16 @@
             {{-- Wedding Services --}}
             <div class="cursor-pointer group">
                 <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                    <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Wedding Services" 
+                    <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="{{ __('portfolio.services.wedding.title') }}" 
                          class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute text-white bottom-6 left-6 right-6">
-                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">Wedding Organizer</h3>
-                            <p class="mb-4 text-sm opacity-90">Pernikahan impian dengan sentuhan personal dan detail yang sempurna</p>
+                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ __('portfolio.services.wedding.title') }}</h3>
+                            <p class="mb-4 text-sm opacity-90">{{ __('portfolio.services.wedding.description') }}</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Perencanaan</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Dekorasi</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Koordinasi</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.wedding.tags.planning') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.wedding.tags.decoration') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.wedding.tags.coordination') }}</span>
                             </div>
                         </div>
                     </div>
@@ -80,15 +79,15 @@
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
                             <p class="text-2xl font-bold text-pink-600 edu-vic-wa-nt-hand">50+</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Pernikahan</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.wedding.stats.weddings') }}</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-pink-600 edu-vic-wa-nt-hand">100%</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Kepuasan</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.wedding.stats.satisfaction') }}</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-pink-600 edu-vic-wa-nt-hand">5★</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Rating</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.wedding.stats.rating') }}</p>
                         </div>
                     </div>
                 </div>
@@ -97,16 +96,16 @@
             {{-- Corporate Events --}}
             <div class="cursor-pointer group">
                 <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                    <img src="{{ asset('storage/content/event01.png') }}" alt="Corporate Events" 
+                    <img src="{{ asset('storage/content/event01.png') }}" alt="{{ __('portfolio.services.corporate.title') }}" 
                          class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute text-white bottom-6 left-6 right-6">
-                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">Events Organizer</h3>
-                            <p class="mb-4 text-sm opacity-90">Event perusahaan yang profesional dan berkesan untuk kesuksesan bisnis</p>
+                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ __('portfolio.services.corporate.title') }}</h3>
+                            <p class="mb-4 text-sm opacity-90">{{ __('portfolio.services.corporate.description') }}</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Seminar</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Launching</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Meeting</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.corporate.tags.seminar') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.corporate.tags.launching') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.corporate.tags.meeting') }}</span>
                             </div>
                         </div>
                     </div>
@@ -115,15 +114,15 @@
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
                             <p class="text-2xl font-bold text-blue-600 edu-vic-wa-nt-hand">30+</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Perusahaan</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.corporate.stats.companies') }}</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-blue-600 edu-vic-wa-nt-hand">80+</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Event</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.corporate.stats.events') }}</p>
                         </div>
                         <div>
-                            <p class="text-2xl font-bold text-blue-600 edu-vic-wa-nt-hand">3 Thn</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Pengalaman</p>
+                            <p class="text-2xl font-bold text-blue-600 edu-vic-wa-nt-hand">3 {{ __('portfolio.services.corporate.stats.experience_years') }}</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.corporate.stats.experience') }}</p>
                         </div>
                     </div>
                 </div>
@@ -132,16 +131,16 @@
             {{-- Decoration Services --}}
             <div class="cursor-pointer group">
                 <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                    <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Decoration Services" 
+                    <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="{{ __('portfolio.services.decoration.title') }}" 
                          class="object-cover w-full h-64 transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/30 to-transparent">
                         <div class="absolute text-white bottom-6 left-6 right-6">
-                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">Event Decoration</h3>
-                            <p class="mb-4 text-sm opacity-90">Dekorasi menawan yang menghadirkan suasana magis di setiap acara</p>
+                            <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ __('portfolio.services.decoration.title') }}</h3>
+                            <p class="mb-4 text-sm opacity-90">{{ __('portfolio.services.decoration.description') }}</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Tema</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Custom</span>
-                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">Modern</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.decoration.tags.theme') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.decoration.tags.custom') }}</span>
+                                <span class="px-3 py-1 text-xs rounded-full bg-white/20 backdrop-blur-sm">{{ __('portfolio.services.decoration.tags.modern') }}</span>
                             </div>
                         </div>
                     </div>
@@ -150,15 +149,15 @@
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div>
                             <p class="text-2xl font-bold text-purple-600 edu-vic-wa-nt-hand">100+</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Dekorasi</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.decoration.stats.decorations') }}</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-purple-600 edu-vic-wa-nt-hand">25+</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Tema</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.decoration.stats.themes') }}</p>
                         </div>
                         <div>
                             <p class="text-2xl font-bold text-purple-600 edu-vic-wa-nt-hand">∞</p>
-                            <p class="text-xs text-gray-600 dark:text-gray-400">Kreativitas</p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">{{ __('portfolio.services.decoration.stats.creativity') }}</p>
                         </div>
                     </div>
                 </div>
@@ -169,87 +168,85 @@
         <div class="mb-16">
             <div class="mb-12 text-center">
                 <h2 class="mb-4 text-4xl font-bold text-gray-800 edu-vic-wa-nt-hand dark:text-white">
-                    Proyek Unggulan
+                    {{ __('portfolio.featured_projects.title') }}
                 </h2>
                 <p class="text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
-                    Beberapa karya terbaik yang telah kami wujudkan
+                    {{ __('portfolio.featured_projects.subtitle') }}
                 </p>
             </div>
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-                {{-- Featured Project 1 --}}
-                @if ($portofolios->count(0) > 0)
+                {{-- Dynamic Featured Projects --}}
+                @if ($portofolios->count() > 0)
                     @foreach ($portofolios as $portofolio)         
                     <div class="cursor-pointer group">
                         <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                            {{-- {{ dd($portofolio->galery[0]->foto) }} --}}
                             @if ($portofolio->galery->count() > 0)
-                                <img src="{{ $portofolio->thumbnail_url }}" alt="Featured Project" 
+                                <img src="{{ $portofolio->thumbnail_url }}" alt="{{ $portofolio['judul'] }}" 
                                 class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-105">
                             @else
-                                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Featured Project" 
+                                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="{{ $portofolio['judul'] }}" 
                                 class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-105">
                             @endif
                             <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:opacity-100">
                                 <div class="absolute text-white bottom-8 left-8 right-8">
                                     <div class="flex items-center gap-4 mb-4">
-                                        <span class="px-4 py-2 text-sm font-semibold bg-pink-600 rounded-full">{{ $portofolio['kategori'] }}</span>
+                                        <span class="px-4 py-2 text-sm font-semibold bg-pink-600 rounded-full">
+                                            @php
+                                                $categoryKey = strtolower($portofolio['kategori']);
+                                                $categoryTranslation = __('portfolio.categories.' . $categoryKey);
+                                            @endphp
+                                            {{ $categoryTranslation !== 'portfolio.categories.' . $categoryKey ? $categoryTranslation : $portofolio['kategori'] }}
+                                        </span>
                                         <span class="text-sm opacity-75">{{ $portofolio['tanggal_event'] }}</span>
                                     </div>
                                     <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ $portofolio['judul'] }}</h3>
-                                    <p class="mb-4 text-sm opacity-90">{{ $portofolio['deskripsi'] }}</p>
-                                    {{-- <div class="flex gap-2">
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Full Planning</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Venue</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Catering</span>
-                                    </div> --}}
+                                    <p class="mb-4 text-sm opacity-90">{{ Str::limit($portofolio['deskripsi'], 120) }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-           
                     @endforeach
-                    
-                    @else
-                    {{-- Featured Project 2 --}}
+                @else
+                    {{-- Default Projects when no data --}}
                     <div class="cursor-pointer group">
                         <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                            <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Featured Project" 
+                            <img src="{{ asset('storage/content/decoration.jpg') }}" alt="{{ __('portfolio.default_projects.corporate_gala.title') }}" 
                                 class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-105">
                             <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:opacity-100">
                                 <div class="absolute text-white bottom-8 left-8 right-8">
                                     <div class="flex items-center gap-4 mb-4">
-                                        <span class="px-4 py-2 text-sm font-semibold bg-blue-600 rounded-full">Corporate</span>
-                                        <span class="text-sm opacity-75">November 2023</span>
+                                        <span class="px-4 py-2 text-sm font-semibold bg-blue-600 rounded-full">{{ __('portfolio.categories.corporate') }}</span>
+                                        <span class="text-sm opacity-75">{{ __('portfolio.default_projects.corporate_gala.date') }}</span>
                                     </div>
-                                    <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">PT Borneo Annual Gala</h3>
-                                    <p class="mb-4 text-sm opacity-90">Gala dinner tahunan perusahaan dengan tema sustainability dan inovasi untuk 300 peserta</p>
+                                    <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ __('portfolio.default_projects.corporate_gala.title') }}</h3>
+                                    <p class="mb-4 text-sm opacity-90">{{ __('portfolio.default_projects.corporate_gala.description') }}</p>
                                     <div class="flex gap-2">
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Event Management</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Entertainment</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Branding</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.event_management') }}</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.entertainment') }}</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.branding') }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {{-- Featured Project 2 --}}
+                    {{-- Duplicate for demonstration --}}
                     <div class="cursor-pointer group">
                         <div class="relative overflow-hidden shadow-xl rounded-2xl">
-                            <img src="{{ asset('storage/content/decoration.jpg') }}" alt="Featured Project" 
+                            <img src="{{ asset('storage/content/decoration.jpg') }}" alt="{{ __('portfolio.default_projects.corporate_gala.title') }}" 
                                 class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-105">
                             <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:opacity-100">
                                 <div class="absolute text-white bottom-8 left-8 right-8">
                                     <div class="flex items-center gap-4 mb-4">
-                                        <span class="px-4 py-2 text-sm font-semibold bg-blue-600 rounded-full">Corporate</span>
-                                        <span class="text-sm opacity-75">November 2023</span>
+                                        <span class="px-4 py-2 text-sm font-semibold bg-blue-600 rounded-full">{{ __('portfolio.categories.corporate') }}</span>
+                                        <span class="text-sm opacity-75">{{ __('portfolio.default_projects.corporate_gala.date') }}</span>
                                     </div>
-                                    <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">PT Borneo Annual Gala</h3>
-                                    <p class="mb-4 text-sm opacity-90">Gala dinner tahunan perusahaan dengan tema sustainability dan inovasi untuk 300 peserta</p>
+                                    <h3 class="mb-2 text-2xl font-bold edu-vic-wa-nt-hand">{{ __('portfolio.default_projects.corporate_gala.title') }}</h3>
+                                    <p class="mb-4 text-sm opacity-90">{{ __('portfolio.default_projects.corporate_gala.description') }}</p>
                                     <div class="flex gap-2">
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Event Management</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Entertainment</span>
-                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">Branding</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.event_management') }}</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.entertainment') }}</span>
+                                        <span class="px-3 py-1 text-xs rounded-full bg-white/20">{{ __('portfolio.default_projects.corporate_gala.tags.branding') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -290,6 +287,30 @@
         .timeline-line {
             display: none;
         }
+    }
+
+    /* Language switcher styles */
+    .language-switcher .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .language-switcher .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 1000;
+        min-width: 150px;
+        margin-top: 0.25rem;
+    }
+    
+    .language-switcher .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    
+    .language-switcher .dropdown-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.1);
     }
 </style>
 @endpush
@@ -412,5 +433,16 @@
                 step.style.transform = 'scale(1)';
             }, index * 200);
         });
+
+        // Language switcher functionality
+        document.addEventListener('click', function(e) {
+            const dropdown = document.querySelector('.language-switcher .dropdown-menu');
+            const toggle = document.querySelector('.language-switcher .dropdown-toggle');
+            
+            if (toggle && !toggle.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
     });
 </script>
+@endpush

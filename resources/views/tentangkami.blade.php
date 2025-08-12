@@ -52,10 +52,10 @@
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
-                    Tentang 3Rasa
+                    {{ __('app.tentang_page.hero.title') }}
                 </h1>
                 <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                    Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi
+                   {{ __('app.tentang_page.hero.subtitle') }}
                 </p>
             </div>
         </div>
@@ -72,11 +72,11 @@
                          class="object-contain w-32 h-32 transition-transform duration-300 md:w-40 md:h-40 drop-shadow-lg hover:scale-105">
                 </div>
                 <h1 class="mb-4 text-4xl font-semibold dark:text-white md:text-6xl edu-vic-wa-nt-hand">
-                    3Rasa Event Organizer
+                    {{ __('app.tentang_page.sub_hero.title') }}
                 </h1>
                 <div class="w-24 h-1 mx-auto mb-6 bg-gradient-to-r from-primary to-red-600"></div>
                 <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-600 md:text-xl dark:text-gray-300 pt-serif-regular-italic">
-                    "Menciptakan Momen Berharga dengan Tiga Rasa: Cinta, Bangga, dan Bahagia"
+                    {{ __('app.tentang_page.sub_hero.subtitle') }}
                 </p>
             </div>
 
@@ -84,24 +84,19 @@
             <div data-aos="fade-up" class="grid items-center gap-12 md:grid-cols-2">
                 <div>
                     <h2 class="mb-6 text-3xl font-semibold text-black md:text-4xl dark:text-white edu-vic-wa-nt-hand">
-                        Tentang 3Rasa
+                        {{ __('app.tentang_page.tentang.title') }}
                     </h2>
                     <div class="space-y-4 text-gray-700 dark:text-gray-300 pt-serif-regular">
                         <p class="text-lg leading-relaxed">
-                            <strong class="text-primary">3Rasa Event Organizer</strong> adalah perusahaan jasa wedding organizer dan event organizer 
-                            terpercaya yang berlokasi di <strong>Tarakan, Kalimantan Utara</strong>. Sejak didirikan pada tahun 2018, 
-                            kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.
+                            <strong class="text-primary">{{ __('app.tentang_page.tentang.description.p1.bold1') }}</strong> {{ __('app.tentang_page.tentang.description.p1.isi1') }} <strong>{{ __('app.tentang_page.tentang.description.p1.bold2') }}</strong>. {{ __('app.tentang_page.tentang.description.p1.isi2') }}
                         </p>
                         <p class="text-lg leading-relaxed">
-                            Dengan pengalaman lebih dari <strong class="text-primary">7 tahun</strong> dan telah menyelenggarakan 
-                            <strong class="text-primary">100+ acara pernikahan</strong>, kami memahami betul bahwa setiap momen 
-                            pernikahan adalah unik dan berharga. Tim profesional kami yang berpengalaman siap membantu Anda 
-                            menciptakan hari bahagia yang tak terlupakan.
+                            {{ __('app.tentang_page.tentang.description.p2.isi') }}  <strong class="text-primary"> {{ __('app.tentang_page.tentang.description.p2.bold1') }} </strong> {{ __('app.tentang_page.tentang.description.p2.isi1') }} 
+                            <strong class="text-primary">{{ __('app.tentang_page.tentang.description.p2.bold2') }}</strong>, {{ __('app.tentang_page.tentang.description.p2.isi2') }}
                         </p>
                         <p class="text-lg leading-relaxed">
-                            Kami menyediakan paket wedding organizer lengkap yang meliputi <strong>dekorasi</strong>, 
-                            <strong>dokumentasi</strong>, <strong>MC profesional</strong>, <strong>sound system</strong>, 
-                            dan berbagai layanan pendukung lainnya untuk memastikan acara Anda berjalan sempurna.
+                            {{ __('app.tentang_page.tentang.description.p3.isi') }} <strong>{{ __('app.tentang_page.tentang.description.p3.bold1') }}</strong>
+                            {{ __('app.tentang_page.tentang.description.p3.isi1') }}
                         </p>
                     </div>
                 </div>
@@ -127,10 +122,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
             </div>
-            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Visi Kami</h3>
+            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">{{ __('app.tentang_page.visimisi.visi.title') }}</h3>
             <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                Menjadi wedding organizer terdepan di Kalimantan Utara yang dikenal dengan pelayanan berkualitas tinggi, 
-                kreativitas tanpa batas, dan dedikasi penuh dalam mewujudkan setiap impian pernikahan klien kami.
+               {{ __('app.tentang_page.visimisi.visi.description') }}
             </p>
         </div>
         
@@ -140,11 +134,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
             </div>
-            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white">Misi Kami</h3>
+            <h3 class="mb-4 text-3xl text-black edu-vic-wa-nt-hand dark:text-white"> {{ __('app.tentang_page.visimisi.misi.title') }}</h3>
             <p class="leading-relaxed text-gray-700 dark:text-gray-300 pt-serif-regular">
-                Memberikan layanan wedding organizer yang profesional, inovatif, dan personal untuk setiap klien. 
-                Kami berkomitmen menciptakan pengalaman pernikahan yang tak terlupakan dengan sentuhan tradisi 
-                dan kemewahan modern.
+                 {{ __('app.tentang_page.visimisi.misi.description') }}
             </p>
         </div>
     </div>
@@ -157,9 +149,9 @@
         {{-- Our Values --}}
         <div data-aos="fade-up"  class="mb-20">
             <div class="mb-12 text-center">
-                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">Nilai-Nilai Kami</h2>
+                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">{{ __('app.tentang_page.nilai.head.title') }}</h2>
                 <p class="max-w-3xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
-                    Tiga pilar yang menjadi fondasi dalam setiap layanan yang kami berikan
+                    {{ __('app.tentang_page.nilai.head.subtitle') }}
                 </p>
             </div>
             
@@ -170,9 +162,9 @@
                             <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
                         </svg>
                     </div>
-                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Cinta</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">{{ __('app.tentang_page.nilai.card.card1.title') }}</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                        Setiap detail dikerjakan dengan cinta dan perhatian penuh untuk menciptakan momen yang sempurna
+                        {{ __('app.tentang_page.nilai.card.card1.description') }}
                     </p>
                 </div>
                 
@@ -182,9 +174,9 @@
                             <path d="M5,16L3,14L5,12L6.5,13.5L11,9L12.5,10.5L6.5,16.5L5,16M19,7H22V9H19V12H17V9H14V7H17V4H19V7M17,17V15H15V17H17M13,17V15H11V17H13M9,17V15H7V17H9Z" />
                         </svg>
                     </div>
-                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Bangga</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">{{ __('app.tentang_page.nilai.card.card2.title') }}</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                        Bangga menjadi bagian dari momen bahagia Anda dan dipercaya menghadirkan yang terbaik
+                        {{ __('app.tentang_page.nilai.card.card2.description') }}
                     </p>
                 </div>
                 
@@ -194,9 +186,9 @@
                             <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
                         </svg>
                     </div>
-                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Rasa Bahagia</h3>
+                    <h3 class="mb-3 text-2xl text-black edu-vic-wa-nt-hand-500 dark:text-white">{{ __('app.tentang_page.nilai.card.card3.title') }}</h3>
                     <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                        Kebahagiaan Anda adalah kebahagiaan kami, senyum Anda adalah reward terbesar bagi kami
+                        {{ __('app.tentang_page.nilai.card.card3.description') }}
                     </p>
                 </div>
             </div>
@@ -206,9 +198,9 @@
         {{-- Why Choose Us --}}
         <div data-aos="fade-up" class="pb-20">
             <div class="mb-12 text-center">
-                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">Mengapa Memilih 3Rasa?</h2>
+                <h2 class="mb-4 text-5xl text-black edu-vic-wa-nt-hand dark:text-white">{{ __('app.tentang_page.mengapa.head.title') }}</h2>
                 <p class="max-w-3xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
-                    Komitmen kami untuk memberikan yang terbaik dalam setiap detail pernikahan Anda
+                    {{ __('app.tentang_page.mengapa.head.subtitle') }}
                 </p>
             </div>
             
@@ -220,23 +212,9 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Pengalaman Terpercaya</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">{{ __('app.tentang_page.mengapa.card.card1.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                            Lebih dari 7 tahun melayani pasangan di Kalimantan Utara dengan track record yang sempurna.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
-                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Personal Touch</h3>
-                        <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                            Setiap pernikahan adalah unik. Kami memberikan sentuhan personal yang sesuai dengan kepribadian Anda.
+                            {{ __('app.tentang_page.mengapa.card.card1.description') }}
                         </p>
                     </div>
                 </div>
@@ -248,9 +226,24 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Tim Profesional</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">{{ __('app.tentang_page.mengapa.card.card2.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                            Didukung oleh tim profesional yang berpengalaman dan passionate di bidangnya masing-masing.
+                            {{ __('app.tentang_page.mengapa.card.card2.description') }}
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-6 p-6 transition-all duration-300 bg-white shadow-lg dark:bg-gray-700 rounded-2xl hover:shadow-xl">
+                    
+                    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 bg-primary rounded-xl">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">{{ __('app.tentang_page.mengapa.card.card3.title') }}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
+                            {{ __('app.tentang_page.mengapa.card.card3.description') }}
                         </p>
                     </div>
                 </div>
@@ -262,9 +255,9 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">Harga Transparan</h3>
+                        <h3 class="mb-2 text-xl text-black poppins-medium dark:text-white">{{ __('app.tentang_page.mengapa.card.card4.title') }}</h3>
                         <p class="text-gray-600 dark:text-gray-400 pt-serif-regular">
-                            Tidak ada biaya tersembunyi. Semua detail biaya akan dijelaskan dengan jelas sejak awal.
+                            {{ __('app.tentang_page.mengapa.card.card4.description') }}
                         </p>
                     </div>
                 </div>
