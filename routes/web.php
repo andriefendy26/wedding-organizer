@@ -15,6 +15,7 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\PublicLetterController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\LanguageController;
 use App\Models\Artikel;
 use App\Models\Portofolio;
 use App\Models\Testimoni;
@@ -30,6 +31,15 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Language routes
+Route::get('/language/{locale}', [LanguageController::class, 'changeLanguage'])->name('language.change');
+Route::get('/api/language/current', [LanguageController::class, 'getCurrentLanguage'])->name('language.current');
+
+// Demo route for multilanguage
+Route::get('/multilanguage-demo', function () {
+    return view('multilanguage-demo');
+})->name('multilanguage.demo');
 
 Route::get('/', [TestimoniController::class, 'index'])->name('home');
 

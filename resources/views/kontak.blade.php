@@ -38,10 +38,10 @@
         <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
             <div>
                 <h1 data-aos="zoom-in-down" class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
-                    Hubungi Kami
+                    {{ __('app.contact_page.hero.title') }}
                 </h1>
                 <p data-aos="zoom-in-up" class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                    Siap mewujudkan pernikahan impian Anda? Mari berkonsultasi dan rencanakan momen spesial bersama tim profesional kami
+                    {{ __('app.contact_page.hero.description') }}
                 </p>
             </div>
         </div>
@@ -55,10 +55,10 @@
             <div>
                 <div class="mb-8">
                     <h2 class="mb-4 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
-                        Get In Touch
+                        {{ __('app.contact_page.form.title') }}
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
-                        Ceritakan visi pernikahan impian Anda, dan biarkan kami membantu mewujudkannya menjadi kenyataan yang menakjubkan.
+                        {{ __('app.contact_page.form.description') }}
                     </p>
                 </div>
 
@@ -77,19 +77,19 @@
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Nama Lengkap *
+                                {{ __('app.contact_page.form.full_name') }}
                             </label>
                             <input 
                                 x-model="form.name"
                                 type="text" 
                                 required
                                 class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
-                                placeholder="Masukkan nama lengkap Anda"
+                                placeholder="{{ __('app.contact_page.form.full_name_placeholder') }}"
                             />
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Nomor WhatsApp *
+                                {{ __('app.contact_page.form.whatsapp') }}
                             </label>
                             <input 
                                 x-model="form.phone"
@@ -97,27 +97,27 @@
                                 type="tel" 
                                 required
                                 class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
-                                placeholder="contoh: 081234567890"
+                                placeholder="{{ __('app.contact_page.form.whatsapp_placeholder') }}"
                             />
                         </div>
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Email
+                            {{ __('app.contact_page.form.email') }}
                         </label>
                         <input 
                             x-model="form.email"
                             type="email" 
                             class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
-                            placeholder="nama@email.com"
+                            placeholder="{{ __('app.contact_page.form.email_placeholder') }}"
                         />
                     </div>
 
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Tanggal Acara *
+                                {{ __('app.contact_page.form.event_date') }}
                             </label>
                             <input 
                                 x-model="form.event_date"
@@ -130,93 +130,49 @@
                         </div>
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Estimasi Budget
+                                {{ __('app.contact_page.form.budget') }}
                             </label>
                             <select 
                                 x-model="form.budget"
                                 class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
                             >
-                                <option value="">Pilih range budget</option>
-                                <option value="10-25">10 - 25 Juta</option>
-                                <option value="25-50">25 - 50 Juta</option>
-                                <option value="50-100">50 - 100 Juta</option>
-                                <option value="100+">100+ Juta</option>
+                                <option value="">{{ __('app.contact_page.form.budget_placeholder') }}</option>
+                                @foreach(__('app.contact_page.form.budget_options') as $key => $value)
+                                <option value="{{ $key }}">{{ $value }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Jenis Layanan *
+                            {{ __('app.contact_page.form.service_type') }}
                         </label>
                         <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
+                            @foreach(__('app.contact_page.form.services') as $key => $value)
                             <label class="flex items-center gap-2 cursor-pointer">
                                 <input 
                                     type="checkbox" 
                                     x-model="form.services" 
-                                    value="wedding-organizer"
+                                    value="{{ $key }}"
                                     class="border-gray-300 rounded text-primary focus:ring-primary"
                                 />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Wedding Organizer</span>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">{{ $value }}</span>
                             </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    x-model="form.services" 
-                                    value="decoration"
-                                    class="border-gray-300 rounded text-primary focus:ring-primary"
-                                />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Dekorasi</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    x-model="form.services" 
-                                    value="catering"
-                                    class="border-gray-300 rounded text-primary focus:ring-primary"
-                                />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Catering</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    x-model="form.services" 
-                                    value="photography"
-                                    class="border-gray-300 rounded text-primary focus:ring-primary"
-                                />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Fotografi</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    x-model="form.services" 
-                                    value="sound-system"
-                                    class="border-gray-300 rounded text-primary focus:ring-primary"
-                                />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">Sound System</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input 
-                                    type="checkbox" 
-                                    x-model="form.services" 
-                                    value="mc"
-                                    class="border-gray-300 rounded text-primary focus:ring-primary"
-                                />
-                                <span class="text-sm text-gray-700 dark:text-gray-300">MC</span>
-                            </label>
+                            @endforeach
                         </div>
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Pesan & Detail Acara *
+                            {{ __('app.contact_page.form.message') }}
                         </label>
                         <textarea 
                             x-model="form.message"
                             rows="5" 
                             required
                             class="w-full px-4 py-3 text-black transition-colors bg-white border-2 border-gray-300 resize-none dark:border-gray-600 rounded-xl focus:border-primary focus:outline-none dark:bg-gray-700 dark:text-white poppins-regular"
-                            placeholder="Ceritakan konsep pernikahan impian Anda, jumlah tamu, lokasi yang diinginkan, dan detail lainnya..."
+                            placeholder="{{ __('app.contact_page.form.message_placeholder') }}"
                         ></textarea>
                     </div>
 
@@ -225,13 +181,13 @@
                         :disabled="loading"
                         class="w-full px-8 py-4 text-lg font-medium text-white transition-all duration-300 bg-primary rounded-xl hover:scale-105 edu-vic-wa-nt-hand disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        <span x-show="!loading">Kirim Pesan</span>
+                        <span x-show="!loading">{{ __('app.contact_page.form.submit') }}</span>
                         <span x-show="loading" class="flex items-center justify-center gap-2">
                             <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                 <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
-                            Mengirim...
+                            {{ __('app.contact_page.form.sending') }}
                         </span>
                     </button>
 
@@ -242,8 +198,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                             <div>
-                                <p class="font-medium">Konsultasi berhasil dikirim!</p>
-                                <p class="text-sm">Tim kami akan menghubungi Anda segera untuk membahas detail pernikahan impian Anda.</p>
+                                <p class="font-medium">{{ __('app.contact_page.form.success_title') }}</p>
+                                <p class="text-sm">{{ __('app.contact_page.form.success_message') }}</p>
                             </div>
                         </div>
                     </div>
@@ -255,7 +211,7 @@
                 {{-- Google Maps --}}
                 <div>
                     <h3 class="mb-4 text-2xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
-                        Lokasi Kami
+                        {{ __('app.contact_page.location.title') }}
                     </h3>
                     <div class="overflow-hidden bg-gray-100 shadow-lg dark:bg-gray-700 rounded-2xl">
                         <iframe 
@@ -274,30 +230,30 @@
                 {{-- Business Hours --}}
                 <div class="p-8 bg-gray-50 dark:bg-gray-700 rounded-2xl">
                     <h3 class="mb-6 text-2xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
-                        Jam Operasional
+                        {{ __('app.contact_page.business_hours.title') }}
                     </h3>
                     <div class="space-y-4 pt-serif-regular">
                         <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                            <span class="text-gray-700 dark:text-gray-300">Senin - Jumat</span>
-                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
+                            <span class="text-gray-700 dark:text-gray-300">{{ __('app.contact_page.business_hours.monday_friday') }}</span>
+                            <span class="font-medium text-black dark:text-white">{{ __('app.contact_page.business_hours.hours') }}</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                            <span class="text-gray-700 dark:text-gray-300">Sabtu</span>
-                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
+                            <span class="text-gray-700 dark:text-gray-300">{{ __('app.contact_page.business_hours.saturday') }}</span>
+                            <span class="font-medium text-black dark:text-white">{{ __('app.contact_page.business_hours.hours') }}</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-600">
-                            <span class="text-gray-700 dark:text-gray-300">Minggu</span>
-                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
+                            <span class="text-gray-700 dark:text-gray-300">{{ __('app.contact_page.business_hours.sunday') }}</span>
+                            <span class="font-medium text-black dark:text-white">{{ __('app.contact_page.business_hours.hours') }}</span>
                         </div>
                         <div class="flex items-center justify-between py-2">
-                            <span class="text-gray-700 dark:text-gray-300">Hari Libur Nasional</span>
-                            <span class="font-medium text-black dark:text-white">09.00 - 18.00</span>
+                            <span class="text-gray-700 dark:text-gray-300">{{ __('app.contact_page.business_hours.holidays') }}</span>
+                            <span class="font-medium text-black dark:text-white">{{ __('app.contact_page.business_hours.hours') }}</span>
                         </div>
                     </div>
                     
                     <div class="p-4 mt-6 border border-blue-200 bg-blue-50 dark:bg-blue-900/20 rounded-xl dark:border-blue-800">
                         <p class="text-sm text-blue-800 dark:text-blue-200">
-                            <strong>Catatan:</strong> Untuk konsultasi di luar jam operasional, hubungi WhatsApp kami. Kami siap melayani konsultasi darurat 24/7.
+                            <strong>{{ __('app.contact_page.business_hours.note_title') }}</strong> {{ __('app.contact_page.business_hours.note_message') }}
                         </p>
                     </div>
                 </div>
@@ -311,10 +267,10 @@
         <div class="container px-4 mx-auto sm:px-6 lg:px-8">
             <div data-aos="zoom-in-left" class="mb-12 text-center">
                 <h2 class="mb-4 text-4xl font-semibold text-black edu-vic-wa-nt-hand dark:text-white">
-                    Pertanyaan yang Sering Diajukan
+                    {{ __('app.contact_page.faq.title') }}
                 </h2>
                 <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 pt-serif-regular-italic">
-                    Temukan jawaban untuk pertanyaan umum seputar layanan wedding organizer kami
+                    {{ __('app.contact_page.faq.description') }}
                 </p>
             </div>
 
@@ -326,7 +282,7 @@
                         class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
                         <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
-                            Berapa lama waktu yang dibutuhkan untuk merencanakan pernikahan?
+                            {{ __('app.contact_page.faq.faq1.question') }}
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 1 }" 
@@ -338,7 +294,7 @@
                     </button>
                     <div x-show="openFaq === 1" x-transition class="px-6 pb-6">
                         <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                            Idealnya, perencanaan pernikahan dimulai 6-12 bulan sebelum hari H. Namun, kami juga bisa menangani pernikahan dengan waktu persiapan yang lebih singkat, bahkan hingga 1-2 bulan sebelumnya, tergantung ketersediaan vendor dan kompleksitas acara.
+                            {{ __('app.contact_page.faq.faq1.answer') }}
                         </p>
                     </div>
                 </div>
@@ -350,7 +306,7 @@
                         class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
                         <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
-                            Apakah ada paket wedding organizer yang bisa disesuaikan dengan budget?
+                            {{ __('app.contact_page.faq.faq2.question') }}
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 2 }" 
@@ -362,7 +318,7 @@
                     </button>
                     <div x-show="openFaq === 2" x-transition class="px-6 pb-6">
                         <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                            Tentu saja! Kami menyediakan berbagai paket mulai dari basic hingga premium. Setiap paket bisa dikustomisasi sesuai kebutuhan dan budget Anda. Tim kami akan membantu memaksimalkan budget yang ada untuk hasil terbaik.
+                            {{ __('app.contact_page.faq.faq2.answer') }}
                         </p>
                     </div>
                 </div>
@@ -374,7 +330,7 @@
                         class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
                         <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
-                            Bagaimana proses konsultasi dan perencanaan dengan tim 3Rasa?
+                            {{ __('app.contact_page.faq.faq3.question') }}
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 3 }" 
@@ -386,7 +342,7 @@
                     </button>
                     <div x-show="openFaq === 3" x-transition class="px-6 pb-6">
                         <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                            Proses dimulai dengan konsultasi gratis untuk memahami visi dan kebutuhan Anda. Setelah itu, kami akan menyusun proposal detail beserta timeline. Sepanjang proses, Anda akan mendapat update rutin dan bisa berkonsultasi kapan saja.
+                            {{ __('app.contact_page.faq.faq3.answer') }}
                         </p>
                     </div>
                 </div>
@@ -398,7 +354,7 @@
                         class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
                         <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
-                            Apakah 3Rasa melayani pernikahan adat tradisional?
+                            {{ __('app.contact_page.faq.faq4.question') }}
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 4 }" 
@@ -410,7 +366,7 @@
                     </button>
                     <div x-show="openFaq === 4" x-transition class="px-6 pb-6">
                         <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                            Ya, kami sangat berpengalaman dalam menyelenggarakan pernikahan adat, khususnya adat Kalimantan dan tradisi lokal lainnya. Tim kami memahami protokol adat dan bekerjasama dengan tetua adat untuk memastikan setiap ritual berjalan dengan sempurna.
+                            {{ __('app.contact_page.faq.faq4.answer') }}
                         </p>
                     </div>
                 </div>
@@ -422,7 +378,7 @@
                         class="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 rounded-2xl"
                     >
                         <h3 class="pr-4 text-lg font-semibold text-black dark:text-white">
-                            Bagaimana jika ada perubahan mendadak pada hari pernikahan?
+                            {{ __('app.contact_page.faq.faq5.question') }}
                         </h3>
                         <svg 
                             :class="{ 'rotate-45': openFaq === 5 }" 
@@ -434,7 +390,7 @@
                     </button>
                     <div x-show="openFaq === 5" x-transition class="px-6 pb-6">
                         <p class="text-gray-600 dark:text-gray-300 pt-serif-regular">
-                            Tim 3Rasa selalu memiliki contingency plan untuk berbagai situasi darurat. Kami menyediakan koordinator lapangan yang siap menangani perubahan mendadak dan memastikan acara tetap berjalan lancar tanpa mengurangi kualitas.
+                            {{ __('app.contact_page.faq.faq5.answer') }}
                         </p>
                     </div>
                 </div>
@@ -467,14 +423,14 @@
                 this.errorMessage = '';
                 
                 try {
-                    // Validasi client-side
-                    if (!this.form.name || !this.form.phone || !this.form.event_date || !this.form.message) {
-                        throw new Error('Mohon lengkapi semua field yang wajib diisi');
-                    }
-                    
-                    if (this.form.services.length === 0) {
-                        throw new Error('Pilih minimal satu jenis layanan');
-                    }
+                                    // Validasi client-side
+                if (!this.form.name || !this.form.phone || !this.form.event_date || !this.form.message) {
+                    throw new Error('{{ __("app.contact_page.form.error_required") }}');
+                }
+                
+                if (this.form.services.length === 0) {
+                    throw new Error('{{ __("app.contact_page.form.error_service") }}');
+                }
 
                     // Kirim data ke Laravel controller
                     const response = await fetch('/konsultasi', {
@@ -495,7 +451,7 @@
                             const errorMessages = Object.values(result.errors).flat();
                             throw new Error(errorMessages.join(', '));
                         } else {
-                            throw new Error(result.message || 'Terjadi kesalahan pada server');
+                            throw new Error(result.message || '{{ __("app.contact_page.form.error_server") }}');
                         }
                     }
 
@@ -521,7 +477,7 @@
                         //     window.open(`https://wa.me/6281234567890?text=${whatsappMessage}`, '_blank');
                         // }, 2000);
                     } else {
-                        throw new Error(result.message || 'Gagal mengirim konsultasi');
+                        throw new Error(result.message || '{{ __("app.contact_page.form.error_validation") }}');
                     }
                     
                 } catch (error) {
@@ -570,7 +526,7 @@
                 today.setHours(0, 0, 0, 0);
                 
                 if (selectedDate <= today) {
-                    alert('Tanggal acara harus setelah hari ini');
+                    alert('{{ __("app.contact_page.form.event_date") }} harus setelah hari ini');
                     this.form.event_date = '';
                 }
             }

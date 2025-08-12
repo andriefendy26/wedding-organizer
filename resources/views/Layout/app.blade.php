@@ -2,15 +2,15 @@
     $phoneNumber = config('app.phone');
     $message = <<<TEXT
     ==============================
-    *HALO, SAYA INGIN KONSULTASI*
+    *{{ __('app.whatsapp_message') }}*
     ==============================
 
-    Halo *3Rasa Production* 👋
+    {{ __('app.whatsapp_greeting') }}
 
-    Saya tertarik untuk berkonsultasi mengenai layanan yang tersedia.
+    {{ __('app.whatsapp_interest') }}
 
-    🙏 Terima kasih atas waktunya.
-    📩 Pesan ini dikirim via: https://3rasaproduction.com
+    {{ __('app.whatsapp_thanks') }}
+    {{ __('app.whatsapp_sent_via') }}
 TEXT;
 
     $encodedMessage = urlencode($message);
@@ -18,7 +18,7 @@ TEXT;
 @endphp
 
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: false }" x-init="
+<html lang="{{ app()->getLocale() }}" x-data="{ darkMode: false }" x-init="
     darkMode = localStorage.getItem('darkMode') === 'true';
     $watch('darkMode', val => {
         localStorage.setItem('darkMode', val);
@@ -363,7 +363,7 @@ TEXT;
     }
 </style>
 </head>
-<body class="font-sans transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
+<body class="font-sans bg-gray-50 transition-colors duration-300 dark:bg-gray-900">
     {{-- Shooting Stars Background --}}
     <div class="shooting-stars">
         <div class="shooting-star"></div>
@@ -378,7 +378,7 @@ TEXT;
     <!-- Custom Alert HTML (tambahkan setelah tag body) -->
     @if(session('success'))
     <div id="successAlert" class="p-4 text-white shadow-2xl custom-alert success">
-        <div class="flex items-center justify-between">
+        <div class="flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="flex-shrink-0">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -386,7 +386,7 @@ TEXT;
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-semibold">Berhasil!</h4>
+                    <h4 class="font-semibold">{{ __('app.success') }}</h4>
                     <p class="text-sm opacity-90">{{ session('success') }}</p>
                 </div>
             </div>
@@ -401,7 +401,7 @@ TEXT;
 
     @if(session('error'))
     <div id="errorAlert" class="p-4 text-white shadow-2xl custom-alert error">
-        <div class="flex items-center justify-between">
+        <div class="flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="flex-shrink-0">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -409,7 +409,7 @@ TEXT;
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-semibold">Gagal!</h4>
+                    <h4 class="font-semibold">{{ __('app.error') }}</h4>
                     <p class="text-sm opacity-90">{{ session('error') }}</p>
                 </div>
             </div>
@@ -424,7 +424,7 @@ TEXT;
 
     @if($errors->any())
     <div id="validationAlert" class="p-4 text-white shadow-2xl custom-alert error">
-        <div class="flex items-start justify-between">
+        <div class="flex justify-between items-start">
             <div class="flex items-start space-x-3">
                 <div class="flex-shrink-0 mt-1">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -432,7 +432,7 @@ TEXT;
                     </svg>
                 </div>
                 <div>
-                    <h4 class="font-semibold">Validation Error!</h4>
+                    <h4 class="font-semibold">{{ __('app.validation_error') }}</h4>
                     <ul class="mt-1 space-y-1 text-sm opacity-90">
                         @foreach($errors->all() as $error)
                             <li>• {{ $error }}</li>
@@ -453,10 +453,10 @@ TEXT;
     <header x-data="{ mobileMenuOpen : false }" class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900/95 dark:border-gray-700">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <!-- Main Header Content -->
-            <div class="flex items-center justify-between">
+            <div class="flex justify-between items-center">
                 <!-- Logo/Brand -->
                 <div class="flex items-center space-x-2">
-                    <div class="flex items-center justify-center w-24 h-24 rounded-xl">
+                    <div class="flex justify-center items-center w-24 h-24 rounded-xl">
                         <img src={{ asset('storage/content/Logo.png') }} alt="Logo 3Rasa">
                     </div>
                     {{-- <div class="hidden sm:block">
@@ -468,75 +468,75 @@ TEXT;
                     {{-- </div> --}}
                     <div class="hidden sm:block">
                         <span class="text-xl font-bold text-gray-900 edu-vic-wa-nt-hand dark:text-white">
-                             Event Organizer</span>
+                             {{ __('app.event_organizer') }}</span>
                         
                         {{-- <p class="text-sm text-gray-600 dark:text-gray-400">&</p> --}}
-                        <p class="text-sm text-gray-600 dark:text-gray-400">& Wedding Organizer</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">& {{ __('app.wedding_organizer') }}</p>
                     </div>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="items-center hidden space-x-8 lg:flex">
+                <nav class="hidden items-center space-x-8 lg:flex">
                     <a href="/" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                        Home
+                        {{ __('app.home') }}
                     </a>
                     
                     <!-- Pages Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center space-x-1 font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                            <span>Pages</span>
+                            <span>{{ __('app.pages') }}</span>
                             <i class="text-xs transition-transform fas fa-chevron-down group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute left-0 invisible mt-2 opacity-0 top-full group-hover:opacity-100 group-hover:visible dropdown-transition">
-                            <div class="py-2 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700 min-w-48 backdrop-blur-md">
+                        <div class="absolute left-0 top-full invisible mt-2 opacity-0 group-hover:opacity-100 group-hover:visible dropdown-transition">
+                            <div class="py-2 bg-white rounded-lg border border-gray-200 shadow-xl backdrop-blur-md dark:bg-gray-800 dark:border-gray-700 min-w-48">
                                 <a href="/tentang" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
-                                    <i class="w-4 mr-3 fas fa-info-circle"></i>
-                                    Tentang Kami
+                                    <i class="mr-3 w-4 fas fa-info-circle"></i>
+                                    {{ __('app.about_us') }}
                                 </a>
                                 <a href="/layanan" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
-                                    <i class="w-4 mr-3 fas fa-concierge-bell"></i>
-                                    Layanan
+                                    <i class="mr-3 w-4 fas fa-concierge-bell"></i>
+                                    {{-- {{ __('app.services') }} --}}
                                 </a>
                                 <a href="/galery" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
-                                    <i class="w-4 mr-3 fas fa-images"></i>
-                                    Galery
+                                    <i class="mr-3 w-4 fas fa-images"></i>
+                                    {{ __('app.gallery') }}
                                 </a>
                                 <a href="/portofolio" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
-                                    <i class="w-4 mr-3 fas fa-images"></i>
-                                    Portofolio
+                                    <i class="mr-3 w-4 fas fa-images"></i>
+                                    {{ __('app.portfolio') }}
                                 </a>
                                 <hr class="my-1 border-gray-200 dark:border-gray-600">
                                 <a href="/team" class="flex items-center px-4 py-2 text-sm text-gray-700 transition-colors dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600">
-                                    <i class="w-4 mr-3 fas fa-users"></i>
-                                    Tim Kami
+                                    <i class="mr-3 w-4 fas fa-users"></i>
+                                    {{ __('app.our_team') }}
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <a href="/artikel" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                        Artikel
+                        {{ __('app.articles') }}
                     </a>
                     <a href="/faq" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                        FAQ
+                        {{ __('app.faq') }}
                     </a>
                     <a href="/kalender" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                        Kalender
+                        {{ __('app.calendar') }}
                     </a>
                     <a href="/kontak" class="font-medium text-gray-700 transition-colors nav-link dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400">
-                        Kontak
+                        {{ __('app.contact') }}
                     </a>
                 </nav>
 
                 <!-- Right Side Controls -->
                 <div class="flex items-center space-x-4">
                     <!-- Language Switcher -->
-                    {{-- <div class="relative hidden sm:block" x-data="languageSwitcher()">
+                    <div class="hidden relative sm:block" x-data="languageSwitcher()">
                         <button 
                             @click="open = !open"
                             @click.away="open = false"
-                            class="flex items-center px-3 py-2 space-x-2 text-sm font-medium text-gray-700 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            class="flex items-center px-3 py-2 space-x-2 text-sm font-medium text-gray-700 rounded-lg transition-colors duration-200 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                         >
                             <img :src="currentLanguage.flag" :alt="currentLanguage.name" class="w-5 h-4 rounded-sm">
                             <span x-text="currentLanguage.code.toUpperCase()"></span>
@@ -551,23 +551,23 @@ TEXT;
                             x-transition:leave="transition ease-in duration-150"
                             x-transition:leave-start="opacity-100 scale-100"
                             x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 z-50 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700"
+                            class="absolute right-0 z-50 mt-2 w-48 bg-white rounded-lg border border-gray-200 shadow-xl dark:bg-gray-800 dark:border-gray-700"
                         >
                             <div class="py-1">
                                 <template x-for="language in languages" :key="language.code">
-                                    <button
-                                        @click="setLanguage(language)"
-                                        class="flex items-center w-full px-4 py-2 text-sm text-gray-700 transition-colors duration-150 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600"
+                                    <a
+                                        :href="'/language/' + language.code"
+                                        class="flex items-center px-4 py-2 w-full text-sm text-gray-700 transition-colors duration-150 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-red-600"
                                         :class="currentLanguage.code === language.code ? 'bg-red-50 dark:bg-red-900/20 text-red-600' : ''"
                                     >
-                                        <img :src="language.flag" :alt="language.name" class="w-5 h-4 mr-3 rounded-sm">
+                                        <img :src="language.flag" :alt="language.name" class="mr-3 w-5 h-4 rounded-sm">
                                         <span x-text="language.name"></span>
                                         <i x-show="currentLanguage.code === language.code" class="ml-auto text-red-600 fas fa-check"></i>
-                                    </button>
+                                    </a>
                                 </template>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                     
                     <!-- Dark Mode Toggle -->
                     <div class="flex items-center space-x-2">
@@ -577,7 +577,7 @@ TEXT;
                         
                         <button 
                             @click="darkMode = !darkMode"
-                            class="relative inline-flex items-center h-6 rounded-full w-11 toggle-bg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                            class="inline-flex relative items-center w-11 h-6 rounded-full toggle-bg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
                             :class="darkMode ? 'bg-red-600' : 'bg-gray-300'"
                             type="button"
                             role="switch"
@@ -585,7 +585,7 @@ TEXT;
                         >
                             <span class="sr-only">Toggle dark mode</span>
                             <span 
-                                class="inline-block w-4 h-4 transition duration-300 ease-in-out transform bg-white rounded-full shadow-lg toggle-dot"
+                                class="inline-block w-4 h-4 bg-white rounded-full shadow-lg transition duration-300 ease-in-out transform toggle-dot"
                                 :class="darkMode ? 'translate-x-6' : 'translate-x-0.5'"
                             >
                             </span>
@@ -599,19 +599,19 @@ TEXT;
                     <!-- Mobile Menu Button -->
                     <button 
                         @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="relative z-50 flex flex-col items-center justify-center w-8 h-8 lg:hidden focus:outline-none"
+                        class="flex relative z-50 flex-col justify-center items-center w-8 h-8 lg:hidden focus:outline-none"
                         :class="mobileMenuOpen ? 'space-y-0' : 'space-y-1'"
                     >
                         <span 
-                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 dark:bg-gray-300"
                             :class="mobileMenuOpen ? 'rotate-45 translate-y-1' : ''"
                         ></span>
                         <span 
-                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 dark:bg-gray-300"
                             :class="mobileMenuOpen ? 'opacity-0' : ''"
                         ></span>
                         <span 
-                            class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-all duration-300"
+                            class="block w-6 h-0.5 bg-gray-700 transition-all duration-300 dark:bg-gray-300"
                             :class="mobileMenuOpen ? '-rotate-45 ' : ''"
                         ></span>
                     </button>
@@ -632,20 +632,20 @@ TEXT;
                 <nav class="flex flex-col pt-4 pb-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
                     <a href="/" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-home"></i>
-                        Home
+                       class="block px-4 py-2 text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="mr-3 w-5 fas fa-home"></i>
+                        {{ __('app.home') }}
                     </a>
                     
                     <!-- Mobile Pages Section -->
                     <div x-data="{ pagesOpen: false }">
                         <button 
                             @click="pagesOpen = !pagesOpen"
-                            class="flex items-center justify-between w-full px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            class="flex justify-between items-center px-4 py-2 w-full text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                         >
                             <div class="flex items-center">
-                                <i class="w-5 mr-3 fas fa-file-alt"></i>
-                                Pages
+                                <i class="mr-3 w-5 fas fa-file-alt"></i>
+                                {{ __('app.pages') }}
                             </div>
                             <i class="transition-transform fas fa-chevron-down" :class="pagesOpen ? 'rotate-180' : ''"></i>
                         </button>
@@ -660,60 +660,60 @@ TEXT;
                              class="mt-2 ml-4 space-y-1 origin-top">
                             <a href="/tentang" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-info-circle"></i>
-                                Tentang Kami
+                               class="block px-4 py-2 text-sm text-gray-600 rounded-lg transition-colors dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="mr-3 w-4 fas fa-info-circle"></i>
+                                {{ __('app.about_us') }}
                             </a>
                             <a href="/layanan" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-concierge-bell"></i>
-                                Layanan
+                               class="block px-4 py-2 text-sm text-gray-600 rounded-lg transition-colors dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="mr-3 w-4 fas fa-concierge-bell"></i>
+                                {{-- {{ __('app.services') }} --}}
                             </a>
                             <a href="/portofolio" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-images"></i>
-                                Portofolio
+                               class="block px-4 py-2 text-sm text-gray-600 rounded-lg transition-colors dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="mr-3 w-4 fas fa-images"></i>
+                                {{ __('app.portfolio') }}
                             </a>
                             <a href="/galery" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-images"></i>
-                                Galery
+                               class="block px-4 py-2 text-sm text-gray-600 rounded-lg transition-colors dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="mr-3 w-4 fas fa-images"></i>
+                                {{ __('app.gallery') }}
                             </a>
                             <a href="/team" 
                                @click="mobileMenuOpen = false"
-                               class="block px-4 py-2 text-sm text-gray-600 transition-colors rounded-lg dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <i class="w-4 mr-3 fas fa-users"></i>
-                                Tim Kami
+                               class="block px-4 py-2 text-sm text-gray-600 rounded-lg transition-colors dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <i class="mr-3 w-4 fas fa-users"></i>
+                                {{ __('app.our_team') }}
                             </a>
                         </div>
                     </div>
 
                     <a href="/artikel" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-newspaper"></i>
-                        Artikel
+                       class="block px-4 py-2 text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="mr-3 w-5 fas fa-newspaper"></i>
+                        {{ __('app.articles') }}
                     </a>
                     <a href="/faq" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-question-circle"></i>
-                        FAQ
+                       class="block px-4 py-2 text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="mr-3 w-5 fas fa-question-circle"></i>
+                        {{ __('app.faq') }}
                     </a>
                     <a href="/kalender" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-calendar-alt"></i>
-                        Kalender
+                       class="block px-4 py-2 text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="mr-3 w-5 fas fa-calendar-alt"></i>
+                        {{ __('app.calendar') }}
                     </a>
                     <a href="/kontak" 
                        @click="mobileMenuOpen = false"
-                       class="block px-4 py-2 text-gray-700 transition-colors rounded-lg dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                        <i class="w-5 mr-3 fas fa-envelope"></i>
-                        Kontak
+                       class="block px-4 py-2 text-gray-700 rounded-lg transition-colors dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="mr-3 w-5 fas fa-envelope"></i>
+                        {{ __('app.contact') }}
                     </a>
                 </nav>
             </div>
@@ -724,7 +724,7 @@ TEXT;
     @yield('content')
     
     <!-- Footer Section -->
-    <footer class="relative overflow-hidden text-white bg-gray-800">
+    <footer class="overflow-hidden relative text-white bg-gray-800">
         <!-- Background decoration -->
         <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-no-repeat bg-cover bg-center opacity-5"
             style="background: url({{ asset('storage/content/decoration01.jpeg') }}); background-size: cover; background-position: center; background-repeat: no-repeat;"
@@ -739,29 +739,29 @@ TEXT;
                     <div class="mb-6">
                         <h3 class="mb-4 text-4xl text-white edu-vic-wa-nt-hand-500">3Rasa</h3>
                         <p class="text-lg leading-relaxed text-gray-300 pt-serif-regular-italic">
-                            Wujudkan momen spesial Anda bersama kami. Dari pesta pernikahan yang elegan, event korporat profesional, hingga penyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.
+                            {{ __('app.realize_your_special_moments') }}
                         </p>
                     </div>
                     
                     <!-- Social Media -->
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/3rasa_production/" class="group">
-                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                            <div class="flex justify-center items-center w-12 h-12 rounded-full border-2 border-gray-600 transition-all duration-300 hover:border-primary hover:scale-110">
                                 <x-bi-instagram class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                         {{-- <a href="#" class="group">
-                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                            <div class="flex justify-center items-center w-12 h-12 rounded-full border-2 border-gray-600 transition-all duration-300 hover:border-primary hover:scale-110">
                                 <x-bi-telephone class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
                         <a href="#" class="group">
-                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                            <div class="flex justify-center items-center w-12 h-12 rounded-full border-2 border-gray-600 transition-all duration-300 hover:border-primary hover:scale-110">
                                 <x-bi-tiktok class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a> --}}
                         <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank" class="group">
-                            <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 border-2 border-gray-600 rounded-full hover:border-primary hover:scale-110">
+                            <div class="flex justify-center items-center w-12 h-12 rounded-full border-2 border-gray-600 transition-all duration-300 hover:border-primary hover:scale-110">
                                 <x-bi-whatsapp class="w-5 h-5 transition-colors duration-300 group-hover:text-primary" />
                             </div>
                         </a>
@@ -770,39 +770,39 @@ TEXT;
 
                 <!-- Services -->
                 <div>
-                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">Layanan Kami</h4>
+                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">{{ __('app.our_services') }}</h4>
                     <ul class="space-y-3 poppins-regular">
-                        <li><a href="/layananwedding" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Wedding Organizer</a></li>
+                        <li><a href="/layananwedding" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">{{ __('app.wedding_organizer_service') }}</a></li>
                         {{-- <li><a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dekorasi Pernikahan</a></li> --}}
-                        <li><a href="/layanandekorasi" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Event Organizer</a></li>
-                        <li><a href="/layanansewa" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Sewa Perlengkapan</a></li>
-                        <li><a href="/galery" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">Dokumentasi</a></li>
+                        <li><a href="/layanandekorasi" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">{{ __('app.event_organizer_service') }}</a></li>
+                        <li><a href="/layanansewa" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">{{ __('app.equipment_rental') }}</a></li>
+                        <li><a href="/galery" class="text-gray-300 transition-colors duration-300 hover:text-primary hover:tracking-wider">{{ __('app.documentation') }}</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">Kontak</h4>
+                    <h4 class="mb-6 text-xl text-white edu-vic-wa-nt-hand-500">{{ __('app.contact') }}</h4>
                     <div class="space-y-4 poppins-regular">
-                        <div class="flex items-start gap-3">
-                            <div class="flex items-center justify-center w-6 h-6 mt-1 rounded-full bg-primary">
+                        <div class="flex gap-3 items-start">
+                            <div class="flex justify-center items-center mt-1 w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-map-pin class="w-3 h-3 text-white" />
                             </div>
                             <div>
-                                <p class="text-sm text-gray-300">Jl. Padat Karya No.3, Kp. Enam, 77123</p>
-                                <p class="text-sm text-gray-300">Kec.Tarakan Timur, Tarakan, Kalimantan Utara</p>
+                                <p class="text-sm text-gray-300">{{ __('app.address_line1') }}</p>
+                                <p class="text-sm text-gray-300">{{ __('app.address_line2') }}</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-center gap-3">
-                            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
+                        <div class="flex gap-3 items-center">
+                            <div class="flex justify-center items-center w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-phone class="w-3 h-3 text-white" />
                             </div>
                             <p class="text-sm text-gray-300">+62 812-3456-7890</p>
                         </div>
                         
-                        <div class="flex items-center gap-3">
-                            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
+                        <div class="flex gap-3 items-center">
+                            <div class="flex justify-center items-center w-6 h-6 rounded-full bg-primary">
                                 <x-heroicon-o-envelope class="w-3 h-3 text-white" />
                             </div>
                             <p class="text-sm text-gray-300">3rasaproduction2012@gmail.com</p>
@@ -813,18 +813,18 @@ TEXT;
 
             <!-- Newsletter Section -->
             <div class="pt-8 mb-8 border-t border-gray-700">
-                <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+                <div class="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
                     <div>
-                        <h4 class="mb-2 text-2xl text-white edu-vic-wa-nt-hand-500">Dapatkan Update Terbaru</h4>
-                        <p class="text-gray-300 pt-serif-regular-italic">Berlangganan newsletter kami untuk mendapatkan tips pernikahan dan penawaran spesial</p>
+                        <h4 class="mb-2 text-2xl text-white edu-vic-wa-nt-hand-500">{{ __('app.get_latest_updates') }}</h4>
+                        <p class="text-gray-300 pt-serif-regular-italic">{{ __('app.subscribe_newsletter') }}</p>
                     </div>
                     <div class="flex gap-4">
                         <form method="POST" action="{{ route('subscribe') }}">
                             @csrf
-                            <input type="email" name="email" id="email" required placeholder="Masukkan email Anda"
-                            class="flex-1 px-4 py-3 text-white placeholder-gray-400 transition-colors duration-300 bg-gray-800 border border-gray-600 rounded-xl focus:border-primary focus:outline-none">
-                            <button type="submit" class="px-6 py-3 text-white transition-all duration-300 bg-primary rounded-xl edu-vic-wa-nt-hand-500 hover:scale-105 hover:tracking-wider">
-                                Berlangganan
+                            <input type="email" name="email" id="email" required placeholder="{{ __('app.enter_your_email') }}"
+                            class="flex-1 px-4 py-3 placeholder-gray-400 text-white bg-gray-800 rounded-xl border border-gray-600 transition-colors duration-300 focus:border-primary focus:outline-none">
+                            <button type="submit" class="px-6 py-3 text-white rounded-xl transition-all duration-300 bg-primary edu-vic-wa-nt-hand-500 hover:scale-105 hover:tracking-wider">
+                                {{ __('app.subscribe') }}
                             </button>
                         </form>
                     </div>
@@ -833,50 +833,50 @@ TEXT;
 
 
             <!-- Customer Testimonial Banner -->
-            <div class="p-6 mb-8 border bg-gradient-to-r from-primary/20 to-transparent rounded-2xl border-primary/30">
-                <div class="flex items-center gap-6">
+            <div class="p-6 mb-8 bg-gradient-to-r to-transparent rounded-2xl border from-primary/20 border-primary/30">
+                <div class="flex gap-6 items-center">
                     <div class="text-center">
                         <div class="text-4xl edu-vic-wa-nt-hand-500 text-primary">100+</div>
-                        <div class="text-sm text-gray-300 pt-serif-regular">Pasangan Bahagia</div>
+                        <div class="text-sm text-gray-300 pt-serif-regular">{{ __('app.happy_couples') }}</div>
                     </div>
                     <div class="flex-1">
                         <p class="text-lg text-white pt-serif-regular-italic">
-                            "Terima kasih 3Rasa telah membuat hari pernikahan kami menjadi sempurna dan tak terlupakan"
+                            "{{ __('app.thank_you_3rasa') }}"
                         </p>
-                        <p class="mt-2 text-sm text-primary edu-vic-wa-nt-hand-500">- Pasangan yang Puas</p>
+                        <p class="mt-2 text-sm text-primary edu-vic-wa-nt-hand-500">{{ __('app.satisfied_couples') }}</p>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom Footer -->
             <div class="pt-8 border-t border-gray-700">
-                <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+                <div class="flex flex-col gap-4 justify-between items-center md:flex-row">
                     <div class="flex gap-6 text-sm poppins-regular">
-                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">Kebijakan Privasi</a>
-                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">Syarat & Ketentuan</a>
-                        <a href="/faq" class="text-gray-300 transition-colors duration-300 hover:text-primary">FAQ</a>
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">{{ __('app.privacy_policy') }}</a>
+                        <a href="#" class="text-gray-300 transition-colors duration-300 hover:text-primary">{{ __('app.terms_conditions') }}</a>
+                        <a href="/faq" class="text-gray-300 transition-colors duration-300 hover:text-primary">{{ __('app.faq') }}</a>
                     </div>
                     <div class="text-sm text-gray-400 poppins-regular">
-                        © 2025 3Rasa Wedding Organizer. All rights reserved.
+                        © 2025 3Rasa Wedding Organizer. {{ __('app.all_rights_reserved') }}
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Decorative Elements -->
-        <div class="absolute bottom-0 right-0 w-64 h-64 opacity-10">
-            <div class="w-full h-full rounded-full bg-gradient-to-tl from-primary/30 to-transparent"></div>
+        <div class="absolute right-0 bottom-0 w-64 h-64 opacity-10">
+            <div class="w-full h-full bg-gradient-to-tl to-transparent rounded-full from-primary/30"></div>
         </div>
     </footer>
 
     <!-- Call to Action Floating Button -->
-    <div class="fixed z-50 bottom-6 right-6">
-        <button class="p-4 text-white transition-all duration-300 rounded-full shadow-lg group bg-primary hover:scale-110 hover:shadow-2xl">
+    <div class="fixed right-6 bottom-6 z-50">
+        <button class="p-4 text-white rounded-full shadow-lg transition-all duration-300 group bg-primary hover:scale-110 hover:shadow-2xl">
              <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
-                <div class="flex items-center gap-3">
+                <div class="flex gap-3 items-center">
                     <x-bi-whatsapp class="w-6 h-6" />
                         <span class="hidden pr-2 transition-all duration-300 group-hover:block edu-vic-wa-nt-hand-500">
-                            Hubungi Kami
+                            {{ __('app.contact_us') }}
                         </span>
                 </div>
             </a>
@@ -913,9 +913,9 @@ TEXT;
             return {
                 open: false,
                 currentLanguage: {
-                    code: 'en',
-                    name: 'English',
-                    flag: 'https://flagcdn.com/w20/us.png'
+                    code: '{{ app()->getLocale() }}',
+                    name: '{{ app()->getLocale() === "en" ? "English" : "Bahasa Indonesia" }}',
+                    flag: '{{ app()->getLocale() === "en" ? "https://flagcdn.com/w20/us.png" : "https://flagcdn.com/w20/id.png" }}'
                 },
                 languages: [
                     {
@@ -927,59 +927,13 @@ TEXT;
                         code: 'id',
                         name: 'Bahasa Indonesia',
                         flag: 'https://flagcdn.com/w20/id.png'
-                    },
-                    {
-                        code: 'es',
-                        name: 'Español',
-                        flag: 'https://flagcdn.com/w20/es.png'
-                    },
-                    {
-                        code: 'fr',
-                        name: 'Français',
-                        flag: 'https://flagcdn.com/w20/fr.png'
-                    },
-                    {
-                        code: 'de',
-                        name: 'Deutsch',
-                        flag: 'https://flagcdn.com/w20/de.png'
-                    },
-                    {
-                        code: 'ja',
-                        name: '日本語',
-                        flag: 'https://flagcdn.com/w20/jp.png'
                     }
                 ],
                 
                 init() {
-                    // Load saved language from localStorage
-                    const saved = localStorage.getItem('selectedLanguage');
-                    if (saved) {
-                        const lang = JSON.parse(saved);
-                        this.currentLanguage = lang;
-                        this.updatePageLanguage(lang.code);
-                    }
-                },
-                
-                setLanguage(language) {
-                    this.currentLanguage = language;
-                    this.open = false;
-                    
-                    // Save to localStorage
-                    localStorage.setItem('selectedLanguage', JSON.stringify(language));
-                    
-                    // Update page language
-                    this.updatePageLanguage(language.code);
-                    
-                    // Trigger custom event for other components to listen
-                    window.dispatchEvent(new CustomEvent('languageChanged', { 
-                        detail: { language: language.code } 
-                    }));
-                },
-                
-                updatePageLanguage(langCode) {
-                    document.documentElement.lang = langCode;
-                    // In real Laravel app, you would redirect to route with locale
-                    // window.location.href = `/lang/${langCode}`;
+                    // Set current language based on server locale
+                    const currentLocale = '{{ app()->getLocale() }}';
+                    this.currentLanguage = this.languages.find(lang => lang.code === currentLocale) || this.languages[0];
                 }
             }
         }
