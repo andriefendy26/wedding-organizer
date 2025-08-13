@@ -12,10 +12,12 @@ class Testimoni extends Model
     protected $table = 'tb_testimoni';
 
     protected $fillable = [
-        'user_id',
         'foto',
         'nama',
         'rating',
         'deskripsi',
+        'email', 
+        'no_telp',
+        'status'
     ];
 }

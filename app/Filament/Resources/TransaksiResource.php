@@ -34,7 +34,7 @@ class TransaksiResource extends Resource
 {
     protected static ?string $model = Transaksi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'solar-wallet-money-linear';
     protected static ?string $navigationGroup = 'Manajemen Layanan';
     protected static ?int $navigationSort = 1;
     

@@ -49,6 +49,7 @@ class AdminPanelProvider extends PanelProvider
                 'Layanan',
                 'Manajemen Layanan',
                 'Konten Website',
+                'Manajemen Email',
                 'UserManagement',
                 'Settings',
             ])->collapsibleNavigationGroups(false)

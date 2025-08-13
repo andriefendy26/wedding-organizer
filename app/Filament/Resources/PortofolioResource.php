@@ -22,7 +22,7 @@ class PortofolioResource extends Resource
 {
     protected static ?string $model = Portofolio::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'solar-notes-broken';
     // protected static ?string $navigationGroup = 'Content'; 
 
     protected static ?string $navigationGroup = 'Konten Website';

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EmailList;
 use App\Models\Subscribers;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,13 @@ class SubscribeController extends Controller
     //
     public function store(Request $request)
     {
-          $request->validate([
-        'email' => 'required|email',
+        $request->validate([
+            'email' => 'required|email',
         ]);
 
         // Cek apakah email sudah ada
-        $existing = Subscribers::where('email', $request->email)->first();
+        // EmailList::
+        $existing = EmailList::where('email', $request->email)->first();
 
         if ($existing) {
             // return response()->json([
@@ -27,7 +29,8 @@ class SubscribeController extends Controller
                 ->with('error', 'Email sudah terdaftar.');
         }
 
-        Subscribers::create([
+        EmailList::create([
+            'name' => $request->email,
             'email' => $request->email,
         ]);
 

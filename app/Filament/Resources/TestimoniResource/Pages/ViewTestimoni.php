@@ -48,11 +48,11 @@ class ViewTestimoni extends ViewRecord
                                     ->size('lg'),
                             ]),
                         
-                        TextEntry::make('user.name')
-                            ->label('User Account')
-                            ->placeholder('Guest User')
-                            ->badge()
-                            ->color('success'),
+                        // TextEntry::make('user.name')
+                        //     ->label('User Account')
+                        //     ->placeholder('Guest User')
+                        //     ->badge()
+                        //     ->color('success'),
                         
                         TextEntry::make('deskripsi')
                             ->label('Testimoni')

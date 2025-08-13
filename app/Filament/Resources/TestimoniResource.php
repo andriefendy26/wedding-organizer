@@ -16,6 +16,7 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -51,17 +52,21 @@ class TestimoniResource extends Resource
                                     ->required()
                                     ->maxLength(255)
                                     ->placeholder('Masukkan nama pelanggan'),
-
-                                Select::make('user_id')
-                                    ->label('User (Opsional)')
-                                    ->options(User::all()->pluck('name', 'id'))
-                                    ->searchable()
-                                    ->placeholder('Pilih user jika ada')
-                                    ->helperText('Kosongkan jika testimoni dari non-user'),
+                                TextInput::make('email')
+                                    ->label('Email')
+                                    // ->required()
+                                    ->maxLength(255)
+                                    ->placeholder('Masukkan nama pelanggan'),
+                                
                             ]),
 
                         Grid::make(2)
                             ->schema([
+                                TextInput::make('no_telp')
+                                    ->label('No Telpon')
+                                    // ->required()
+                                    ->maxLength(255)
+                                    ->placeholder('Masukkan nama pelanggan'),
                                 Select::make('rating')
                                     ->label('Rating')
                                     ->required()
@@ -79,6 +84,7 @@ class TestimoniResource extends Resource
                                     ->label('Foto Profil')
                                     ->image()
                                     ->directory('testimoni')
+                                    ->disk('public')
                                     ->visibility('public')
                                     ->imageEditor()
                                     ->imageEditorAspectRatios([
@@ -88,15 +94,24 @@ class TestimoniResource extends Resource
                                     ->helperText('Upload foto profil (opsional, max 2MB)')
                                     ->columnSpanFull(),
                             ]),
+                           Select::make('status')
+                                ->label('Status')
+                                ->options([
+                                    'pending' => 'Menunggu Persetujuan',
+                                    'approved' => 'Disetujui', 
+                                    'rejected' => 'Ditolak'
+                                ])
+                                ->default('pending')
+                                ->required(),
 
-                        Textarea::make('deskripsi')
-                            ->label('Deskripsi Testimoni')
-                            ->required()
-                            ->rows(4)
-                            ->maxLength(500)
-                            ->placeholder('Tulis testimoni pelanggan di sini...')
-                            ->columnSpanFull(),
-                    ])
+                            Textarea::make('deskripsi')
+                                ->label('Deskripsi Testimoni')
+                                ->required()
+                                ->rows(4)
+                                ->maxLength(500)
+                                ->placeholder('Tulis testimoni pelanggan di sini...')
+                                ->columnSpanFull(),
+                 ])
                     ->columns(1),
             ]);
     }
@@ -117,17 +132,24 @@ class TestimoniResource extends Resource
                     ->sortable()
                     ->weight('bold'),
 
-                TextColumn::make('user.name')
-                    ->label('User')
-                    ->placeholder('Guest')
-                    ->badge()
-                    ->color('success')
-                    ->sortable(),
-
                 TextColumn::make('rating')
                     ->label('Rating')
                     ->formatStateUsing(fn ($state) => str_repeat('⭐', $state))
                     ->sortable(),
+                
+                TextColumn::make('status')
+                        ->label('Status')
+                        ->badge()
+                        ->color(fn (string $state): string => match ($state) {
+                            'pending' => 'warning',
+                            'approved' => 'success',
+                            'rejected' => 'danger',
+                        })
+                        ->formatStateUsing(fn (string $state): string => match ($state) {
+                            'pending' => 'Menunggu',
+                            'approved' => 'Disetujui',
+                            'rejected' => 'Ditolak',
+                        }),
 
                 TextColumn::make('deskripsi')
                     ->label('Testimoni')
@@ -153,6 +175,13 @@ class TestimoniResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                SelectFilter::make('status')
+                    ->label('Filter Status')
+                    ->options([
+                        'pending' => 'Menunggu',
+                        'approved' => 'Disetujui',
+                        'rejected' => 'Ditolak'
+                    ]),
                 SelectFilter::make('rating')
                     ->label('Filter Rating')
                     ->options([
@@ -188,6 +217,32 @@ class TestimoniResource extends Resource
                     ->label('Edit'),
                 Tables\Actions\DeleteAction::make()
                     ->label('Hapus'),
+                    Action::make('approve')
+                        ->label('Setujui')
+                        ->icon('heroicon-o-check-circle')
+                        ->color('success')
+                        ->requiresConfirmation()
+                        ->visible(fn ($record) => $record->status !== 'approved')
+                        ->action(function ($record) {
+                            $record->update(['status' => 'approved']);
+                            Notification::make()
+                                ->title('Testimoni disetujui')
+                                ->success()
+                                ->send();
+                        }), 
+                    Action::make('reject')
+                        ->label('Tolak')
+                        ->icon('heroicon-o-x-circle')
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->visible(fn ($record) => $record->status !== 'rejected')
+                        ->action(function ($record) {
+                            $record->update(['status' => 'rejected']);
+                            Notification::make()
+                                ->title('Testimoni ditolak')
+                                ->success()
+                                ->send();
+                        }),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

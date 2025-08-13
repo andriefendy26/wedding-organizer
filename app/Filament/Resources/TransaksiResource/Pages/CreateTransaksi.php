@@ -11,6 +11,11 @@ use App\Models\KalenderKetersediaan;
 class CreateTransaksi extends CreateRecord
 {
     protected static string $resource = TransaksiResource::class;
+    
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 
     // protected function afterCreate(): void
     // {

@@ -465,9 +465,24 @@ TEXT;
             @foreach($testimoni as $testimonial)
                 <div class="flex-shrink-0 p-6 bg-white border-2 border-gray-300 shadow-lg rounded-xl max-w-80">
                     <div class="flex items-center mb-4">
-                        <div class="flex items-center justify-center w-12 h-12 bg-black rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
-                            <span class="text-lg font-bold text-white">JD</span>
-                        </div>
+                            @if (!empty($testimonial->foto) && file_exists(public_path('storage/' . $testimonial->foto)))
+                                <!-- Foto tersedia -->
+                                <img 
+                                    src="{{ asset('storage/' . $testimonial->foto) }}" 
+                                    alt="{{ $testimonial->nama }}" 
+                                    class="object-cover w-12 h-12 border border-gray-300 rounded-full"
+                                >
+                            @else
+                                <!-- Tidak ada foto → tampilkan inisial -->
+                                @php
+                                    $initials = collect(explode(' ', $testimonial->nama))
+                                                    ->map(fn($word) => strtoupper(substr($word, 0, 1)))
+                                                    ->join('');
+                                @endphp
+                                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                                    <span class="text-lg font-bold text-white">{{ $initials }}</span>
+                                </div>
+                            @endif
                         <div class="ml-3">
                             <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
                             <p class="text-sm text-gray-500">
@@ -484,12 +499,28 @@ TEXT;
             @foreach($testimoni as $testimonial)
                 <div class="flex-shrink-0 p-6 bg-white border-2 border-gray-300 shadow-lg rounded-xl max-w-80">
                     <div class="flex items-center mb-4">
-                        <div class="flex items-center justify-center w-12 h-12 bg-black rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
-                            <span class="text-lg font-bold text-white">JD</span>
-                        </div>
+                            @if (!empty($testimonial->foto) && file_exists(public_path('storage/' . $testimonial->foto)))
+                                <!-- Foto tersedia -->
+                                <img 
+                                    src="{{ asset('storage/' . $testimonial->foto) }}" 
+                                    alt="{{ $testimonial->nama }}" 
+                                    class="object-cover w-12 h-12 border border-gray-300 rounded-full"
+                                >
+                            @else
+                                <!-- Tidak ada foto → tampilkan inisial -->
+                                @php
+                                    $initials = collect(explode(' ', $testimonial->nama))
+                                                    ->map(fn($word) => strtoupper(substr($word, 0, 1)))
+                                                    ->join('');
+                                @endphp
+                                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                                    <span class="text-lg font-bold text-white">{{ $initials }}</span>
+                                </div>
+                            @endif
                         <div class="ml-3">
                             <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
                             <p class="text-sm text-gray-500">
+                                    <!-- Rating dalam bentuk ikon bintang -->
                                 @for ($i = 1; $i <= 5; $i++)
                                     <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
                                 @endfor
@@ -505,9 +536,24 @@ TEXT;
             @foreach($testimoni as $testimonial)
                 <div class="flex-shrink-0 p-6 bg-white border-2 border-gray-300 shadow-lg rounded-xl max-w-80">
                     <div class="flex items-center mb-4">
-                        <div class="flex items-center justify-center w-12 h-12 bg-black rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
-                            <span class="text-lg font-bold text-white">JD</span>
-                        </div>
+                            @if (!empty($testimonial->foto) && file_exists(public_path('storage/' . $testimonial->foto)))
+                                <!-- Foto tersedia -->
+                                <img 
+                                    src="{{ asset('storage/' . $testimonial->foto) }}" 
+                                    alt="{{ $testimonial->nama }}" 
+                                    class="object-cover w-12 h-12 border border-gray-300 rounded-full"
+                                >
+                            @else
+                                <!-- Tidak ada foto → tampilkan inisial -->
+                                @php
+                                    $initials = collect(explode(' ', $testimonial->nama))
+                                                    ->map(fn($word) => strtoupper(substr($word, 0, 1)))
+                                                    ->join('');
+                                @endphp
+                                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                                    <span class="text-lg font-bold text-white">{{ $initials }}</span>
+                                </div>
+                            @endif
                         <div class="ml-3">
                             <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
                             <p class="text-sm text-gray-500">
@@ -524,12 +570,28 @@ TEXT;
             @foreach($testimoni as $testimonial)
                 <div class="flex-shrink-0 p-6 bg-white border-2 border-gray-300 shadow-lg rounded-xl max-w-80">
                     <div class="flex items-center mb-4">
-                        <div class="flex items-center justify-center w-12 h-12 bg-black rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
-                            <span class="text-lg font-bold text-white">JD</span>
-                        </div>
+                            @if (!empty($testimonial->foto) && file_exists(public_path('storage/' . $testimonial->foto)))
+                                <!-- Foto tersedia -->
+                                <img 
+                                    src="{{ asset('storage/' . $testimonial->foto) }}" 
+                                    alt="{{ $testimonial->nama }}" 
+                                    class="object-cover w-12 h-12 border border-gray-300 rounded-full"
+                                >
+                            @else
+                                <!-- Tidak ada foto → tampilkan inisial -->
+                                @php
+                                    $initials = collect(explode(' ', $testimonial->nama))
+                                                    ->map(fn($word) => strtoupper(substr($word, 0, 1)))
+                                                    ->join('');
+                                @endphp
+                                <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500">
+                                    <span class="text-lg font-bold text-white">{{ $initials }}</span>
+                                </div>
+                            @endif
                         <div class="ml-3">
                             <h3 class="font-semibold text-gray-800">{{ $testimonial->nama }}</h3>
-                            <p class="text-sm text-gray-500">  <!-- Rating dalam bentuk ikon bintang -->
+                            <p class="text-sm text-gray-500">
+                                    <!-- Rating dalam bentuk ikon bintang -->
                                 @for ($i = 1; $i <= 5; $i++)
                                     <i class="fas fa-star {{ $i <= $testimonial->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
                                 @endfor

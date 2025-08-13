@@ -114,11 +114,14 @@ Route::prefix('letters/public')->group(function () {
         ->name('letters.public.download');
 });
 
-// routes/web.php
-// Route::get('/letters/public/{slug}', [PublicLetterController::class, 'show'])->name('letters.public');
-// Route::get('/letters/public/{slug}/download', [PublicLetterController::class, 'download'])->name('letters.public.download');
 
-
+// Public Testimoni Routes
+Route::prefix('testimoni')->name('testimoni.')->group(function () {
+    Route::get('/', [TestimoniController::class, 'index'])->name('index');
+    Route::get('/create', [TestimoniController::class, 'create'])->name('create');
+    Route::post('/', [TestimoniController::class, 'store'])->name('store');
+    Route::get('/{testimoni}', [TestimoniController::class, 'show'])->name('show');
+});
 // sitemap
 
 Route::get('/sitemap.xml', function () {
