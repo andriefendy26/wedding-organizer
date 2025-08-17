@@ -310,7 +310,7 @@ return [
         'stats' => [
             'decorations' => '500+',
             'decorations_label' => 'Realized Decorations',
-            'experience' => '5+',
+            'experience' => '13+',
             'experience_label' => 'Years Experience',
         ],
         'floating_card' => [
@@ -330,8 +330,8 @@ return [
         'heading' => 'Latest Inspiration & Moments',
         'description' => 'Discover the latest wedding inspiration, behind the scenes, and happy moments from our clients on Instagram',
         'profile' => [
-            'username' => '@3rasa_wedding',
-            'bio' => 'Wedding Organizer Tarakan',
+            'username' => '@3rasa_production',
+            'bio' => 'Event Organizer Tarakan',
             'follow_button' => 'Follow',
             'stats' => [
                 'posts' => 'Posts',
@@ -672,11 +672,11 @@ return [
                 'bold1' => '3Rasa Event Organizer',
                 'isi1' => 'is a trusted wedding and event organizer company based in',
                 'bold2' => 'Tarakan, North Kalimantan.',
-                'isi2' => 'Since our establishment in 2018, we have dedicated ourselves to making wedding dreams and special events come true for our clients.'
+                'isi2' => 'Since our establishment in 2012, we have dedicated ourselves to making wedding dreams and special events come true for our clients.'
             ],
             'p2' => [
                 'isi' => 'With more than',
-                'bold1' => '7 years of experience',
+                'bold1' => '13 years of experience',
                 'isi1' => 'and having organized over',
                 'bold2' => '100+ wedding events,',
                 'isi2' => ' we truly understand that every wedding moment is unique and precious. Our experienced professional team is ready to help you create an unforgettable happy day.'
@@ -726,7 +726,7 @@ return [
         'card' => [
             'card1' => [
                 'title' => 'Trusted Experience',
-                'description' => 'Over 7 years of serving couples in North Kalimantan with a flawless track record.'
+                'description' => 'Over 13 years of serving couples in North Kalimantan with a flawless track record.'
             ],
             'card2' => [
                 'title' => 'Professional Team',

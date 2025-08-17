@@ -10,16 +10,17 @@ class QrCodeService
 {
     public function generateQrCode(string $url, string $filename): string
     {
-        $qrCodePath = 'qr-codes/' . $filename . '.svg';
-        
-        $qrCode = QrCode::format('svg')
+        // Simpan ke disk 'public' (PNG lebih kompatibel untuk PDF)
+        $qrCodePath = 'surat/qr-codes/' . $filename . '.png';
+
+        $qrCode = QrCode::format('png')
             ->size(80)
             ->margin(1)
             ->errorCorrection('H')
             ->generate($url);
-            
-        Storage::put($qrCodePath, $qrCode);
-        
+
+        Storage::disk('public')->put($qrCodePath, $qrCode);
+
         return $qrCodePath;
     }
 
@@ -27,8 +28,8 @@ class QrCodeService
     {
         try {
             // Create HTML with embedded PDF and QR code using base64
-            $pdfContent = base64_encode(Storage::get($originalPdfPath));
-            $qrContent = base64_encode(Storage::get($qrCodePath));
+            $pdfContent = base64_encode(Storage::disk('public')->get($originalPdfPath));
+            $qrContent = base64_encode(Storage::disk('public')->get($qrCodePath));
             
             // Create HTML template
             $html = view('pdf.qr-overlay', [
@@ -40,7 +41,7 @@ class QrCodeService
             $pdf = Pdf::loadHTML($html)->setPaper('a4');
             
             // Save to storage
-            Storage::put($outputPath, $pdf->output());
+            Storage::disk('public')->put($outputPath, $pdf->output());
             
             return $outputPath;
             

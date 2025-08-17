@@ -39,7 +39,7 @@ echo "\n3. Letters in Database:\n";
 $letters = Letter::all();
 foreach ($letters as $letter) {
     echo "ID: {$letter->id}\n";
-    echo "  Nomor: {$letter->nomor_surat}\n";
+    echo "  Nomor: {$letter->letter_number}\n";
     echo "  Status: {$letter->status}\n";
     echo "  Original Path: {$letter->original_file_path}\n";
     

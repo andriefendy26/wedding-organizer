@@ -27,7 +27,7 @@
         "midtrans/midtrans-php": "^2.6",
         "setasign/fpdf": "^1.8",
         "setasign/fpdi": "^2.6",
-        "simplesoftwareio/simple-qrcode": "^4.2",
+        "simplesoftwareio/simple-qrcode": "*",
         "tecnickcom/tcpdf": "^6.10"
     },
     "require-dev": {

@@ -45,7 +45,8 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
-            ])->navigationGroups([
+            ])            ->navigationGroups([
+                'E-Surat',
                 'Layanan',
                 'Manajemen Layanan',
                 'Konten Website',
@@ -66,7 +67,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
             ])
             ->authMiddleware([
                 Authenticate::class,

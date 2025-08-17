@@ -310,7 +310,7 @@ return [
         'stats' => [
             'decorations' => '500+',
             'decorations_label' => 'Dekorasi Terealisasi',
-            'experience' => '5+',
+            'experience' => '13+',
             'experience_label' => 'Tahun Pengalaman',
         ],
         'floating_card' => [
@@ -330,9 +330,9 @@ return [
         'heading' => 'Inspirasi & Momen Terbaru',
         'description' => 'Temukan inspirasi pernikahan terbaru, behind the scenes, dan momen bahagia dari klien kami di Instagram',
         'profile' => [
-            'username' => '@3rasa_wedding',
-            'bio' => 'Wedding Organizer Tarakan',
-            'follow_button' => 'Follow',
+            'username' => '@3rasa_production',
+            'bio' => 'Event Organizer Tarakan',
+            'follow_button' => 'Ikuti',
             'stats' => [
                 'posts' => 'Posts',
                 'followers' => 'Followers',
@@ -677,11 +677,11 @@ return [
                     'bold1' => '3Rasa Event Organizer',
                     'isi1' => 'adalah perusahaan jasa wedding organizer dan event organizer terpercaya yang berlokasi di',
                     'bold2' => 'Tarakan, Kalimantan Utara.',
-                    'isi2' => 'Sejak didirikan pada tahun 2018, kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.'
+                    'isi2' => 'Sejak didirikan pada tahun 2012, kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.'
                 ],
                 'p2' => [
                     'isi' => 'Dengan pengalaman lebih dari',
-                    'bold1' => '7 Tahun',
+                    'bold1' => '13 Tahun',
                     'isi1' => 'dan telah menyelenggarakan',
                     'bold2' => '100+ acara pernikahan',
                     'isi2' => ' kami memahami betul bahwa setiap momen pernikahan adalah unik dan berharga. Tim profesional kami yang berpengalaman siap membantu Anda menciptakan hari bahagia yang tak terlupakan.'
@@ -731,7 +731,7 @@ return [
             'card' => [
                 'card1' => [
                     'title' => 'Pengalaman Terpercaya',
-                    'description' => 'Lebih dari 7 tahun melayani pasangan di Kalimantan Utara dengan track record yang sempurna.'
+                    'description' => 'Lebih dari 13 tahun melayani pasangan di Kalimantan Utara dengan track record yang sempurna.'
                 ],
                 'card2' => [
                     'title' => 'Tim Profesional',

@@ -139,7 +139,7 @@
             <dl class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                     <dt class="text-xs font-medium text-gray-500">Nomor Surat</dt>
-                    <dd class="text-sm text-gray-900">{{ $letter->nomor_surat }}</dd>
+                    <dd class="text-sm text-gray-900">{{ $letter->letter_number }}</dd>
                 </div>
                 <div>
                     <dt class="text-xs font-medium text-gray-500">Penandatangan</dt>

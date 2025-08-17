@@ -105,7 +105,7 @@
                          alt="3Rasa Event Organizer Services" 
                          class="w-full h-auto shadow-2xl rounded-2xl">
                     <div class="absolute p-6 bg-white border border-gray-200 shadow-xl -bottom-6 -right-6 dark:bg-gray-700 rounded-xl dark:border-gray-600">
-                        <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand">7+</div>
+                        <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand">13+</div>
                         <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</div>
                     </div>
                 </div>

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\LetterResource\Pages;
+namespace App\Filament\Resources\SuratResource\Pages;
 
-use App\Filament\Resources\LetterResource;
+use App\Filament\Resources\SuratResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListLetters extends ListRecords
+class ListSurats extends ListRecords
 {
-    protected static string $resource = LetterResource::class;
+    protected static string $resource = SuratResource::class;
 
     protected function getHeaderActions(): array
     {

@@ -13,9 +13,9 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\PublicLetterController;
-use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\SubscribeController;
 use App\Models\Artikel;
 use App\Models\Portofolio;
 use App\Models\Testimoni;
@@ -81,19 +81,12 @@ Route::get('/portofolio', [PortofolioController::class, 'index'])->name('Portofo
 Route::get('/layanan', function () {
     return view('layanan');
 });
-// Route::get('/detaillayanan', function () {
-//     return view('detaillayanan');
-// });
-// Route::get('/layanansewa', function () {
-//     return view('sewabarang');
-// });
 Route::get('/layanansewa', [LayananController::class, 'IndexSewaBarang'])->name('sewa');
 Route::get('/layananwedding', [LayananController::class, 'IndexWedding'])->name('wedding');
 
 Route::get('/layanandekorasi', function () {
     return view('dekorasi');
 });
-
 
 Route::post('/subscribe', [SubscribeController::class, 'store'])->name('subscribe');
 
@@ -106,16 +99,6 @@ Route::post('/bayar/{public_id}', [BayarController::class, 'update'])->name('bay
 Route::get('/kalender/events', [KalenderController::class, 'events'])->name('kalender.events');
 
 
-Route::prefix('letters/public')->group(function () {
-    Route::get('/{slug}', [PublicLetterController::class, 'show'])
-        ->name('letters.public.show');
-    
-    Route::get('/{slug}/download', [PublicLetterController::class, 'download'])
-        ->name('letters.public.download');
-});
-
-
-// Public Testimoni Routes
 Route::prefix('testimoni')->name('testimoni.')->group(function () {
     Route::get('/', [TestimoniController::class, 'index'])->name('index');
     Route::get('/create', [TestimoniController::class, 'create'])->name('create');
@@ -129,3 +112,14 @@ Route::get('/sitemap.xml', function () {
     // $category = artikel->tags;
     return response()->view('sitemap', compact('artikel'))->header('Content-Type','text/xml');
 });
+
+// Routes untuk E-Surat
+Route::prefix('surat')->name('surat.')->group(function () {
+    Route::get('/verifikasi/{publicLink}', [\App\Http\Controllers\SuratVerificationController::class, 'verify'])->name('verify');
+    Route::get('/download/{publicLink}', [\App\Http\Controllers\SuratVerificationController::class, 'downloadPdf'])->name('download');
+    Route::get('/preview/{publicLink}', [\App\Http\Controllers\SuratVerificationController::class, 'previewPdf'])->name('preview');
+});
+
+
+
+

@@ -19,5 +19,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'superadmin@example.com',
             'password' => 'superadmin'
         ]);
+
+        // Seed E-Surat data
+        $this->call([
+            SuratHeaderSeeder::class,
+            SuratTemplateSeeder::class,
+        ]);
     }
 }

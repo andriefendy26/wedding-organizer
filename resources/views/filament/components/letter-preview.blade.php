@@ -19,7 +19,7 @@
                     
                     <button 
                         type="button"
-                        @click="downloadFile('{{ Storage::url($letter->signed_file_path) }}', 'surat_{{ $letter->nomor_surat }}.pdf')"
+                        @click="downloadFile('{{ Storage::url($letter->signed_file_path) }}', 'surat_{{ $letter->safe_filename }}.pdf')"
                         class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
             <dl class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div>
                     <dt class="text-xs font-medium text-gray-500">Nomor Surat</dt>
-                    <dd class="text-sm text-gray-900">{{ $letter->nomor_surat }}</dd>
+                    <dd class="text-sm text-gray-900">{{ $letter->letter_number }}</dd>
                 </div>
                 <div>
                     <dt class="text-xs font-medium text-gray-500">Penandatangan</dt>

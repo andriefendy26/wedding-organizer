@@ -14,12 +14,43 @@ class TestimoniController extends Controller
         // $testimoni = Testimoni::all();
         // dd($testimoni);
 
+        $instagram = [
+            [
+                'title' => "Dekorasi Premium Eksklusif",
+                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+                'img' =>  asset('storage/content/wedding01.jpg'),
+                'like' => 0,
+                'comment' => 0
+            ],
+            [
+                'title' => "Dekorasi Premium Eksklusif",
+                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+                'img' =>  asset('storage/content/wedding01.jpg'),
+                'like' => 0,
+                'comment' => 0
+            ],
+            [
+                'title' => "Dekorasi Premium Eksklusif",
+                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+                'img' =>  asset('storage/content/wedding01.jpg'),
+                'like' => 0,
+                'comment' => 0
+            ],
+            [
+                'title' => "Dekorasi Premium Eksklusif",
+                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+                'img' =>  asset('storage/content/wedding01.jpg'),
+                'like' => 0,
+                'comment' => 0
+            ],
+        ];
+
         $testimoni = Testimoni::where('status', 'approved')
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
         return view('home', 
-        compact('testimoni')
+        compact('testimoni', 'instagram')
         );
     }
     /**

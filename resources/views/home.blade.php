@@ -643,15 +643,15 @@ TEXT;
             
             <div class="grid grid-cols-3 gap-4 text-center">
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">150</p>
+                    <p class="text-xl font-bold text-black dark:text-white">307</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.posts') }}</p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">2.5K</p>
+                    <p class="text-xl font-bold text-black dark:text-white">5028</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.followers') }}</p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">1.2K</p>
+                    <p class="text-xl font-bold text-black dark:text-white">2519</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.following') }}</p>
                 </div>
             </div>
@@ -661,104 +661,40 @@ TEXT;
     {{-- Instagram Feed Grid --}}
     <div class="grid grid-cols-1 gap-6 pb-8 md:grid-cols-2 lg:grid-cols-3">
         {{-- Instagram Post 1 --}}
-        <div data-aos="zoom-in-up" class="relative overflow-hidden transition-all duration-300 bg-white border-2 border-gray-200 shadow-lg rounded-2xl group dark:border-gray-700 dark:bg-gray-800 hover:shadow-xl">
-            <div class="flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 aspect-square dark:from-gray-700 dark:to-gray-600">
-                <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="Wedding Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 bg-black/0 group-hover:bg-black/60 group-hover:opacity-100">
-                <div class="text-center text-white">
-                    <div class="flex items-center justify-center mb-2 space-x-6">
-                        <div class="flex items-center">
-                            <x-heroicon-o-heart class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">142</span>
+        @foreach ($instagram as $item)
+            <div data-aos="zoom-in-up" class="relative overflow-hidden transition-all duration-300 bg-white border-2 border-gray-200 shadow-lg rounded-2xl group dark:border-gray-700 dark:bg-gray-800 hover:shadow-xl">
+                <div class="flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 aspect-square dark:from-gray-700 dark:to-gray-600">
+                    <img src={{ $item['img'] }} alt="Wedding Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 bg-black/0 group-hover:bg-black/60 group-hover:opacity-100">
+                    <div class="text-center text-white">
+                        <div class="flex items-center justify-center mb-2 space-x-6">
+                            <div class="flex items-center">
+                                <x-heroicon-o-heart class="w-6 h-6 mr-1" />
+                                <span class="font-semibold">{{ $item['like'] }}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <x-heroicon-o-chat-bubble-oval-left class="w-6 h-6 mr-1" />
+                                <span class="font-semibold">{{ $item['comment'] }}</span>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <x-heroicon-o-chat-bubble-oval-left class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">23</span>
-                        </div>
+                        <p class="text-sm font-medium">{{ $item['title']}}</p>
                     </div>
-                    <p class="text-sm font-medium">{{ __('app.instagram.posts.post1.title') }}</p>
+                </div>
+                {{-- Instagram post header --}}
+                <div class="absolute flex items-center justify-between top-4 right-4 left-4">
+                    <div class="flex items-center">
+                        <div class="p-0.5 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full">
+                            <div class="flex items-center justify-center w-full h-full bg-white rounded-full">
+                                <span class="text-xs font-bold text-primary">3R</span>
+                            </div>
+                        </div>
+                        <span class="px-2 py-1 ml-2 text-sm font-semibold text-white rounded-full bg-black/50">3rasa_wedding</span>
+                    </div>
+                    <x-heroicon-o-ellipsis-horizontal class="w-6 h-6 text-white" />
                 </div>
             </div>
-            {{-- Instagram post header --}}
-            <div class="absolute flex items-center justify-between top-4 right-4 left-4">
-                <div class="flex items-center">
-                    <div class="p-0.5 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full">
-                        <div class="flex items-center justify-center w-full h-full bg-white rounded-full">
-                            <span class="text-xs font-bold text-primary">3R</span>
-                        </div>
-                    </div>
-                    <span class="px-2 py-1 ml-2 text-sm font-semibold text-white rounded-full bg-black/50">3rasa_wedding</span>
-                </div>
-                <x-heroicon-o-ellipsis-horizontal class="w-6 h-6 text-white" />
-            </div>
-        </div>
-
-        {{-- Instagram Post 2 --}}
-        <div data-aos="zoom-in-down" class="relative overflow-hidden transition-all duration-300 bg-white border-2 border-gray-200 shadow-lg rounded-2xl group dark:border-gray-700 dark:bg-gray-800 hover:shadow-xl">
-            <div class="flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-100 aspect-square dark:from-gray-700 dark:to-gray-600">
-                <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="Decoration Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 bg-black/0 group-hover:bg-black/60 group-hover:opacity-100">
-                <div class="text-center text-white">
-                    <div class="flex items-center justify-center mb-2 space-x-6">
-                        <div class="flex items-center">
-                            <x-heroicon-o-heart class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">89</span>
-                        </div>
-                        <div class="flex items-center">
-                            <x-heroicon-o-chat-bubble-oval-left class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">15</span>
-                        </div>
-                    </div>
-                    <p class="text-sm font-medium">{{ __('app.instagram.posts.post2.title') }}</p>
-                </div>
-            </div>
-            <div class="absolute flex items-center justify-between top-4 right-4 left-4">
-                <div class="flex items-center">
-                    <div class="p-0.5 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full">
-                        <div class="flex items-center justify-center w-full h-full bg-white rounded-full">
-                            <span class="text-xs font-bold text-primary">3R</span>
-                        </div>
-                    </div>
-                    <span class="px-2 py-1 ml-2 text-sm font-semibold text-white rounded-full bg-black/50">3rasa_wedding</span>
-                </div>
-                <x-heroicon-o-ellipsis-horizontal class="w-6 h-6 text-white" />
-            </div>
-        </div>
-
-        {{-- Instagram Post 3 --}}
-        <div data-aos="zoom-in-up" class="relative overflow-hidden transition-all duration-300 bg-white border-2 border-gray-200 shadow-lg rounded-2xl group dark:border-gray-700 dark:bg-gray-800 hover:shadow-xl">
-            <div class="flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-100 aspect-square dark:from-gray-700 dark:to-gray-600">
-                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="Event Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 bg-black/0 group-hover:bg-black/60 group-hover:opacity-100">
-                <div class="text-center text-white">
-                    <div class="flex items-center justify-center mb-2 space-x-6">
-                        <div class="flex items-center">
-                            <x-heroicon-o-heart class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">203</span>
-                        </div>
-                        <div class="flex items-center">
-                            <x-heroicon-o-chat-bubble-oval-left class="w-6 h-6 mr-1" />
-                            <span class="font-semibold">31</span>
-                        </div>
-                    </div>
-                    <p class="text-sm font-medium">{{ __('app.instagram.posts.post3.title') }}</p>
-                </div>
-            </div>
-            <div class="absolute flex items-center justify-between top-4 right-4 left-4">
-                <div class="flex items-center">
-                    <div class="p-0.5 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full">
-                        <div class="flex items-center justify-center w-full h-full bg-white rounded-full">
-                            <span class="text-xs font-bold text-primary">3R</span>
-                        </div>
-                    </div>
-                    <span class="px-2 py-1 ml-2 text-sm font-semibold text-white rounded-full bg-black/50">3rasa_wedding</span>
-                </div>
-                <x-heroicon-o-ellipsis-horizontal class="w-6 h-6 text-white" />
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
