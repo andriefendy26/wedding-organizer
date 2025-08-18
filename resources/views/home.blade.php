@@ -661,17 +661,18 @@ TEXT;
     {{-- Instagram Feed Grid --}}
     <div class="grid grid-cols-1 gap-6 pb-8 md:grid-cols-2 lg:grid-cols-3">
         {{-- Instagram Post 1 --}}
-        @foreach ($instagram as $item)
+        @if ($instagramPost->count())
+            @foreach ($instagramPost as $item)
             <div data-aos="zoom-in-up" class="relative overflow-hidden transition-all duration-300 bg-white border-2 border-gray-200 shadow-lg rounded-2xl group dark:border-gray-700 dark:bg-gray-800 hover:shadow-xl">
                 <div class="flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100 aspect-square dark:from-gray-700 dark:to-gray-600">
-                    <img src={{ $item['img'] }} alt="Wedding Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+                    <img src={{ asset('storage/'.$item['img']) }} alt="Wedding Post" class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
                 </div>
                 <div class="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 bg-black/0 group-hover:bg-black/60 group-hover:opacity-100">
                     <div class="text-center text-white">
                         <div class="flex items-center justify-center mb-2 space-x-6">
                             <div class="flex items-center">
                                 <x-heroicon-o-heart class="w-6 h-6 mr-1" />
-                                <span class="font-semibold">{{ $item['like'] }}</span>
+                                <span class="font-semibold">{{ asset($item['like']) }}</span>
                             </div>
                             <div class="flex items-center">
                                 <x-heroicon-o-chat-bubble-oval-left class="w-6 h-6 mr-1" />
@@ -694,7 +695,11 @@ TEXT;
                     <x-heroicon-o-ellipsis-horizontal class="w-6 h-6 text-white" />
                 </div>
             </div>
-        @endforeach
+            @endforeach
+        @else
+            <p class="col-span-3 text-center">Tidak ada postingan Instagram.</p>
+        @endif
+        
     </div>
 </div>
 

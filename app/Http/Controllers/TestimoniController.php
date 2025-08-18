@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InstagramPost;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,43 +15,41 @@ class TestimoniController extends Controller
         // $testimoni = Testimoni::all();
         // dd($testimoni);
 
-        $instagram = [
-            [
-                'title' => "Dekorasi Premium Eksklusif",
-                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
-                'img' =>  asset('storage/content/wedding01.jpg'),
-                'like' => 0,
-                'comment' => 0
-            ],
-            [
-                'title' => "Dekorasi Premium Eksklusif",
-                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
-                'img' =>  asset('storage/content/wedding01.jpg'),
-                'like' => 0,
-                'comment' => 0
-            ],
-            [
-                'title' => "Dekorasi Premium Eksklusif",
-                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
-                'img' =>  asset('storage/content/wedding01.jpg'),
-                'like' => 0,
-                'comment' => 0
-            ],
-            [
-                'title' => "Dekorasi Premium Eksklusif",
-                'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
-                'img' =>  asset('storage/content/wedding01.jpg'),
-                'like' => 0,
-                'comment' => 0
-            ],
-        ];
+        // $instagram = [
+        //     [
+        //         'title' => "Dekorasi Premium Eksklusif",
+        //         'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+        //         'img' =>  asset('storage/content/wedding01.jpg'),
+        //         'like' => 0,
+        //         'comment' => 0
+        //     ],
+        //     [
+        //         'title' => "Dekorasi Premium Eksklusif",
+        //         'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+        //         'img' =>  asset('storage/content/wedding01.jpg'),
+        //         'like' => 0,
+        //         'comment' => 0
+        //     ],
+        //     [
+        //         'title' => "Dekorasi Premium Eksklusif",
+        //         'href' => "https://www.instagram.com/3rasa.weddingneventorganizer/reel/C65NEgnLMNR/",
+        //         'img' =>  asset('storage/content/wedding01.jpg'),
+        //         'like' => 0,
+        //         'comment' => 0
+        //     ],
+        // ];
+
+        $instagramProfile = [];
+
+        $instagramPost = InstagramPost::active()->get();
+
 
         $testimoni = Testimoni::where('status', 'approved')
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
         return view('home', 
-        compact('testimoni', 'instagram')
+        compact('testimoni', 'instagramPost', 'instagramProfile')
         );
     }
     /**

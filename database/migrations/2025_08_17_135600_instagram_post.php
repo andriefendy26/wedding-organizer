@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('instagram_posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('href')->nullable();
+            $table->string('img')->nullable();
+            $table->integer('like')->default(0);
+            $table->integer('comment')->default(0);
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('instagram_posts');
     }
 };
