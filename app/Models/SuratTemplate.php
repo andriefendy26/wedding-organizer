@@ -75,3 +75,4 @@ class SuratTemplate extends Model
             ->first();
     }
 }
+

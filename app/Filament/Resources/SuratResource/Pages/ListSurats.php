@@ -17,3 +17,4 @@ class ListSurats extends ListRecords
         ];
     }
 }
+

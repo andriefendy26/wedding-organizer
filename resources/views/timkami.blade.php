@@ -84,7 +84,8 @@
                     <div class="p-8 text-center transition-all duration-500 border border-gray-200 shadow-xl group bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl dark:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2">
                         <h3 
                             class="mb-3 text-6xl transition-transform duration-300 edu-vic-wa-nt-hand text-primary group-hover:scale-110 counter"
-                            data-target="{{ $stat['value'] }}">
+                            data-target="{{ $stat['value'] }}"
+                            >
                             0
                         </h3>
                         <p class="font-medium text-gray-600 dark:text-gray-300 pt-serif-regular">

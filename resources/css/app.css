@@ -25,7 +25,7 @@
 }
 
 .flip-on-load {
-    animation: flipLogo 1.5s ease-in-out forwards;
+    animation: flipLogo 5s ease-in-out forwards;
     transform-style: preserve-3d;
 }
 

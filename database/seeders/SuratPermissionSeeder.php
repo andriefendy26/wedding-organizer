@@ -91,3 +91,4 @@ class SuratPermissionSeeder extends Seeder
         $this->command->info('Permissions E-Surat berhasil diberikan kepada semua user dan role.');
     }
 }
+

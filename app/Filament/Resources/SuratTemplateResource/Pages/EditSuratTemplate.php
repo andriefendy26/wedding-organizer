@@ -22,3 +22,4 @@ class EditSuratTemplate extends EditRecord
         return $this->getResource()::getUrl('index');
     }
 }
+

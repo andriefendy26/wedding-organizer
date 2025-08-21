@@ -30,37 +30,42 @@
 
 
 @section('content')
-<div class="min-h-screen overflow-hidden pt-14">
-    {{-- Hero Section --}}
-    {{-- <div class="relative h-96 bg-gradient-to-r from-primary/20 to-primary/40 dark:from-gray-700 dark:to-gray-600">
-        <div class="absolute inset-0 bg-[url('{{ asset('storage/content/decoration01.jpeg') }}')] bg-cover bg-center opacity-20"></div>
-        <div class="relative z-10 flex items-center justify-center h-full">
-            <div class="text-center">
-                <h1 class="mb-4 text-6xl font-semibold text-black dark:text-white edu-vic-wa-nt-hand">
-                    Tentang 3Rasa
-                </h1>
-                <p class="max-w-2xl mx-auto text-xl text-gray-700 dark:text-gray-300 pt-serif-regular-italic">
-                    Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi
-                </p>
-            </div>
+<div class="w-full h-[80vh]" style="background-image: url('{{ asset('storage/content/gif05.gif') }}');background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="absolute h-[80vh] inset-0 bg-black/50"></div>
+    <div class="relative grid items-center justify-center h-full grid-cols-1 gap-8 px-4 md:grid-cols-2 md:px-8 lg:px-16 xl:px-32">
+        {{-- Hero Section --}}
+        <div class="flex flex-col items-center justify-center">
+            <h2 class="mb-4 text-3xl font-semibold tracking-wide text-white md:text-4xl edu-vic-wa-nt-hand">
+                {{ __('app.hero.title') }} 
+                <span 
+                id="typewriter" 
+                class="font-bold text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 bg-clip-text"
+                data-word1="{{ __('app.hero.slide1_title') }}" 
+                data-word2="{{ __('app.hero.slide2_title') }}"
+                data-word3="{{ __('app.hero.slide3_title') }}"
+                data-word4="{{ __('app.hero.slide4_title') }}"
+                data-word5="{{ __('app.hero.slide5_title') }}"
+                data-word6="{{ __('app.hero.slide6_title') }}"
+                data-word7="{{ __('app.hero.slide7_title') }}"
+                data-word8="{{ __('app.hero.slide8_title') }}"
+                data-word9="{{ __('app.hero.slide9_title') }}"
+                data-word10="{{ __('app.hero.slide10_title') }}"
+                > 
+            </span>
+                {{ __('app.hero.slide11_title') }}
+            </h2>
+        
+            <p class="my-6 text-sm text-gray-200 md:text-lg pt-serif-regular-italic">{{ __('app.hero.description') }}</p>
         </div>
-    </div> --}}
-
-    <div class="relative h-[60vh] overflow-hidden mb-10 "
-     style="background: url({{ asset('storage/content/gif02.gif') }}); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center text-white">
-            <div>
-                <h1 class="mb-4 text-6xl font-semibold tracking-wide edu-vic-wa-nt-hand">
-                    {{ __('app.tentang_page.hero.title') }}
-                </h1>
-                <p class="max-w-2xl mx-auto text-xl pt-serif-regular-italic">
-                   {{ __('app.tentang_page.hero.subtitle') }}
-                </p>
-            </div>
+        <div class="flex items-center justify-center">
+            {{-- Logo --}}
+            <img class="object-cover w-64 md:w-96 flip-on-load" src="{{ asset('storage/content/Logo.png') }}" alt="3Rasa Production">
         </div>
     </div>
+</div>
 
+
+<div class="min-h-screen overflow-hidden pt-14">
     {{-- Logo & Company Introduction Section --}}
     <div class="px-10 py-16 md:px-16 lg:px-24 xl:px-32">
         <div class="mx-auto ">
@@ -69,7 +74,7 @@
                 <div class="flex justify-center mb-8">
                     <img src="{{ asset('storage/content/Logo.png') }}" 
                          alt="3Rasa Event Organizer Logo" 
-                         class="object-contain w-32 h-32 transition-transform duration-300 md:w-40 md:h-40 drop-shadow-lg hover:scale-105">
+                         class="object-contain w-32 h-32 transition-transform duration-300 md:w-96 md:h-96 drop-shadow-lg hover:scale-105">
                 </div>
                 <h1 class="mb-4 text-4xl font-semibold dark:text-white md:text-6xl edu-vic-wa-nt-hand">
                     {{ __('app.tentang_page.sub_hero.title') }}
@@ -88,24 +93,26 @@
                     </h2>
                     <div class="space-y-4 text-gray-700 dark:text-gray-300 pt-serif-regular">
                         <p class="text-lg leading-relaxed">
-                            <strong class="text-primary">{{ __('app.tentang_page.tentang.description.p1.bold1') }}</strong> {{ __('app.tentang_page.tentang.description.p1.isi1') }} <strong>{{ __('app.tentang_page.tentang.description.p1.bold2') }}</strong>. {{ __('app.tentang_page.tentang.description.p1.isi2') }}
+                            {{ __('app.tentang_page.tentang.description.p1') }}
                         </p>
                         <p class="text-lg leading-relaxed">
-                            {{ __('app.tentang_page.tentang.description.p2.isi') }}  <strong class="text-primary"> {{ __('app.tentang_page.tentang.description.p2.bold1') }} </strong> {{ __('app.tentang_page.tentang.description.p2.isi1') }} 
-                            <strong class="text-primary">{{ __('app.tentang_page.tentang.description.p2.bold2') }}</strong>, {{ __('app.tentang_page.tentang.description.p2.isi2') }}
+                            {{ __('app.tentang_page.tentang.description.p2') }}
                         </p>
-                        <p class="text-lg leading-relaxed">
-                            {{ __('app.tentang_page.tentang.description.p3.isi') }} <strong>{{ __('app.tentang_page.tentang.description.p3.bold1') }}</strong>
-                            {{ __('app.tentang_page.tentang.description.p3.isi1') }}
-                        </p>
+                        {{-- <p class="text-lg leading-relaxed">
+                            {{ __('app.tentang_page.tentang.description.p3') }}
+                        </p> --}}
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative ">
                     <img src="{{ asset('storage/content/wedding07.jpg') }}" 
                          alt="3Rasa Event Organizer Services" 
                          class="w-full h-auto shadow-2xl rounded-2xl">
-                    <div class="absolute p-6 bg-white border border-gray-200 shadow-xl -bottom-6 -right-6 dark:bg-gray-700 rounded-xl dark:border-gray-600">
-                        <div class="text-3xl font-bold text-primary edu-vic-wa-nt-hand">13+</div>
+                    <div class="absolute p-6 text-center bg-white border border-gray-200 shadow-xl -bottom-6 -right-6 dark:bg-gray-700 rounded-xl dark:border-gray-600">
+                        {{-- <x-solar-cup-broken class="w-10 h-10 text-black dark:text-white" /> --}}
+                        <img src={{ asset("storage/content/medal.png") }} alt="Logo Mendal 3Rasa" class="w-10 h-10 mx-auto mb-2">
+                        <div class="text-3xl font-bold text-black edu-vic-wa-nt-hand dark:text-white">
+                            <span class="counter" data-target={{ 13 }}></span> 
+                            <span class="text-primary">+</span></div>
                         <div class="text-gray-600 dark:text-gray-300 pt-serif-regular">Tahun Pengalaman</div>
                     </div>
                 </div>
@@ -158,7 +165,7 @@
             <div class="grid grid-cols-3 gap-8">
                 <div class="text-center transition-all duration-300 group hover:scale-105">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
-                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
                         </svg>
                     </div>
@@ -170,7 +177,7 @@
                 
                 <div class="text-center transition-all duration-300 group hover:scale-105">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
-                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M5,16L3,14L5,12L6.5,13.5L11,9L12.5,10.5L6.5,16.5L5,16M19,7H22V9H19V12H17V9H14V7H17V4H19V7M17,17V15H15V17H17M13,17V15H11V17H13M9,17V15H7V17H9Z" />
                         </svg>
                     </div>
@@ -182,7 +189,7 @@
                 
                 <div class="text-center transition-all duration-300 group hover:scale-105">
                     <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 transition-all duration-300 rounded-full bg-gradient-to-br from-primary to-red-700 group-hover:shadow-xl">
-                        <svg class="w-10 h-10 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
                         </svg>
                     </div>
@@ -266,6 +273,7 @@
 
 
     </div>
+
 </div>
 
 @push('styles')
@@ -464,6 +472,44 @@
         }
     }
 </style>
+@endpush
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+
+        const animateCount = (counter) => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const increment = target / 100; // durasi = 100 step
+
+            const updateCounter = () => {
+                count += increment;
+                if (count < target) {
+                    counter.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target; // pastikan akhir sama persis
+                }
+            };
+
+            updateCounter();
+        };
+
+        // Efek hanya jalan saat elemen masuk viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target); // sekali jalan
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
 @endpush
 
 @endsection

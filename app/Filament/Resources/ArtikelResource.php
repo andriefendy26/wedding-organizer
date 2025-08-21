@@ -43,10 +43,10 @@ class ArtikelResource extends Resource
                         TextInput::make('judul')
                             ->label('Judul Artikel')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(255)->required(),
                         TextInput::make('sub_judul')
                             ->label('Sub Judul')
-                            ->maxLength(255),
+                            ->maxLength(255)->required(),
                     ]),
 
                 Step::make('Isi & Detail')

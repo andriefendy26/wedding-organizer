@@ -236,17 +236,31 @@ return [
 
     // Home page translations
     'hero' => [
-        'slide1_title' => 'Complete Equipment Rental at 3Rasa',
-        'slide1_description' => 'Whatever the concept, we present the best equipment to ensure every moment runs perfectly — from luxurious decorations to captivating small details.',
-        'slide2_title' => 'From Plan to Realization, We Are Ready to Help',
-        'slide2_description' => 'Trust your event needs to our professional team. We are ready to help realize special moments with premium equipment and services.',
-        'slide3_title' => 'Complete Equipment Rental at 3Rasa',
-        'slide3_description' => 'From elegant wedding parties, professional corporate events, to exclusive decoration rentals — everything we prepare with full heart.',
-        'slide4_title' => 'From Concept to Beautiful Memories, We Are Here for You',
+        'title' => 'Lets Create Your Super',
+        'description' => 'Trust your event needs to our professional team. We are ready to help realize special moments with premium equipment and services.',
+        'slide1_title' => 'Festival',
+        'slide2_title' => 'Summit',
+        'slide3_title' => 'Tour',
+        'slide4_title' => 'Expo',
+        'slide5_title' => 'Meeting',
+        'slide6_title' => 'Award',
+        'slide7_title' => 'Conference',
+        'slide8_title' => 'FGD',
+        'slide9_title' => 'Gathering',
+        'slide10_title' => 'Team Build',
+        'slide11_title' => 'With 3Rasa Production',
         'slide4_description' => 'From elegant wedding parties, professional corporate events, to exclusive decoration rentals — everything we prepare with full heart.',
         'consultation_button' => 'Free Consultation',
         'portfolio_button' => 'View Portfolio',
     ],
+    
+    'stat' => [
+        'label1' => 'Projects Completed',
+        'label2' => 'Happy Clients',
+        'label3' => 'Satisfaction Rate',
+        'label4' => 'Expert Team',
+    ],
+
     'services_home' => [
         'subtitle' => 'What We Offer',
         'title' => 'SERVICES',
@@ -662,32 +676,18 @@ return [
         'subtitle' => 'Make your special moments come true with our touch of love and utmost dedication'
     ],
     'sub_hero' => [
-        'title' => '3Rasa Event Organizer',
-        'subtitle' => '"Creating Precious Moments with Three Emotions: Love, Pride, and Happiness"'
+        'title' => '3Rasa Production',
+        'subtitle' => '"3Rasa Production provides creative, professional, and memorable event solutions. From large-scale festivals to corporate events, we ensure every detail is executed flawlessly."'
     ],
     'tentang' => [
-        'title' => 'About 3Rasa',
+        'title' => '3Rasa Production – The Best in North Kalimantan',
         'description' => [
-            'p1' => [
-                'bold1' => '3Rasa Event Organizer',
-                'isi1' => 'is a trusted wedding and event organizer company based in',
-                'bold2' => 'Tarakan, North Kalimantan.',
-                'isi2' => 'Since our establishment in 2012, we have dedicated ourselves to making wedding dreams and special events come true for our clients.'
-            ],
-            'p2' => [
-                'isi' => 'With more than',
-                'bold1' => '13 years of experience',
-                'isi1' => 'and having organized over',
-                'bold2' => '100+ wedding events,',
-                'isi2' => ' we truly understand that every wedding moment is unique and precious. Our experienced professional team is ready to help you create an unforgettable happy day.'
-            ],
-            'p3' => [
-                'isi' => 'We offer a complete wedding organizer package that includes',
-                'bold1' => 'decorations, documentation, professional MC, sound system,',
-                'isi1' => 'and various other supporting services to ensure your event runs perfectly.',
-            ],
+            'p1' => "3Rasa Production provides the best Event Organizer (EO) and Wedding Organizer (WO) services in North Kalimantan and Indonesia, tailored to your needs. As a legal and professional company organizing various indoor and outdoor events since 2012, we have successfully designed and delivered events such as product launching, gatherings, conferences, seminars, townhalls, exhibitions, and roadshows in a unique and engaging way.",
+            'p2' => "The entire 3Rasa Production team is ready to create event concepts based on client needs while opening discussions to exchange ideas and concepts for upcoming events. More than 900++ (and still counting) companies and organizations have trusted us with their gatherings, product launches, offline, online, and hybrid events. This aligns with our vision as",
+            // 'p3' => "We provide complete wedding organizer packages including decoration, documentation, professional MCs, sound systems, and various supporting services to ensure your special day runs perfectly.",
         ]
-    ],
+    ],  
+
     'visimisi'=> [
         'visi' => [
             'title' => 'Our Vision',

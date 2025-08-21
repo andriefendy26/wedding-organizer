@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galery;
 use App\Models\InstagramPost;
+use App\Models\InstagramProfile;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,8 +40,20 @@ class TestimoniController extends Controller
         //         'comment' => 0
         //     ],
         // ];
+        $allImage = Galery::all();
 
-        $instagramProfile = [];
+        foreach ($allImage as $team) {
+            // Pastikan foto menggunakan asset path yang benar
+            if ($team->foto) {
+                $team->foto_url = asset('storage/' . $team->foto);
+            } else {
+                // Default foto jika tidak ada
+                $team->foto_url = asset('storage/team/default.jpg');
+            }
+            
+        }
+
+        $profile = InstagramProfile::getMainProfile();
 
         $instagramPost = InstagramPost::active()->get();
 
@@ -49,7 +63,7 @@ class TestimoniController extends Controller
             ->paginate(12);
 
         return view('home', 
-        compact('testimoni', 'instagramPost', 'instagramProfile')
+        compact('testimoni', 'instagramPost', 'profile', 'allImage')
         );
     }
     /**

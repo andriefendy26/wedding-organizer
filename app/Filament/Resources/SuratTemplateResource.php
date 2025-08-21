@@ -183,3 +183,4 @@ class SuratTemplateResource extends Resource
         ];
     }
 }
+

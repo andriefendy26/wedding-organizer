@@ -22,3 +22,4 @@ class EditSurat extends EditRecord
         return $this->getResource()::getUrl('index');
     }
 }
+

@@ -237,3 +237,4 @@ curl http://localhost:8000/surat/preview/{publicLink}
 -   Cek apakah template default sudah diset
 -   Cek apakah template aktif
 -   Cek relasi antara template dan jenis surat
+

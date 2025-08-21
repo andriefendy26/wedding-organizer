@@ -296,3 +296,4 @@ Template surat mendukung placeholder berikut:
 ## License
 
 MIT License - bebas digunakan untuk keperluan komersial dan non-komersial.
+

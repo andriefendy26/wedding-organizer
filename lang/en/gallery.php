@@ -81,4 +81,9 @@ return [
     'alt_decoration_minimalist' => 'Minimalist Decoration',
     'alt_corporate_meeting' => 'Corporate Meeting',
     'alt_product_launch' => 'Product Launch',
+
+    'header' => [
+        'title' => 'Gallery',
+        'subtitle' => 'Explore our collection of event photos and documentation',
+    ],
 ];

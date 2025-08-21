@@ -450,8 +450,18 @@ TEXT;
     @endif
 
     <!-- Unified Header dengan Navigation -->
-    <header x-data="{ mobileMenuOpen : false }" class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900/95 dark:border-gray-700">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <header 
+        x-data="{ mobileMenuOpen: false, show: false }" 
+        x-init="
+        const check = () => show = window.scrollY > 50;
+        check();
+        window.addEventListener('scroll', check, { passive: true });
+        "
+        x-show="show"
+        x-cloak
+        class="fixed top-0 z-50 w-full transition-all duration-300 border-b border-gray-200 shadow-lg bg-white/90 backdrop-blur-md dark:bg-gray-900/95 dark:border-gray-700"
+    >
+       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <!-- Main Header Content -->
             <div class="flex items-center justify-between">
                 <!-- Logo/Brand -->
@@ -930,7 +940,48 @@ TEXT;
 
     <!-- Discount Overlay Component -->
     {{-- @include('components.overlay') --}}
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const el = document.getElementById("typewriter");
+            const word1 = el.getAttribute('data-word1');
+            const word2 = el.getAttribute('data-word2');
+            const word3 = el.getAttribute('data-word3');
+            const word4 = el.getAttribute('data-word4');
+            const word5 = el.getAttribute('data-word5');
+            const word6 = el.getAttribute('data-word6');
+            const word7 = el.getAttribute('data-word7');
+            const word8 = el.getAttribute('data-word8');
+            const word9 = el.getAttribute('data-word9');
+            const word10 = el.getAttribute('data-word10');
+            const words = [word1, word2, word3, word4, word5, word6, word7, word8, word9, word10];
+            
+            let currentWord = 0;
+            let currentChar = 0;
+
+            function type() {
+                if (currentChar < words[currentWord].length) {
+                    el.innerHTML += words[currentWord].charAt(currentChar);
+                    currentChar++;
+                    setTimeout(type, 80);
+                } else {
+                    setTimeout(erase, 1000);
+                }
+            }
+
+            function erase() {
+                if (currentChar > 0) {
+                    el.innerHTML = el.innerHTML.slice(0, -1);
+                    currentChar--;
+                    setTimeout(erase, 50);
+                } else {
+                    currentWord = (currentWord + 1) % words.length;
+                    setTimeout(type, 100);
+                }
+            }
+
+            type();
+        });
+    </script>
     <script>
         function closeAlert(alertId) {
             const alert = document.getElementById(alertId);

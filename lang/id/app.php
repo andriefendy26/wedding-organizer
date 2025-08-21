@@ -235,18 +235,32 @@ return [
     'contact_info' => 'Info Kontak',
 
     // Home page translations
-    'hero' => [
-        'slide1_title' => 'Sewa Perlengkapan Lengkap di 3Rasa',
-        'slide1_description' => 'Apapun konsepnya, kami hadirkan perlengkapan terbaik agar setiap momen Anda berjalan sempurna — dari dekorasi mewah hingga detail kecil yang memikat.',
-        'slide2_title' => 'Dari Rencana Hingga Realisasi, Kami Siap Membantu',
-        'slide2_description' => 'Percayakan kebutuhan acara Anda pada tim profesional kami. Kami siap membantu mewujudkan momen istimewa dengan perlengkapan dan layanan yang prima.',
-        'slide3_title' => 'Sewa Perlengkapan Lengkap di 3Rasa',
-        'slide3_description' => 'Dari pesta pernikahan yang elegan, event korporat profesional, hingga penyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.',
-        'slide4_title' => 'Dari Konsep hingga Kenangan Indah, Kami Ada untuk Anda',
-        'slide4_description' => 'Dari pesta pernikahan yang elegan, event korporat profesional, hingga penyewaan dekorasi eksklusif — semua kami siapkan dengan sepenuh hati.',
+   'hero' => [
+        'title' => 'Mari Ciptakan Acara Super Anda',
+        'description' => 'Percayakan kebutuhan acara Anda kepada tim profesional kami. Kami siap membantu mewujudkan momen istimewa dengan peralatan dan layanan premium.',
+        'slide1_title' => 'Festival',
+        'slide2_title' => 'Summit',
+        'slide3_title' => 'Tur',
+        'slide4_title' => 'Expo',
+        'slide5_title' => 'Rapat',
+        'slide6_title' => 'Penghargaan',
+        'slide7_title' => 'Konferensi',
+        'slide8_title' => 'FGD',
+        'slide9_title' => 'Gathering',
+        'slide10_title' => 'Team Build',
+        'slide11_title' => 'Bersama 3Rasa Production',
+        'slide4_description' => 'Dari pesta pernikahan yang elegan, acara perusahaan profesional, hingga penyewaan dekorasi eksklusif — semua kami persiapkan sepenuh hati.',
         'consultation_button' => 'Konsultasi Gratis',
         'portfolio_button' => 'Lihat Portofolio',
     ],
+
+    'stat' => [
+        'label1' => 'Proyek Selesai',
+        'label2' => 'Pelanggan Bahagia',
+        'label3' => 'Tingkat Kepuasan',
+        'label4' => 'Tim Ahli',
+    ],
+
     'services_home' => [
         'subtitle' => 'Apa Yang Kami Tawarkan',
         'title' => 'LAYANAN',
@@ -660,38 +674,22 @@ return [
 
 
     // Tentang Kami Tranlations
-
     'tentang_page' => [
         'hero' => [
             'title' => 'Tentang 3Rasa',
             'subtitlle' => 'Wujudkan momen spesial Anda bersama kami dengan sentuhan cinta dan dedikasi tinggi'
         ],
         'sub_hero' => [
-            'title' => '3Rasa Event Organizer',
-            'subtitle' => '"Menciptakan Momen Berharga dengan Tiga Rasa: Cinta, Bangga, dan Bahagia"'
+            'title' => '3Rasa Production',
+            'subtitle' => '"3Rasa Production menghadirkan solusi event yang kreatif, profesional, dan berkesan. Dari festival berskala besar hingga corporate event, kami memastikan setiap detail terwujud sempurna"'
         ],
         'tentang' => [
-            'title' => 'Tentang 3Rasa',
+            'title' => '3Rasa Production Terbaik Kaltara ',
             'description' => [
-                'p1' => [
-                    'bold1' => '3Rasa Event Organizer',
-                    'isi1' => 'adalah perusahaan jasa wedding organizer dan event organizer terpercaya yang berlokasi di',
-                    'bold2' => 'Tarakan, Kalimantan Utara.',
-                    'isi2' => 'Sejak didirikan pada tahun 2012, kami telah mengabdikan diri untuk mewujudkan impian pernikahan dan acara spesial bagi klien-klien kami.'
-                ],
-                'p2' => [
-                    'isi' => 'Dengan pengalaman lebih dari',
-                    'bold1' => '13 Tahun',
-                    'isi1' => 'dan telah menyelenggarakan',
-                    'bold2' => '100+ acara pernikahan',
-                    'isi2' => ' kami memahami betul bahwa setiap momen pernikahan adalah unik dan berharga. Tim profesional kami yang berpengalaman siap membantu Anda menciptakan hari bahagia yang tak terlupakan.'
-                ],
-                'p3' => [
-                    'isi' => 'Kami menyediakan paket wedding organizer lengkap yang meliputi',
-                    'bold1' => 'dekorasi, dokumentasi, MC profesional, sound system,',
-                    'isi1' => 'dan berbagai layanan pendukung lainnya untuk memastikan acara Anda berjalan sempurna.',
-                ],
-            ]
+                'p1' => "3Rasa Production menyediakan layanan Event Organizer (EO) dan Wedding Organizer (WO) terbaik Kaltara dan Indonesia, sesuai kebutuhan Anda. Sebagai Perusahaan yang legal dan profesional dalam menyelenggarakan berbagai acara indoor dan outdoor sejak tahun 2012, berbagai acara seperti launching, gathering, conferenmce, seminar, townhall, exhibition (pameran) dan roadshow dirancang khusus dan menarik.",
+                'p2' => "Seluruh Tim 3Rasa Production siap memberikan konsep kegiatan sesuai kebutuhan klien dan  membuka dialog/diskusi untuk bertukar ide dan konsep kegiatan yang akan diselenggarakan nantinya. Lebih dari 900++ (still counting) perusahaan dan organisasi telah mempercayakan kepada kami gathering event, launching, offline, online, hybrid event. Sesuai dengan visi kami sebagai",
+                // 'p3' => "Kami menyediakan paket wedding organizer lengkap yang meliputi dekorasi, dokumentasi, MC profesional, sound system, dan berbagai layanan pendukung lainnya untuk memastikan acara Anda berjalan sempurna.",
+                ]
             ],
         'visimisi'=> [
             'visi' => [

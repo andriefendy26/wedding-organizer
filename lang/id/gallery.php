@@ -81,4 +81,9 @@ return [
     'alt_decoration_minimalist' => 'Dekorasi Minimalis',
     'alt_corporate_meeting' => 'Corporate Meeting',
     'alt_product_launch' => 'Product Launch',
+       
+    'header' => [
+        'title' => 'Galeri',
+        'subtitle' => 'Setiap momen adalah cerita. Melalui galeri ini, kami hadirkan rangkaian dokumentasi dari berbagai acara yang telah kami tangani',
+    ],
 ];

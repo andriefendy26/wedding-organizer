@@ -49,116 +49,197 @@ TEXT;
 @endsection
 
 @section('content')
-<div class="relative w-full h-screen"
-    x-data="{}"
-    >
-    <div class="containerHero">
-        <div id="slide">                 
-            <div x-data="{kursiIsOpen : true}" class="bg-white item sm dark:bg-gray-800" style="background-image: url('{{ asset('storage/content/gif04.gif') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black/50"></div>
-                <div class="relative flex items-center justify-center w-full h-full pt-48 text-center content">
-                    <div class="flex flex-col items-center justify-center">
-                        <h1 class="lg:w-[30%] text-white text-3xl md:text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
-                                {{ __('app.hero.slide1_title') }}
-                        </h1>
-                        <p class="lg:w-[50%] my-6 text-gray-200 text-sm md:text-lg pt-serif-regular-italic">{{ __('app.hero.slide1_description') }}</p>
-                        <div class="flex items-start justify-center gap-3 font-semibold edu-vic-wa-nt-hand-500">
-                            <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
-                                <button class="p-2 px-5 tracking-wide text-black transition-all duration-300 bg-white rounded-xl hover:tracking-widest hover:px-8">
-                                    {{ __('app.hero.consultation_button') }}
-                            </a>
-                            <a href="/portofolio">
-                                </button>
-                                <button class="p-2 px-5 tracking-wide text-white transition-all duration-300 rounded-xl bg-primary hover:tracking-widest hover:px-8">{{ __('app.hero.portfolio_button') }}</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="w-full h-screen" style="background-image: url('{{ asset('storage/content/gif05.gif') }}');background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative flex items-center justify-center w-full h-full text-center content">
+        <div class="flex flex-col items-center justify-center">
+            <img class="object-cover w-64 md:w-96 flip-on-load" src="{{ asset('storage/content/Logo.png') }}" alt="3Rasa Production">
+            <h2 class="lg:w-[40%] text-white text-3xl md:text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
+                {{ __('app.hero.title') }} 
+                <span 
+                id="typewriter" 
+                class="font-bold text-transparent bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 bg-clip-text"
+                    data-word1="{{ __('app.hero.slide1_title') }}" 
+                    data-word2="{{ __('app.hero.slide2_title') }}"
+                    data-word3="{{ __('app.hero.slide3_title') }}"
+                    data-word4="{{ __('app.hero.slide4_title') }}"
+                    data-word5="{{ __('app.hero.slide5_title') }}"
+                    data-word6="{{ __('app.hero.slide6_title') }}"
+                    data-word7="{{ __('app.hero.slide7_title') }}"
+                    data-word8="{{ __('app.hero.slide8_title') }}"
+                    data-word9="{{ __('app.hero.slide9_title') }}"
+                    data-word10="{{ __('app.hero.slide10_title') }}"
+                    > 
+                </span>
+                {{ __('app.hero.slide11_title') }}
+            </h2>
             
-            <div x-data="{kursiIsOpen : true}" class="bg-white item sm dark:bg-gray-800" style="background-image: url('{{ asset('storage/content/gif05.gif') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black/50"></div>
-                <div class="relative flex items-center justify-center w-full h-full pt-40 text-center content">
-                    <div class="flex flex-col items-center justify-center">
-                        <img class="object-cover w-52 md:w-64 flip-on-load" src="{{ asset('storage/content/Logo.png') }}" alt="3Rasa Production">
-                        <h2 id="typewriter" class="lg:w-[40%] text-white text-3xl md:text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand" 
-                            data-word1="{{ __('app.hero.slide2_title') }}" 
-                            data-word2="{{ __('app.hero.slide4_title') }}">
-                              
-                        </h2>
-                        <p class="lg:w-[50%] my-6 text-gray-200 text-sm md:text-lg pt-serif-regular-italic">{{ __('app.hero.slide2_description') }}</p>
-                        <div class="flex items-start justify-center gap-3 text-sm font-semibold md:text-md edu-vic-wa-nt-hand-500">
-                            <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
-                                <button class="p-2 px-5 tracking-wide text-black transition-all duration-300 bg-white rounded-xl hover:tracking-widest hover:px-8">
-                                    {{ __('app.hero.consultation_button') }}
-                            </a>
-                            <a href="/portofolio">
-                                </button>
-                                <button class="p-2 px-5 text-white transition-all duration-300 md:tracking-wide rounded-xl bg-primary hover:tracking-widest hover:px-8">{{ __('app.hero.portfolio_button') }}</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="lg:w-[50%] my-6 text-gray-200 text-sm md:text-lg pt-serif-regular-italic">{{ __('app.hero.description') }}</p>
+            <div class="flex items-start justify-center gap-3 text-sm font-semibold md:text-lg edu-vic-wa-nt-hand-500">
+                <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
+                    <button class="p-2 px-5 tracking-wide text-black transition-all duration-300 bg-white rounded-xl hover:tracking-widest hover:px-8">
+                        {{ __('app.hero.consultation_button') }}
+                </a>
 
-            <div x-data="{kursiIsOpen : true}" class="bg-white item sm dark:bg-gray-800" style="background-image: url('{{ asset('storage/content/gif04.gif') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black/50"></div>
-                <div class="relative flex items-center justify-center w-full h-full pt-48 text-center content">
-                    <div class="flex flex-col items-center justify-center">
-                        <h2 class="lg:w-[30%] text-white text-3xl md:text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand">
-                                {{ __('app.hero.slide3_title') }}
-                        </h2>
-                        <p class="lg:w-[50%] my-6 text-gray-200 text-sm md:text-lg pt-serif-regular-italic">{{ __('app.hero.slide3_description') }}</p>
-                        <div class="flex items-start justify-center gap-3 font-semibold edu-vic-wa-nt-hand-500">
-                            <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
-                                <button class="p-2 px-5 tracking-wide text-black transition-all duration-300 bg-white rounded-xl hover:tracking-widest hover:px-8">
-                                    {{ __('app.hero.consultation_button') }}
-                            </a>
-                            <a href="/portofolio">
-                                </button>
-                                <button class="p-2 px-5 tracking-wide text-white transition-all duration-300 rounded-xl bg-primary hover:tracking-widest hover:px-8">{{ __('app.hero.portfolio_button') }}</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
-            
-            <div x-data="{kursiIsOpen : true}" class="bg-white item sm dark:bg-gray-800" style="background-image: url('{{ asset('storage/content/gif03.gif') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                <div class="absolute inset-0 bg-black/50"></div>
-                <div class="relative flex items-center justify-center w-full h-full pt-40 text-center content">
-                    <div class="flex flex-col items-center justify-center">
-                        <img class="object-cover w-52 md:w-64 flip-on-load" src="{{ asset('storage/content/Logo.png') }}" alt="3Rasa Production">
-                        <h2 class="lg:w-[40%] text-white text-3xl md:text-4xl tracking-wide font-semibold mb-4 edu-vic-wa-nt-hand" >
-                        {{ __('app.hero.slide4_title') }}
-                              
-                        </h2>
-                        <p class="lg:w-[50%] my-6 text-gray-200 text-sm md:text-lg pt-serif-regular-italic">{{ __('app.hero.slide2_description') }}</p>
-                        <div class="flex items-start justify-center gap-3 font-semibold edu-vic-wa-nt-hand-500">
-                            <a href="https://api.whatsapp.com/send/?phone={{ $phoneNumber }}&text={{ $encodedMessage }}&type=phone_number&app_absent=0" target="_blank">
-                                <button class="p-2 px-5 tracking-wide text-black transition-all duration-300 bg-white rounded-xl hover:tracking-widest hover:px-8">
-                                    {{ __('app.hero.consultation_button') }}
-                            </a>
-                            <a href="/portofolio">
-                                </button>
-                                <button class="p-2 px-5 tracking-wide text-white transition-all duration-300 rounded-xl bg-primary hover:tracking-widest hover:px-8">{{ __('app.hero.portfolio_button') }}</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-        <div class="buttons">
-            <button id="prev" class="left-0 p-3 border-2 rounded-full bg-white/40"><x-heroicon-o-arrow-long-left /></i></button>
-            <button id="next" class="right-0 p-3 border-2 rounded-full bg-white/40"><x-heroicon-o-arrow-long-right /></i></button>
+    </div>
+</div>
+<!-- Team Stats Section -->
+<div data-aos="zoom-in-down" class="relative px-4 my-20 overflow-hidden md:px-8">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"></div>
+    
+    <!-- Diagonal Lines Pattern -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(0,0,0,0.1) 10px,
+            rgba(0,0,0,0.1) 12px
+        );"></div>
+    </div>
+    
+    <!-- Horizontal Lines Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 20px,
+            rgba(0,0,0,0.15) 20px,
+            rgba(0,0,0,0.15) 21px
+        );"></div>
+    </div>
+    
+    <!-- Vertical Lines Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 30px,
+            rgba(0,0,0,0.1) 30px,
+            rgba(0,0,0,0.1) 31px
+        );"></div>
+    </div>
+    
+    <!-- Decorative Corner Lines -->
+    <div class="absolute top-0 left-0 w-32 h-32 opacity-30">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 8px,
+            rgba(59, 130, 246, 0.3) 8px,
+            rgba(59, 130, 246, 0.3) 10px
+        );"></div>
+    </div>
+    
+    <div class="absolute bottom-0 right-0 w-32 h-32 opacity-30">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 8px,
+            rgba(16, 185, 129, 0.3) 8px,
+            rgba(16, 185, 129, 0.3) 10px
+        );"></div>
+    </div>
+    
+    <div class="relative z-10 mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            @php
+                $stats = [
+                    [
+                        'value' => 500,
+                        'label' => __('app.stat.label1'),
+                        'color' => '#3B82F6', // Blue
+                        'icon' => 'handshake'
+                    ],
+                    [
+                        'value' => 2000,
+                        'label' => __('app.stat.label2'),
+                        'color' => '#10B981', // Green
+                        'icon' => 'users'
+                    ],
+                    [
+                        'value' => 100,
+                        'label' => __('app.stat.label3'),
+                        'color' => '#F59E0B', // Amber
+                        'icon' => 'award'
+                    ],
+                    [
+                        'value' => 99,
+                        'label' => __('app.stat.label4'),
+                        'color' => '#EF4444', // Red
+                        'icon' => 'target'
+                    ],
+                ];
+            @endphp
+
+            @foreach($stats as $index => $stat)
+                <div class="flex flex-col items-center p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ">
+
+                    <!-- Professional Icon Container -->
+                    <div class="relative mb-6">
+                        <!-- Icon Background -->
+                        <div class="relative flex items-center justify-center w-20 h-20 overflow-hidden rounded-2xl" 
+                             style="background: linear-gradient(135deg, {{ $stat['color'] }}15, {{ $stat['color'] }}25);">
+                            
+                            <!-- Subtle Pattern Overlay -->
+                            <div class="absolute inset-0 opacity-30" 
+                                 style="background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, {{ $stat['color'] }}10 4px, {{ $stat['color'] }}10 8px);"></div>
+                            
+                            <!-- Additional Line Pattern for Icon -->
+                            <div class="absolute inset-0 opacity-20" 
+                                 style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, {{ $stat['color'] }}15 6px, {{ $stat['color'] }}15 7px);"></div>
+                            
+                            <!-- Professional Icons -->
+                            @if($stat['icon'] == 'handshake')
+                                <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
+                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                          d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+                                </svg>
+                            @elseif($stat['icon'] == 'users')
+                                <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
+                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                          d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                                </svg>
+                            @elseif($stat['icon'] == 'award')
+                                <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
+                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                          d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228a25.835 25.835 0 012.916.52 6.003 6.003 0 01-4.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                </svg>
+                            @else
+                                <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
+                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                          d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                </svg>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Counter Number -->
+                    <h3 class="my-3 text-3xl font-bold transition-transform duration-300 edu-vic-wa-nt-hand dark:text-white group-hover:scale-105 counter" 
+                        style="color: {{ $stat['color'] }}"
+                        data-target="{{ $stat['value'] }}">
+                        0
+                    </h3>
+                    
+                    <!-- Label -->
+                    <p class="text-lg font-medium text-gray-600 dark:text-gray-300 pt-serif-regular">
+                        {{ $stat['label'] }}
+                    </p>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
 
 {{-- Services Section --}}
 <div class="px-10 pt-20 pb-10 overflow-hidden section md:px-16 lg:px-24 xl:px-32">
-
     {{-- Header Instagram --}}
     <div class="mb-12 text-center">
         <div data-aos="zoom-in-down" class="relative text-black edu-vic-wa-nt-hand-500 dark:text-white">
@@ -167,8 +248,8 @@ TEXT;
                 {{ __('app.services_home.title') }}
             </h2>
         </div>
-        <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
-            <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.services_home.heading') }}</h3>
+        <div data-aos="zoom-in-up" class="">
+            {{-- <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.services_home.heading') }}</h3> --}}
             <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 {{ __('app.services_home.description') }}
             </p>
@@ -236,7 +317,7 @@ TEXT;
                     
                     <div class="absolute bottom-4 left-4">
                         <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
-                            <x-heroicon-o-sparkles class="w-6 h-6 text-primary" />
+                            <x-heroicon-o-heart class="w-6 h-6 text-primary" />
                         </div>
                     </div>
                 </div>
@@ -274,7 +355,7 @@ TEXT;
                     
                     <div class="absolute bottom-4 left-4">
                         <div class="flex items-center justify-center w-12 h-12 transition-transform duration-300 rounded-2xl bg-white/90 dark:bg-gray-800/90 group-hover:scale-110">
-                            <x-heroicon-o-cube class="w-6 h-6 text-primary" />
+                            <x-heroicon-o-heart class="w-6 h-6 text-primary" />
                         </div>
                     </div>
                 </div>
@@ -307,90 +388,9 @@ TEXT;
         </div>
 </div>
 
-<!-- Fireworks Container -->
-<div class="fireworks-container" id="fireworksContainer"></div>
-{{-- Hiasan --}}
-<div class="px-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
-    <h2 data-aos="fade-right" class="py-8 mx-8 text-2xl text-center text-black lg:text-3xl poppins-medium md:mx-20 lg:mx-40 dark:text-white">{{ __('app.decoration.title') }}</h2>
-
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {{-- card 1 --}}
-        <div data-aos="fade-left" class="flex poppins-regular h-72 md:h-[500px] flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl" style="background-image: url('{{ asset('storage/content/wedding03.jpg') }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-            <h3 class="self-end w-auto px-3 py-1 text-xs border-2 border-white rounded-full">{{ __('app.decoration.card1.badge') }}</h3>
-            <p class="tracking-widest text-md xl:text-lg edu-vic-wa-nt-hand-400">{{ __('app.decoration.card1.description') }}</p>
-        </div>
-    
-        {{-- card 2 --}}
-        <div data-aos="fade-up" class="flex flex-col items-center justify-center gap-4 p-4 text-center border-2 border-gray-200 rounded-xl">
-            <h3 class="text-3xl text-black lg:text-4xl edu-vic-wa-nt-hand-500 dark:text-white">{{ __('app.decoration.card2.title') }}</h3>
-            <p class="text-sm tracking-wider text-gray-600 pt-serif-regular lg:text-md dark:text-gray-400">{{ __('app.decoration.card2.description') }}</p>
-            
-
-        </div>
-    
-        {{-- card 3 --}}
-        <div data-aos="fade-down" class="h-40 lg:h-[500px] md:col-span-2 lg:col-span-1 flex relative overflow-hidden poppins-regular flex-col p-4 text-white border-2 border-gray-300 justify-between rounded-xl" style="background-image: url('{{ asset('storage/content/wedding04.jpg') }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-            <div class="absolute inset-0 bg-black/60"></div>
-            <div class="relative z-10 flex gap-3 text-xs">
-                @foreach(__('app.decoration.card3.tags') as $tag)
-                <span class="p-1 px-5 rounded-full backdrop-blur-sm bg-white/40">{{ $tag }}</span>
-                @endforeach
-            </div>
-            <div class="relative z-10 flex gap-3 text-xs">
-                <span class="p-2 rounded-full backdrop-blur-sm lg:p-5 bg-white/40"><x-bi-instagram class="w-4 h-4" /></span>
-                <span class="p-2 rounded-full backdrop-blur-sm lg:p-5 bg-white/40"><x-bi-telephone class="w-4 h-4"/></span>
-                <span class="p-2 rounded-full backdrop-blur-sm lg:p-5 bg-white/40"><x-bi-tiktok class="w-4 h-4" /></span>
-            </div>
-        </div>
-        
-    </div>
-
-    <div class="grid grid-cols-1 gap-4 mt-4 md:grid-cols-2">
-
-        <div  class="grid grid-cols-3 gap-4">
-            <div data-aos="zoom-in-down"  class="col-span-3 p-6 bg-gray-200 rounded-2xl">
-                <h3 class="text-lg text-black poppins-regular">{{ __('app.testimonials.title') }}</h3>
-                <p class="mt-2 text-sm text-gray-800 edu-vic-wa-nt-hand-500">{{ __('app.testimonials.testimonial') }}
-                    <span class="font-semibold text-primary">{{ __('app.testimonials.couple_name') }}</span>
-                </p>
-            </div>
-
-            <div data-aos="zoom-in-down" class="col-span-3 h-52 rounded-xl xl:h-full xl:col-span-1" style="background-image: url('{{ asset("storage/content/wedding05.jpeg") }}'); background-size: cover; background-position: center;"></div>
-            {{-- <img src="{{ asset("storage/content/wedding05.jpeg") }}" class="col-span-3 w-52 h-52 rounded-xl" alt="Couple Tarakan"> --}}
-            
-            <div data-aos="zoom-in-up"  class="flex flex-col items-center justify-center col-span-2 gap-4 p-4 text-sm text-center border-2 border-gray-200 rounded-2xl xl:col-span-1">
-                {{-- <h3 class="text-4xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Dibuat dengan banyak cinta</h3> --}}
-                <p class="tracking-wider text-center text-gray-600 pt-serif-regular dark:text-gray-400">Perjalanan pernikahan Anda adalah kisah yang indah, dan kami hadir untuk menuliskannya.</p>
-   
-            </div>
-
-            <div data-aos="zoom-in-left"  class="flex flex-col items-center justify-center gap-4 p-4 text-sm text-center bg-gray-200 border-2 border-gray-200 rounded-2xl">
-                {{-- <h3 class="text-4xl text-black edu-vic-wa-nt-hand-500 dark:text-white">Dibuat dengan banyak cinta</h3> --}}
-                <p class="text-3xl tracking-wider text-center text-gray-600 pt-serif-regular xl:text-5xl dark:text-gray-400">{{ __('app.testimonials.stats.satisfied_couples') }}</p>
-                <p class="tracking-wider text-center text-gray-600 pt-serif-regular dark:text-gray-400">{{ __('app.testimonials.stats.description') }}</p>
-            </div>
-        </div>
-        
-        <div data-aos="fade-left"  class="grid grid-cols-1 gap-5 pt-serif-regular">
-            <div class="p-6 bg-gray-200 rounded-2xl">
-                <h3 class="text-black text-md">{{ __('app.planning.description') }}</h3>
-            </div>
-            <div class="px-6 py-4 bg-gray-200 rounded-2xl">
-                <p class="text-black">01. <span class="">{{ __('app.planning.steps.step1') }}</span></p>
-            </div>
-            <div class="px-6 py-4 bg-gray-200 rounded-2xl">
-                <p class="text-black">02. <span class="">{{ __('app.planning.steps.step2') }}</span></p>
-            </div>
-            <div class="px-6 py-4 bg-gray-200 rounded-2xl">
-                <p class="text-black">03. <span class="">{{ __('app.planning.steps.step3') }}</span></p>
-            </div>
-        
-        </div>
-    </div>
-</div>
 
 {{-- Service Overview Section --}}
-<div class="px-10 py-20 overflow-hidden md:px-16 lg:px-24 xl:px-32">
+<div class="px-10 py-20 pt-20 overflow-hidden md:px-16 lg:px-24 xl:px-32">
     <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
         <div data-aos="fade-right">
             <h2 class="mb-6 text-3xl font-semibold text-black lg:text-5xl edu-vic-wa-nt-hand dark:text-white">
@@ -439,6 +439,176 @@ TEXT;
     </div>
 </div>
 
+{{-- Galery --}}
+<div class="px-10 py-20 pt-20 overflow-hidden md:px-16 lg:px-24 xl:px-32">
+    {{-- Header Galery --}}
+    <div class="mb-12 text-center">
+        <div data-aos="zoom-in-down" class="relative text-black edu-vic-wa-nt-hand-500 dark:text-white">
+            {{-- <div class="text-lg absolute top-[30%] left-[35%] text-gray-500 dark:text-gray-400">{{ __('app.services_home.subtitle') }}</div> --}}
+            <h2 class="md:tracking-[20px] xl:tracking-[30px] text-[50px] md:text-[100px] xl:text-[120px] opacity-20">  
+                {{ __('gallery.header.title') }}
+            </h2>
+        </div>
+        <div data-aos="zoom-in-up" class="">
+            {{-- <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.services_home.heading') }}</h3> --}}
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
+                {{ __('gallery.header.subtitle') }}
+            </p>
+        </div>
+    </div>
+    {{-- Portfolio Grid --}}
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" id="portfolio-grid">
+        
+        @if($allImage->count() > 0) 
+        @foreach ($allImage as $image) 
+            <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+                <div class="relative overflow-hidden shadow-lg rounded-xl">
+                    <img src="{{ $image['foto_url'] }}" alt="{{ $image['nama'] }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                    <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                        <div class="absolute text-white bottom-6 left-6">
+                            <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ $image['nama'] }}</h3>
+                            <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">{{ __('gallery.wedding_category') }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+        @else
+        {{-- Wedding Projects --}}
+        <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="{{ __('gallery.alt_wedding_adat_bugis') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.wedding_adat_bugis') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_rina_andi') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">{{ __('gallery.wedding_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="{{ __('gallery.alt_wedding_modern') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.wedding_modern') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_sarah_budi') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">{{ __('gallery.wedding_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding04.jpg') }}" alt="{{ __('gallery.alt_wedding_outdoor') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.wedding_outdoor') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_maya_doni') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">{{ __('gallery.wedding_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Decoration Projects --}}
+        <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/decoration01.jpeg') }}" alt="{{ __('gallery.alt_decoration_elegant') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.decoration_elegant') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.theme_gold_white') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">{{ __('gallery.decoration_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/decoration.jpg') }}" alt="{{ __('gallery.alt_decoration_traditional') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.decoration_traditional') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.theme_kalimantan') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">{{ __('gallery.decoration_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Corporate Events --}}
+        <div class="cursor-pointer portfolio-item corporate group" data-category="corporate">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding05.jpeg') }}" alt="{{ __('gallery.alt_corporate_meeting') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.corporate_meeting') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_borneo_sejahtera') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs bg-blue-500 rounded-full">{{ __('gallery.corporate_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Additional Items --}}
+        <div class="cursor-pointer portfolio-item wedding group" data-category="wedding">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding01.jpg') }}" alt="{{ __('gallery.alt_wedding_indoor') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.wedding_indoor') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_lina_agus') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs rounded-full bg-primary">{{ __('gallery.wedding_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor-pointer portfolio-item decoration group" data-category="decoration">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/decoration04.png') }}" alt="{{ __('gallery.alt_decoration_minimalist') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.decoration_minimalist') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.theme_modern_clean') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs bg-purple-500 rounded-full">{{ __('gallery.decoration_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cursor-pointer portfolio-item corporate group" data-category="corporate">
+            <div class="relative overflow-hidden shadow-lg rounded-xl">
+                <img src="{{ asset('storage/content/wedding03.jpg') }}" alt="{{ __('gallery.alt_product_launch') }}" 
+                        class="object-cover w-full transition-transform duration-500 h-80 group-hover:scale-110">
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
+                    <div class="absolute text-white bottom-6 left-6">
+                        <h3 class="text-xl font-semibold edu-vic-wa-nt-hand">{{ __('gallery.product_launch') }}</h3>
+                        <p class="text-sm pt-serif-regular-italic">{{ __('gallery.client_tech_company') }}</p>
+                        <span class="inline-block px-3 py-1 mt-2 text-xs bg-blue-500 rounded-full">{{ __('gallery.corporate_category') }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+    </div>
+
+</div>
+
 {{-- Testimoni --}}
 <div class="px-10 mt-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
     <div  class="mb-12 text-center">
@@ -448,8 +618,8 @@ TEXT;
                 {{ __('app.testimoni.title') }}
             </h2>
         </div>
-        <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
-            <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.testimoni.heading') }}</h3>
+        <div data-aos="zoom-in-up" class="">
+            {{-- <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.testimoni.heading') }}</h3> --}}
             <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 {{ __('app.testimoni.description') }}
             </p>
@@ -605,7 +775,7 @@ TEXT;
     </div>
 </div>
 
-{{-- Instagram Section --}}
+{{-- Instagram Section --}} 
 <div class="px-10 pt-10 overflow-hidden md:px-16 lg:px-24 xl:px-32">
     {{-- Header Instagram --}}
     <div  class="mb-12 text-center">
@@ -615,8 +785,8 @@ TEXT;
                 {{ __('app.instagram.title') }}
             </h2>
         </div>
-        <div data-aos="zoom-in-up" class="lg:mt-[-60px]">
-            <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.instagram.heading') }}</h3>
+        <div data-aos="zoom-in-up" class="">
+            {{-- <h3 class="mb-4 text-xl text-black md:text-2xl lg:text-4xl poppins-medium dark:text-white">{{ __('app.instagram.heading') }}</h3> --}}
             <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 pt-serif-regular-italic">
                 {{ __('app.instagram.description') }}
             </p>
@@ -625,38 +795,65 @@ TEXT;
 
 
     {{-- Instagram Profile Card --}}
-    <div data-aos="zoom-in-down" class="max-w-md p-1 mx-auto mb-8 bg-gradient-to-br from-purple-500 to-orange-400 rounded-2xl via-primary">
-        <div  class="p-6 bg-white rounded-2xl dark:bg-gray-800">
-            <div  class="flex items-center justify-between mb-4">
-                <div class="flex items-center">
-                    
+    <div data-aos="zoom-in-down" class="p-1 mx-auto mb-8 bg-gradient-to-br from-purple-500 to-orange-400 rounded-2xl via-primary">
+        <div class="p-6 bg-white rounded-2xl dark:bg-gray-800">
+            <div class="flex items-center justify-around mb-4 ">
+                <img src="{{ $profile->profile_image_url }}" 
+                    alt="{{ $profile->username }}" 
+                    class="object-cover w-20 h-20 rounded-full ">
+                <div class="flex items-center max-w-md">
+                    {{-- Foto profil --}}
+
                     <div class="ml-4">
-                        <h3 class="text-lg font-bold text-black dark:text-white">{{ __('app.instagram.profile.username') }}</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.bio') }}</p>
+                        <h3 class="text-lg font-bold text-black dark:text-white">
+                            {{ $profile->display_name ?? $profile->username }}
+                            @if($profile->is_verified)
+                                ✅
+                            @endif
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            {{ $profile->bio }}
+                        </p>
                     </div>
                 </div>
-                <button class="items-center justify-center hidden px-4 py-2 transition-all duration-300 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 lg:flex group hover:scale-105">
+                <a href="{{ $profile->full_instagram_url }}" target="_blank"
+                class="items-center justify-center hidden px-4 py-2 transition-all duration-300 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 lg:flex group hover:scale-105">
                     <x-bi-instagram class="w-5 h-5 mr-2 text-black dark:text-white" />
-                    <span class="font-semibold text-black dark:text-white">{{ __('app.instagram.profile.follow_button') }}</span>
-                </button>
+                    <span class="font-semibold text-black dark:text-white">
+                        {{ __('app.instagram.profile.follow_button') }}
+                    </span>
+                </a>
             </div>
             
             <div class="grid grid-cols-3 gap-4 text-center">
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">307</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.posts') }}</p>
+                    <p class="text-xl font-bold text-black dark:text-white">
+                        {{ $profile->posts_formatted }}
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        {{ __('app.instagram.profile.stats.posts') }}
+                    </p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">5028</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.followers') }}</p>
+                    <p class="text-xl font-bold text-black dark:text-white">
+                        {{ $profile->followers_formatted }}
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        {{ __('app.instagram.profile.stats.followers') }}
+                    </p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold text-black dark:text-white">2519</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('app.instagram.profile.stats.following') }}</p>
+                    <p class="text-xl font-bold text-black dark:text-white">
+                        {{ $profile->following_formatted }}
+                    </p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        {{ __('app.instagram.profile.stats.following') }}
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
 
     {{-- Instagram Feed Grid --}}
     <div class="grid grid-cols-1 gap-6 pb-8 md:grid-cols-2 lg:grid-cols-3">
@@ -708,260 +905,28 @@ TEXT;
 
 @push('styles')
 <style>
-    /* Hero Section Styles - Override untuk memastikan style terbaca */
-    .containerHero {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        width: 100% !important;
-        height: 100vh !important;
-        overflow: hidden !important;
-    }
+/* Simple dot pattern background */
+.simple-dots {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+}
 
-    #slide {
-        /* width: max-content !important; */
-        /* margin-top: 50px !important; */
-    }
+/* Counter animation */
+.counter {
+    display: inline-block;
+}
 
-    .item {
-        width: 150px !important;
-        height: 300px !important;
-        display: inline-block !important;
-        transition: 0.5s !important;
-        position: absolute !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        transform: translate(0, -50%) !important;
-        /* border-radius: 5px !important; */
-    }
+/* Hover effects */
+.group:hover .counter {
+    animation: bounce-number 0.6s ease-in-out;
+}
 
-    .item:nth-child(1),
-    .item:nth-child(2) {
-        left: 0 !important;
-        top: 0 !important;
-        transform: translate(0, 0) !important;
-        border-radius: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        box-shadow: none !important;
-    }
-
-    /* Mobile First - Base styles (< 40rem) */
-    .item:nth-child(3) {
-        display: none !important;
-        left: 9% !important;
-        top: 88% !important;
-        width: 38% !important;
-        height: 110px !important;
-    }
-
-    .item:nth-child(4) {
-        display: none !important;
-        left: 53% !important;
-        top: 88% !important;
-        width: 38% !important;
-        height: 110px !important;
-    }
-
-    .item:nth-child(n + 5) {
-        left: calc(100% + 50px) !important;
-        opacity: 0 !important;
-    }
-
-    .buttons {
-        position: absolute !important;
-        top: 80% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        display: flex !important;
-        gap: 1rem !important;
-        justify-content: center !important;
-        z-index: 30 !important;
-    }
-
-    .buttons button {
-        width: 50px !important;
-        height: 50px !important;
-        transition: 0.5s !important;
-    }
-
-    /* Small devices (≥ 40rem / 640px) */
-    @media (min-width: 40rem) {
-        .item:nth-child(3) {
-            display: block !important;
-            left: 12% !important;
-            top: 88% !important;
-            width: 35% !important;
-            height: 110px !important;
-        }
-
-        .item:nth-child(4) {
-            display: block !important;
-            left: calc(22% + 220px) !important;
-            top: 88% !important;
-            width: 35% !important;
-            height: 110px !important;
-        }
-
-        .item:nth-child(n + 5) {
-            left: calc(70% + 200px) !important;
-            opacity: 0 !important;
-        }
-
-        .buttons {
-            top: 70% !important;
-            gap: 1rem !important;
-        }
-
-        .buttons button {
-            width: 50px !important;
-            height: 50px !important;
-        }
-    }
-
-    /* Medium devices (≥ 48rem / 768px) */
-    @media (min-width: 48rem) {
-        .item:nth-child(3) {
-            display: block !important;
-            left: 18% !important;
-            top: 88% !important;
-            width: 30% !important;
-            height: 110px !important;
-        }
-
-        .item:nth-child(4) {
-            display: block !important;
-            left: calc(35% + 170px) !important;
-            top: 88% !important;
-            width: 30% !important;
-            height: 110px !important;
-        }
-
-        .item:nth-child(n + 5) {
-            left: calc(70% + 200px) !important;
-            opacity: 0 !important;
-        }
-
-        .buttons {
-            top: 70% !important;
-            gap: 1.5rem !important;
-        }
-
-        .buttons button {
-            width: 50px !important;
-            height: 50px !important;
-        }
-    }
-
-    /* Large devices (≥ 64rem / 1024px) */
-    @media (min-width: 64rem) {
-        .item:nth-child(3) {
-            display: block !important;
-            left: 32% !important;
-            top: 85% !important;
-            width: 180px !important;
-            height: 100px !important;
-        }
-
-        .item:nth-child(4) {
-            display: block !important;
-            left: calc(36% + 200px) !important;
-            top: 85% !important;
-            width: 180px !important;
-            height: 100px !important;
-        }
-
-        .item:nth-child(n + 5) {
-            left: calc(70% + 200px) !important;
-            opacity: 0 !important;
-        }
-
-        .buttons {
-            position: absolute !important;
-            top: 80% !important;
-            left: 0 !important;
-            transform: translateX(0%) !important;
-            display: flex !important;
-            gap: 1rem !important;
-            justify-content: space-around !important;
-            z-index: 30 !important;
-            width: 100% !important;
-        }
-
-        .buttons button {
-            width: 50px !important;
-            height: 50px !important;
-            transition: 0.5s !important;
-        }
-    }
-
-    /* Extra Large devices (≥ 80rem / 1280px) */
-    @media (min-width: 80rem) {
-        .item:nth-child(3) {
-            display: block !important;
-            left: 35% !important;
-            top: 85% !important;
-            width: 180px !important;
-            height: 100px !important;
-        }
-
-        .item:nth-child(4) {
-            display: block !important;
-            left: calc(38% + 200px) !important;
-            top: 85% !important;
-            width: 180px !important;
-            height: 100px !important;
-        }
-
-        .item:nth-child(n + 5) {
-            left: calc(70% + 200px) !important;
-            opacity: 0 !important;
-        }
-
-        .buttons {
-            position: absolute !important;
-            top: 80% !important;
-            left: 0 !important;
-            transform: translateX(0%) !important;
-            display: flex !important;
-            gap: 1rem !important;
-            justify-content: space-around !important;
-            z-index: 30 !important;
-            padding-left: 10% !important;
-            padding-right: 10% !important;
-            width: 100% !important;
-        }
-
-        .buttons button {
-            width: 50px !important;
-            height: 50px !important;
-            transition: 0.5s !important;
-        }
-    }
-
-    .item .content {
-        position: absolute !important;
-        top: 50% !important;
-        transform: translate(0, -50%) !important;
-        display: none !important;
-        font-family: system-ui !important;
-    }
-
-    .item .tambahan {
-        display: none !important;
-    }
-
-    .item:nth-child(2) .tambahan {
-        display: block !important;
-    }
-
-    .item:nth-child(2) .content {
-        display: block !important;
-        z-index: 2 !important;
-    }
-
+@keyframes bounce-number {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+</style>
+<style>
     @keyframes showcontent {
         from {
             opacity: 0;
@@ -998,41 +963,44 @@ TEXT;
 
 @push('scripts')
 
-<!-- Typewriter Animation -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const el = document.getElementById("typewriter");
-        const word1 = el.getAttribute('data-word1');
-        const word2 = el.getAttribute('data-word2');
-        const words = [word1, word2];
-        
-        let currentWord = 0;
-        let currentChar = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
 
-        function type() {
-            if (currentChar < words[currentWord].length) {
-                el.innerHTML += words[currentWord].charAt(currentChar);
-                currentChar++;
-                setTimeout(type, 80);
-            } else {
-                setTimeout(erase, 1000);
-            }
-        }
+        const animateCount = (counter) => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const increment = target / 100; // durasi = 100 step
 
-        function erase() {
-            if (currentChar > 0) {
-                el.innerHTML = el.innerHTML.slice(0, -1);
-                currentChar--;
-                setTimeout(erase, 50);
-            } else {
-                currentWord = (currentWord + 1) % words.length;
-                setTimeout(type, 100);
-            }
-        }
+            const updateCounter = () => {
+                count += increment;
+                if (count < target) {
+                    counter.textContent = Math.floor(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target; // pastikan akhir sama persis
+                }
+            };
 
-        type();
+            updateCounter();
+        };
+
+        // Efek hanya jalan saat elemen masuk viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target); // sekali jalan
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
     });
 </script>
+
+<!-- Typewriter Animation -->
+
 
 <script>
     document.getElementById('next').onclick = function(){

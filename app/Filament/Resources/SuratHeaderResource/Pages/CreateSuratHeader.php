@@ -14,3 +14,4 @@ class CreateSuratHeader extends CreateRecord
         return $this->getResource()::getUrl('index');
     }
 }
+

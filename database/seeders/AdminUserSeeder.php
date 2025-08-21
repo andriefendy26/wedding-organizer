@@ -38,3 +38,4 @@ class AdminUserSeeder extends Seeder
         $this->command->info('User admin memiliki role Super Admin dengan semua permission.');
     }
 }
+

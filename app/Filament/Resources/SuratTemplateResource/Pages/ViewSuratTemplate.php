@@ -17,3 +17,4 @@ class ViewSuratTemplate extends ViewRecord
         ];
     }
 }
+
