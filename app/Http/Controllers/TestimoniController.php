@@ -40,6 +40,7 @@ class TestimoniController extends Controller
         //         'comment' => 0
         //     ],
         // ];
+        
         $allImage = Galery::all();
 
         foreach ($allImage as $team) {

@@ -85,6 +85,7 @@ TEXT;
         </div>
     </div>
 </div>
+
 <!-- Team Stats Section -->
 <div data-aos="zoom-in-down" class="relative px-4 my-20 overflow-hidden md:px-8">
     <!-- Gradient Background -->
@@ -129,8 +130,8 @@ TEXT;
             -45deg,
             transparent,
             transparent 8px,
-            rgba(59, 130, 246, 0.3) 8px,
-            rgba(59, 130, 246, 0.3) 10px
+            rgba(251, 146, 60, 0.3) 8px,
+            rgba(251, 146, 60, 0.3) 10px
         );"></div>
     </div>
     
@@ -139,8 +140,8 @@ TEXT;
             45deg,
             transparent,
             transparent 8px,
-            rgba(16, 185, 129, 0.3) 8px,
-            rgba(16, 185, 129, 0.3) 10px
+            rgba(236, 72, 153, 0.3) 8px,
+            rgba(236, 72, 153, 0.3) 10px
         );"></div>
     </div>
     
@@ -151,85 +152,112 @@ TEXT;
                     [
                         'value' => 500,
                         'label' => __('app.stat.label1'),
-                        'color' => '#3B82F6', // Blue
-                        'icon' => 'handshake'
+                        'icon' => 'handshake',
+                        'suffix' => '+'
                     ],
                     [
                         'value' => 2000,
                         'label' => __('app.stat.label2'),
-                        'color' => '#10B981', // Green
-                        'icon' => 'users'
+                        'icon' => 'users',
+                        'suffix' => '+'
                     ],
                     [
                         'value' => 100,
                         'label' => __('app.stat.label3'),
-                        'color' => '#F59E0B', // Amber
-                        'icon' => 'award'
+                        'icon' => 'award',
+                        'suffix' => '%'
                     ],
                     [
                         'value' => 99,
                         'label' => __('app.stat.label4'),
-                        'color' => '#EF4444', // Red
-                        'icon' => 'target'
+                        'icon' => 'target',
+                        'suffix' => '%'
                     ],
                 ];
             @endphp
 
             @foreach($stats as $index => $stat)
-                <div class="flex flex-col items-center p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ">
+                <div class="flex flex-col items-center p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 min-h-[280px] justify-center">
 
                     <!-- Professional Icon Container -->
                     <div class="relative mb-6">
-                        <!-- Icon Background -->
-                        <div class="relative flex items-center justify-center w-20 h-20 overflow-hidden rounded-2xl" 
-                             style="background: linear-gradient(135deg, {{ $stat['color'] }}15, {{ $stat['color'] }}25);">
+                        <!-- Icon Background dengan gradient -->
+                        <div class="relative flex items-center justify-center w-20 h-20 overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-100 via-orange-100 to-pink-100 dark:from-yellow-900/20 dark:via-orange-900/20 dark:to-pink-900/20">
                             
-                            <!-- Subtle Pattern Overlay -->
+                            <!-- Subtle Pattern Overlay dengan gradient colors -->
                             <div class="absolute inset-0 opacity-30" 
-                                 style="background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, {{ $stat['color'] }}10 4px, {{ $stat['color'] }}10 8px);"></div>
+                                 style="background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(251, 146, 60, 0.1) 4px, rgba(251, 146, 60, 0.1) 8px);"></div>
                             
                             <!-- Additional Line Pattern for Icon -->
                             <div class="absolute inset-0 opacity-20" 
-                                 style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, {{ $stat['color'] }}15 6px, {{ $stat['color'] }}15 7px);"></div>
+                                 style="background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(236, 72, 153, 0.15) 6px, rgba(236, 72, 153, 0.15) 7px);"></div>
                             
-                            <!-- Professional Icons -->
+                            <!-- Professional Icons dengan gradient stroke -->
                             @if($stat['icon'] == 'handshake')
                                 <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
-                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <defs>
+                                        <linearGradient id="gradient{{ $index }}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#EAB308"/>
+                                            <stop offset="50%" style="stop-color:#FB923C"/>
+                                            <stop offset="100%" style="stop-color:#EC4899"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="url(#gradient{{ $index }})" stroke-linecap="round" stroke-linejoin="round" 
                                           d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
                                 </svg>
                             @elseif($stat['icon'] == 'users')
                                 <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
-                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <defs>
+                                        <linearGradient id="gradient{{ $index }}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#EAB308"/>
+                                            <stop offset="50%" style="stop-color:#FB923C"/>
+                                            <stop offset="100%" style="stop-color:#EC4899"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="url(#gradient{{ $index }})" stroke-linecap="round" stroke-linejoin="round" 
                                           d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
                                 </svg>
                             @elseif($stat['icon'] == 'award')
                                 <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
-                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <defs>
+                                        <linearGradient id="gradient{{ $index }}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#EAB308"/>
+                                            <stop offset="50%" style="stop-color:#FB923C"/>
+                                            <stop offset="100%" style="stop-color:#EC4899"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="url(#gradient{{ $index }})" stroke-linecap="round" stroke-linejoin="round" 
                                           d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228a25.835 25.835 0 012.916.52 6.003 6.003 0 01-4.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
                                 </svg>
                             @else
                                 <svg class="relative z-10 w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
-                                     fill="none" stroke="{{ $stat['color'] }}" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" 
+                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <defs>
+                                        <linearGradient id="gradient{{ $index }}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#EAB308"/>
+                                            <stop offset="50%" style="stop-color:#FB923C"/>
+                                            <stop offset="100%" style="stop-color:#EC4899"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path stroke="url(#gradient{{ $index }})" stroke-linecap="round" stroke-linejoin="round" 
                                           d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                                 </svg>
                             @endif
                         </div>
                     </div>
 
-                    <!-- Counter Number -->
-                    <h3 class="my-3 text-3xl font-bold transition-transform duration-300 edu-vic-wa-nt-hand dark:text-white group-hover:scale-105 counter" 
-                        style="color: {{ $stat['color'] }}"
-                        data-target="{{ $stat['value'] }}">
-                        0
+                    <!-- Counter Number dengan gradient text -->
+                    <h3 class="px-20 my-4 text-4xl font-bold leading-tight text-transparent transition-transform duration-300 edu-vic-wa-nt-hand group-hover:scale-105 counter bg-gradient-to-r from-yellow-500 via-orange-500 to-pink-500 bg-clip-text" 
+                        data-target="{{ $stat['value'] }}" 
+                        data-suffix="{{ $stat['suffix'] }}">
+                        0{{ $stat['suffix'] }}
                     </h3>
                     
-                    <!-- Label -->
-                    <p class="text-lg font-medium text-gray-600 dark:text-gray-300 pt-serif-regular">
+                    <!-- Label dengan gradient text -->
+                    <p class="text-lg font-medium leading-relaxed text-transparent pt-serif-regular bg-gradient-to-r from-yellow-600 via-orange-600 to-pink-600 bg-clip-text">
                         {{ $stat['label'] }}
                     </p>
                 </div>

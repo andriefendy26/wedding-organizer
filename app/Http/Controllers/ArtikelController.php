@@ -65,7 +65,7 @@ class ArtikelController extends Controller
         // If no related articles found, get latest articles
         if ($relatedArtikels->count() < 3) {
             $relatedArtikels = Artikel::where('id', '!=', $artikel->id)
-                ->latest
+                ->latest()
                 ->limit(3)
                 ->get();
         }
